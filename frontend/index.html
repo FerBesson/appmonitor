@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Market Terminal Argy — Monitor de Acciones Argentinas</title>
+    <meta name="description" content="Monitor en tiempo real de acciones argentinas del BCBA con gráficos OHLC, indicadores técnicos SMA/RSI y análisis de volumen.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lightweight Charts CDN -->
+    <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navbar -->
+        <header class="navbar">
+            <div class="navbar-brand">
+                <div class="brand-text">
+                    <h1>Market Terminal Argy</h1>
+                </div>
+            </div>
+            <div class="navbar-status">
+                <div class="status-pill live-pulse">
+                    <span class="dot"></span>
+                    <span id="status-text">ACTUALIZADO</span>
+                </div>
+                <div class="timer-pill">
+                    ⏳ <strong id="countdown">30</strong>s
+                </div>
+                <button id="refresh-btn" class="icon-btn" title="Actualizar ahora">🔄</button>
+            </div>
+        </header>
+
+        <!-- 3-Column Main Workspace -->
+        <main class="main-workspace">
+
+            <!-- LEFT: Stocks Table -->
+            <div class="panel-section">
+                <div class="section-toolbar">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="search" id="search-input" placeholder="Buscar ticker..." autocomplete="off">
+                    </div>
+                    <div class="filters-group">
+                        <div class="panel-select-tabs">
+                            <button class="panel-tab active" data-panel="all">Todos</button>
+                            <button class="panel-tab" data-panel="lider">Líder</button>
+                            <button class="panel-tab" data-panel="general">General</button>
+                        </div>
+                        <div class="currency-select-tabs">
+                            <button class="currency-tab active" data-currency="ARS">ARS</button>
+                            <button class="currency-tab" data-currency="USD">USD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="market-table">
+                        <thead>
+                            <tr>
+                                <th class="col-ticker" data-sort="ticker">TICKER <span class="sort-icon"></span></th>
+                                <th class="col-price" data-sort="price">PRECIO <span class="sort-icon"></span></th>
+                                <th class="col-change" data-sort="change">VAR % <span class="sort-icon"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-tbody">
+                            <tr class="loading-row">
+                                <td colspan="3">Cargando datos...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <span><strong id="showing-count">0</strong> / <strong id="total-count">0</strong></span>
+                </div>
+            </div>
+
+            <!-- CENTER: Chart -->
+            <div class="chart-section">
+                <div class="chart-section-header">
+                    <div class="chart-ticker-info">
+                        <h2 id="drawer-ticker">Seleccioná un activo</h2>
+                        <span id="drawer-name" class="chart-subtitle">Tocá cualquier fila de la tabla</span>
+                    </div>
+                    <button class="close-drawer-btn" id="close-drawer" style="display: none;">✕</button>
+                </div>
+
+                <div class="chart-section-body">
+                    <div class="empty-state" id="chart-empty-state">
+                        <div class="empty-icon">📊</div>
+                        <p>Seleccioná una acción del panel izquierdo para ver el gráfico histórico.</p>
+                    </div>
+
+                    <div id="chart-workspace" style="display: none;">
+                        <div class="asset-metrics">
+                            <div class="metric">
+                                <label>Precio Cierre</label>
+                                <span id="metric-close">---</span>
+                            </div>
+                            <div class="metric">
+                                <label>SMA 20</label>
+                                <span id="metric-sma20" class="sma20-text">---</span>
+                            </div>
+                            <div class="metric">
+                                <label>SMA 50</label>
+                                <span id="metric-sma50" class="sma50-text">---</span>
+                            </div>
+                            <div class="metric">
+                                <label>RSI (14)</label>
+                                <span id="metric-rsi">---</span>
+                            </div>
+                        </div>
+
+                        <!-- Timeframe selector -->
+                        <div class="timeframe-selector" id="timeframe-selector">
+                            <button class="timeframe-card" data-range="7d">7d</button>
+                            <button class="timeframe-card" data-range="1m">1m</button>
+                            <button class="timeframe-card" data-range="3m">3m</button>
+                            <button class="timeframe-card" data-range="6m">6m</button>
+                            <button class="timeframe-card" data-range="YTD">YTD</button>
+                            <button class="timeframe-card" data-range="1a">1a</button>
+                            <button class="timeframe-card active" data-range="all">Todo</button>
+                        </div>
+
+                        <div id="tv-chart-container" class="chart-box"></div>
+
+                        <div class="chart-legend">
+                            <span class="legend-item"><i class="dot yellow"></i> SMA 20</span>
+                            <span class="legend-item"><i class="dot blue"></i> SMA 50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Market Movers -->
+            <div class="movers-section">
+                <div class="movers-header">
+                    <h3 class="movers-title">MARKET MOVERS</h3>
+                </div>
+                <div class="movers-tabs">
+                    <button class="movers-tab active" data-movers="gainers">Gainers</button>
+                    <button class="movers-tab" data-movers="losers">Losers</button>
+                </div>
+                <div class="movers-list" id="movers-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

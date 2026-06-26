@@ -11,6 +11,7 @@ from backend.models import AssetQuote, MarketSummary, StockHistoryPoint
 from backend.services.analytics import get_market_summary, get_stock_history_processed, get_stored_stocks
 from backend.services.updater import start_background_updater
 from backend.services.data912_client import data912_client
+from backend.services.merval_service import get_merval_ccl
 from backend.config import HISTORIAL_DIR
 
 @asynccontextmanager
@@ -48,6 +49,13 @@ async def api_summary():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo resumen: {str(e)}")
 
+@app.get("/api/merval-ccl")
+async def api_merval_ccl():
+    try:
+        return await get_merval_ccl()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo Merval CCL: {str(e)}")
+
 @app.get("/api/panel/stocks", response_model=List[AssetQuote])
 async def api_panel_stocks():
     try:
@@ -67,8 +75,10 @@ async def api_history(ticker: str):
             try:
                 mtime = os.path.getmtime(filepath)
                 if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                    with open(filepath, "r", encoding="utf-8") as f:
-                        raw_json = f.read()
+                    def read_file():
+                        with open(filepath, "r", encoding="utf-8") as f:
+                            return f.read()
+                    raw_json = await asyncio.to_thread(read_file)
                     return Response(content=raw_json, media_type="application/json")
             except Exception as e:
                 print(f"Error leyendo caché crudo para {ticker}: {e}")
@@ -81,8 +91,10 @@ async def api_history(ticker: str):
         # Intentar responder con el archivo recién guardado en crudo para evitar serialización Pydantic
         if os.path.exists(filepath) and os.path.getsize(filepath) > 10:
             try:
-                with open(filepath, "r", encoding="utf-8") as f:
-                    raw_json = f.read()
+                def read_file():
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        return f.read()
+                raw_json = await asyncio.to_thread(read_file)
                 return Response(content=raw_json, media_type="application/json")
             except Exception:
                 pass

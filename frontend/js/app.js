@@ -1,7 +1,7 @@
 // Estado Global de la App
 const state = {
     stocks: [],
-    currentPanel: 'all', // 'all', 'lider', 'general'
+    currentPanel: 'lider', // 'lider', 'general'
     currentCurrency: 'ARS', // 'ARS', 'USD'
     searchQuery: '',
     selectedTicker: null,
@@ -47,6 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initEventListeners() {
+    // Evento de click para el widget del Merval CCL
+    const mervalWidget = document.getElementById('merval-ccl-widget');
+    if (mervalWidget) {
+        mervalWidget.style.cursor = 'pointer';
+        mervalWidget.addEventListener('click', () => {
+            selectAsset('MERVAL_CCL');
+        });
+    }
+
+    // Eventos de click para los widgets de dólares
+    const a3500Widget = document.getElementById('dolar-a3500-widget');
+    if (a3500Widget) {
+        a3500Widget.addEventListener('click', () => {
+            selectAsset('USD_MAYORISTA');
+        });
+    }
+    const mepWidget = document.getElementById('dolar-mep-widget');
+    if (mepWidget) {
+        mepWidget.addEventListener('click', () => {
+            selectAsset('USD_MEP');
+        });
+    }
+    const cclWidget = document.getElementById('dolar-ccl-widget');
+    if (cclWidget) {
+        cclWidget.addEventListener('click', () => {
+            selectAsset('USD_CCL');
+        });
+    }
+
     document.getElementById('refresh-btn').addEventListener('click', () => {
         state.countdown = 30;
         state.historyCache = {}; // Limpiar caché histórico al refrescar manualmente
@@ -153,16 +182,34 @@ function startCountdown() {
 
 async function refreshAllData() {
     try {
-        const stocksRes = await fetch('/api/panel/stocks');
+        const [stocksRes, mervalRes] = await Promise.all([
+            fetch('/api/panel/stocks'),
+            fetch('/api/merval-ccl')
+        ]);
 
         if (stocksRes.ok) {
             state.stocks = await stocksRes.json();
+            
+            // Actualizar widgets de dólares en el encabezado
+            const usdMay = state.stocks.find(s => s.ticker === 'USD_MAYORISTA');
+            const usdMep = state.stocks.find(s => s.ticker === 'USD_MEP');
+            const usdCcl = state.stocks.find(s => s.ticker === 'USD_CCL');
+            
+            if (usdMay) updateDolarWidget('dolar-a3500', usdMay);
+            if (usdMep) updateDolarWidget('dolar-mep', usdMep);
+            if (usdCcl) updateDolarWidget('dolar-ccl', usdCcl);
+
             renderTable();
             renderMarketMovers();
             if (state.selectedTicker) {
                 const asset = state.stocks.find(s => s.ticker === state.selectedTicker);
                 if (asset) updateQuickMetrics(asset);
             }
+        }
+
+        if (mervalRes.ok) {
+            const mervalData = await mervalRes.json();
+            updateMervalWidget(mervalData);
         }
     } catch (err) {
         console.error('Error conectando al backend:', err);
@@ -178,7 +225,7 @@ function renderMarketMovers() {
     const container = document.getElementById('movers-list');
     if (!container) return;
 
-    const valid = state.stocks.filter(s => s.price > 0);
+    const valid = state.stocks.filter(s => s.price > 0 && s.ticker !== 'USD_MAYORISTA' && s.ticker !== 'USD_MEP' && s.ticker !== 'USD_CCL');
 
     let movers;
     if (state.moversTab === 'gainers') {
@@ -220,7 +267,7 @@ function renderMarketMovers() {
 // ═══════════════════════════════════════
 function renderTable() {
     const tbody = document.getElementById('stocks-tbody');
-    let filtered = [...state.stocks];
+    let filtered = state.stocks.filter(s => s.ticker !== 'USD_MAYORISTA' && s.ticker !== 'USD_MEP' && s.ticker !== 'USD_CCL');
 
     if (state.currentPanel !== 'all') {
         filtered = filtered.filter(s => s.panel === state.currentPanel);
@@ -302,11 +349,39 @@ async function selectAsset(ticker) {
     state.selectedTicker = ticker;
     renderTable();
 
-    const asset = state.stocks.find(s => s.ticker === ticker);
+    let asset = state.stocks.find(s => s.ticker === ticker);
+    if (ticker === 'MERVAL_CCL') {
+        asset = {
+            ticker: 'MERVAL_CCL',
+            name: 'Índice S&P Merval CCL',
+            currency: 'USD',
+            price: 0.0
+        };
+        const priceText = document.getElementById('merval-ccl-price').textContent;
+        // Parsear el precio actual del widget (ej. "USD 2.011,93" -> 2011.93)
+        const parsedPrice = parseFloat(priceText.replace('USD ', '').replace(/\./g, '').replace(',', '.'));
+        if (!isNaN(parsedPrice)) {
+            asset.price = parsedPrice;
+        }
+    }
+    
     if (!asset) return;
 
-    document.getElementById('drawer-ticker').textContent = ticker;
-    document.getElementById('drawer-name').textContent = asset.name || 'Acción del Panel BCBA';
+    let displayTicker = ticker;
+    let displayName = asset.name || 'Acción del Panel BCBA';
+    if (ticker === 'USD_MAYORISTA') {
+        displayTicker = 'A3500';
+        displayName = 'Dólar Mayorista (A3500)';
+    } else if (ticker === 'USD_MEP') {
+        displayTicker = 'MEP';
+        displayName = 'Dólar MEP';
+    } else if (ticker === 'USD_CCL') {
+        displayTicker = 'CCL';
+        displayName = 'Dólar CCL';
+    }
+    
+    document.getElementById('drawer-ticker').textContent = displayTicker;
+    document.getElementById('drawer-name').textContent = displayName;
     document.getElementById('chart-empty-state').style.display = 'none';
     document.getElementById('chart-workspace').style.display = 'flex';
 
@@ -508,4 +583,62 @@ function updateHeaderIndicators() {
             th.classList.remove('sorted');
         }
     });
+}
+
+function updateMervalWidget(data) {
+    const priceEl = document.getElementById('merval-ccl-price');
+    const changeEl = document.getElementById('merval-ccl-change');
+    
+    if (!priceEl || !changeEl) return;
+    
+    const mervalCcl = data && data.merval_ccl !== undefined ? data.merval_ccl : 0;
+    const changePct = data && data.change_pct !== undefined ? data.change_pct : 0;
+    
+    // Formato de miles y decimales estándar
+    const formattedPrice = new Intl.NumberFormat('es-AR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(mervalCcl);
+    
+    priceEl.textContent = `USD ${formattedPrice}`;
+    
+    const sign = changePct > 0 ? '+' : '';
+    changeEl.textContent = `${sign}${Number(changePct).toFixed(2)}%`;
+    
+    changeEl.className = 'change-pill';
+    if (changePct > 0) {
+        changeEl.classList.add('up');
+    } else if (changePct < 0) {
+        changeEl.classList.add('down');
+    } else {
+        changeEl.classList.add('neutral');
+    }
+}
+
+function updateDolarWidget(prefix, asset) {
+    const priceEl = document.getElementById(`${prefix}-price`);
+    const changeEl = document.getElementById(`${prefix}-change`);
+    if (!priceEl || !changeEl) return;
+    
+    const price = asset.price || 0;
+    const changePct = asset.change_pct || 0;
+    
+    const formattedPrice = new Intl.NumberFormat('es-AR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(price);
+    
+    priceEl.textContent = `ARS ${formattedPrice}`;
+    
+    const sign = changePct > 0 ? '+' : '';
+    changeEl.textContent = `${sign}${Number(changePct).toFixed(2)}%`;
+    
+    changeEl.className = 'change-pill';
+    if (changePct > 0) {
+        changeEl.classList.add('up');
+    } else if (changePct < 0) {
+        changeEl.classList.add('down');
+    } else {
+        changeEl.classList.add('neutral');
+    }
 }

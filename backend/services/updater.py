@@ -2,7 +2,7 @@ import os
 import json
 import asyncio
 from datetime import datetime
-from backend.config import ACCIONES_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
+from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
 from backend.services.data912_client import data912_client
 from backend.models import AssetQuote
 
@@ -149,29 +149,163 @@ def parse_stocks_raw(raw_list: list) -> list:
         ).model_dump())
     return quotes
 
+_dolar_history_cache = None
+_dolar_cache_time = None
+
+async def get_cached_dolar_history():
+    global _dolar_history_cache, _dolar_cache_time
+    now = datetime.now()
+    # Cache de 1 hora (3600 segundos) para el historial pesado
+    if _dolar_history_cache is not None and _dolar_cache_time is not None:
+        if (now - _dolar_cache_time).total_seconds() < 3600:
+            return _dolar_history_cache
+            
+    import httpx
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            response = await client.get("https://api.argentinadatos.com/v1/cotizaciones/dolares", timeout=15.0)
+            if response.status_code == 200:
+                _dolar_history_cache = response.json()
+                _dolar_cache_time = now
+                return _dolar_history_cache
+    except Exception as e:
+        print(f"Error obteniendo histórico de ArgentinaDatos: {e}")
+        
+    return _dolar_history_cache
+
+async def get_latest_dolar_quotes():
+    import httpx
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            response = await client.get("https://dolarapi.com/v1/dolares", timeout=5.0)
+            if response.status_code == 200:
+                return response.json()
+    except Exception as e:
+        print(f"Error obteniendo cotizaciones del día de DolarApi: {e}")
+    return None
+
 async def fetch_and_save_market_data():
     """Consulta la API de Data912 y guarda únicamente las acciones en backend/datos/acciones.json"""
     try:
         stocks_raw = await data912_client.get_arg_stocks()
         stocks_dump = parse_stocks_raw(stocks_raw)
 
+        # Obtener cotizaciones de dólares
+        dolar_assets = []
+        try:
+            # 1. Obtener histórico de ArgentinaDatos (usando caché) para la variación diaria
+            dolar_history = await get_cached_dolar_history()
+            
+            # 2. Obtener cotización en tiempo real del día
+            latest_quotes = await get_latest_dolar_quotes()
+            
+            dolar_configs = [
+                {"casa": "mayorista", "ticker": "USD_MAYORISTA", "name": "A3500", "dolarapi_casa": "mayorista"},
+                {"casa": "bolsa", "ticker": "USD_MEP", "name": "MEP", "dolarapi_casa": "bolsa"},
+                {"casa": "contadoconliqui", "ticker": "USD_CCL", "name": "CCL", "dolarapi_casa": "contadoconliqui"}
+            ]
+            
+            for config in dolar_configs:
+                casa = config["casa"]
+                ticker = config["ticker"]
+                name = config["name"]
+                dolarapi_casa = config["dolarapi_casa"]
+                
+                # Obtener precio anterior del cierre del día anterior (usando el historial)
+                prev_price = 0.0
+                if dolar_history:
+                    house_history = [x for x in dolar_history if x.get("casa") == casa]
+                    if house_history:
+                        house_history.sort(key=lambda x: x.get("fecha", ""))
+                        today_str = datetime.now().strftime("%Y-%m-%d")
+                        latest_hist = house_history[-1]
+                        
+                        # Si el último registro del histórico es de hoy, el anterior/cierre previo es el penúltimo
+                        if latest_hist.get("fecha") == today_str:
+                            if len(house_history) >= 2:
+                                prev_price = float(house_history[-2].get("venta") or house_history[-2].get("compra") or 0.0)
+                            else:
+                                prev_price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
+                        else:
+                            prev_price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
+                
+                # Obtener el precio actual del día
+                price = 0.0
+                if latest_quotes:
+                    latest_item = next((q for q in latest_quotes if q.get("casa") == dolarapi_casa), None)
+                    if latest_item:
+                        price = float(latest_item.get("venta") or latest_item.get("compra") or 0.0)
+                
+                # Fallback al histórico si DolarApi falla
+                if price <= 0 and dolar_history:
+                    house_history = [x for x in dolar_history if x.get("casa") == casa]
+                    if house_history:
+                        house_history.sort(key=lambda x: x.get("fecha", ""))
+                        latest_hist = house_history[-1]
+                        price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
+                        if prev_price <= 0 and len(house_history) >= 2:
+                            prev_price = float(house_history[-2].get("venta") or house_history[-2].get("compra") or price)
+                
+                if price > 0:
+                    if prev_price <= 0:
+                        prev_price = price
+                        
+                    change_pct = ((price - prev_price) / prev_price) * 100.0
+                    
+                    dolar_assets.append({
+                        "ticker": ticker,
+                        "price": price,
+                        "change_pct": round(change_pct, 2),
+                        "volume": 0.0,
+                        "high": price,
+                        "low": price,
+                        "open": prev_price,
+                        "name": name,
+                        "panel": "general",
+                        "currency": "ARS"
+                    })
+        except Exception as e:
+            print(f"Error cargando cotizaciones de dólares en updater: {e}")
+            
+        # Fallback de último recurso: mantener cotizaciones existentes en disco si falló todo
+        if not dolar_assets:
+            try:
+                if os.path.exists(DOLARES_JSON_PATH):
+                    with open(DOLARES_JSON_PATH, "r", encoding="utf-8") as f:
+                        old_dolares = json.load(f)
+                        dolar_assets = old_dolares.get("dolares", [])
+            except Exception as e:
+                print(f"Error leyendo fallback de dolares.json: {e}")
+                
         os.makedirs(DATOS_DIR, exist_ok=True)
 
-        payload = {
+        payload_acciones = {
             "updated_at": datetime.now().isoformat(),
             "acciones": stocks_dump
         }
 
-        def save_file():
-            temp_path = ACCIONES_JSON_PATH + ".tmp"
-            with open(temp_path, "w", encoding="utf-8") as f:
-                json.dump(payload, f, ensure_ascii=False, indent=2)
-            os.replace(temp_path, ACCIONES_JSON_PATH)
+        payload_dolares = {
+            "updated_at": datetime.now().isoformat(),
+            "dolares": dolar_assets
+        }
 
-        await asyncio.to_thread(save_file)
+        def save_files():
+            # Guardar acciones.json
+            temp_path_acc = ACCIONES_JSON_PATH + ".tmp"
+            with open(temp_path_acc, "w", encoding="utf-8") as f:
+                json.dump(payload_acciones, f, ensure_ascii=False, indent=2)
+            os.replace(temp_path_acc, ACCIONES_JSON_PATH)
 
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] Datos guardados exitosamente en datos/acciones.json ({len(stocks_dump)} acciones)")
-        return payload
+            # Guardar dolares.json
+            temp_path_dol = DOLARES_JSON_PATH + ".tmp"
+            with open(temp_path_dol, "w", encoding="utf-8") as f:
+                json.dump(payload_dolares, f, ensure_ascii=False, indent=2)
+            os.replace(temp_path_dol, DOLARES_JSON_PATH)
+
+        await asyncio.to_thread(save_files)
+
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] Datos guardados en datos/acciones.json ({len(stocks_dump)} acciones) y datos/dolares.json ({len(dolar_assets)} dólares)")
+        return payload_acciones
     except Exception as e:
         print(f"Error en actualización periódica: {e}")
         return None
@@ -195,7 +329,7 @@ async def precache_historical_data():
         if not lider_tickers:
             lider_tickers = list(MERVAL_LIDER_TICKERS)
             
-        tickers_to_precache = lider_tickers + general_tickers
+        tickers_to_precache = ["MERVAL_CCL"] + lider_tickers + general_tickers
     except Exception:
         tickers_to_precache = list(MERVAL_LIDER_TICKERS)
         
@@ -227,9 +361,21 @@ async def precache_historical_data():
 
 async def start_background_updater():
     """Bucle infinito que actualiza datos cada 30 segundos"""
-    await fetch_and_save_market_data()
+    from backend.services.merval_service import fetch_and_save_merval_ccl
+    
+    await asyncio.gather(
+        fetch_and_save_market_data(),
+        fetch_and_save_merval_ccl()
+    )
     # Lanzar la precarga en segundo plano
     asyncio.create_task(precache_historical_data())
     while True:
         await asyncio.sleep(UPDATE_INTERVAL_SECONDS)
-        await fetch_and_save_market_data()
+        try:
+            await asyncio.gather(
+                fetch_and_save_market_data(),
+                fetch_and_save_merval_ccl()
+            )
+        except Exception as e:
+            print(f"Error en bucle de actualización: {e}")
+

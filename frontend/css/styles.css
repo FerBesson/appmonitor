@@ -112,6 +112,43 @@ body {
     color: var(--text-primary);
 }
 
+.navbar-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-merval {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 140, 0, 0.25);
+}
+
+.merval-label {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.merval-values {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.merval-price {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
 .navbar-status {
     display: flex;
     align-items: center;

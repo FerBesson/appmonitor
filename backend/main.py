@@ -7,8 +7,9 @@ from fastapi import FastAPI, HTTPException, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
-from backend.models import AssetQuote, MarketSummary, StockHistoryPoint
+from backend.models import AssetQuote, MarketSummary, StockHistoryPoint, AssetFundamentals
 from backend.services.analytics import get_market_summary, get_stock_history_processed, get_stored_stocks
+from backend.services.yahoo_finance import yahoo_finance_service
 from backend.services.updater import start_background_updater
 from backend.services.data912_client import data912_client
 from backend.services.merval_service import get_merval_ccl
@@ -62,6 +63,13 @@ async def api_panel_stocks():
         return await get_stored_stocks()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo panel: {str(e)}")
+
+@app.get("/api/fundamentals/{ticker}", response_model=AssetFundamentals)
+async def api_fundamentals(ticker: str):
+    try:
+        return await yahoo_finance_service.fetch_fundamentals(ticker)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo fundamentales: {str(e)}")
 
 @app.get("/api/history/{ticker}", response_model=List[StockHistoryPoint])
 async def api_history(ticker: str):

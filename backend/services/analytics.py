@@ -8,6 +8,41 @@ from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, HISTORIAL_DIR
 from backend.models import AssetQuote, MarketSummary, StockHistoryPoint
 from backend.services.data912_client import data912_client
 
+def _compute_ema(values: List[float], period: int) -> List[Optional[float]]:
+    n = len(values)
+    ema = [None] * n
+    if n < period:
+        return ema
+    multiplier = 2.0 / (period + 1.0)
+    sma = sum(values[:period]) / period
+    ema[period - 1] = sma
+    for i in range(period, n):
+        ema[i] = (values[i] - ema[i - 1]) * multiplier + ema[i - 1]
+    return ema
+
+def _compute_macd(closes: List[float]) -> tuple:
+    n = len(closes)
+    macd_line = [None] * n
+    signal_line = [None] * n
+    histogram = [None] * n
+    ema12 = _compute_ema(closes, 12)
+    ema26 = _compute_ema(closes, 26)
+    for i in range(n):
+        if ema12[i] is not None and ema26[i] is not None:
+            macd_line[i] = ema12[i] - ema26[i]
+    valid_macd = [x for x in macd_line if x is not None]
+    if len(valid_macd) >= 9:
+        macd_ema9 = _compute_ema(valid_macd, 9)
+        first_valid_idx = macd_line.index(valid_macd[0])
+        for i in range(len(macd_ema9)):
+            val = macd_ema9[i]
+            if val is not None:
+                idx = first_valid_idx + i
+                signal_line[idx] = round(val, 4)
+                macd_line[idx] = round(macd_line[idx], 4)
+                histogram[idx] = round(macd_line[idx] - val, 4)
+    return macd_line, signal_line, histogram
+
 def _get_float(item: dict, keys: list, default: float = 0.0) -> float:
     for k in keys:
         if k in item and item[k] is not None:
@@ -295,6 +330,24 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
                 rs = avg_gain / avg_loss
                 rsi[i] = round(100.0 - (100.0 / (1.0 + rs)), 2)
 
+    # Bollinger Bands (20, 2)
+    bb_upper = [None] * n
+    bb_lower = [None] * n
+    bb_middle = [None] * n
+    if n >= 20:
+        import math
+        for i in range(19, n):
+            slice_20 = closes[i-19:i+1]
+            mean = sum(slice_20) / 20.0
+            variance = sum((x - mean) ** 2 for x in slice_20) / 20.0
+            std_dev = math.sqrt(variance)
+            bb_middle[i] = round(mean, 2)
+            bb_upper[i] = round(mean + 2 * std_dev, 2)
+            bb_lower[i] = round(mean - 2 * std_dev, 2)
+
+    # MACD
+    macd, macd_signal, macd_hist = _compute_macd(closes)
+
     result = []
     for i in range(n):
         p = points[i]
@@ -307,7 +360,13 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
             volume=p["volume"],
             sma20=sma20[i],
             sma50=sma50[i],
-            rsi=rsi[i]
+            rsi=rsi[i],
+            bb_upper=bb_upper[i],
+            bb_lower=bb_lower[i],
+            bb_middle=bb_middle[i],
+            macd=macd[i],
+            macd_signal=macd_signal[i],
+            macd_hist=macd_hist[i]
         ))
 
     # Guardar en caché local

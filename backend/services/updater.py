@@ -84,6 +84,8 @@ def get_base_ticker(ticker: str) -> str:
         return "TGSU2"
     if base == "YPF":
         return "YPFD"
+    if base == "TECO":
+        return "TECO2"
     return base
 
 def get_company_name(ticker: str) -> str:

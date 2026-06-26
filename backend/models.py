@@ -31,3 +31,22 @@ class StockHistoryPoint(BaseModel):
     sma20: Optional[float] = None
     sma50: Optional[float] = None
     rsi: Optional[float] = None
+    bb_upper: Optional[float] = None
+    bb_lower: Optional[float] = None
+    bb_middle: Optional[float] = None
+    macd: Optional[float] = None
+    macd_signal: Optional[float] = None
+    macd_hist: Optional[float] = None
+
+class AssetFundamentals(BaseModel):
+    ticker: str
+    sector: Optional[str] = None
+    industry: Optional[str] = None
+    market_cap: Optional[str] = None
+    pe_ratio: Optional[str] = None
+    dividend_yield: Optional[str] = None
+    eps: Optional[str] = None
+    beta: Optional[str] = None
+    price_to_book: Optional[str] = None
+    profit_margin: Optional[str] = None
+    description: Optional[str] = None

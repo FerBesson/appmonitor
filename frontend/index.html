@@ -152,22 +152,84 @@
                             </div>
                         </div>
 
-                        <!-- Timeframe selector -->
-                        <div class="timeframe-selector" id="timeframe-selector">
-                            <button class="timeframe-card" data-range="7d">7d</button>
-                            <button class="timeframe-card" data-range="1m">1m</button>
-                            <button class="timeframe-card" data-range="3m">3m</button>
-                            <button class="timeframe-card" data-range="6m">6m</button>
-                            <button class="timeframe-card" data-range="YTD">YTD</button>
-                            <button class="timeframe-card" data-range="1a">1a</button>
-                            <button class="timeframe-card active" data-range="all">Todo</button>
+                        <!-- Controles de Plazo e Indicadores -->
+                        <div class="controls-row">
+                            <div class="timeframe-selector" id="timeframe-selector">
+                                <button class="timeframe-card" data-range="7d">7d</button>
+                                <button class="timeframe-card" data-range="1m">1m</button>
+                                <button class="timeframe-card" data-range="3m">3m</button>
+                                <button class="timeframe-card" data-range="6m">6m</button>
+                                <button class="timeframe-card" data-range="YTD">YTD</button>
+                                <button class="timeframe-card" data-range="1a">1a</button>
+                                <button class="timeframe-card active" data-range="all">Todo</button>
+                            </div>
+                            
+                            <div class="indicators-toolbar" id="indicators-toolbar">
+                                <span class="toolbar-title">Velas:</span>
+                                <button class="indicator-btn active" data-indicator="sma20">SMA 20</button>
+                                <button class="indicator-btn active" data-indicator="sma50">SMA 50</button>
+                                <button class="indicator-btn" data-indicator="bollinger">Bollinger</button>
+                            </div>
                         </div>
 
-                        <div id="tv-chart-container" class="chart-box"></div>
+                        <!-- Caja contenedora de gráficos sincronizados -->
+                        <div class="charts-wrapper-box">
+                            <div id="tv-chart-container" class="sub-chart price-chart"></div>
+                            <div class="chart-divider rsi-divider">
+                                <span class="chart-divider-label">RSI 14</span>
+                            </div>
+                            <div id="tv-rsi-container" class="sub-chart rsi-chart"></div>
+                            <div class="chart-divider macd-divider">
+                                <span class="chart-divider-label">MACD 12,26,9</span>
+                            </div>
+                            <div id="tv-macd-container" class="sub-chart macd-chart"></div>
+                        </div>
 
-                        <div class="chart-legend">
-                            <span class="legend-item"><i class="dot yellow"></i> SMA 20</span>
-                            <span class="legend-item"><i class="dot blue"></i> SMA 50</span>
+                        <!-- Sección de Análisis Fundamental -->
+                        <div class="fundamentals-section" id="fundamentals-section" style="display: none;">
+                            <h3 class="fundamentals-title">Análisis Fundamental</h3>
+                            <div class="fundamentals-grid">
+                                <div class="fundamental-card">
+                                    <span class="f-label">Sector</span>
+                                    <span class="f-value" id="f-sector">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Industria</span>
+                                    <span class="f-value" id="f-industry">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Cap. de Mercado</span>
+                                    <span class="f-value" id="f-market-cap">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Ratio P/E</span>
+                                    <span class="f-value" id="f-pe-ratio">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Div. Yield</span>
+                                    <span class="f-value" id="f-div-yield">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Ganancia x Acción (EPS)</span>
+                                    <span class="f-value" id="f-eps">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Beta (Volatilidad)</span>
+                                    <span class="f-value" id="f-beta">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Precio / Libro</span>
+                                    <span class="f-value" id="f-price-to-book">---</span>
+                                </div>
+                                <div class="fundamental-card">
+                                    <span class="f-label">Margen Neto</span>
+                                    <span class="f-value" id="f-profit-margin">---</span>
+                                </div>
+                            </div>
+                            <div class="company-description-card">
+                                <span class="f-label">Descripción de la Empresa</span>
+                                <p id="f-description">Seleccioná un activo para ver su descripción.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

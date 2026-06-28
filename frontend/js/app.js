@@ -107,6 +107,7 @@ function calculateSMAOnValue(data, period) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
+    updateHeaderFlag();
     refreshAllData();
     startCountdown();
 });
@@ -119,6 +120,7 @@ function initEventListeners() {
             assetTypeTabs.forEach(t => t.classList.remove('active'));
             e.target.classList.add('active');
             state.assetType = e.target.dataset.type;
+            updateHeaderFlag();
             
             const panelContainer = document.getElementById('panel-filter-container');
             const usdcTab = document.getElementById('currency-usdc-tab');
@@ -1291,4 +1293,56 @@ function updateSectorDropdown() {
             }
         });
     });
+}
+
+function updateHeaderFlag() {
+    const flagContainer = document.getElementById('brand-flag');
+    if (!flagContainer) return;
+
+    const arFlag = `<svg viewBox="0 0 18 12" width="24" height="16" class="flag-icon" xmlns="http://www.w3.org/2000/svg">
+  <rect width="18" height="4" fill="#75AADB"/>
+  <rect y="4" width="18" height="4" fill="#FFFFFF"/>
+  <rect y="8" width="18" height="4" fill="#75AADB"/>
+  <circle cx="9" cy="6" r="1.2" fill="#F6B426"/>
+  <circle cx="9" cy="6" r="0.5" fill="#E5A515"/>
+</svg>`;
+
+    const usFlag = `<svg viewBox="0 0 18 12" width="24" height="16" class="flag-icon" xmlns="http://www.w3.org/2000/svg">
+  <rect width="18" height="12" fill="#B22234"/>
+  <rect y="0.92" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect y="2.77" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect y="4.62" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect y="6.46" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect y="8.31" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect y="10.15" width="18" height="0.92" fill="#FFFFFF"/>
+  <rect width="7.5" height="6.46" fill="#3C3B6E"/>
+  <g fill="#FFFFFF">
+    <circle cx="1.5" cy="1.3" r="0.3"/>
+    <circle cx="3.0" cy="1.3" r="0.3"/>
+    <circle cx="4.5" cy="1.3" r="0.3"/>
+    <circle cx="6.0" cy="1.3" r="0.3"/>
+    <circle cx="2.25" cy="2.6" r="0.3"/>
+    <circle cx="3.75" cy="2.6" r="0.3"/>
+    <circle cx="5.25" cy="2.6" r="0.3"/>
+    <circle cx="1.5" cy="3.9" r="0.3"/>
+    <circle cx="3.0" cy="3.9" r="0.3"/>
+    <circle cx="4.5" cy="3.9" r="0.3"/>
+    <circle cx="6.0" cy="3.9" r="0.3"/>
+    <circle cx="2.25" cy="5.2" r="0.3"/>
+    <circle cx="3.75" cy="5.2" r="0.3"/>
+    <circle cx="5.25" cy="5.2" r="0.3"/>
+  </g>
+</svg>`;
+
+    if (state.assetType === 'cedears') {
+        document.body.classList.remove('theme-acciones');
+        document.body.classList.add('theme-cedears');
+        flagContainer.innerHTML = usFlag;
+        flagContainer.title = "Viendo CEDEARs (Estados Unidos)";
+    } else {
+        document.body.classList.remove('theme-cedears');
+        document.body.classList.add('theme-acciones');
+        flagContainer.innerHTML = arFlag;
+        flagContainer.title = "Viendo Acciones (Argentina)";
+    }
 }

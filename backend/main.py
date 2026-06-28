@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from backend.models import AssetQuote, MarketSummary, StockHistoryPoint, AssetFundamentals
-from backend.services.analytics import get_market_summary, get_stock_history_processed, get_stored_stocks
+from backend.services.analytics import get_market_summary, get_stock_history_processed, get_stored_stocks, get_stored_cedears
 from backend.services.yahoo_finance import yahoo_finance_service
 from backend.services.updater import start_background_updater
 from backend.services.data912_client import data912_client
@@ -63,6 +63,13 @@ async def api_panel_stocks():
         return await get_stored_stocks()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo panel: {str(e)}")
+
+@app.get("/api/panel/cedears", response_model=List[AssetQuote])
+async def api_panel_cedears():
+    try:
+        return await get_stored_cedears()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo panel de cedears: {str(e)}")
 
 @app.get("/api/fundamentals/{ticker}", response_model=AssetFundamentals)
 async def api_fundamentals(ticker: str):

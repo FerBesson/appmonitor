@@ -4,9 +4,176 @@ import asyncio
 import bisect
 from datetime import datetime
 from typing import Any, Dict, List, Optional
-from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, HISTORIAL_DIR
+from backend.config import ACCIONES_JSON_PATH, CEDEARS_JSON_PATH, DOLARES_JSON_PATH, HISTORIAL_DIR, DATOS_DIR
 from backend.models import AssetQuote, MarketSummary, StockHistoryPoint
 from backend.services.data912_client import data912_client
+
+# Caché en memoria para sectores (mapeo Ticker -> Sector en español)
+_sectors_cache = {}
+_sectors_cache_loaded = False
+
+def load_sectors_cache():
+    global _sectors_cache, _sectors_cache_loaded
+    if _sectors_cache_loaded:
+        return
+    
+    # Sectores estáticos predefinidos para acciones locales de Argentina (en español)
+    static_sectors = {
+        "ALUA": "Materiales Básicos",
+        "BBAR": "Servicios Financieros",
+        "BMA": "Servicios Financieros",
+        "BYMA": "Servicios Financieros",
+        "CEPU": "Servicios Públicos",
+        "COME": "Industriales",
+        "CRES": "Bienes Raíces",
+        "ECOG": "Servicios Públicos",
+        "EDN": "Servicios Públicos",
+        "GGAL": "Servicios Financieros",
+        "LOMA": "Materiales Básicos",
+        "METR": "Servicios Públicos",
+        "PAMP": "Energía",
+        "SUPV": "Servicios Financieros",
+        "TGNO4": "Servicios Públicos",
+        "TGSU2": "Servicios Públicos",
+        "TRAN": "Servicios Públicos",
+        "TXAR": "Materiales Básicos",
+        "VALO": "Servicios Financieros",
+        "YPFD": "Energía",
+        
+        # Panel General
+        "AGRO": "Industriales",
+        "AUSO": "Servicios Públicos",
+        "BHIP": "Servicios Financieros",
+        "BOLT": "Consumo Cíclico",
+        "BPAT": "Servicios Financieros",
+        "CADO": "Bienes Raíces",
+        "CAPX": "Servicios Públicos",
+        "CARC": "Materiales Básicos",
+        "CELU": "Materiales Básicos",
+        "CGPA2": "Servicios Públicos",
+        "CTIO": "Bienes Raíces",
+        "DGCU2": "Servicios Públicos",
+        "FERR": "Industriales",
+        "FIPL": "Materiales Básicos",
+        "GAMI": "Servicios Financieros",
+        "HAVA": "Consumo Defensivo",
+        "IRSA": "Bienes Raíces",
+        "LEDE": "Consumo Defensivo",
+        "LONG": "Consumo Cíclico",
+        "MOLA": "Consumo Defensivo",
+        "MOLI": "Consumo Defensivo",
+        "MORI": "Consumo Defensivo",
+        "OEST": "Servicios Públicos",
+        "RICH": "Salud",
+        "RIGO": "Materiales Básicos",
+        "SAMI": "Consumo Defensivo",
+        "SEMI": "Consumo Defensivo",
+        "TECO2": "Telecomunicaciones",
+    }
+    _sectors_cache.update(static_sectors)
+    
+    # Traducción de sectores de Yahoo Finance (inglés) a español
+    sector_translation = {
+        "Technology": "Tecnología",
+        "Financial Services": "Servicios Financieros",
+        "Healthcare": "Salud",
+        "Consumer Cyclical": "Consumo Cíclico",
+        "Consumer Defensive": "Consumo Defensivo",
+        "Industrials": "Industriales",
+        "Utilities": "Servicios Públicos",
+        "Energy": "Energía",
+        "Basic Materials": "Materiales Básicos",
+        "Real Estate": "Bienes Raíces",
+        "Communication Services": "Telecomunicaciones",
+        "N/A": "Otros",
+        "": "Otros"
+    }
+
+    # Leer archivos de fundamentos cacheados en disco
+    fundamentos_dir = os.path.join(DATOS_DIR, "fundamentos")
+    if os.path.exists(fundamentos_dir):
+        try:
+            for filename in os.listdir(fundamentos_dir):
+                if filename.endswith(".json"):
+                    filepath = os.path.join(fundamentos_dir, filename)
+                    try:
+                        with open(filepath, "r", encoding="utf-8") as f:
+                            fund_data = json.load(f)
+                            ticker = fund_data.get("ticker", "")
+                            # Eliminar sufijo .BA de Yahoo Finance
+                            if ticker.endswith(".BA"):
+                                ticker = ticker[:-3]
+                            ticker = ticker.upper()
+                            sector_eng = fund_data.get("sector", "")
+                            sector_esp = sector_translation.get(sector_eng, sector_eng or "Otros")
+                            if ticker and sector_esp:
+                                _sectors_cache[ticker] = sector_esp
+                    except Exception:
+                        pass
+        except Exception as e:
+            print(f"Error cargando sectores desde fundamentos: {e}")
+            
+    _sectors_cache_loaded = True
+
+def update_sector_in_cache(ticker: str, sector: str):
+    """Permite registrar un sector en la caché en memoria al descargar nuevos fundamentos."""
+    global _sectors_cache
+    sector_translation = {
+        "Technology": "Tecnología",
+        "Financial Services": "Servicios Financieros",
+        "Healthcare": "Salud",
+        "Consumer Cyclical": "Consumo Cíclico",
+        "Consumer Defensive": "Consumo Defensivo",
+        "Industrials": "Industriales",
+        "Utilities": "Servicios Públicos",
+        "Energy": "Energía",
+        "Basic Materials": "Materiales Básicos",
+        "Real Estate": "Bienes Raíces",
+        "Communication Services": "Telecomunicaciones",
+        "N/A": "Otros",
+        "": "Otros"
+    }
+    
+    t = ticker.upper()
+    if t.endswith(".BA"):
+        t = t[:-3]
+    
+    sector_esp = sector_translation.get(sector, sector or "Otros")
+    _sectors_cache[t] = sector_esp
+
+def resolve_sector(ticker: str) -> str:
+    """Resuelve el sector de un activo limpiando su ticker de variantes de moneda."""
+    load_sectors_cache()
+    
+    t = ticker.upper()
+    
+    # Casos especiales
+    if t in ["USD_MEP", "USD_CCL", "USD_MAYORISTA"]:
+        return "Monedas"
+    if t == "MERVAL_CCL":
+        return "Índices"
+        
+    # Recortar sufijos de moneda de CEDEARs / Acciones locales
+    if t.endswith("C") or t.endswith("D"):
+        candidate = t[:-1]
+        if candidate in _sectors_cache:
+            return _sectors_cache[candidate]
+        if t.endswith("DD"):
+            candidate = t[:-2]
+            if candidate in _sectors_cache:
+                return _sectors_cache[candidate]
+                
+    if t.endswith(".D"):
+        candidate = t[:-2]
+        if candidate in _sectors_cache:
+            return _sectors_cache[candidate]
+            
+    # Búsqueda exacta
+    if t in _sectors_cache:
+        return _sectors_cache[t]
+        
+    return "Otros"
+
 
 def _compute_ema(values: List[float], period: int) -> List[Optional[float]]:
     n = len(values)
@@ -67,6 +234,15 @@ def load_stored_data() -> Dict[str, Any]:
             print(f"Error leyendo acciones.json: {e}")
     return {}
 
+def load_stored_cedears() -> Dict[str, Any]:
+    if os.path.exists(CEDEARS_JSON_PATH):
+        try:
+            with open(CEDEARS_JSON_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error leyendo cedears.json: {e}")
+    return {}
+
 def load_stored_dolares() -> List[Dict[str, Any]]:
     if os.path.exists(DOLARES_JSON_PATH):
         try:
@@ -85,6 +261,14 @@ async def ensure_data_loaded() -> Dict[str, Any]:
         data = await fetch_and_save_market_data() or {}
     return data
 
+async def ensure_cedears_loaded() -> Dict[str, Any]:
+    data = await asyncio.to_thread(load_stored_cedears)
+    if not data or "cedears" not in data:
+        from backend.services.updater import fetch_and_save_market_data
+        await fetch_and_save_market_data()
+        data = await asyncio.to_thread(load_stored_cedears) or {}
+    return data
+
 async def get_stored_stocks() -> List[AssetQuote]:
     data = await ensure_data_loaded()
     stocks_list = data.get("acciones", [])
@@ -92,7 +276,31 @@ async def get_stored_stocks() -> List[AssetQuote]:
     dolares_list = await asyncio.to_thread(load_stored_dolares)
     merged_list = stocks_list + dolares_list
     
-    return [AssetQuote(**item) for item in merged_list]
+    quotes = []
+    for item in merged_list:
+        quote = AssetQuote(**item)
+        quote.sector = resolve_sector(quote.ticker)
+        quotes.append(quote)
+    return quotes
+
+async def get_stored_cedears() -> List[AssetQuote]:
+    data = await ensure_cedears_loaded()
+    cedears_list = data.get("cedears", [])
+    
+    quotes = []
+    for item in cedears_list:
+        quote = AssetQuote(**item)
+        quote.sector = resolve_sector(quote.ticker)
+        quotes.append(quote)
+    return quotes
+
+def get_cedear_base_ticker(ticker: str, cedear_tickers: set) -> str:
+    t = ticker.upper()
+    if t.endswith("C") or t.endswith("D"):
+        base = t[:-1]
+        if base in cedear_tickers:
+            return base
+    return t
 
 async def get_market_summary() -> MarketSummary:
     stocks = await get_stored_stocks()
@@ -141,6 +349,35 @@ async def get_historical_mep_rates() -> Dict[str, float]:
     except Exception as e:
         print(f"Error obteniendo historial MEP desde ArgentinaDatos: {e}")
     return _mep_history_cache or {}
+
+_ccl_history_cache = {}
+_ccl_cache_date = None
+
+async def get_historical_ccl_rates() -> Dict[str, float]:
+    global _ccl_history_cache, _ccl_cache_date
+    today = datetime.today().date()
+    
+    if _ccl_history_cache and _ccl_cache_date == today:
+        return _ccl_history_cache
+        
+    try:
+        import httpx
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            response = await client.get("https://api.argentinadatos.com/v1/cotizaciones/dolares/contadoconliqui", timeout=10.0)
+            if response.status_code == 200:
+                data = response.json()
+                ccl_history = {}
+                for item in data:
+                    date = item.get("fecha")
+                    val = item.get("venta") or item.get("compra")
+                    if date and val:
+                        ccl_history[date] = float(val)
+                _ccl_history_cache = ccl_history
+                _ccl_cache_date = today
+                return _ccl_history_cache
+    except Exception as e:
+        print(f"Error obteniendo historial CCL desde ArgentinaDatos: {e}")
+    return _ccl_history_cache or {}
 
 async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
     ticker = ticker.upper()
@@ -214,19 +451,41 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
                 "volume": 0.0
             })
     else:
-        # Detectar si el ticker es en USD
-        is_usd = (ticker == "YPFDD" or (ticker.endswith("D") and ticker != "YPFD") or ticker.endswith(".D"))
+        # Detectar si es CEDEAR o acción
+        stored_cedears = await get_stored_cedears()
+        cedear_tickers = {c.ticker.upper() for c in stored_cedears}
+        is_ced = ticker in cedear_tickers
         
-        if is_usd:
-            from backend.services.updater import get_base_ticker
-            base_ticker = get_base_ticker(ticker)
-            raw_hist = await data912_client.get_stock_history(base_ticker)
-            mep_rates = await get_historical_mep_rates()
-            sorted_mep_dates = sorted(mep_rates.keys())
+        if is_ced:
+            is_usd = ticker.endswith("D") and (ticker[:-1] in cedear_tickers)
+            is_usdc = ticker.endswith("C") and (ticker[:-1] in cedear_tickers)
+            
+            if is_usd or is_usdc:
+                base_ticker = get_cedear_base_ticker(ticker, cedear_tickers)
+                raw_hist = await data912_client.get_cedear_history(base_ticker)
+                if is_usd:
+                    rates = await get_historical_mep_rates()
+                else: # is_usdc
+                    rates = await get_historical_ccl_rates()
+                sorted_dates = sorted(rates.keys())
+            else:
+                raw_hist = await data912_client.get_cedear_history(ticker)
+                rates = {}
+                sorted_dates = []
         else:
-            raw_hist = await data912_client.get_stock_history(ticker)
-            mep_rates = {}
-            sorted_mep_dates = []
+            # Acción local
+            is_usd = (ticker == "YPFDD" or (ticker.endswith("D") and ticker != "YPFD") or ticker.endswith(".D"))
+            is_usdc = False
+            if is_usd:
+                from backend.services.updater import get_base_ticker
+                base_ticker = get_base_ticker(ticker)
+                raw_hist = await data912_client.get_stock_history(base_ticker)
+                rates = await get_historical_mep_rates()
+                sorted_dates = sorted(rates.keys())
+            else:
+                raw_hist = await data912_client.get_stock_history(ticker)
+                rates = {}
+                sorted_dates = []
 
         if not raw_hist:
             return []
@@ -246,17 +505,17 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
             l = _get_float(item, ["l", "low"], min(o, c))
             v = _get_float(item, ["v", "volume"], 0.0)
 
-            # Si es USD, convertimos los precios usando la tasa MEP de ese día
-            if is_usd:
+            # Si es USD/USDC, convertimos los precios usando la tasa correspondiente de ese día
+            if is_usd or is_usdc:
                 d_key = date_str[:10]
-                rate = mep_rates.get(d_key)
+                rate = rates.get(d_key)
                 if rate is None:
-                    if sorted_mep_dates:
-                        idx = bisect.bisect_right(sorted_mep_dates, d_key)
+                    if sorted_dates:
+                        idx = bisect.bisect_right(sorted_dates, d_key)
                         if idx > 0:
-                            rate = mep_rates[sorted_mep_dates[idx - 1]]
+                            rate = rates[sorted_dates[idx - 1]]
                         else:
-                            rate = mep_rates[sorted_mep_dates[0]]
+                            rate = rates[sorted_dates[0]]
                     else:
                         rate = 1.0
                 if rate <= 0:

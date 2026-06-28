@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lightweight Charts CDN -->
     <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
-    <link rel="stylesheet" href="css/styles.css?v=1.2.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.3.0">
 </head>
 <body>
     <div class="app-container">
@@ -79,18 +79,35 @@
             <!-- LEFT: Stocks Table -->
             <div class="panel-section">
                 <div class="section-toolbar">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="search" id="search-input" placeholder="Buscar ticker..." autocomplete="off">
+                    <div class="asset-type-select-tabs">
+                        <button class="asset-type-tab active" data-type="acciones">Acciones</button>
+                        <button class="asset-type-tab" data-type="cedears">CEDEARs</button>
+                    </div>
+                    <div class="search-row">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="search" id="search-input" placeholder="Buscar ticker..." autocomplete="off">
+                        </div>
+                        <div class="sector-filter-container" id="sector-filter-container">
+                            <button id="sector-filter-btn" class="sector-filter-btn" title="Filtrar por sector">
+                                <span class="btn-icon">📁</span>
+                                <span id="sector-filter-btn-text">Sector: Todos</span>
+                                <span class="btn-arrow">▼</span>
+                            </button>
+                            <div id="sector-filter-dropdown" class="sector-dropdown-menu">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
                     </div>
                     <div class="filters-group">
-                        <div class="panel-select-tabs">
+                        <div class="panel-select-tabs" id="panel-filter-container">
                             <button class="panel-tab active" data-panel="lider">Líder</button>
                             <button class="panel-tab" data-panel="general">General</button>
                         </div>
-                        <div class="currency-select-tabs">
+                        <div class="currency-select-tabs" id="currency-filter-container">
                             <button class="currency-tab active" data-currency="ARS">ARS</button>
                             <button class="currency-tab" data-currency="USD">USD</button>
+                            <button class="currency-tab" data-currency="USDC" id="currency-usdc-tab" style="display: none;">USDC</button>
                         </div>
                     </div>
                 </div>
@@ -264,9 +281,10 @@
             <div class="movers-section">
                 <div class="movers-header">
                     <h3 class="movers-title">MARKET MOVERS</h3>
-                    <div class="movers-currency-tabs">
+                    <div class="movers-currency-tabs" id="movers-currency-filter-container">
                         <button class="movers-currency-tab active" data-currency="ARS">ARS</button>
                         <button class="movers-currency-tab" data-currency="USD">USD</button>
+                        <button class="movers-currency-tab" data-currency="USDC" id="movers-currency-usdc-tab" style="display: none;">USDC</button>
                     </div>
                 </div>
                 <div class="movers-tabs">
@@ -281,6 +299,6 @@
         </main>
     </div>
 
-    <script src="js/app.js?v=1.2.0"></script>
+    <script src="js/app.js?v=1.3.0"></script>
 </body>
 </html>

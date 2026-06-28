@@ -1,9 +1,12 @@
 // Estado Global de la App
 const state = {
     stocks: [],
+    cedears: [],
+    assetType: 'acciones', // 'acciones' | 'cedears'
     currentPanel: 'lider', // 'lider', 'general'
-    currentCurrency: 'ARS', // 'ARS', 'USD'
+    currentCurrency: 'ARS', // 'ARS', 'USD', 'USDC'
     searchQuery: '',
+    currentSector: 'all',
     selectedTicker: null,
     chartInstance: null,
     candleSeries: null,
@@ -36,7 +39,7 @@ const state = {
     sortBy: 'ticker',
     sortDirection: 'asc',
     moversTab: 'gainers', // 'gainers' | 'losers'
-    moversCurrency: 'ARS' // 'ARS' | 'USD'
+    moversCurrency: 'ARS' // 'ARS' | 'USD' | 'USDC'
 };
 
 // Formateador de moneda argentina
@@ -55,6 +58,18 @@ const formatUSD = {
             maximumFractionDigits: 2
         }).format(val);
         return `USD ${num}`;
+    }
+};
+
+// Formateador de moneda USDC (Cable)
+const formatUSDC = {
+    format: (val) => {
+        if (val === null || val === undefined || isNaN(val)) return 'N/A';
+        const num = new Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(val);
+        return `USDC ${num}`;
     }
 };
 
@@ -97,6 +112,56 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initEventListeners() {
+    // Eventos de click para el selector de Acciones / CEDEARs
+    const assetTypeTabs = document.querySelectorAll('.asset-type-tab');
+    assetTypeTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            assetTypeTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            state.assetType = e.target.dataset.type;
+            
+            const panelContainer = document.getElementById('panel-filter-container');
+            const usdcTab = document.getElementById('currency-usdc-tab');
+            const moversUsdcTab = document.getElementById('movers-currency-usdc-tab');
+            
+            if (state.assetType === 'cedears') {
+                if (panelContainer) panelContainer.style.display = 'none';
+                if (usdcTab) usdcTab.style.display = 'block';
+                if (moversUsdcTab) moversUsdcTab.style.display = 'block';
+            } else {
+                if (panelContainer) panelContainer.style.display = 'flex';
+                if (usdcTab) usdcTab.style.display = 'none';
+                if (moversUsdcTab) moversUsdcTab.style.display = 'none';
+                
+                // Si la moneda seleccionada era USDC, resetear a ARS
+                if (state.currentCurrency === 'USDC') {
+                    state.currentCurrency = 'ARS';
+                    const currencyTabs = document.querySelectorAll('.currency-tab');
+                    currencyTabs.forEach(t => {
+                        if (t.dataset.currency === 'ARS') t.classList.add('active');
+                        else t.classList.remove('active');
+                    });
+                }
+                if (state.moversCurrency === 'USDC') {
+                    state.moversCurrency = 'ARS';
+                    const moversCurrencyTabs = document.querySelectorAll('.movers-currency-tab');
+                    moversCurrencyTabs.forEach(t => {
+                        if (t.dataset.currency === 'ARS') t.classList.add('active');
+                        else t.classList.remove('active');
+                    });
+                }
+            }
+            
+            state.currentSector = 'all';
+            const btnText = document.getElementById('sector-filter-btn-text');
+            if (btnText) btnText.textContent = 'Sector: Todos';
+            updateSectorDropdown();
+
+            renderTable();
+            renderMarketMovers();
+        });
+    });
+
     // Evento de click para el widget del Merval CCL
     const mervalWidget = document.getElementById('merval-ccl-widget');
     if (mervalWidget) {
@@ -273,6 +338,23 @@ function initEventListeners() {
         resizeChart(state.rsiChartInstance, 'tv-rsi-container');
         resizeChart(state.macdChartInstance, 'tv-macd-container');
     });
+
+    // Evento para abrir/cerrar el dropdown de sectores
+    const sectorBtn = document.getElementById('sector-filter-btn');
+    const sectorContainer = document.getElementById('sector-filter-container');
+    if (sectorBtn && sectorContainer) {
+        sectorBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sectorContainer.classList.toggle('open');
+        });
+        
+        // Cerrar al hacer click afuera
+        document.addEventListener('click', (e) => {
+            if (!sectorContainer.contains(e.target)) {
+                sectorContainer.classList.remove('open');
+            }
+        });
+    }
 }
 
 function startCountdown() {
@@ -291,8 +373,9 @@ function startCountdown() {
 
 async function refreshAllData() {
     try {
-        const [stocksRes, mervalRes] = await Promise.all([
+        const [stocksRes, cedearsRes, mervalRes] = await Promise.all([
             fetch('/api/panel/stocks'),
+            fetch('/api/panel/cedears'),
             fetch('/api/merval-ccl')
         ]);
 
@@ -307,13 +390,20 @@ async function refreshAllData() {
             if (usdMay) updateDolarWidget('dolar-a3500', usdMay);
             if (usdMep) updateDolarWidget('dolar-mep', usdMep);
             if (usdCcl) updateDolarWidget('dolar-ccl', usdCcl);
+        }
 
-            renderTable();
-            renderMarketMovers();
-            if (state.selectedTicker) {
-                const asset = state.stocks.find(s => s.ticker === state.selectedTicker);
-                if (asset) updateQuickMetrics(asset);
-            }
+        if (cedearsRes.ok) {
+            state.cedears = await cedearsRes.json();
+        }
+
+        updateSectorDropdown();
+        renderTable();
+        renderMarketMovers();
+
+        if (state.selectedTicker) {
+            const asset = state.stocks.find(s => s.ticker === state.selectedTicker) ||
+                          state.cedears.find(s => s.ticker === state.selectedTicker);
+            if (asset) updateQuickMetrics(asset);
         }
 
         if (mervalRes.ok) {
@@ -334,7 +424,9 @@ function renderMarketMovers() {
     const container = document.getElementById('movers-list');
     if (!container) return;
 
-    const valid = state.stocks.filter(s => 
+    const listToFilter = state.assetType === 'cedears' ? state.cedears : state.stocks;
+
+    const valid = listToFilter.filter(s => 
         s.price > 0 && 
         s.ticker !== 'USD_MAYORISTA' && 
         s.ticker !== 'USD_MEP' && 
@@ -355,7 +447,7 @@ function renderMarketMovers() {
     }
 
     container.innerHTML = movers.map(asset => {
-        const formatter = asset.currency === 'USD' ? formatUSD : formatARS;
+        const formatter = asset.currency === 'USDC' ? formatUSDC : (asset.currency === 'USD' ? formatUSD : formatARS);
         const sign = asset.change_pct > 0 ? '+' : '';
         const changeClass = asset.change_pct > 0 ? 'up' : asset.change_pct < 0 ? 'down' : '';
 
@@ -382,9 +474,12 @@ function renderMarketMovers() {
 // ═══════════════════════════════════════
 function renderTable() {
     const tbody = document.getElementById('stocks-tbody');
-    let filtered = state.stocks.filter(s => s.ticker !== 'USD_MAYORISTA' && s.ticker !== 'USD_MEP' && s.ticker !== 'USD_CCL');
+    
+    const listToFilter = state.assetType === 'cedears' ? state.cedears : state.stocks;
+    
+    let filtered = listToFilter.filter(s => s.ticker !== 'USD_MAYORISTA' && s.ticker !== 'USD_MEP' && s.ticker !== 'USD_CCL');
 
-    if (state.currentPanel !== 'all') {
+    if (state.assetType === 'acciones' && state.currentPanel !== 'all') {
         filtered = filtered.filter(s => s.panel === state.currentPanel);
     }
 
@@ -397,6 +492,10 @@ function renderTable() {
             s.ticker.includes(state.searchQuery) ||
             (s.name && s.name.toUpperCase().includes(state.searchQuery))
         );
+    }
+
+    if (state.currentSector && state.currentSector !== 'all') {
+        filtered = filtered.filter(s => s.sector === state.currentSector);
     }
 
     // Ordenar según columna seleccionada
@@ -425,18 +524,18 @@ function renderTable() {
     if (filtered.length === 0) {
         tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding: 20px; color:#64748b;">Sin resultados</td></tr>`;
         document.getElementById('showing-count').textContent = '0';
-        document.getElementById('total-count').textContent = state.stocks.length;
+        document.getElementById('total-count').textContent = listToFilter.length;
         return;
     }
 
     document.getElementById('showing-count').textContent = filtered.length;
-    document.getElementById('total-count').textContent = state.stocks.length;
+    document.getElementById('total-count').textContent = listToFilter.length;
 
     tbody.innerHTML = filtered.map(asset => {
         const isSelected = state.selectedTicker === asset.ticker ? 'active-row' : '';
         const pillClass = asset.change_pct > 0 ? 'up' : asset.change_pct < 0 ? 'down' : 'neutral';
         const sign = asset.change_pct > 0 ? '+' : '';
-        const formatter = asset.currency === 'USD' ? formatUSD : formatARS;
+        const formatter = asset.currency === 'USDC' ? formatUSDC : (asset.currency === 'USD' ? formatUSD : formatARS);
 
         return `
             <tr class="${isSelected}" data-ticker="${asset.ticker}">
@@ -464,7 +563,7 @@ async function selectAsset(ticker) {
     state.selectedTicker = ticker;
     renderTable();
 
-    let asset = state.stocks.find(s => s.ticker === ticker);
+    let asset = state.stocks.find(s => s.ticker === ticker) || state.cedears.find(s => s.ticker === ticker);
     if (ticker === 'MERVAL_CCL') {
         asset = {
             ticker: 'MERVAL_CCL',
@@ -537,7 +636,7 @@ async function selectAsset(ticker) {
 }
 
 function updateQuickMetrics(asset) {
-    const formatter = asset.currency === 'USD' ? formatUSD : formatARS;
+    const formatter = asset.currency === 'USDC' ? formatUSDC : (asset.currency === 'USD' ? formatUSD : formatARS);
     document.getElementById('metric-close').textContent = formatter.format(asset.price);
 }
 
@@ -927,7 +1026,7 @@ function renderChart(historyPoints, currency) {
 
     if (historyPoints.length > 0) {
         const last = historyPoints[historyPoints.length - 1];
-        const formatter = currency === 'USD' ? formatUSD : formatARS;
+        const formatter = currency === 'USDC' ? formatUSDC : (currency === 'USD' ? formatUSD : formatARS);
         
         const lastSma20 = sma20Data.length > 0 ? sma20Data[sma20Data.length - 1].value : null;
         const lastSma50 = sma50Data.length > 0 ? sma50Data[sma50Data.length - 1].value : null;
@@ -1135,4 +1234,61 @@ function populateFundamentals(data, isError = false) {
     setValue('f-profit-margin', data.profit_margin);
     const descEl = document.getElementById('f-description');
     if (descEl) descEl.textContent = data.description || 'No hay descripción disponible.';
+}
+
+// ========= SECTOR FILTER DROPDOWN =========
+
+function updateSectorDropdown() {
+    const listToProcess = state.assetType === 'cedears' ? state.cedears : state.stocks;
+    
+    const sectorsSet = new Set();
+    listToProcess.forEach(asset => {
+        if (asset.sector && asset.sector !== 'Monedas' && asset.sector !== 'Índices' && asset.ticker !== 'USD_MAYORISTA' && asset.ticker !== 'USD_MEP' && asset.ticker !== 'USD_CCL') {
+            sectorsSet.add(asset.sector);
+        }
+    });
+    
+    const sortedSectors = Array.from(sectorsSet).sort();
+    
+    const dropdown = document.getElementById('sector-filter-dropdown');
+    if (!dropdown) return;
+    
+    let html = `
+        <div class="sector-dropdown-item ${state.currentSector === 'all' ? 'active' : ''}" data-sector="all">
+            Todos los sectores
+        </div>
+    `;
+    
+    sortedSectors.forEach(sector => {
+        const isActive = state.currentSector === sector ? 'active' : '';
+        html += `
+            <div class="sector-dropdown-item ${isActive}" data-sector="${sector}">
+                ${sector}
+            </div>
+        `;
+    });
+    
+    dropdown.innerHTML = html;
+    
+    dropdown.querySelectorAll('.sector-dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            const sector = e.currentTarget.dataset.sector;
+            state.currentSector = sector;
+            
+            const btnText = document.getElementById('sector-filter-btn-text');
+            if (btnText) {
+                btnText.textContent = sector === 'all' ? 'Sector: Todos' : sector;
+            }
+            
+            dropdown.querySelectorAll('.sector-dropdown-item').forEach(el => el.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            
+            renderTable();
+            
+            const sectorContainer = document.getElementById('sector-filter-container');
+            if (sectorContainer) {
+                sectorContainer.classList.remove('open');
+            }
+        });
+    });
 }

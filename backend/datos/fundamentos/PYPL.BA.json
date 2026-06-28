@@ -1,0 +1,13 @@
+{
+  "ticker": "PYPL",
+  "sector": "Financial Services",
+  "industry": "Credit Services",
+  "market_cap": "7.52T",
+  "pe_ratio": "1.08",
+  "dividend_yield": "1.22%",
+  "eps": "7,874.18",
+  "beta": "1.34",
+  "price_to_book": "5.33",
+  "profit_margin": "15.00%",
+  "description": "PayPal Holdings, Inc. operates a technology platform that enables digital payments for merchants and consumers worldwide. The company operates a two-sided network at scale that connects merchants and consumers that enables its customers to connect, transact, and send and receive payments through online and in person, as well as transfer and withdraw funds using various funding sources, such as bank accounts, PayPal or Venmo account balance, consumer credit and debit products, credit and debit cards, and cryptocurrencies, as well as other stored value products, including gift cards and eligible rewards. It provides payment solutions under the PayPal, PayPal Credit, Braintree, Venmo, Xoom, Hyperwallet, Honey, and Paidy names. The company was founded in 1998 and is headquartered in San Jose, California."
+}

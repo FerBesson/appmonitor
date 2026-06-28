@@ -49,8 +49,31 @@ class Data912Client:
         except Exception:
             return []
 
+    async def get_arg_cedears(self) -> List[Dict[str, Any]]:
+        try:
+            res = await self.fetch(LIVE_ENDPOINTS["arg_cedears"])
+            if isinstance(res, list):
+                return res
+            elif isinstance(res, dict) and "data" in res:
+                return res["data"]
+            return []
+        except Exception:
+            return []
+
     async def get_stock_history(self, ticker: str) -> List[Dict[str, Any]]:
         path = f"/historical/stocks/{ticker.upper()}"
+        try:
+            res = await self.fetch(path)
+            if isinstance(res, list):
+                return res
+            elif isinstance(res, dict) and "data" in res:
+                return res["data"]
+            return []
+        except Exception:
+            return []
+
+    async def get_cedear_history(self, ticker: str) -> List[Dict[str, Any]]:
+        path = f"/historical/cedears/{ticker.upper()}"
         try:
             res = await self.fetch(path)
             if isinstance(res, list):

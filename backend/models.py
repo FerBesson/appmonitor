@@ -12,6 +12,7 @@ class AssetQuote(BaseModel):
     name: Optional[str] = ""
     panel: Optional[str] = "general"
     currency: Optional[str] = "ARS"
+    sector: Optional[str] = "Otros"
 
 class MarketSummary(BaseModel):
     top_gainers: List[AssetQuote]

@@ -45,19 +45,49 @@ class YahooFinanceService:
         return None
 
     def _normalize_ticker(self, ticker: str) -> str:
-        # Standard normalization
         base = ticker.upper()
         
-        # Strip currency endings (e.g. BMA.D, ALUAD -> BMA, ALUA)
-        if base.endswith("DD") or base.endswith(".D"):
-            base = base[:-2]
-        elif base.endswith("D") and base not in ["YPFD", "LOMA", "IRSA", "LEDE"]:
-            base = base[:-1]
-            
+        # Cargar todos los tickers conocidos para saber si recortar el sufijo de moneda
+        known_tickers = set()
+        for filename in ["acciones.json", "cedears.json"]:
+            path = os.path.join(DATOS_DIR, filename)
+            if os.path.exists(path):
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        key = "acciones" if filename == "acciones.json" else "cedears"
+                        for item in data.get(key, []):
+                            known_tickers.add(item["ticker"].upper())
+                except Exception:
+                    pass
+
+        # Exclusiones estáticas de fallback (seguridad por si los archivos no existen en primer inicio)
+        static_exclusions = {
+            "YPFD", "LOMA", "IRSA", "LEDE", "HOOD", "AMD", "GILD", "MCD", "GOLD", "JD", "DD",
+            "YPFDD", "ALUAD", "BBARD", "BMAD", "BYMAD", "CEPUD", "COMED", "CRESD", "ECOGD", "EDND", "GGALD",
+            "LOMAD", "METRD", "PAMPD", "SUPVD", "TGNO4D", "TGSU2D", "TRAND", "TXARD", "VALOD"
+        }
+
+        # Recortar sufijos de moneda de forma inteligente
+        if base.endswith("C") or base.endswith("D"):
+            candidate = base[:-1]
+            if known_tickers:
+                if candidate in known_tickers:
+                    base = candidate
+            else:
+                # Si no hay caché cargado aún, usar heurística estática
+                if base not in static_exclusions:
+                    if base.endswith("DD") or base.endswith(".D"):
+                        base = base[:-2]
+                    elif base.endswith("D"):
+                        base = base[:-1]
+                    elif base.endswith("C"):
+                        base = base[:-1]
+
         if base == "TECO":
             base = "TECO2"
             
-        # Append .BA for Argentine stocks
+        # Adjuntar .BA para Yahoo Finance
         if not base.endswith(".BA"):
             return f"{base}.BA"
         return base
@@ -130,6 +160,13 @@ class YahooFinanceService:
                     # Save to cache
                     with open(cache_path, "w", encoding="utf-8") as f:
                         json.dump(fundamentals_dict, f, ensure_ascii=False, indent=2)
+                    
+                    # Update analytics sector cache in memory
+                    try:
+                        from backend.services.analytics import update_sector_in_cache
+                        update_sector_in_cache(fundamentals_dict["ticker"], fundamentals_dict["sector"])
+                    except Exception as ex:
+                        print(f"Error updating sector cache: {ex}")
                         
                     return AssetFundamentals(**fundamentals_dict)
             

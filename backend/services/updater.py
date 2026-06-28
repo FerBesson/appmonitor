@@ -2,7 +2,7 @@ import os
 import json
 import asyncio
 from datetime import datetime, timedelta
-from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, MERVAL_CCL_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
+from backend.config import ACCIONES_JSON_PATH, CEDEARS_JSON_PATH, DOLARES_JSON_PATH, MERVAL_CCL_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
 from backend.services.data912_client import data912_client
 from backend.models import AssetQuote
 
@@ -151,6 +151,62 @@ def parse_stocks_raw(raw_list: list) -> list:
         ).model_dump())
     return quotes
 
+def parse_cedears_raw(raw_list: list) -> list:
+    quotes = []
+    if not isinstance(raw_list, list):
+        return quotes
+
+    # Registrar todos los símbolos presentes en la respuesta para distinguir los base de sus variantes
+    all_symbols = set()
+    for item in raw_list:
+        if isinstance(item, dict):
+            sym = _get_str(item, ["symbol", "ticker", "s", "codigo"], "").upper()
+            if sym:
+                all_symbols.add(sym)
+
+    for item in raw_list:
+        if not isinstance(item, dict):
+            continue
+        ticker = _get_str(item, ["symbol", "ticker", "s", "codigo"], "")
+        if not ticker:
+            continue
+        price = _get_float(item, ["c", "price", "last", "close", "p"], 0.0)
+        change_pct = _get_float(item, ["pct_change", "change_pct", "dr", "var", "variacion"], 0.0)
+        volume = _get_float(item, ["v", "volume", "vol", "volumen"], 0.0)
+        high = _get_float(item, ["h", "high", "max"], None)
+        low = _get_float(item, ["l", "low", "min"], None)
+        open_p = _get_float(item, ["o", "open", "apertura"], None)
+
+        t_upper = ticker.upper()
+        
+        # Clasificación de moneda inteligente
+        currency = "ARS"
+        if t_upper.endswith("C"):
+            base = t_upper[:-1]
+            if base in all_symbols:
+                currency = "USDC"
+        elif t_upper.endswith("D"):
+            base = t_upper[:-1]
+            if base in all_symbols:
+                currency = "USD"
+
+        panel = "cedear"
+        name = f"CEDEAR {ticker}"
+
+        quotes.append(AssetQuote(
+            ticker=ticker,
+            price=price,
+            change_pct=change_pct,
+            volume=volume,
+            high=high,
+            low=low,
+            open=open_p,
+            name=name,
+            panel=panel,
+            currency=currency
+        ).model_dump())
+    return quotes
+
 _dolar_history_cache = None
 _dolar_cache_time = None
 
@@ -187,10 +243,13 @@ async def get_latest_dolar_quotes():
     return None
 
 async def fetch_and_save_market_data():
-    """Consulta la API de Data912 y guarda únicamente las acciones en backend/datos/acciones.json"""
+    """Consulta la API de Data912 y guarda acciones y cedears"""
     try:
         stocks_raw = await data912_client.get_arg_stocks()
         stocks_dump = parse_stocks_raw(stocks_raw)
+
+        cedears_raw = await data912_client.get_arg_cedears()
+        cedears_dump = parse_cedears_raw(cedears_raw)
 
         # Obtener cotizaciones de dólares
         dolar_assets = []
@@ -286,6 +345,11 @@ async def fetch_and_save_market_data():
             "acciones": stocks_dump
         }
 
+        payload_cedears = {
+            "updated_at": datetime.now().isoformat(),
+            "cedears": cedears_dump
+        }
+
         payload_dolares = {
             "updated_at": datetime.now().isoformat(),
             "dolares": dolar_assets
@@ -298,6 +362,12 @@ async def fetch_and_save_market_data():
                 json.dump(payload_acciones, f, ensure_ascii=False, indent=2)
             os.replace(temp_path_acc, ACCIONES_JSON_PATH)
 
+            # Guardar cedears.json
+            temp_path_ced = CEDEARS_JSON_PATH + ".tmp"
+            with open(temp_path_ced, "w", encoding="utf-8") as f:
+                json.dump(payload_cedears, f, ensure_ascii=False, indent=2)
+            os.replace(temp_path_ced, CEDEARS_JSON_PATH)
+
             # Guardar dolares.json
             temp_path_dol = DOLARES_JSON_PATH + ".tmp"
             with open(temp_path_dol, "w", encoding="utf-8") as f:
@@ -306,36 +376,57 @@ async def fetch_and_save_market_data():
 
         await asyncio.to_thread(save_files)
 
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] Datos guardados en datos/acciones.json ({len(stocks_dump)} acciones) y datos/dolares.json ({len(dolar_assets)} dólares)")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] Datos guardados en datos/acciones.json ({len(stocks_dump)} acciones), datos/cedears.json ({len(cedears_dump)} cedears) y datos/dolares.json ({len(dolar_assets)} dólares)")
         return payload_acciones
     except Exception as e:
         print(f"Error en actualización periódica: {e}")
         return None
 
 async def precache_historical_data():
-    """Recorre todas las acciones (líderes primero, luego general) y precarga su historial si no está actualizado (de hoy)"""
-    from backend.services.analytics import get_stock_history_processed, load_stored_data
+    """Recorre todas las acciones (líderes primero, luego general) y CEDEARs y precarga su historial y fundamentales si no están actualizados"""
+    from backend.services.analytics import get_stock_history_processed, load_stored_data, load_stored_cedears
     from backend.config import HISTORIAL_DIR
     import os
     
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Iniciando precarga de datos históricos en segundo plano...")
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Iniciando precarga de datos históricos y fundamentales en segundo plano...")
     
     # Obtener todos los tickers clasificados para priorizar líderes
     try:
         stored = await asyncio.to_thread(load_stored_data)
         acciones = stored.get("acciones", [])
         
+        stored_ced = await asyncio.to_thread(load_stored_cedears)
+        cedears = stored_ced.get("cedears", [])
+        
         lider_tickers = [a["ticker"] for a in acciones if a.get("panel") == "lider"]
         general_tickers = [a["ticker"] for a in acciones if a.get("panel") != "lider"]
+        
+        # Obtener tickers base de CEDEARs
+        cedear_tickers = {c["ticker"].upper() for c in cedears}
+        ced_base_tickers = set()
+        for t in cedear_tickers:
+            if t.endswith("C") or t.endswith("D"):
+                candidate = t[:-1]
+                if candidate in cedear_tickers:
+                    ced_base_tickers.add(candidate)
+                    continue
+                if t.endswith("DD"):
+                    candidate = t[:-2]
+                    if candidate in cedear_tickers:
+                        ced_base_tickers.add(candidate)
+                        continue
+            ced_base_tickers.add(t)
+            
+        ced_base_tickers = sorted(list(ced_base_tickers))
         
         if not lider_tickers:
             lider_tickers = list(MERVAL_LIDER_TICKERS)
             
-        tickers_to_precache = ["MERVAL_CCL"] + lider_tickers + general_tickers
+        tickers_to_precache = ["MERVAL_CCL"] + lider_tickers + general_tickers + ced_base_tickers
     except Exception:
         tickers_to_precache = list(MERVAL_LIDER_TICKERS)
         
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Se precargarán {len(tickers_to_precache)} tickers (líderes primero).")
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Se precargarán {len(tickers_to_precache)} tickers (líderes primero, luego general y CEDEARs).")
     
     for ticker in tickers_to_precache:
         filepath = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
@@ -350,6 +441,7 @@ async def precache_historical_data():
             except Exception:
                 pass
                 
+        # 1. Precargar historial
         if not is_up_to_date:
             try:
                 await get_stock_history_processed(ticker)
@@ -359,29 +451,41 @@ async def precache_historical_data():
                 print(f"[{datetime.now().strftime('%H:%M:%S')}] Error precargando {ticker}: {e}")
                 await asyncio.sleep(1.5)
                 
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Fin de la precarga de datos históricos.")
+        # 2. Precargar fundamentales
+        if ticker != "MERVAL_CCL":
+            try:
+                from backend.services.yahoo_finance import yahoo_finance_service
+                await yahoo_finance_service.fetch_fundamentals(ticker)
+            except Exception:
+                pass
+                
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Fin de la precarga de datos históricos y fundamentales.")
 
 def is_data_up_to_date_with_friday_close() -> bool:
     """Verifica si los archivos de datos locales ya tienen la información de cierre del viernes."""
     try:
-        if not os.path.exists(ACCIONES_JSON_PATH) or not os.path.exists(DOLARES_JSON_PATH) or not os.path.exists(MERVAL_CCL_JSON_PATH):
+        if not os.path.exists(ACCIONES_JSON_PATH) or not os.path.exists(CEDEARS_JSON_PATH) or not os.path.exists(DOLARES_JSON_PATH) or not os.path.exists(MERVAL_CCL_JSON_PATH):
             return False
             
         with open(ACCIONES_JSON_PATH, "r", encoding="utf-8") as f:
             data_acc = json.load(f)
+        with open(CEDEARS_JSON_PATH, "r", encoding="utf-8") as f:
+            data_ced = json.load(f)
         with open(DOLARES_JSON_PATH, "r", encoding="utf-8") as f:
             data_dol = json.load(f)
         with open(MERVAL_CCL_JSON_PATH, "r", encoding="utf-8") as f:
             data_merv = json.load(f)
             
         updated_acc_str = data_acc.get("updated_at")
+        updated_ced_str = data_ced.get("updated_at")
         updated_dol_str = data_dol.get("updated_at")
         updated_merv_str = data_merv.get("updated_at")
         
-        if not updated_acc_str or not updated_dol_str or not updated_merv_str:
+        if not updated_acc_str or not updated_ced_str or not updated_dol_str or not updated_merv_str:
             return False
             
         updated_acc = datetime.fromisoformat(updated_acc_str)
+        updated_ced = datetime.fromisoformat(updated_ced_str)
         updated_dol = datetime.fromisoformat(updated_dol_str)
         updated_merv = datetime.fromisoformat(updated_merv_str)
         
@@ -395,6 +499,7 @@ def is_data_up_to_date_with_friday_close() -> bool:
         
         # Si todos los archivos fueron actualizados después del cierre del viernes, están al día
         return (updated_acc >= last_friday_close and 
+                updated_ced >= last_friday_close and 
                 updated_dol >= last_friday_close and 
                 updated_merv >= last_friday_close)
     except Exception as e:

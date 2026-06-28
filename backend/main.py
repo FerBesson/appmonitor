@@ -8,7 +8,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from backend.models import AssetQuote, MarketSummary, StockHistoryPoint, AssetFundamentals
-from backend.services.analytics import get_market_summary, get_stock_history_processed, get_stored_stocks, get_stored_cedears
+from backend.services.analytics import (
+    get_market_summary, get_stock_history_processed, get_stored_stocks, get_stored_cedears,
+    is_history_cache_fresh, get_cached_stocks_json, get_cached_cedears_json
+)
 from backend.services.yahoo_finance import yahoo_finance_service
 from backend.services.updater import start_background_updater
 from backend.services.data912_client import data912_client
@@ -60,6 +63,9 @@ async def api_merval_ccl():
 @app.get("/api/panel/stocks", response_model=List[AssetQuote])
 async def api_panel_stocks():
     try:
+        raw_json = get_cached_stocks_json()
+        if raw_json:
+            return Response(content=raw_json, media_type="application/json")
         return await get_stored_stocks()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo panel: {str(e)}")
@@ -67,6 +73,9 @@ async def api_panel_stocks():
 @app.get("/api/panel/cedears", response_model=List[AssetQuote])
 async def api_panel_cedears():
     try:
+        raw_json = get_cached_cedears_json()
+        if raw_json:
+            return Response(content=raw_json, media_type="application/json")
         return await get_stored_cedears()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo panel de cedears: {str(e)}")
@@ -84,17 +93,15 @@ async def api_history(ticker: str):
         ticker = ticker.upper()
         filepath = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
         
-        # 1. Si existe caché local de hoy con tamaño válido, responder en crudo (RAW)
+        # 1. Si existe caché local fresco, responder en crudo (RAW)
         # Esto evita parsear JSON en Python y la lentitud de validación/serialización Pydantic
-        if os.path.exists(filepath) and os.path.getsize(filepath) > 10:
+        if is_history_cache_fresh(filepath):
             try:
-                mtime = os.path.getmtime(filepath)
-                if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                    def read_file():
-                        with open(filepath, "r", encoding="utf-8") as f:
-                            return f.read()
-                    raw_json = await asyncio.to_thread(read_file)
-                    return Response(content=raw_json, media_type="application/json")
+                def read_file():
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        return f.read()
+                raw_json = await asyncio.to_thread(read_file)
+                return Response(content=raw_json, media_type="application/json")
             except Exception as e:
                 print(f"Error leyendo caché crudo para {ticker}: {e}")
 

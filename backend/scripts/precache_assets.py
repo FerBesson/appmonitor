@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from backend.config import HISTORIAL_DIR, DATOS_DIR
 from backend.services.updater import fetch_and_save_market_data, get_base_ticker
 from backend.services.merval_service import fetch_and_save_merval_ccl
-from backend.services.analytics import get_stock_history_processed, get_stored_cedears, get_stored_stocks
+from backend.services.analytics import get_stock_history_processed, get_stored_cedears, get_stored_stocks, is_history_cache_fresh
 from backend.services.yahoo_finance import yahoo_finance_service, FUNDAMENTALES_DIR
 
 async def main():
@@ -95,14 +95,7 @@ async def main():
     async def process_ticker(ticker: str, index: int, total: int):
         # 1. Comprobar Historial
         hist_file = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
-        hist_up_to_date = False
-        if os.path.exists(hist_file) and os.path.getsize(hist_file) > 10:
-            try:
-                mtime = os.path.getmtime(hist_file)
-                if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                    hist_up_to_date = True
-            except Exception:
-                pass
+        hist_up_to_date = is_history_cache_fresh(hist_file)
 
         if hist_up_to_date:
             stats["historial_existentes"] += 1

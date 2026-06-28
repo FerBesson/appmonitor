@@ -130,6 +130,7 @@ function initEventListeners() {
                 if (panelContainer) panelContainer.style.display = 'none';
                 if (usdcTab) usdcTab.style.display = 'block';
                 if (moversUsdcTab) moversUsdcTab.style.display = 'block';
+                if (state.cedears.length === 0) refreshAllData();
             } else {
                 if (panelContainer) panelContainer.style.display = 'flex';
                 if (usdcTab) usdcTab.style.display = 'none';
@@ -375,11 +376,20 @@ function startCountdown() {
 
 async function refreshAllData() {
     try {
-        const [stocksRes, cedearsRes, mervalRes] = await Promise.all([
+        const fetchPromises = [
             fetch('/api/panel/stocks'),
-            fetch('/api/panel/cedears'),
             fetch('/api/merval-ccl')
-        ]);
+        ];
+        
+        const needCedears = state.assetType === 'cedears' || state.cedears.length === 0 || (state.selectedTicker && state.cedears.some(c => c.ticker === state.selectedTicker));
+        if (needCedears) {
+            fetchPromises.push(fetch('/api/panel/cedears'));
+        }
+
+        const responses = await Promise.all(fetchPromises);
+        const stocksRes = responses[0];
+        const mervalRes = responses[1];
+        const cedearsRes = needCedears ? responses[2] : null;
 
         if (stocksRes.ok) {
             state.stocks = await stocksRes.json();
@@ -394,7 +404,7 @@ async function refreshAllData() {
             if (usdCcl) updateDolarWidget('dolar-ccl', usdCcl);
         }
 
-        if (cedearsRes.ok) {
+        if (cedearsRes && cedearsRes.ok) {
             state.cedears = await cedearsRes.json();
         }
 
@@ -406,6 +416,19 @@ async function refreshAllData() {
             const asset = state.stocks.find(s => s.ticker === state.selectedTicker) ||
                           state.cedears.find(s => s.ticker === state.selectedTicker);
             if (asset) updateQuickMetrics(asset);
+
+            // Actualizar velas del gráfico activo de forma progresiva
+            try {
+                const chartRes = await fetch(`/api/history/${state.selectedTicker}`);
+                if (chartRes.ok) {
+                    const historyData = await chartRes.json();
+                    state.historyCache[state.selectedTicker] = historyData;
+                    state.historyPoints = historyData;
+                    updateChartWithTimeframe();
+                }
+            } catch (e) {
+                console.error('Error actualizando gráfico en segundo plano:', e);
+            }
         }
 
         if (mervalRes.ok) {

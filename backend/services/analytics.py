@@ -2,11 +2,71 @@ import os
 import json
 import asyncio
 import bisect
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 from backend.config import ACCIONES_JSON_PATH, CEDEARS_JSON_PATH, DOLARES_JSON_PATH, HISTORIAL_DIR, DATOS_DIR
 from backend.models import AssetQuote, MarketSummary, StockHistoryPoint
 from backend.services.data912_client import data912_client
+
+_memory_cache_stocks_quotes: Optional[List[AssetQuote]] = None
+_memory_cache_stocks_json: Optional[str] = None
+_memory_cache_cedears_quotes: Optional[List[AssetQuote]] = None
+_memory_cache_cedears_json: Optional[str] = None
+
+def get_cached_stocks_json() -> Optional[str]:
+    return _memory_cache_stocks_json
+
+def get_cached_cedears_json() -> Optional[str]:
+    return _memory_cache_cedears_json
+
+def set_memory_caches(stocks_list: list, cedears_list: list, dolares_list: list):
+    global _memory_cache_stocks_quotes, _memory_cache_stocks_json, _memory_cache_cedears_quotes, _memory_cache_cedears_json
+    try:
+        merged_stocks = stocks_list + dolares_list
+        stocks_quotes = []
+        for item in merged_stocks:
+            q = AssetQuote(**item)
+            if not q.sector or q.sector == "Otros":
+                q.sector = resolve_sector(q.ticker)
+            stocks_quotes.append(q)
+            
+        cedears_quotes = []
+        for item in cedears_list:
+            q = AssetQuote(**item)
+            if not q.sector or q.sector == "Otros":
+                q.sector = resolve_sector(q.ticker)
+            cedears_quotes.append(q)
+            
+        _memory_cache_stocks_quotes = stocks_quotes
+        _memory_cache_cedears_quotes = cedears_quotes
+        
+        _memory_cache_stocks_json = json.dumps([q.model_dump() for q in stocks_quotes], ensure_ascii=False)
+        _memory_cache_cedears_json = json.dumps([q.model_dump() for q in cedears_quotes], ensure_ascii=False)
+    except Exception as e:
+        print(f"Error actualizando cachés en memoria: {e}")
+
+def is_history_cache_fresh(filepath: str) -> bool:
+    if not os.path.exists(filepath) or os.path.getsize(filepath) <= 10:
+        return False
+    try:
+        mtime = datetime.fromtimestamp(os.path.getmtime(filepath))
+        now = datetime.now()
+        if mtime.date() == now.date():
+            return True
+        if now.weekday() in (5, 6):
+            days_to_friday = now.weekday() - 4
+            friday_date = (now - timedelta(days=days_to_friday)).date()
+            return mtime.date() >= friday_date
+        if now.weekday() == 0 and now.hour < 11:
+            friday_date = (now - timedelta(days=3)).date()
+            return mtime.date() >= friday_date
+        if now.weekday() in (1, 2, 3, 4) and now.hour < 11:
+            yesterday_date = (now - timedelta(days=1)).date()
+            return mtime.date() >= yesterday_date
+    except Exception as e:
+        print(f"Error verificando frescura de caché para {filepath}: {e}")
+        return False
+    return False
 
 # Caché en memoria para sectores (mapeo Ticker -> Sector en español)
 _sectors_cache = {}
@@ -270,29 +330,32 @@ async def ensure_cedears_loaded() -> Dict[str, Any]:
     return data
 
 async def get_stored_stocks() -> List[AssetQuote]:
+    global _memory_cache_stocks_quotes
+    if _memory_cache_stocks_quotes is not None:
+        return _memory_cache_stocks_quotes
+        
     data = await ensure_data_loaded()
     stocks_list = data.get("acciones", [])
-    
     dolares_list = await asyncio.to_thread(load_stored_dolares)
-    merged_list = stocks_list + dolares_list
+    cedears_data = await ensure_cedears_loaded()
+    cedears_list = cedears_data.get("cedears", [])
     
-    quotes = []
-    for item in merged_list:
-        quote = AssetQuote(**item)
-        quote.sector = resolve_sector(quote.ticker)
-        quotes.append(quote)
-    return quotes
+    set_memory_caches(stocks_list, cedears_list, dolares_list)
+    return _memory_cache_stocks_quotes or []
 
 async def get_stored_cedears() -> List[AssetQuote]:
-    data = await ensure_cedears_loaded()
-    cedears_list = data.get("cedears", [])
+    global _memory_cache_cedears_quotes
+    if _memory_cache_cedears_quotes is not None:
+        return _memory_cache_cedears_quotes
+        
+    cedears_data = await ensure_cedears_loaded()
+    cedears_list = cedears_data.get("cedears", [])
+    data = await ensure_data_loaded()
+    stocks_list = data.get("acciones", [])
+    dolares_list = await asyncio.to_thread(load_stored_dolares)
     
-    quotes = []
-    for item in cedears_list:
-        quote = AssetQuote(**item)
-        quote.sector = resolve_sector(quote.ticker)
-        quotes.append(quote)
-    return quotes
+    set_memory_caches(stocks_list, cedears_list, dolares_list)
+    return _memory_cache_cedears_quotes or []
 
 def get_cedear_base_ticker(ticker: str, cedear_tickers: set) -> str:
     t = ticker.upper()
@@ -386,12 +449,10 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
     if ticker == "MERVAL_CCL":
         from backend.services.merval_service import fetch_and_save_merval_ccl_history
         def read_cache_file():
-            if os.path.exists(filepath) and os.path.getsize(filepath) > 10:
+            if is_history_cache_fresh(filepath):
                 try:
-                    mtime = os.path.getmtime(filepath)
-                    if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                        with open(filepath, "r", encoding="utf-8") as f:
-                            return json.load(f)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        return json.load(f)
                 except Exception:
                     pass
             return None
@@ -401,14 +462,12 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
             return [StockHistoryPoint(**p) for p in cached_data]
         return await fetch_and_save_merval_ccl_history()
 
-    # Intentar leer caché local si es de hoy
+    # Intentar leer caché local si está fresco
     def read_cache_file():
-        if os.path.exists(filepath):
+        if is_history_cache_fresh(filepath):
             try:
-                mtime = os.path.getmtime(filepath)
-                if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                    with open(filepath, "r", encoding="utf-8") as f:
-                        return json.load(f)
+                with open(filepath, "r", encoding="utf-8") as f:
+                    return json.load(f)
             except Exception as e:
                 print(f"Error leyendo caché local para {ticker}: {e}")
         return None

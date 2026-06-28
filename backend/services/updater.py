@@ -338,6 +338,15 @@ async def fetch_and_save_market_data():
             except Exception as e:
                 print(f"Error leyendo fallback de dolares.json: {e}")
                 
+        from backend.services.analytics import resolve_sector, set_memory_caches
+        for s in stocks_dump:
+            s["sector"] = resolve_sector(s["ticker"])
+        for c in cedears_dump:
+            c["sector"] = resolve_sector(c["ticker"])
+        for d in dolar_assets:
+            d["sector"] = "Monedas"
+            
+        set_memory_caches(stocks_dump, cedears_dump, dolar_assets)
         os.makedirs(DATOS_DIR, exist_ok=True)
 
         payload_acciones = {
@@ -432,14 +441,10 @@ async def precache_historical_data():
         filepath = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
         is_up_to_date = False
         
-        # Verificar que el archivo exista, no esté vacío (>10 bytes) y sea de hoy
-        if os.path.exists(filepath) and os.path.getsize(filepath) > 10:
-            try:
-                mtime = os.path.getmtime(filepath)
-                if datetime.fromtimestamp(mtime).date() == datetime.today().date():
-                    is_up_to_date = True
-            except Exception:
-                pass
+        # Verificar que el archivo esté fresco
+        from backend.services.analytics import is_history_cache_fresh
+        if is_history_cache_fresh(filepath):
+            is_up_to_date = True
                 
         # 1. Precargar historial
         if not is_up_to_date:

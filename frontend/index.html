@@ -147,6 +147,14 @@
                                 <span id="metric-sma50" class="sma50-text">---</span>
                             </div>
                             <div class="metric">
+                                <label>SMA 100</label>
+                                <span id="metric-sma100" class="sma100-text">---</span>
+                            </div>
+                            <div class="metric">
+                                <label>SMA 200</label>
+                                <span id="metric-sma200" class="sma200-text">---</span>
+                            </div>
+                            <div class="metric">
                                 <label>RSI (14)</label>
                                 <span id="metric-rsi">---</span>
                             </div>
@@ -159,16 +167,33 @@
                                 <button class="timeframe-card" data-range="1m">1m</button>
                                 <button class="timeframe-card" data-range="3m">3m</button>
                                 <button class="timeframe-card" data-range="6m">6m</button>
-                                <button class="timeframe-card" data-range="YTD">YTD</button>
+                                <button class="timeframe-card active" data-range="YTD">YTD</button>
                                 <button class="timeframe-card" data-range="1a">1a</button>
-                                <button class="timeframe-card active" data-range="all">Todo</button>
+                                <button class="timeframe-card" data-range="all">Todo</button>
                             </div>
                             
-                            <div class="indicators-toolbar" id="indicators-toolbar">
-                                <span class="toolbar-title">Velas:</span>
-                                <button class="indicator-btn active" data-indicator="sma20">SMA 20</button>
-                                <button class="indicator-btn active" data-indicator="sma50">SMA 50</button>
-                                <button class="indicator-btn" data-indicator="bollinger">Bollinger</button>
+                            <div class="indicators-dropdown-container">
+                                <button class="indicators-dropdown-btn" id="indicators-dropdown-btn">
+                                    <span class="btn-icon">📈</span>
+                                    <span>Indicadores</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                                <div class="indicators-dropdown-menu" id="indicators-dropdown-menu">
+                                    <div class="dropdown-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" id="indicator-sma" data-indicator="sma">
+                                            <span class="checkmark"></span>
+                                            <span class="item-label">SMA 20/50/100/200</span>
+                                        </label>
+                                    </div>
+                                    <div class="dropdown-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" id="indicator-bollinger" data-indicator="bollinger">
+                                            <span class="checkmark"></span>
+                                            <span class="item-label">Bandas de Bollinger</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -239,6 +264,10 @@
             <div class="movers-section">
                 <div class="movers-header">
                     <h3 class="movers-title">MARKET MOVERS</h3>
+                    <div class="movers-currency-tabs">
+                        <button class="movers-currency-tab active" data-currency="ARS">ARS</button>
+                        <button class="movers-currency-tab" data-currency="USD">USD</button>
+                    </div>
                 </div>
                 <div class="movers-tabs">
                     <button class="movers-tab active" data-movers="gainers">Ganadores</button>

@@ -10,17 +10,21 @@ const state = {
     volumeSeries: null,
     sma20Series: null,
     sma50Series: null,
+    sma100Series: null,
+    sma200Series: null,
     bbUpperSeries: null,
     bbLowerSeries: null,
     bbMiddleSeries: null,
     rsiChartInstance: null,
     rsiSeries: null,
+    rsiMaSeries: null,
+    rsiBand70Series: null,
+    rsiBand30Series: null,
     macdChartInstance: null,
     macdLineSeries: null,
     macdSignalSeries: null,
     macdHistSeries: null,
-    showSMA20: true,
-    showSMA50: true,
+    showSMA: false,
     showBollinger: false,
     countdown: 30,
     timerId: null,
@@ -28,10 +32,11 @@ const state = {
     historyPoints: [],
     historyCache: {}, // Caché en memoria para datos históricos
     selectedCurrency: 'ARS',
-    currentTimeframe: 'all',
+    currentTimeframe: 'YTD',
     sortBy: 'ticker',
     sortDirection: 'asc',
-    moversTab: 'gainers' // 'gainers' | 'losers'
+    moversTab: 'gainers', // 'gainers' | 'losers'
+    moversCurrency: 'ARS' // 'ARS' | 'USD'
 };
 
 // Formateador de moneda argentina
@@ -52,6 +57,38 @@ const formatUSD = {
         return `USD ${num}`;
     }
 };
+
+// Función para calcular SMA en el frontend
+function calculateSMA(data, period) {
+    const sma = [];
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+        sum += data[i].close;
+        if (i >= period) {
+            sum -= data[i - period].close;
+        }
+        if (i >= period - 1) {
+            sma.push({ time: data[i].time, value: parseFloat((sum / period).toFixed(2)) });
+        }
+    }
+    return sma;
+}
+
+// Función para calcular SMA de valores simples (RSI) en el frontend
+function calculateSMAOnValue(data, period) {
+    const sma = [];
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+        sum += data[i].value;
+        if (i >= period) {
+            sum -= data[i - period].value;
+        }
+        if (i >= period - 1) {
+            sma.push({ time: data[i].time, value: parseFloat((sum / period).toFixed(2)) });
+        }
+    }
+    return sma;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
@@ -157,6 +194,17 @@ function initEventListeners() {
         });
     });
 
+    // Market Movers currency tabs
+    const moversCurrencyTabs = document.querySelectorAll('.movers-currency-tab');
+    moversCurrencyTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            moversCurrencyTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            state.moversCurrency = e.target.dataset.currency;
+            renderMarketMovers();
+        });
+    });
+
     // Eventos de selección de plazo (tarjetas de gráfico)
     const tfSelector = document.getElementById('timeframe-selector');
     if (tfSelector) {
@@ -168,28 +216,47 @@ function initEventListeners() {
         });
     }
 
-    // Eventos de toggle de indicadores sobre las velas
-    const indicatorToolbar = document.getElementById('indicators-toolbar');
-    if (indicatorToolbar) {
-        indicatorToolbar.querySelectorAll('.indicator-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const indicator = btn.dataset.indicator;
-                btn.classList.toggle('active');
-                const isActive = btn.classList.contains('active');
+    // Evento para abrir/cerrar el dropdown de indicadores
+    const dropdownBtn = document.getElementById('indicators-dropdown-btn');
+    const dropdownContainer = document.querySelector('.indicators-dropdown-container');
+    if (dropdownBtn && dropdownContainer) {
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownContainer.classList.toggle('open');
+        });
+        
+        // Cerrar al hacer click afuera
+        document.addEventListener('click', (e) => {
+            if (!dropdownContainer.contains(e.target)) {
+                dropdownContainer.classList.remove('open');
+            }
+        });
+    }
 
-                if (indicator === 'sma20') {
-                    state.showSMA20 = isActive;
-                    if (state.sma20Series) state.sma20Series.applyOptions({ visible: isActive });
-                } else if (indicator === 'sma50') {
-                    state.showSMA50 = isActive;
-                    if (state.sma50Series) state.sma50Series.applyOptions({ visible: isActive });
-                } else if (indicator === 'bollinger') {
-                    state.showBollinger = isActive;
-                    if (state.bbUpperSeries) state.bbUpperSeries.applyOptions({ visible: isActive });
-                    if (state.bbLowerSeries) state.bbLowerSeries.applyOptions({ visible: isActive });
-                    if (state.bbMiddleSeries) state.bbMiddleSeries.applyOptions({ visible: isActive });
-                }
-            });
+    // Inicializar estado de checkboxes desde state
+    const smaCheckbox = document.getElementById('indicator-sma');
+    const bollingerCheckbox = document.getElementById('indicator-bollinger');
+
+    if (smaCheckbox) {
+        smaCheckbox.checked = state.showSMA;
+        smaCheckbox.addEventListener('change', (e) => {
+            state.showSMA = e.target.checked;
+            const visible = state.showSMA;
+            if (state.sma20Series) state.sma20Series.applyOptions({ visible });
+            if (state.sma50Series) state.sma50Series.applyOptions({ visible });
+            if (state.sma100Series) state.sma100Series.applyOptions({ visible });
+            if (state.sma200Series) state.sma200Series.applyOptions({ visible });
+        });
+    }
+
+    if (bollingerCheckbox) {
+        bollingerCheckbox.checked = state.showBollinger;
+        bollingerCheckbox.addEventListener('change', (e) => {
+            state.showBollinger = e.target.checked;
+            const visible = state.showBollinger;
+            if (state.bbUpperSeries) state.bbUpperSeries.applyOptions({ visible });
+            if (state.bbLowerSeries) state.bbLowerSeries.applyOptions({ visible });
+            if (state.bbMiddleSeries) state.bbMiddleSeries.applyOptions({ visible });
         });
     }
 
@@ -267,7 +334,13 @@ function renderMarketMovers() {
     const container = document.getElementById('movers-list');
     if (!container) return;
 
-    const valid = state.stocks.filter(s => s.price > 0 && s.ticker !== 'USD_MAYORISTA' && s.ticker !== 'USD_MEP' && s.ticker !== 'USD_CCL');
+    const valid = state.stocks.filter(s => 
+        s.price > 0 && 
+        s.ticker !== 'USD_MAYORISTA' && 
+        s.ticker !== 'USD_MEP' && 
+        s.ticker !== 'USD_CCL' &&
+        s.currency === state.moversCurrency
+    );
 
     let movers;
     if (state.moversTab === 'gainers') {
@@ -496,10 +569,15 @@ function renderChart(historyPoints, currency) {
     state.volumeSeries = null;
     state.sma20Series = null;
     state.sma50Series = null;
+    state.sma100Series = null;
+    state.sma200Series = null;
     state.bbUpperSeries = null;
     state.bbLowerSeries = null;
     state.bbMiddleSeries = null;
     state.rsiSeries = null;
+    state.rsiMaSeries = null;
+    state.rsiBand70Series = null;
+    state.rsiBand30Series = null;
     state.macdLineSeries = null;
     state.macdSignalSeries = null;
     state.macdHistSeries = null;
@@ -561,14 +639,28 @@ function renderChart(historyPoints, currency) {
         color: '#ffb300', // Gold Yellow (highly visible)
         lineWidth: 2,
         title: 'SMA 20',
-        visible: state.showSMA20
+        visible: state.showSMA
     });
 
     state.sma50Series = state.chartInstance.addLineSeries({
         color: '#00e5ff', // Neon Cyan (highly visible)
         lineWidth: 2,
         title: 'SMA 50',
-        visible: state.showSMA50
+        visible: state.showSMA
+    });
+
+    state.sma100Series = state.chartInstance.addLineSeries({
+        color: '#ec4899', // Hot Pink (highly visible)
+        lineWidth: 2,
+        title: 'SMA 100',
+        visible: state.showSMA
+    });
+
+    state.sma200Series = state.chartInstance.addLineSeries({
+        color: '#ffffff', // White (highly visible)
+        lineWidth: 2,
+        title: 'SMA 200',
+        visible: state.showSMA
     });
 
     state.bbUpperSeries = state.chartInstance.addLineSeries({
@@ -611,32 +703,58 @@ function renderChart(historyPoints, currency) {
             }
         });
 
-        state.rsiSeries = state.rsiChartInstance.addLineSeries({
-            color: '#ff8c00',
-            lineWidth: 2,
-            title: 'RSI'
+        state.rsiBand70Series = state.rsiChartInstance.addAreaSeries({
+            topColor: 'rgba(139, 92, 246, 0.08)',
+            bottomColor: 'rgba(139, 92, 246, 0.08)',
+            lineColor: 'rgba(0, 0, 0, 0)',
+            lineWidth: 0,
+            lineVisible: false,
+            priceLineVisible: false,
+            lastValueVisible: false,
+            crosshairMarkerVisible: false,
         });
 
-        // RSI Levels
+        state.rsiBand30Series = state.rsiChartInstance.addAreaSeries({
+            topColor: '#050505',
+            bottomColor: '#050505',
+            lineColor: 'rgba(0, 0, 0, 0)',
+            lineWidth: 0,
+            lineVisible: false,
+            priceLineVisible: false,
+            lastValueVisible: false,
+            crosshairMarkerVisible: false,
+        });
+
+        state.rsiSeries = state.rsiChartInstance.addLineSeries({
+            color: '#7e57c2', // TradingView Violet
+            lineWidth: 1.5
+        });
+
+        state.rsiMaSeries = state.rsiChartInstance.addLineSeries({
+            color: '#fbbf24', // TradingView Yellow MA
+            lineWidth: 1.5
+        });
+
+        // RSI Levels (TradingView Style)
         state.rsiSeries.createPriceLine({
             price: 70,
-            color: '#ef4444',
+            color: 'rgba(139, 92, 246, 0.3)',
             lineWidth: 1,
             lineStyle: 2, // Dotted
-            axisLabelVisible: true,
+            axisLabelVisible: false,
             title: '70'
         });
         state.rsiSeries.createPriceLine({
             price: 30,
-            color: '#22c55e',
+            color: 'rgba(139, 92, 246, 0.3)',
             lineWidth: 1,
             lineStyle: 2, // Dotted
-            axisLabelVisible: true,
+            axisLabelVisible: false,
             title: '30'
         });
         state.rsiSeries.createPriceLine({
             price: 50,
-            color: 'rgba(255, 255, 255, 0.15)',
+            color: 'rgba(139, 92, 246, 0.15)',
             lineWidth: 1,
             lineStyle: 2, // Dotted
             axisLabelVisible: false
@@ -680,8 +798,6 @@ function renderChart(historyPoints, currency) {
     // Data lists
     const candles = [];
     const volumeData = [];
-    const sma20Data = [];
-    const sma50Data = [];
     const bbUpperData = [];
     const bbLowerData = [];
     const bbMiddleData = [];
@@ -700,12 +816,6 @@ function renderChart(historyPoints, currency) {
             volumeData.push({ time, value: p.volume, color });
         }
 
-        if (p.sma20 !== null && p.sma20 !== undefined) {
-            sma20Data.push({ time, value: p.sma20 });
-        }
-        if (p.sma50 !== null && p.sma50 !== undefined) {
-            sma50Data.push({ time, value: p.sma50 });
-        }
         if (p.bb_upper !== null && p.bb_upper !== undefined) {
             bbUpperData.push({ time, value: p.bb_upper });
         }
@@ -732,12 +842,48 @@ function renderChart(historyPoints, currency) {
 
     state.candleSeries.setData(candles);
     if (state.volumeSeries) state.volumeSeries.setData(volumeData);
+
+    // Calcular SMAs usando la serie HISTÓRICA COMPLETA (state.historyPoints) para evitar desvirtuar los indicadores según el plazo visible
+    const fullCandles = state.historyPoints.map(p => ({
+        time: p.date,
+        close: p.close
+    }));
+    const fullSma20 = calculateSMA(fullCandles, 20);
+    const fullSma50 = calculateSMA(fullCandles, 50);
+    const fullSma100 = calculateSMA(fullCandles, 100);
+    const fullSma200 = calculateSMA(fullCandles, 200);
+
+    // Filtrar los datos calculados para que coincidan únicamente con las fechas visibles en el gráfico
+    const visibleDates = new Set(candles.map(c => c.time));
+    const sma20Data = fullSma20.filter(d => visibleDates.has(d.time));
+    const sma50Data = fullSma50.filter(d => visibleDates.has(d.time));
+    const sma100Data = fullSma100.filter(d => visibleDates.has(d.time));
+    const sma200Data = fullSma200.filter(d => visibleDates.has(d.time));
+
     state.sma20Series.setData(sma20Data);
     state.sma50Series.setData(sma50Data);
+    state.sma100Series.setData(sma100Data);
+    state.sma200Series.setData(sma200Data);
     state.bbUpperSeries.setData(bbUpperData);
     state.bbLowerSeries.setData(bbLowerData);
     state.bbMiddleSeries.setData(bbMiddleData);
-    if (state.rsiSeries) state.rsiSeries.setData(rsiData);
+    if (state.rsiSeries) {
+        // Generar las bandas sombreadas
+        const rsiBand70Data = rsiData.map(d => ({ time: d.time, value: 70 }));
+        const rsiBand30Data = rsiData.map(d => ({ time: d.time, value: 30 }));
+        if (state.rsiBand70Series) state.rsiBand70Series.setData(rsiBand70Data);
+        if (state.rsiBand30Series) state.rsiBand30Series.setData(rsiBand30Data);
+
+        // Calcular la media del RSI usando la serie histórica completa de RSI para evitar desvirtuaciones
+        const fullRsi = state.historyPoints
+            .filter(p => p.rsi !== null && p.rsi !== undefined)
+            .map(p => ({ time: p.date, value: p.rsi }));
+        const fullRsiMa = calculateSMAOnValue(fullRsi, 14);
+        const rsiMaData = fullRsiMa.filter(d => visibleDates.has(d.time));
+
+        state.rsiSeries.setData(rsiData);
+        if (state.rsiMaSeries) state.rsiMaSeries.setData(rsiMaData);
+    }
     if (state.macdLineSeries) state.macdLineSeries.setData(macdLineData);
     if (state.macdSignalSeries) state.macdSignalSeries.setData(macdSignalData);
     if (state.macdHistSeries) state.macdHistSeries.setData(macdHistData);
@@ -767,8 +913,16 @@ function renderChart(historyPoints, currency) {
     if (historyPoints.length > 0) {
         const last = historyPoints[historyPoints.length - 1];
         const formatter = currency === 'USD' ? formatUSD : formatARS;
-        document.getElementById('metric-sma20').textContent = last.sma20 ? formatter.format(last.sma20) : 'N/A';
-        document.getElementById('metric-sma50').textContent = last.sma50 ? formatter.format(last.sma50) : 'N/A';
+        
+        const lastSma20 = sma20Data.length > 0 ? sma20Data[sma20Data.length - 1].value : null;
+        const lastSma50 = sma50Data.length > 0 ? sma50Data[sma50Data.length - 1].value : null;
+        const lastSma100 = sma100Data.length > 0 ? sma100Data[sma100Data.length - 1].value : null;
+        const lastSma200 = sma200Data.length > 0 ? sma200Data[sma200Data.length - 1].value : null;
+
+        document.getElementById('metric-sma20').textContent = lastSma20 ? formatter.format(lastSma20) : 'N/A';
+        document.getElementById('metric-sma50').textContent = lastSma50 ? formatter.format(lastSma50) : 'N/A';
+        document.getElementById('metric-sma100').textContent = lastSma100 ? formatter.format(lastSma100) : 'N/A';
+        document.getElementById('metric-sma200').textContent = lastSma200 ? formatter.format(lastSma200) : 'N/A';
         document.getElementById('metric-rsi').textContent = last.rsi ? `${last.rsi} pts` : 'N/A';
     }
 

@@ -328,19 +328,7 @@ function initEventListeners() {
         });
     }
 
-    window.addEventListener('resize', () => {
-        const resizeChart = (chart, containerId) => {
-            if (chart) {
-                const el = document.getElementById(containerId);
-                if (el) {
-                    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
-                }
-            }
-        };
-        resizeChart(state.chartInstance, 'tv-chart-container');
-        resizeChart(state.rsiChartInstance, 'tv-rsi-container');
-        resizeChart(state.macdChartInstance, 'tv-macd-container');
-    });
+    window.addEventListener('resize', resizeAllCharts);
 
     // Evento para abrir/cerrar el dropdown de sectores
     const sectorBtn = document.getElementById('sector-filter-btn');
@@ -657,6 +645,14 @@ async function selectAsset(ticker) {
     } else {
         const fundSection = document.getElementById('fundamentals-section');
         if (fundSection) fundSection.style.display = 'none';
+    }
+
+    // En móviles, mostrar el cajón del gráfico
+    const chartSection = document.querySelector('.chart-section');
+    if (chartSection) {
+        chartSection.classList.add('open-mobile');
+        // Esperar a que la animación de deslizamiento termine para redimensionar los gráficos correctamente
+        setTimeout(resizeAllCharts, 310);
     }
 }
 
@@ -1368,4 +1364,18 @@ function updateHeaderFlag() {
         flagContainer.innerHTML = arFlag;
         flagContainer.title = "Viendo Acciones (Argentina)";
     }
+}
+
+function resizeAllCharts() {
+    const resizeChart = (chart, containerId) => {
+        if (chart) {
+            const el = document.getElementById(containerId);
+            if (el) {
+                chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
+            }
+        }
+    };
+    resizeChart(state.chartInstance, 'tv-chart-container');
+    resizeChart(state.rsiChartInstance, 'tv-rsi-container');
+    resizeChart(state.macdChartInstance, 'tv-macd-container');
 }

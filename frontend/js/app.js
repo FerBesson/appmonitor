@@ -779,19 +779,19 @@ function renderChart(historyPoints, currency) {
         });
 
         state.macdLineSeries = state.macdChartInstance.addLineSeries({
-            color: '#60a5fa',
-            lineWidth: 1.5,
-            title: 'MACD'
+            color: '#2962FF', // TradingView MACD Blue
+            lineWidth: 1.5
         });
 
         state.macdSignalSeries = state.macdChartInstance.addLineSeries({
-            color: '#f59e0b',
-            lineWidth: 1.5,
-            title: 'Signal'
+            color: '#FF6D00', // TradingView Signal Orange
+            lineWidth: 1.5
         });
 
         state.macdHistSeries = state.macdChartInstance.addHistogramSeries({
-            title: 'Histogram'
+            priceFormat: {
+                type: 'volume'
+            }
         });
     }
 
@@ -806,6 +806,7 @@ function renderChart(historyPoints, currency) {
     const macdSignalData = [];
     const macdHistData = [];
 
+    let prevMacdHist = null;
     historyPoints.forEach(p => {
         const time = p.date;
         candles.push({ time, open: p.open, high: p.high, low: p.low, close: p.close });
@@ -835,8 +836,22 @@ function renderChart(historyPoints, currency) {
             macdSignalData.push({ time, value: p.macd_signal });
         }
         if (state.macdHistSeries && p.macd_hist !== null && p.macd_hist !== undefined) {
-            const color = p.macd_hist >= 0 ? 'rgba(34, 197, 94, 0.6)' : 'rgba(239, 68, 68, 0.6)';
+            let color;
+            if (p.macd_hist >= 0) {
+                if (prevMacdHist === null || p.macd_hist > prevMacdHist) {
+                    color = '#26a69a'; // Creciente positivo (Teal oscuro)
+                } else {
+                    color = '#b2dfdb'; // Decreciente positivo (Teal claro)
+                }
+            } else {
+                if (prevMacdHist === null || p.macd_hist < prevMacdHist) {
+                    color = '#ef5350'; // Decreciente negativo (Rojo oscuro)
+                } else {
+                    color = '#ffcdd2'; // Creciente negativo (Rojo claro)
+                }
+            }
             macdHistData.push({ time, value: p.macd_hist, color });
+            prevMacdHist = p.macd_hist;
         }
     });
 

@@ -275,20 +275,46 @@ async def fetch_and_save_market_data():
                 # Obtener precio anterior del cierre del día anterior (usando el historial)
                 prev_price = 0.0
                 if dolar_history:
-                    house_history = [x for x in dolar_history if x.get("casa") == casa]
+                    # Filtrar días de semana (Lunes a Viernes) para evitar registros de fin de semana en el historial
+                    house_history = []
+                    for x in dolar_history:
+                        if x.get("casa") == casa:
+                            fecha_str = x.get("fecha")
+                            if fecha_str:
+                                try:
+                                    f_dt = datetime.strptime(fecha_str[:10], "%Y-%m-%d")
+                                    if f_dt.weekday() < 5:  # Lunes a Viernes
+                                        house_history.append(x)
+                                except Exception:
+                                    pass
+
                     if house_history:
                         house_history.sort(key=lambda x: x.get("fecha", ""))
-                        today_str = datetime.now().strftime("%Y-%m-%d")
-                        latest_hist = house_history[-1]
                         
-                        # Si el último registro del histórico es de hoy, el anterior/cierre previo es el penúltimo
-                        if latest_hist.get("fecha") == today_str:
-                            if len(house_history) >= 2:
-                                prev_price = float(house_history[-2].get("venta") or house_history[-2].get("compra") or 0.0)
-                            else:
-                                prev_price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
+                        # Determinar el día activo actual
+                        now_dt = datetime.now()
+                        if now_dt.weekday() == 5:  # Sábado
+                            active_date_str = (now_dt - timedelta(days=1)).strftime("%Y-%m-%d")
+                        elif now_dt.weekday() == 6:  # Domingo
+                            active_date_str = (now_dt - timedelta(days=2)).strftime("%Y-%m-%d")
                         else:
-                            prev_price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
+                            active_date_str = now_dt.strftime("%Y-%m-%d")
+                        
+                        # Buscar el último registro histórico que sea estrictamente anterior a active_date_str
+                        prev_hist = None
+                        for hist in reversed(house_history):
+                            if hist.get("fecha", "") < active_date_str:
+                                prev_hist = hist
+                                break
+                        
+                        # Si no encontramos ninguno anterior, usamos el penúltimo o el primero disponible
+                        if not prev_hist:
+                            if len(house_history) >= 2:
+                                prev_hist = house_history[-2]
+                            else:
+                                prev_hist = house_history[-1]
+                                
+                        prev_price = float(prev_hist.get("venta") or prev_hist.get("compra") or 0.0)
                 
                 # Obtener el precio actual del día
                 price = 0.0
@@ -299,13 +325,23 @@ async def fetch_and_save_market_data():
                 
                 # Fallback al histórico si DolarApi falla
                 if price <= 0 and dolar_history:
-                    house_history = [x for x in dolar_history if x.get("casa") == casa]
+                    # Usamos la misma lista filtrada por día de semana
                     if house_history:
-                        house_history.sort(key=lambda x: x.get("fecha", ""))
                         latest_hist = house_history[-1]
                         price = float(latest_hist.get("venta") or latest_hist.get("compra") or 0.0)
-                        if prev_price <= 0 and len(house_history) >= 2:
-                            prev_price = float(house_history[-2].get("venta") or house_history[-2].get("compra") or price)
+                        if prev_price <= 0:
+                            # Buscamos el registro anterior a latest_hist.get("fecha")
+                            prev_hist = None
+                            for hist in reversed(house_history):
+                                if hist.get("fecha", "") < latest_hist.get("fecha", ""):
+                                    prev_hist = hist
+                                    break
+                            if not prev_hist:
+                                if len(house_history) >= 2:
+                                    prev_hist = house_history[-2]
+                                else:
+                                    prev_hist = house_history[-1]
+                            prev_price = float(prev_hist.get("venta") or prev_hist.get("compra") or price)
                 
                 if price > 0:
                     if prev_price <= 0:

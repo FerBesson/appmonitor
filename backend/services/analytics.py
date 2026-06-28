@@ -501,8 +501,19 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
             val = float(item.get("venta") or item.get("compra") or 0.0)
             if val <= 0:
                 continue
+            
+            # Filtro de días de semana (Lunes a Viernes) para tener la misma lógica que las acciones y cedears
+            date_str = item.get("fecha", "")[:10]
+            if date_str:
+                try:
+                    f_dt = datetime.strptime(date_str, "%Y-%m-%d")
+                    if f_dt.weekday() >= 5:  # Sábado o Domingo
+                        continue
+                except Exception:
+                    pass
+                    
             points.append({
-                "date": item.get("fecha", "")[:10],
+                "date": date_str,
                 "open": val,
                 "high": val,
                 "low": val,

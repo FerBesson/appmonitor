@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T13:16:04.592174",
+  "updated_at": "2026-06-28T15:56:29.821719",
   "cedears": [
     {
       "ticker": "AAL",
@@ -12,7 +12,7 @@
       "name": "CEDEAR AAL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "AALC",
@@ -25,7 +25,7 @@
       "name": "CEDEAR AALC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "AALD",
@@ -38,7 +38,7 @@
       "name": "CEDEAR AALD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "AAP",
@@ -51,7 +51,7 @@
       "name": "CEDEAR AAP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AAPL",
@@ -64,7 +64,7 @@
       "name": "CEDEAR AAPL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AAPLC",
@@ -77,7 +77,7 @@
       "name": "CEDEAR AAPLC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AAPLD",
@@ -90,7 +90,7 @@
       "name": "CEDEAR AAPLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ABBV",
@@ -103,7 +103,7 @@
       "name": "CEDEAR ABBV",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ABBVC",
@@ -116,7 +116,7 @@
       "name": "CEDEAR ABBVC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ABBVD",
@@ -129,7 +129,7 @@
       "name": "CEDEAR ABBVD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ABEV",
@@ -142,7 +142,7 @@
       "name": "CEDEAR ABEV",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ABEV3",
@@ -155,7 +155,7 @@
       "name": "CEDEAR ABEV3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ABEVC",
@@ -168,7 +168,7 @@
       "name": "CEDEAR ABEVC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ABEVD",
@@ -181,7 +181,7 @@
       "name": "CEDEAR ABEVD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ABNB",
@@ -233,7 +233,7 @@
       "name": "CEDEAR ABT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ABTD",
@@ -246,7 +246,7 @@
       "name": "CEDEAR ABTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ACN",
@@ -259,7 +259,7 @@
       "name": "CEDEAR ACN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ACNC",
@@ -272,7 +272,7 @@
       "name": "CEDEAR ACNC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ACND",
@@ -285,7 +285,7 @@
       "name": "CEDEAR ACND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ACWI",
@@ -337,7 +337,7 @@
       "name": "CEDEAR ADBE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADBEC",
@@ -350,7 +350,7 @@
       "name": "CEDEAR ADBEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADBED",
@@ -363,7 +363,7 @@
       "name": "CEDEAR ADBED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADGO",
@@ -376,7 +376,7 @@
       "name": "CEDEAR ADGO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ADGOD",
@@ -389,7 +389,7 @@
       "name": "CEDEAR ADGOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "ADI",
@@ -402,7 +402,7 @@
       "name": "CEDEAR ADI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADID",
@@ -415,7 +415,7 @@
       "name": "CEDEAR ADID",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADP",
@@ -428,7 +428,7 @@
       "name": "CEDEAR ADP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ADS",
@@ -441,7 +441,7 @@
       "name": "CEDEAR ADS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ADSD",
@@ -454,7 +454,7 @@
       "name": "CEDEAR ADSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AEG",
@@ -467,7 +467,7 @@
       "name": "CEDEAR AEG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AEM",
@@ -545,7 +545,7 @@
       "name": "CEDEAR AIG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AIGC",
@@ -558,7 +558,7 @@
       "name": "CEDEAR AIGC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AIGD",
@@ -571,7 +571,7 @@
       "name": "CEDEAR AIGD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AKO.B",
@@ -636,7 +636,7 @@
       "name": "CEDEAR AMAT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMATC",
@@ -649,7 +649,7 @@
       "name": "CEDEAR AMATC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMATD",
@@ -662,7 +662,7 @@
       "name": "CEDEAR AMATD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMD",
@@ -675,7 +675,7 @@
       "name": "CEDEAR AMD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMDC",
@@ -688,7 +688,7 @@
       "name": "CEDEAR AMDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMDD",
@@ -701,7 +701,7 @@
       "name": "CEDEAR AMDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AMGN",
@@ -714,7 +714,7 @@
       "name": "CEDEAR AMGN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "AMGND",
@@ -727,7 +727,7 @@
       "name": "CEDEAR AMGND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "AMX",
@@ -740,7 +740,7 @@
       "name": "CEDEAR AMX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "AMXD",
@@ -753,7 +753,7 @@
       "name": "CEDEAR AMXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "AMZN",
@@ -766,7 +766,7 @@
       "name": "CEDEAR AMZN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AMZNC",
@@ -779,7 +779,7 @@
       "name": "CEDEAR AMZNC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AMZND",
@@ -792,7 +792,7 @@
       "name": "CEDEAR AMZND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ANET",
@@ -831,7 +831,7 @@
       "name": "CEDEAR ANF",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ANFD",
@@ -844,7 +844,7 @@
       "name": "CEDEAR ANFD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ARCO",
@@ -857,7 +857,7 @@
       "name": "CEDEAR ARCO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ARCOC",
@@ -870,7 +870,7 @@
       "name": "CEDEAR ARCOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ARCOD",
@@ -883,7 +883,7 @@
       "name": "CEDEAR ARCOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ARKK",
@@ -935,7 +935,7 @@
       "name": "CEDEAR ARM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ARMD",
@@ -948,7 +948,7 @@
       "name": "CEDEAR ARMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ASML",
@@ -1000,7 +1000,7 @@
       "name": "CEDEAR ASR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "ASTS",
@@ -1052,7 +1052,7 @@
       "name": "CEDEAR AVGO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AVGOC",
@@ -1065,7 +1065,7 @@
       "name": "CEDEAR AVGOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AVGOD",
@@ -1078,7 +1078,7 @@
       "name": "CEDEAR AVGOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "AVY",
@@ -1091,7 +1091,7 @@
       "name": "CEDEAR AVY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AVYD",
@@ -1104,7 +1104,7 @@
       "name": "CEDEAR AVYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "AXIA",
@@ -1130,7 +1130,7 @@
       "name": "CEDEAR AXP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AXPC",
@@ -1143,7 +1143,7 @@
       "name": "CEDEAR AXPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AXPD",
@@ -1156,7 +1156,7 @@
       "name": "CEDEAR AXPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "AZN",
@@ -1169,7 +1169,7 @@
       "name": "CEDEAR AZN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "AZNC",
@@ -1182,7 +1182,7 @@
       "name": "CEDEAR AZNC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "AZND",
@@ -1195,7 +1195,7 @@
       "name": "CEDEAR AZND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "B",
@@ -1247,7 +1247,7 @@
       "name": "CEDEAR BA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "BA.C",
@@ -1299,7 +1299,7 @@
       "name": "CEDEAR BABA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "BABAC",
@@ -1312,7 +1312,7 @@
       "name": "CEDEAR BABAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "BABAD",
@@ -1325,7 +1325,7 @@
       "name": "CEDEAR BABAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "BAC",
@@ -1338,7 +1338,7 @@
       "name": "CEDEAR BAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "BAD",
@@ -1351,7 +1351,7 @@
       "name": "CEDEAR BAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "BAK",
@@ -1364,7 +1364,7 @@
       "name": "CEDEAR BAK",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BAKD",
@@ -1377,7 +1377,7 @@
       "name": "CEDEAR BAKD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BB",
@@ -1416,7 +1416,7 @@
       "name": "CEDEAR BBAS3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BBD",
@@ -1442,7 +1442,7 @@
       "name": "CEDEAR BBDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BBDC3",
@@ -1455,7 +1455,7 @@
       "name": "CEDEAR BBDC3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BBDCD",
@@ -1468,7 +1468,7 @@
       "name": "CEDEAR BBDCD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BBDD",
@@ -1520,7 +1520,7 @@
       "name": "CEDEAR BCS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BHP",
@@ -1533,7 +1533,7 @@
       "name": "CEDEAR BHP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BHPD",
@@ -1546,7 +1546,7 @@
       "name": "CEDEAR BHPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BIDU",
@@ -1559,7 +1559,7 @@
       "name": "CEDEAR BIDU",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "BIDUC",
@@ -1572,7 +1572,7 @@
       "name": "CEDEAR BIDUC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "BIDUD",
@@ -1585,7 +1585,7 @@
       "name": "CEDEAR BIDUD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "BIIB",
@@ -1598,7 +1598,7 @@
       "name": "CEDEAR BIIB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "BIIBD",
@@ -1611,7 +1611,7 @@
       "name": "CEDEAR BIIBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "BIOX",
@@ -1624,7 +1624,7 @@
       "name": "CEDEAR BIOX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BIOXC",
@@ -1637,7 +1637,7 @@
       "name": "CEDEAR BIOXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BIOXD",
@@ -1650,7 +1650,7 @@
       "name": "CEDEAR BIOXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "BKNG",
@@ -1663,7 +1663,7 @@
       "name": "CEDEAR BKNG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "BKNGD",
@@ -1676,7 +1676,7 @@
       "name": "CEDEAR BKNGD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "BKR",
@@ -1689,7 +1689,7 @@
       "name": "CEDEAR BKR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "BKRD",
@@ -1702,7 +1702,7 @@
       "name": "CEDEAR BKRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "BMNR",
@@ -1741,7 +1741,7 @@
       "name": "CEDEAR BMY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "BMYD",
@@ -1754,7 +1754,7 @@
       "name": "CEDEAR BMYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "BNG",
@@ -1793,7 +1793,7 @@
       "name": "CEDEAR BNY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BNYD",
@@ -1806,7 +1806,7 @@
       "name": "CEDEAR BNYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BP",
@@ -1819,7 +1819,7 @@
       "name": "CEDEAR BP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "BPA11",
@@ -1832,7 +1832,7 @@
       "name": "CEDEAR BPA11",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BPC",
@@ -1845,7 +1845,7 @@
       "name": "CEDEAR BPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "BPD",
@@ -1858,7 +1858,7 @@
       "name": "CEDEAR BPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "BRKB",
@@ -1871,7 +1871,7 @@
       "name": "CEDEAR BRKB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BRKBC",
@@ -1884,7 +1884,7 @@
       "name": "CEDEAR BRKBC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BRKBD",
@@ -1897,7 +1897,7 @@
       "name": "CEDEAR BRKBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BSBR",
@@ -1910,7 +1910,7 @@
       "name": "CEDEAR BSBR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "BX",
@@ -1949,7 +1949,7 @@
       "name": "CEDEAR C",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "C.D",
@@ -1962,7 +1962,7 @@
       "name": "CEDEAR C.D",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "CAAP",
@@ -1975,7 +1975,7 @@
       "name": "CEDEAR CAAP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CAAPD",
@@ -1988,7 +1988,7 @@
       "name": "CEDEAR CAAPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CAH",
@@ -2001,7 +2001,7 @@
       "name": "CEDEAR CAH",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "CAHD",
@@ -2014,7 +2014,7 @@
       "name": "CEDEAR CAHD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "CAR",
@@ -2027,7 +2027,7 @@
       "name": "CEDEAR CAR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CAR.D",
@@ -2040,7 +2040,7 @@
       "name": "CEDEAR CAR.D",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CAT",
@@ -2053,7 +2053,7 @@
       "name": "CEDEAR CAT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CATC",
@@ -2066,7 +2066,7 @@
       "name": "CEDEAR CATC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CATD",
@@ -2079,7 +2079,7 @@
       "name": "CEDEAR CATD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "CC",
@@ -2092,7 +2092,7 @@
       "name": "CEDEAR CC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "CCJ",
@@ -2131,7 +2131,7 @@
       "name": "CEDEAR CCL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "CCLD",
@@ -2144,7 +2144,7 @@
       "name": "CEDEAR CCLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "CDE",
@@ -2157,7 +2157,7 @@
       "name": "CEDEAR CDE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "CDED",
@@ -2170,7 +2170,7 @@
       "name": "CEDEAR CDED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "CEG",
@@ -2248,7 +2248,7 @@
       "name": "CEDEAR CL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "CLD",
@@ -2261,7 +2261,7 @@
       "name": "CEDEAR CLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "CLS",
@@ -2300,7 +2300,7 @@
       "name": "CEDEAR COIN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "COINC",
@@ -2313,7 +2313,7 @@
       "name": "CEDEAR COINC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "COIND",
@@ -2326,7 +2326,7 @@
       "name": "CEDEAR COIND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "COP",
@@ -2404,7 +2404,7 @@
       "name": "CEDEAR COST",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "COSTC",
@@ -2417,7 +2417,7 @@
       "name": "CEDEAR COSTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "COSTD",
@@ -2430,7 +2430,7 @@
       "name": "CEDEAR COSTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "CRM",
@@ -2443,7 +2443,7 @@
       "name": "CEDEAR CRM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CRMC",
@@ -2456,7 +2456,7 @@
       "name": "CEDEAR CRMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CRMD",
@@ -2469,7 +2469,7 @@
       "name": "CEDEAR CRMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CRWD",
@@ -2534,7 +2534,7 @@
       "name": "CEDEAR CSCO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CSCOC",
@@ -2547,7 +2547,7 @@
       "name": "CEDEAR CSCOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CSCOD",
@@ -2560,7 +2560,7 @@
       "name": "CEDEAR CSCOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "CSNA3",
@@ -2573,7 +2573,7 @@
       "name": "CEDEAR CSNA3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "CVS",
@@ -2612,7 +2612,7 @@
       "name": "CEDEAR CVX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "CVXC",
@@ -2625,7 +2625,7 @@
       "name": "CEDEAR CVXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "CVXD",
@@ -2638,7 +2638,7 @@
       "name": "CEDEAR CVXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "CX",
@@ -2677,7 +2677,7 @@
       "name": "CEDEAR DAL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "DALD",
@@ -2690,7 +2690,7 @@
       "name": "CEDEAR DALD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "DE",
@@ -2703,7 +2703,7 @@
       "name": "CEDEAR DE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "DEC",
@@ -2716,7 +2716,7 @@
       "name": "CEDEAR DEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "DECK",
@@ -2755,7 +2755,7 @@
       "name": "CEDEAR DED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "DEO",
@@ -2768,7 +2768,7 @@
       "name": "CEDEAR DEO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "DEOC",
@@ -2781,7 +2781,7 @@
       "name": "CEDEAR DEOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "DEOD",
@@ -2794,7 +2794,7 @@
       "name": "CEDEAR DEOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "DHR",
@@ -2807,7 +2807,7 @@
       "name": "CEDEAR DHR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "DHRC",
@@ -2820,7 +2820,7 @@
       "name": "CEDEAR DHRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "DHRD",
@@ -2833,7 +2833,7 @@
       "name": "CEDEAR DHRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "DIA",
@@ -2885,7 +2885,7 @@
       "name": "CEDEAR DISN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "DISNC",
@@ -2898,7 +2898,7 @@
       "name": "CEDEAR DISNC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "DISND",
@@ -2911,7 +2911,7 @@
       "name": "CEDEAR DISND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "DOCU",
@@ -2924,7 +2924,7 @@
       "name": "CEDEAR DOCU",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "DOCUC",
@@ -2937,7 +2937,7 @@
       "name": "CEDEAR DOCUC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "DOCUD",
@@ -2950,7 +2950,7 @@
       "name": "CEDEAR DOCUD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "DOW",
@@ -2963,7 +2963,7 @@
       "name": "CEDEAR DOW",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "DOWC",
@@ -2976,7 +2976,7 @@
       "name": "CEDEAR DOWC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "DOWD",
@@ -2989,7 +2989,7 @@
       "name": "CEDEAR DOWD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "E",
@@ -3002,7 +3002,7 @@
       "name": "CEDEAR E",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "EA",
@@ -3015,7 +3015,7 @@
       "name": "CEDEAR EA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "EAD",
@@ -3028,7 +3028,7 @@
       "name": "CEDEAR EAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "EBAY",
@@ -3041,7 +3041,7 @@
       "name": "CEDEAR EBAY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "EBAYC",
@@ -3054,7 +3054,7 @@
       "name": "CEDEAR EBAYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "EBAYD",
@@ -3067,7 +3067,7 @@
       "name": "CEDEAR EBAYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "EC",
@@ -3080,7 +3080,7 @@
       "name": "CEDEAR EC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "ECL",
@@ -3197,7 +3197,7 @@
       "name": "CEDEAR EFX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "EFXD",
@@ -3210,7 +3210,7 @@
       "name": "CEDEAR EFXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "ELPC",
@@ -3249,7 +3249,7 @@
       "name": "CEDEAR EQNR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "ERIC",
@@ -3262,7 +3262,7 @@
       "name": "CEDEAR ERIC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ERICD",
@@ -3275,7 +3275,7 @@
       "name": "CEDEAR ERICD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ESGU",
@@ -3353,7 +3353,7 @@
       "name": "CEDEAR ETSY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ETSYC",
@@ -3366,7 +3366,7 @@
       "name": "CEDEAR ETSYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ETSYD",
@@ -3379,7 +3379,7 @@
       "name": "CEDEAR ETSYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "EWJ",
@@ -3509,7 +3509,7 @@
       "name": "CEDEAR F",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "FC",
@@ -3522,7 +3522,7 @@
       "name": "CEDEAR FC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "FCX",
@@ -3535,7 +3535,7 @@
       "name": "CEDEAR FCX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "FCXC",
@@ -3548,7 +3548,7 @@
       "name": "CEDEAR FCXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "FCXD",
@@ -3561,7 +3561,7 @@
       "name": "CEDEAR FCXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "FD",
@@ -3574,7 +3574,7 @@
       "name": "CEDEAR FD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "FDX",
@@ -3587,7 +3587,7 @@
       "name": "CEDEAR FDX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "FDXD",
@@ -3600,7 +3600,7 @@
       "name": "CEDEAR FDXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "FISV",
@@ -3639,7 +3639,7 @@
       "name": "CEDEAR FMX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "FMXD",
@@ -3652,7 +3652,7 @@
       "name": "CEDEAR FMXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "FNMA",
@@ -3665,7 +3665,7 @@
       "name": "CEDEAR FNMA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "FSLR",
@@ -3678,7 +3678,7 @@
       "name": "CEDEAR FSLR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "FSLRC",
@@ -3691,7 +3691,7 @@
       "name": "CEDEAR FSLRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "FSLRD",
@@ -3704,7 +3704,7 @@
       "name": "CEDEAR FSLRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "FXI",
@@ -3795,7 +3795,7 @@
       "name": "CEDEAR GE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "GEC",
@@ -3808,7 +3808,7 @@
       "name": "CEDEAR GEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "GED",
@@ -3821,7 +3821,7 @@
       "name": "CEDEAR GED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "GFI",
@@ -3834,7 +3834,7 @@
       "name": "CEDEAR GFI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "GGB",
@@ -3847,7 +3847,7 @@
       "name": "CEDEAR GGB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "GGBD",
@@ -3860,7 +3860,7 @@
       "name": "CEDEAR GGBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "GILD",
@@ -3873,7 +3873,7 @@
       "name": "CEDEAR GILD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GILDC",
@@ -3886,7 +3886,7 @@
       "name": "CEDEAR GILDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GILDD",
@@ -3899,7 +3899,7 @@
       "name": "CEDEAR GILDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GLD",
@@ -3977,7 +3977,7 @@
       "name": "CEDEAR GLOB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GLOBC",
@@ -3990,7 +3990,7 @@
       "name": "CEDEAR GLOBC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GLOBD",
@@ -4003,7 +4003,7 @@
       "name": "CEDEAR GLOBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GLW",
@@ -4016,7 +4016,7 @@
       "name": "CEDEAR GLW",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GLWC",
@@ -4029,7 +4029,7 @@
       "name": "CEDEAR GLWC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GLWD",
@@ -4042,7 +4042,7 @@
       "name": "CEDEAR GLWD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GM",
@@ -4055,7 +4055,7 @@
       "name": "CEDEAR GM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "GMD",
@@ -4068,7 +4068,7 @@
       "name": "CEDEAR GMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "GOGLC",
@@ -4107,7 +4107,7 @@
       "name": "CEDEAR GOOGL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "GPRK",
@@ -4120,7 +4120,7 @@
       "name": "CEDEAR GPRK",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "GPRKC",
@@ -4133,7 +4133,7 @@
       "name": "CEDEAR GPRKC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "GPRKD",
@@ -4146,7 +4146,7 @@
       "name": "CEDEAR GPRKD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "GRMN",
@@ -4159,7 +4159,7 @@
       "name": "CEDEAR GRMN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GRMND",
@@ -4172,7 +4172,7 @@
       "name": "CEDEAR GRMND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "GS",
@@ -4185,7 +4185,7 @@
       "name": "CEDEAR GS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "GSC",
@@ -4198,7 +4198,7 @@
       "name": "CEDEAR GSC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "GSD",
@@ -4211,7 +4211,7 @@
       "name": "CEDEAR GSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "GSK",
@@ -4224,7 +4224,7 @@
       "name": "CEDEAR GSK",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GSKC",
@@ -4237,7 +4237,7 @@
       "name": "CEDEAR GSKC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GSKD",
@@ -4250,7 +4250,7 @@
       "name": "CEDEAR GSKD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "GT",
@@ -4263,7 +4263,7 @@
       "name": "CEDEAR GT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "GTC",
@@ -4276,7 +4276,7 @@
       "name": "CEDEAR GTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "GTD",
@@ -4289,7 +4289,7 @@
       "name": "CEDEAR GTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HAL",
@@ -4302,7 +4302,7 @@
       "name": "CEDEAR HAL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "HALC",
@@ -4315,7 +4315,7 @@
       "name": "CEDEAR HALC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "HALD",
@@ -4328,7 +4328,7 @@
       "name": "CEDEAR HALD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "HAPV3",
@@ -4341,7 +4341,7 @@
       "name": "CEDEAR HAPV3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "HD",
@@ -4354,7 +4354,7 @@
       "name": "CEDEAR HD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HDB",
@@ -4367,7 +4367,7 @@
       "name": "CEDEAR HDB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "HDC",
@@ -4380,7 +4380,7 @@
       "name": "CEDEAR HDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HDD",
@@ -4393,7 +4393,7 @@
       "name": "CEDEAR HDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HIMS",
@@ -4432,7 +4432,7 @@
       "name": "CEDEAR HL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "HLD",
@@ -4445,7 +4445,7 @@
       "name": "CEDEAR HLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "HMC",
@@ -4458,7 +4458,7 @@
       "name": "CEDEAR HMC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HMY",
@@ -4471,7 +4471,7 @@
       "name": "CEDEAR HMY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "HMYC",
@@ -4484,7 +4484,7 @@
       "name": "CEDEAR HMYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "HMYD",
@@ -4497,7 +4497,7 @@
       "name": "CEDEAR HMYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "HOG",
@@ -4510,7 +4510,7 @@
       "name": "CEDEAR HOG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "HON",
@@ -4523,7 +4523,7 @@
       "name": "CEDEAR HON",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "HOND",
@@ -4536,7 +4536,7 @@
       "name": "CEDEAR HOND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "HOOD",
@@ -4575,7 +4575,7 @@
       "name": "CEDEAR HPQ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "HPQC",
@@ -4588,7 +4588,7 @@
       "name": "CEDEAR HPQC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "HPQD",
@@ -4601,7 +4601,7 @@
       "name": "CEDEAR HPQD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "HSBC",
@@ -4614,7 +4614,7 @@
       "name": "CEDEAR HSBC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "HSY",
@@ -4627,7 +4627,7 @@
       "name": "CEDEAR HSY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "HSYC",
@@ -4640,7 +4640,7 @@
       "name": "CEDEAR HSYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "HSYD",
@@ -4653,7 +4653,7 @@
       "name": "CEDEAR HSYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "HUT",
@@ -4705,7 +4705,7 @@
       "name": "CEDEAR HWM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "HWMD",
@@ -4718,7 +4718,7 @@
       "name": "CEDEAR HWMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "IBB",
@@ -4731,7 +4731,7 @@
       "name": "CEDEAR IBB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IBBC",
@@ -4744,7 +4744,7 @@
       "name": "CEDEAR IBBC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IBBD",
@@ -4757,7 +4757,7 @@
       "name": "CEDEAR IBBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IBIT",
@@ -4809,7 +4809,7 @@
       "name": "CEDEAR IBM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "IBMC",
@@ -4822,7 +4822,7 @@
       "name": "CEDEAR IBMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "IBMD",
@@ -4835,7 +4835,7 @@
       "name": "CEDEAR IBMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "IBN",
@@ -4848,7 +4848,7 @@
       "name": "CEDEAR IBN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "ICLN",
@@ -4939,7 +4939,7 @@
       "name": "CEDEAR IEUR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IEURC",
@@ -4952,7 +4952,7 @@
       "name": "CEDEAR IEURC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IEURD",
@@ -4965,7 +4965,7 @@
       "name": "CEDEAR IEURD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IFF",
@@ -4978,7 +4978,7 @@
       "name": "CEDEAR IFF",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "IFFD",
@@ -4991,7 +4991,7 @@
       "name": "CEDEAR IFFD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "IJH",
@@ -5082,7 +5082,7 @@
       "name": "CEDEAR INFY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ING",
@@ -5095,7 +5095,7 @@
       "name": "CEDEAR ING",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "INGD",
@@ -5108,7 +5108,7 @@
       "name": "CEDEAR INGD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "INTC",
@@ -5121,7 +5121,7 @@
       "name": "CEDEAR INTC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "INTCC",
@@ -5134,7 +5134,7 @@
       "name": "CEDEAR INTCC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "INTCD",
@@ -5147,7 +5147,7 @@
       "name": "CEDEAR INTCD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "IP",
@@ -5160,7 +5160,7 @@
       "name": "CEDEAR IP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "IPD",
@@ -5173,7 +5173,7 @@
       "name": "CEDEAR IPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "IREN",
@@ -5225,7 +5225,7 @@
       "name": "CEDEAR ISRG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "ITA",
@@ -5264,7 +5264,7 @@
       "name": "CEDEAR ITUB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "ITUB3",
@@ -5277,7 +5277,7 @@
       "name": "CEDEAR ITUB3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "ITUBC",
@@ -5290,7 +5290,7 @@
       "name": "CEDEAR ITUBC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "ITUBD",
@@ -5303,7 +5303,7 @@
       "name": "CEDEAR ITUBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVE",
@@ -5316,7 +5316,7 @@
       "name": "CEDEAR IVE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVEC",
@@ -5329,7 +5329,7 @@
       "name": "CEDEAR IVEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVED",
@@ -5342,7 +5342,7 @@
       "name": "CEDEAR IVED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVV",
@@ -5394,7 +5394,7 @@
       "name": "CEDEAR IVW",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVWC",
@@ -5407,7 +5407,7 @@
       "name": "CEDEAR IVWC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IVWD",
@@ -5420,7 +5420,7 @@
       "name": "CEDEAR IVWD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "IWM",
@@ -5472,7 +5472,7 @@
       "name": "CEDEAR JCI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "JD",
@@ -5485,7 +5485,7 @@
       "name": "CEDEAR JD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "JDC",
@@ -5498,7 +5498,7 @@
       "name": "CEDEAR JDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "JDD",
@@ -5511,7 +5511,7 @@
       "name": "CEDEAR JDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "JMIA",
@@ -5563,7 +5563,7 @@
       "name": "CEDEAR JNJ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "JNJC",
@@ -5576,7 +5576,7 @@
       "name": "CEDEAR JNJC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "JNJD",
@@ -5589,7 +5589,7 @@
       "name": "CEDEAR JNJD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "JOYY",
@@ -5602,7 +5602,7 @@
       "name": "CEDEAR JOYY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "JPM",
@@ -5615,7 +5615,7 @@
       "name": "CEDEAR JPM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "JPMC",
@@ -5628,7 +5628,7 @@
       "name": "CEDEAR JPMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "JPMD",
@@ -5641,7 +5641,7 @@
       "name": "CEDEAR JPMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "KB",
@@ -5654,7 +5654,7 @@
       "name": "CEDEAR KB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "KEEL",
@@ -5706,7 +5706,7 @@
       "name": "CEDEAR KEP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Públicos"
     },
     {
       "ticker": "KGC",
@@ -5719,7 +5719,7 @@
       "name": "CEDEAR KGC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "KMB",
@@ -5732,7 +5732,7 @@
       "name": "CEDEAR KMB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "KMBD",
@@ -5745,7 +5745,7 @@
       "name": "CEDEAR KMBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "KO",
@@ -5758,7 +5758,7 @@
       "name": "CEDEAR KO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "KOC",
@@ -5771,7 +5771,7 @@
       "name": "CEDEAR KOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "KOD",
@@ -5784,7 +5784,7 @@
       "name": "CEDEAR KOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "KOFM",
@@ -5810,7 +5810,7 @@
       "name": "CEDEAR LAC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "LACD",
@@ -5823,7 +5823,7 @@
       "name": "CEDEAR LACD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "LAR",
@@ -5836,7 +5836,7 @@
       "name": "CEDEAR LAR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "LARC",
@@ -5849,7 +5849,7 @@
       "name": "CEDEAR LARC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "LARD",
@@ -5862,7 +5862,7 @@
       "name": "CEDEAR LARD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "LLY",
@@ -5875,7 +5875,7 @@
       "name": "CEDEAR LLY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "LLYC",
@@ -5888,7 +5888,7 @@
       "name": "CEDEAR LLYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "LLYD",
@@ -5901,7 +5901,7 @@
       "name": "CEDEAR LLYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "LMT",
@@ -5914,7 +5914,7 @@
       "name": "CEDEAR LMT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "LMTC",
@@ -5927,7 +5927,7 @@
       "name": "CEDEAR LMTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "LMTD",
@@ -5940,7 +5940,7 @@
       "name": "CEDEAR LMTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "LND",
@@ -5953,7 +5953,7 @@
       "name": "CEDEAR LND",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Bienes Raíces"
     },
     {
       "ticker": "LRCX",
@@ -5966,7 +5966,7 @@
       "name": "CEDEAR LRCX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "LRCXC",
@@ -5979,7 +5979,7 @@
       "name": "CEDEAR LRCXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "LRCXD",
@@ -5992,7 +5992,7 @@
       "name": "CEDEAR LRCXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "LREN3",
@@ -6005,7 +6005,7 @@
       "name": "CEDEAR LREN3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "LVS",
@@ -6018,7 +6018,7 @@
       "name": "CEDEAR LVS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "LYG",
@@ -6031,7 +6031,7 @@
       "name": "CEDEAR LYG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MA",
@@ -6044,7 +6044,7 @@
       "name": "CEDEAR MA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MAC",
@@ -6057,7 +6057,7 @@
       "name": "CEDEAR MAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MAD",
@@ -6070,7 +6070,7 @@
       "name": "CEDEAR MAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MCD",
@@ -6083,7 +6083,7 @@
       "name": "CEDEAR MCD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MCDC",
@@ -6096,7 +6096,7 @@
       "name": "CEDEAR MCDC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MCDD",
@@ -6109,7 +6109,7 @@
       "name": "CEDEAR MCDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MDLZ",
@@ -6122,7 +6122,7 @@
       "name": "CEDEAR MDLZ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MDLZC",
@@ -6135,7 +6135,7 @@
       "name": "CEDEAR MDLZC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MDLZD",
@@ -6148,7 +6148,7 @@
       "name": "CEDEAR MDLZD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MDT",
@@ -6161,7 +6161,7 @@
       "name": "CEDEAR MDT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "MDTD",
@@ -6174,7 +6174,7 @@
       "name": "CEDEAR MDTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "MELI",
@@ -6187,7 +6187,7 @@
       "name": "CEDEAR MELI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MELIC",
@@ -6200,7 +6200,7 @@
       "name": "CEDEAR MELIC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MELID",
@@ -6213,7 +6213,7 @@
       "name": "CEDEAR MELID",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "META",
@@ -6226,7 +6226,7 @@
       "name": "CEDEAR META",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "METAC",
@@ -6239,7 +6239,7 @@
       "name": "CEDEAR METAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "METAD",
@@ -6252,7 +6252,7 @@
       "name": "CEDEAR METAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "MFG",
@@ -6265,7 +6265,7 @@
       "name": "CEDEAR MFG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MGLU3",
@@ -6278,7 +6278,7 @@
       "name": "CEDEAR MGLU3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "MMM",
@@ -6291,7 +6291,7 @@
       "name": "CEDEAR MMM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "MMMC",
@@ -6304,7 +6304,7 @@
       "name": "CEDEAR MMMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "MMMD",
@@ -6317,7 +6317,7 @@
       "name": "CEDEAR MMMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "MO",
@@ -6330,7 +6330,7 @@
       "name": "CEDEAR MO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MOC",
@@ -6343,7 +6343,7 @@
       "name": "CEDEAR MOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MOD",
@@ -6356,7 +6356,7 @@
       "name": "CEDEAR MOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "MOS",
@@ -6369,7 +6369,7 @@
       "name": "CEDEAR MOS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "MOSD",
@@ -6382,7 +6382,7 @@
       "name": "CEDEAR MOSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "MP",
@@ -6421,7 +6421,7 @@
       "name": "CEDEAR MRK",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "MRKC",
@@ -6434,7 +6434,7 @@
       "name": "CEDEAR MRKC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "MRKD",
@@ -6447,7 +6447,7 @@
       "name": "CEDEAR MRKD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "MRNA",
@@ -6499,7 +6499,7 @@
       "name": "CEDEAR MRSH",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "MRVL",
@@ -6512,7 +6512,7 @@
       "name": "CEDEAR MRVL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MRVLD",
@@ -6525,7 +6525,7 @@
       "name": "CEDEAR MRVLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSFT",
@@ -6538,7 +6538,7 @@
       "name": "CEDEAR MSFT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSFTC",
@@ -6551,7 +6551,7 @@
       "name": "CEDEAR MSFTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSFTD",
@@ -6564,7 +6564,7 @@
       "name": "CEDEAR MSFTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSI",
@@ -6577,7 +6577,7 @@
       "name": "CEDEAR MSI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSTR",
@@ -6590,7 +6590,7 @@
       "name": "CEDEAR MSTR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSTRC",
@@ -6603,7 +6603,7 @@
       "name": "CEDEAR MSTRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MSTRD",
@@ -6616,7 +6616,7 @@
       "name": "CEDEAR MSTRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MU",
@@ -6629,7 +6629,7 @@
       "name": "CEDEAR MU",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MUC",
@@ -6642,7 +6642,7 @@
       "name": "CEDEAR MUC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MUD",
@@ -6655,7 +6655,7 @@
       "name": "CEDEAR MUD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "MUFG",
@@ -6694,7 +6694,7 @@
       "name": "CEDEAR MUX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "MUXC",
@@ -6707,7 +6707,7 @@
       "name": "CEDEAR MUXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "MUXD",
@@ -6720,7 +6720,7 @@
       "name": "CEDEAR MUXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NAT3D",
@@ -6824,7 +6824,7 @@
       "name": "CEDEAR NEM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NEMD",
@@ -6837,7 +6837,7 @@
       "name": "CEDEAR NEMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NFLX",
@@ -6850,7 +6850,7 @@
       "name": "CEDEAR NFLX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "NFLXC",
@@ -6863,7 +6863,7 @@
       "name": "CEDEAR NFLXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "NFLXD",
@@ -6876,7 +6876,7 @@
       "name": "CEDEAR NFLXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "NG",
@@ -6889,7 +6889,7 @@
       "name": "CEDEAR NG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NGD",
@@ -6902,7 +6902,7 @@
       "name": "CEDEAR NGD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NGG",
@@ -6915,7 +6915,7 @@
       "name": "CEDEAR NGG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Públicos"
     },
     {
       "ticker": "NIO",
@@ -6928,7 +6928,7 @@
       "name": "CEDEAR NIO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NIOC",
@@ -6941,7 +6941,7 @@
       "name": "CEDEAR NIOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NIOD",
@@ -6954,7 +6954,7 @@
       "name": "CEDEAR NIOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NKE",
@@ -6967,7 +6967,7 @@
       "name": "CEDEAR NKE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NKEC",
@@ -6980,7 +6980,7 @@
       "name": "CEDEAR NKEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NKED",
@@ -6993,7 +6993,7 @@
       "name": "CEDEAR NKED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "NMR",
@@ -7006,7 +7006,7 @@
       "name": "CEDEAR NMR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "NOKA",
@@ -7071,7 +7071,7 @@
       "name": "CEDEAR NTES",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "NTESD",
@@ -7084,7 +7084,7 @@
       "name": "CEDEAR NTESD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "NU",
@@ -7097,7 +7097,7 @@
       "name": "CEDEAR NU",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "NUC",
@@ -7110,7 +7110,7 @@
       "name": "CEDEAR NUC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "NUD",
@@ -7123,7 +7123,7 @@
       "name": "CEDEAR NUD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "NUE",
@@ -7136,7 +7136,7 @@
       "name": "CEDEAR NUE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "NVDA",
@@ -7149,7 +7149,7 @@
       "name": "CEDEAR NVDA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "NVDAC",
@@ -7162,7 +7162,7 @@
       "name": "CEDEAR NVDAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "NVDAD",
@@ -7175,7 +7175,7 @@
       "name": "CEDEAR NVDAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "NVO",
@@ -7214,7 +7214,7 @@
       "name": "CEDEAR NVS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "NVSC",
@@ -7227,7 +7227,7 @@
       "name": "CEDEAR NVSC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "NVSD",
@@ -7240,7 +7240,7 @@
       "name": "CEDEAR NVSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "NXE",
@@ -7253,7 +7253,7 @@
       "name": "CEDEAR NXE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "NXED",
@@ -7266,7 +7266,7 @@
       "name": "CEDEAR NXED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "O",
@@ -7370,7 +7370,7 @@
       "name": "CEDEAR ORCL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ORCLC",
@@ -7383,7 +7383,7 @@
       "name": "CEDEAR ORCLC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ORCLD",
@@ -7396,7 +7396,7 @@
       "name": "CEDEAR ORCLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ORLY",
@@ -7409,7 +7409,7 @@
       "name": "CEDEAR ORLY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ORLYC",
@@ -7422,7 +7422,7 @@
       "name": "CEDEAR ORLYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ORLYD",
@@ -7435,7 +7435,7 @@
       "name": "CEDEAR ORLYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "OXY",
@@ -7487,7 +7487,7 @@
       "name": "CEDEAR PAAS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "PAASC",
@@ -7500,7 +7500,7 @@
       "name": "CEDEAR PAASC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "PAASD",
@@ -7513,7 +7513,7 @@
       "name": "CEDEAR PAASD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "PAC",
@@ -7526,7 +7526,7 @@
       "name": "CEDEAR PAC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "PAGS",
@@ -7539,7 +7539,7 @@
       "name": "CEDEAR PAGS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "PAGSD",
@@ -7552,7 +7552,7 @@
       "name": "CEDEAR PAGSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "PANW",
@@ -7643,7 +7643,7 @@
       "name": "CEDEAR PBI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "PBR",
@@ -7656,7 +7656,7 @@
       "name": "CEDEAR PBR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PBRC",
@@ -7669,7 +7669,7 @@
       "name": "CEDEAR PBRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PBRD",
@@ -7682,7 +7682,7 @@
       "name": "CEDEAR PBRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PCAR",
@@ -7695,7 +7695,7 @@
       "name": "CEDEAR PCAR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "PCARD",
@@ -7708,7 +7708,7 @@
       "name": "CEDEAR PCARD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "PDD",
@@ -7760,7 +7760,7 @@
       "name": "CEDEAR PEP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PEPC",
@@ -7773,7 +7773,7 @@
       "name": "CEDEAR PEPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PEPD",
@@ -7786,7 +7786,7 @@
       "name": "CEDEAR PEPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PETR3",
@@ -7799,7 +7799,7 @@
       "name": "CEDEAR PETR3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PETRC",
@@ -7838,7 +7838,7 @@
       "name": "CEDEAR PFE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "PFEC",
@@ -7851,7 +7851,7 @@
       "name": "CEDEAR PFEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "PFED",
@@ -7864,7 +7864,7 @@
       "name": "CEDEAR PFED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "PG",
@@ -7877,7 +7877,7 @@
       "name": "CEDEAR PG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PGC",
@@ -7890,7 +7890,7 @@
       "name": "CEDEAR PGC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PGD",
@@ -7903,7 +7903,7 @@
       "name": "CEDEAR PGD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PHG",
@@ -7916,7 +7916,7 @@
       "name": "CEDEAR PHG",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "PINS",
@@ -7955,7 +7955,7 @@
       "name": "CEDEAR PKS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "PLTR",
@@ -7968,7 +7968,7 @@
       "name": "CEDEAR PLTR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "PLTRC",
@@ -7981,7 +7981,7 @@
       "name": "CEDEAR PLTRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "PLTRD",
@@ -7994,7 +7994,7 @@
       "name": "CEDEAR PLTRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "PM",
@@ -8007,7 +8007,7 @@
       "name": "CEDEAR PM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PMD",
@@ -8020,7 +8020,7 @@
       "name": "CEDEAR PMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "PRIO3",
@@ -8033,7 +8033,7 @@
       "name": "CEDEAR PRIO3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PSQ",
@@ -8085,7 +8085,7 @@
       "name": "CEDEAR PSX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PSXD",
@@ -8098,7 +8098,7 @@
       "name": "CEDEAR PSXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "PYPL",
@@ -8111,7 +8111,7 @@
       "name": "CEDEAR PYPL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "PYPLC",
@@ -8124,7 +8124,7 @@
       "name": "CEDEAR PYPLC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "PYPLD",
@@ -8137,7 +8137,7 @@
       "name": "CEDEAR PYPLD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "QCOM",
@@ -8150,7 +8150,7 @@
       "name": "CEDEAR QCOM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "QCOMC",
@@ -8163,7 +8163,7 @@
       "name": "CEDEAR QCOMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "QCOMD",
@@ -8176,7 +8176,7 @@
       "name": "CEDEAR QCOMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "QQQ",
@@ -8228,7 +8228,7 @@
       "name": "CEDEAR RACE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "RACEC",
@@ -8241,7 +8241,7 @@
       "name": "CEDEAR RACEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "RACED",
@@ -8254,7 +8254,7 @@
       "name": "CEDEAR RACED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "RBLX",
@@ -8267,7 +8267,7 @@
       "name": "CEDEAR RBLX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "RBLXD",
@@ -8280,7 +8280,7 @@
       "name": "CEDEAR RBLXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "RENT3",
@@ -8293,7 +8293,7 @@
       "name": "CEDEAR RENT3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "RGTI",
@@ -8345,7 +8345,7 @@
       "name": "CEDEAR RIO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "RIOC",
@@ -8358,7 +8358,7 @@
       "name": "CEDEAR RIOC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "RIOD",
@@ -8371,7 +8371,7 @@
       "name": "CEDEAR RIOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "RIOT",
@@ -8462,7 +8462,7 @@
       "name": "CEDEAR ROKU",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "ROKUD",
@@ -8475,7 +8475,7 @@
       "name": "CEDEAR ROKUD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "ROST",
@@ -8488,7 +8488,7 @@
       "name": "CEDEAR ROST",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "ROSTD",
@@ -8501,7 +8501,7 @@
       "name": "CEDEAR ROSTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "RSP",
@@ -8540,7 +8540,7 @@
       "name": "CEDEAR RTX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "RTXD",
@@ -8553,7 +8553,7 @@
       "name": "CEDEAR RTXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "SAN",
@@ -8566,7 +8566,7 @@
       "name": "CEDEAR SAN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "SAND",
@@ -8579,7 +8579,7 @@
       "name": "CEDEAR SAND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "SAP",
@@ -8592,7 +8592,7 @@
       "name": "CEDEAR SAP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SAPD",
@@ -8605,7 +8605,7 @@
       "name": "CEDEAR SAPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SATL",
@@ -8657,7 +8657,7 @@
       "name": "CEDEAR SBS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Públicos"
     },
     {
       "ticker": "SBSP3",
@@ -8670,7 +8670,7 @@
       "name": "CEDEAR SBSP3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Públicos"
     },
     {
       "ticker": "SBUX",
@@ -8683,7 +8683,7 @@
       "name": "CEDEAR SBUX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SBUXC",
@@ -8696,7 +8696,7 @@
       "name": "CEDEAR SBUXC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SBUXD",
@@ -8709,7 +8709,7 @@
       "name": "CEDEAR SBUXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SCCO",
@@ -8722,7 +8722,7 @@
       "name": "CEDEAR SCCO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SCHW",
@@ -8748,7 +8748,7 @@
       "name": "CEDEAR SDA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SE",
@@ -8761,7 +8761,7 @@
       "name": "CEDEAR SE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SEC",
@@ -8774,7 +8774,7 @@
       "name": "CEDEAR SEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SED",
@@ -8787,7 +8787,7 @@
       "name": "CEDEAR SED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "SH",
@@ -8839,7 +8839,7 @@
       "name": "CEDEAR SHEL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SHELC",
@@ -8852,7 +8852,7 @@
       "name": "CEDEAR SHELC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SHELD",
@@ -8865,7 +8865,7 @@
       "name": "CEDEAR SHELD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SHOP",
@@ -8878,7 +8878,7 @@
       "name": "CEDEAR SHOP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SHOPC",
@@ -8891,7 +8891,7 @@
       "name": "CEDEAR SHOPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SHOPD",
@@ -8904,7 +8904,7 @@
       "name": "CEDEAR SHOPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SID",
@@ -8917,7 +8917,7 @@
       "name": "CEDEAR SID",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SIDD",
@@ -8930,7 +8930,7 @@
       "name": "CEDEAR SIDD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SLB",
@@ -8943,7 +8943,7 @@
       "name": "CEDEAR SLB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SLBC",
@@ -8956,7 +8956,7 @@
       "name": "CEDEAR SLBC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SLBD",
@@ -8969,7 +8969,7 @@
       "name": "CEDEAR SLBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "SLV",
@@ -9073,7 +9073,7 @@
       "name": "CEDEAR SNA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "SNAP",
@@ -9086,7 +9086,7 @@
       "name": "CEDEAR SNAP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "SNAPD",
@@ -9099,7 +9099,7 @@
       "name": "CEDEAR SNAPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "SNDK",
@@ -9151,7 +9151,7 @@
       "name": "CEDEAR SNOW",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SNOWC",
@@ -9164,7 +9164,7 @@
       "name": "CEDEAR SNOWC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SNOWD",
@@ -9177,7 +9177,7 @@
       "name": "CEDEAR SNOWD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SONY",
@@ -9190,7 +9190,7 @@
       "name": "CEDEAR SONY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SONYC",
@@ -9203,7 +9203,7 @@
       "name": "CEDEAR SONYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SONYD",
@@ -9216,7 +9216,7 @@
       "name": "CEDEAR SONYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SPCE",
@@ -9281,7 +9281,7 @@
       "name": "CEDEAR SPGI",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "SPGID",
@@ -9294,7 +9294,7 @@
       "name": "CEDEAR SPGID",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "SPHQ",
@@ -9346,7 +9346,7 @@
       "name": "CEDEAR SPOT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "SPOTC",
@@ -9359,7 +9359,7 @@
       "name": "CEDEAR SPOTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "SPOTD",
@@ -9372,7 +9372,7 @@
       "name": "CEDEAR SPOTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "SPXL",
@@ -9502,7 +9502,7 @@
       "name": "CEDEAR STNE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "STNEC",
@@ -9515,7 +9515,7 @@
       "name": "CEDEAR STNEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "STNED",
@@ -9528,7 +9528,7 @@
       "name": "CEDEAR STNED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SUZ",
@@ -9541,7 +9541,7 @@
       "name": "CEDEAR SUZ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SUZB3",
@@ -9554,7 +9554,7 @@
       "name": "CEDEAR SUZB3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SUZD",
@@ -9567,7 +9567,7 @@
       "name": "CEDEAR SUZD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "SWKS",
@@ -9580,7 +9580,7 @@
       "name": "CEDEAR SWKS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SWKSD",
@@ -9593,7 +9593,7 @@
       "name": "CEDEAR SWKSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "SYY",
@@ -9606,7 +9606,7 @@
       "name": "CEDEAR SYY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "SYYD",
@@ -9619,7 +9619,7 @@
       "name": "CEDEAR SYYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "T",
@@ -9632,7 +9632,7 @@
       "name": "CEDEAR T",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TC",
@@ -9645,7 +9645,7 @@
       "name": "CEDEAR TC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TCOM",
@@ -9658,7 +9658,7 @@
       "name": "CEDEAR TCOM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TCOMD",
@@ -9671,7 +9671,7 @@
       "name": "CEDEAR TCOMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TD",
@@ -9684,7 +9684,7 @@
       "name": "CEDEAR TD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TEAM",
@@ -9749,7 +9749,7 @@
       "name": "CEDEAR TEN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "TENC",
@@ -9762,7 +9762,7 @@
       "name": "CEDEAR TENC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "TEND",
@@ -9775,7 +9775,7 @@
       "name": "CEDEAR TEND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "TGT",
@@ -9788,7 +9788,7 @@
       "name": "CEDEAR TGT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "TGTC",
@@ -9801,7 +9801,7 @@
       "name": "CEDEAR TGTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "TGTD",
@@ -9814,7 +9814,7 @@
       "name": "CEDEAR TGTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "TIMB",
@@ -9827,7 +9827,7 @@
       "name": "CEDEAR TIMB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TIMBD",
@@ -9840,7 +9840,7 @@
       "name": "CEDEAR TIMBD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TIMS3",
@@ -9853,7 +9853,7 @@
       "name": "CEDEAR TIMS3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TJX",
@@ -9866,7 +9866,7 @@
       "name": "CEDEAR TJX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TJXD",
@@ -9879,7 +9879,7 @@
       "name": "CEDEAR TJXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TM",
@@ -9892,7 +9892,7 @@
       "name": "CEDEAR TM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TMC",
@@ -9905,7 +9905,7 @@
       "name": "CEDEAR TMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TMD",
@@ -9918,7 +9918,7 @@
       "name": "CEDEAR TMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TMO",
@@ -9931,7 +9931,7 @@
       "name": "CEDEAR TMO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "TMOD",
@@ -9944,7 +9944,7 @@
       "name": "CEDEAR TMOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "TMUS",
@@ -9957,7 +9957,7 @@
       "name": "CEDEAR TMUS",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TMUSD",
@@ -9970,7 +9970,7 @@
       "name": "CEDEAR TMUSD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TQQQ",
@@ -10022,7 +10022,7 @@
       "name": "CEDEAR TRIP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TRIPD",
@@ -10035,7 +10035,7 @@
       "name": "CEDEAR TRIPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TRVV",
@@ -10048,7 +10048,7 @@
       "name": "CEDEAR TRVV",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "TRVVD",
@@ -10061,7 +10061,7 @@
       "name": "CEDEAR TRVVD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "TSLA",
@@ -10074,7 +10074,7 @@
       "name": "CEDEAR TSLA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TSLAC",
@@ -10087,7 +10087,7 @@
       "name": "CEDEAR TSLAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TSLAD",
@@ -10100,7 +10100,7 @@
       "name": "CEDEAR TSLAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "TSM",
@@ -10113,7 +10113,7 @@
       "name": "CEDEAR TSM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TSMC",
@@ -10126,7 +10126,7 @@
       "name": "CEDEAR TSMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TSMD",
@@ -10139,7 +10139,7 @@
       "name": "CEDEAR TSMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TTE",
@@ -10152,7 +10152,7 @@
       "name": "CEDEAR TTE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "TTED",
@@ -10165,7 +10165,7 @@
       "name": "CEDEAR TTED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "TV",
@@ -10178,7 +10178,7 @@
       "name": "CEDEAR TV",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TVD",
@@ -10191,7 +10191,7 @@
       "name": "CEDEAR TVD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "TWLO",
@@ -10204,7 +10204,7 @@
       "name": "CEDEAR TWLO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TWLOD",
@@ -10217,7 +10217,7 @@
       "name": "CEDEAR TWLOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TXN",
@@ -10230,7 +10230,7 @@
       "name": "CEDEAR TXN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TXND",
@@ -10243,7 +10243,7 @@
       "name": "CEDEAR TXND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "TXR",
@@ -10256,7 +10256,7 @@
       "name": "CEDEAR TXR",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "TXRC",
@@ -10269,7 +10269,7 @@
       "name": "CEDEAR TXRC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "TXRD",
@@ -10282,7 +10282,7 @@
       "name": "CEDEAR TXRD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "UAL",
@@ -10295,7 +10295,7 @@
       "name": "CEDEAR UAL",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "UALC",
@@ -10308,7 +10308,7 @@
       "name": "CEDEAR UALC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "UALD",
@@ -10321,7 +10321,7 @@
       "name": "CEDEAR UALD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "UBER",
@@ -10334,7 +10334,7 @@
       "name": "CEDEAR UBER",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "UBERC",
@@ -10347,7 +10347,7 @@
       "name": "CEDEAR UBERC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "UBERD",
@@ -10360,7 +10360,7 @@
       "name": "CEDEAR UBERD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "UGP",
@@ -10373,7 +10373,7 @@
       "name": "CEDEAR UGP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "UGPD",
@@ -10386,7 +10386,7 @@
       "name": "CEDEAR UGPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "UL",
@@ -10425,7 +10425,7 @@
       "name": "CEDEAR UNH",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "UNHC",
@@ -10438,7 +10438,7 @@
       "name": "CEDEAR UNHC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "UNHD",
@@ -10451,7 +10451,7 @@
       "name": "CEDEAR UNHD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Salud"
     },
     {
       "ticker": "UNP",
@@ -10464,7 +10464,7 @@
       "name": "CEDEAR UNP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "UNPD",
@@ -10477,7 +10477,7 @@
       "name": "CEDEAR UNPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "UPST",
@@ -10568,7 +10568,7 @@
       "name": "CEDEAR URBN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "URBND",
@@ -10581,7 +10581,7 @@
       "name": "CEDEAR URBND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Cíclico"
     },
     {
       "ticker": "USB",
@@ -10594,7 +10594,7 @@
       "name": "CEDEAR USB",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "USO",
@@ -10633,7 +10633,7 @@
       "name": "CEDEAR V",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VAL3C",
@@ -10672,7 +10672,7 @@
       "name": "CEDEAR VALE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "VALE3",
@@ -10685,7 +10685,7 @@
       "name": "CEDEAR VALE3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "VALEC",
@@ -10698,7 +10698,7 @@
       "name": "CEDEAR VALEC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "VALED",
@@ -10711,7 +10711,7 @@
       "name": "CEDEAR VALED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Materiales Básicos"
     },
     {
       "ticker": "VC",
@@ -10724,7 +10724,7 @@
       "name": "CEDEAR VC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VD",
@@ -10737,7 +10737,7 @@
       "name": "CEDEAR VD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VEA",
@@ -10750,7 +10750,7 @@
       "name": "CEDEAR VEA",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VEAC",
@@ -10763,7 +10763,7 @@
       "name": "CEDEAR VEAC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VEAD",
@@ -10776,7 +10776,7 @@
       "name": "CEDEAR VEAD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "VIG",
@@ -10828,7 +10828,7 @@
       "name": "CEDEAR VIST",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "VISTC",
@@ -10841,7 +10841,7 @@
       "name": "CEDEAR VISTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "VISTD",
@@ -10854,7 +10854,7 @@
       "name": "CEDEAR VISTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "VIV",
@@ -10867,7 +10867,7 @@
       "name": "CEDEAR VIV",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VIVD",
@@ -10880,7 +10880,7 @@
       "name": "CEDEAR VIVD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VIVT3",
@@ -10893,7 +10893,7 @@
       "name": "CEDEAR VIVT3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VOD",
@@ -10906,7 +10906,7 @@
       "name": "CEDEAR VOD",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VODD",
@@ -10919,7 +10919,7 @@
       "name": "CEDEAR VODD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VRSN",
@@ -10932,7 +10932,7 @@
       "name": "CEDEAR VRSN",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "VRSND",
@@ -10945,7 +10945,7 @@
       "name": "CEDEAR VRSND",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "VRTX",
@@ -11036,7 +11036,7 @@
       "name": "CEDEAR VZ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VZC",
@@ -11049,7 +11049,7 @@
       "name": "CEDEAR VZC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "VZD",
@@ -11062,7 +11062,7 @@
       "name": "CEDEAR VZD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "WBO",
@@ -11075,7 +11075,7 @@
       "name": "CEDEAR WBO",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "WBOD",
@@ -11088,7 +11088,7 @@
       "name": "CEDEAR WBOD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "WEGE3",
@@ -11101,7 +11101,7 @@
       "name": "CEDEAR WEGE3",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "WFC",
@@ -11114,7 +11114,7 @@
       "name": "CEDEAR WFC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "WFCC",
@@ -11127,7 +11127,7 @@
       "name": "CEDEAR WFCC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "WFCD",
@@ -11140,7 +11140,7 @@
       "name": "CEDEAR WFCD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "WMT",
@@ -11153,7 +11153,7 @@
       "name": "CEDEAR WMT",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "WMTC",
@@ -11166,7 +11166,7 @@
       "name": "CEDEAR WMTC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "WMTD",
@@ -11179,7 +11179,7 @@
       "name": "CEDEAR WMTD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Consumo Defensivo"
     },
     {
       "ticker": "XLB",
@@ -11231,7 +11231,7 @@
       "name": "CEDEAR XLC",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLCC",
@@ -11244,7 +11244,7 @@
       "name": "CEDEAR XLCC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLCD",
@@ -11257,7 +11257,7 @@
       "name": "CEDEAR XLCD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLE",
@@ -11387,7 +11387,7 @@
       "name": "CEDEAR XLK",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLKC",
@@ -11400,7 +11400,7 @@
       "name": "CEDEAR XLKC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLKD",
@@ -11413,7 +11413,7 @@
       "name": "CEDEAR XLKD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLP",
@@ -11426,7 +11426,7 @@
       "name": "CEDEAR XLP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLPC",
@@ -11439,7 +11439,7 @@
       "name": "CEDEAR XLPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLPD",
@@ -11452,7 +11452,7 @@
       "name": "CEDEAR XLPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLRE",
@@ -11465,7 +11465,7 @@
       "name": "CEDEAR XLRE",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLREC",
@@ -11478,7 +11478,7 @@
       "name": "CEDEAR XLREC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLRED",
@@ -11491,7 +11491,7 @@
       "name": "CEDEAR XLRED",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLU",
@@ -11582,7 +11582,7 @@
       "name": "CEDEAR XLY",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLYC",
@@ -11595,7 +11595,7 @@
       "name": "CEDEAR XLYC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XLYD",
@@ -11608,7 +11608,7 @@
       "name": "CEDEAR XLYD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XME",
@@ -11647,7 +11647,7 @@
       "name": "CEDEAR XOM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "XOMC",
@@ -11660,7 +11660,7 @@
       "name": "CEDEAR XOMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "XOMD",
@@ -11673,7 +11673,7 @@
       "name": "CEDEAR XOMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Energía"
     },
     {
       "ticker": "XP",
@@ -11686,7 +11686,7 @@
       "name": "CEDEAR XP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XPC",
@@ -11699,7 +11699,7 @@
       "name": "CEDEAR XPC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XPD",
@@ -11712,7 +11712,7 @@
       "name": "CEDEAR XPD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Servicios Financieros"
     },
     {
       "ticker": "XPEV",
@@ -11751,7 +11751,7 @@
       "name": "CEDEAR XROX",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "XROXD",
@@ -11764,7 +11764,7 @@
       "name": "CEDEAR XROXD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Industriales"
     },
     {
       "ticker": "XYZ",
@@ -11777,7 +11777,7 @@
       "name": "CEDEAR XYZ",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "XYZC",
@@ -11790,7 +11790,7 @@
       "name": "CEDEAR XYZC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "XYZD",
@@ -11803,7 +11803,7 @@
       "name": "CEDEAR XYZD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "YELP",
@@ -11816,7 +11816,7 @@
       "name": "CEDEAR YELP",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Telecomunicaciones"
     },
     {
       "ticker": "ZM",
@@ -11829,7 +11829,7 @@
       "name": "CEDEAR ZM",
       "panel": "cedear",
       "currency": "ARS",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ZMC",
@@ -11842,7 +11842,7 @@
       "name": "CEDEAR ZMC",
       "panel": "cedear",
       "currency": "USDC",
-      "sector": "Otros"
+      "sector": "Tecnología"
     },
     {
       "ticker": "ZMD",
@@ -11855,7 +11855,7 @@
       "name": "CEDEAR ZMD",
       "panel": "cedear",
       "currency": "USD",
-      "sector": "Otros"
+      "sector": "Tecnología"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T17:31:34.781698",
+  "updated_at": "2026-06-27T21:02:01.200313",
   "dolares": [
     {
       "ticker": "USD_MAYORISTA",
@@ -16,11 +16,11 @@
     {
       "ticker": "USD_MEP",
       "price": 1502.5,
-      "change_pct": 0.05,
+      "change_pct": 0.0,
       "volume": 0.0,
       "high": 1502.5,
       "low": 1502.5,
-      "open": 1501.8,
+      "open": 1502.5,
       "name": "MEP",
       "panel": "general",
       "currency": "ARS"
@@ -28,11 +28,11 @@
     {
       "ticker": "USD_CCL",
       "price": 1541.6,
-      "change_pct": -0.23,
+      "change_pct": 0.0,
       "volume": 0.0,
       "high": 1541.6,
       "low": 1541.6,
-      "open": 1545.1,
+      "open": 1541.6,
       "name": "CCL",
       "panel": "general",
       "currency": "ARS"

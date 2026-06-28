@@ -1,8 +1,8 @@
 import os
 import json
 import asyncio
-from datetime import datetime
-from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
+from datetime import datetime, timedelta
+from backend.config import ACCIONES_JSON_PATH, DOLARES_JSON_PATH, MERVAL_CCL_JSON_PATH, DATOS_DIR, UPDATE_INTERVAL_SECONDS
 from backend.services.data912_client import data912_client
 from backend.models import AssetQuote
 
@@ -361,18 +361,72 @@ async def precache_historical_data():
                 
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Fin de la precarga de datos históricos.")
 
+def is_data_up_to_date_with_friday_close() -> bool:
+    """Verifica si los archivos de datos locales ya tienen la información de cierre del viernes."""
+    try:
+        if not os.path.exists(ACCIONES_JSON_PATH) or not os.path.exists(DOLARES_JSON_PATH) or not os.path.exists(MERVAL_CCL_JSON_PATH):
+            return False
+            
+        with open(ACCIONES_JSON_PATH, "r", encoding="utf-8") as f:
+            data_acc = json.load(f)
+        with open(DOLARES_JSON_PATH, "r", encoding="utf-8") as f:
+            data_dol = json.load(f)
+        with open(MERVAL_CCL_JSON_PATH, "r", encoding="utf-8") as f:
+            data_merv = json.load(f)
+            
+        updated_acc_str = data_acc.get("updated_at")
+        updated_dol_str = data_dol.get("updated_at")
+        updated_merv_str = data_merv.get("updated_at")
+        
+        if not updated_acc_str or not updated_dol_str or not updated_merv_str:
+            return False
+            
+        updated_acc = datetime.fromisoformat(updated_acc_str)
+        updated_dol = datetime.fromisoformat(updated_dol_str)
+        updated_merv = datetime.fromisoformat(updated_merv_str)
+        
+        now = datetime.now()
+        # Encontrar el viernes más cercano en el pasado
+        # 0=Lunes, 4=Viernes, 5=Sábado, 6=Domingo
+        days_since_friday = (now.weekday() - 4) % 7
+        last_friday = now - timedelta(days=days_since_friday)
+        # Consideramos cierre de mercado a las 18:00 local
+        last_friday_close = last_friday.replace(hour=18, minute=0, second=0, microsecond=0)
+        
+        # Si todos los archivos fueron actualizados después del cierre del viernes, están al día
+        return (updated_acc >= last_friday_close and 
+                updated_dol >= last_friday_close and 
+                updated_merv >= last_friday_close)
+    except Exception as e:
+        print(f"Error comprobando estado de datos de cierre de viernes: {e}")
+        return False
+
 async def start_background_updater():
-    """Bucle infinito que actualiza datos cada 30 segundos"""
+    """Bucle infinito que actualiza datos cada 30 segundos en días hábiles"""
     from backend.services.merval_service import fetch_and_save_merval_ccl
     
-    await asyncio.gather(
-        fetch_and_save_market_data(),
-        fetch_and_save_merval_ccl()
-    )
-    # Lanzar la precarga en segundo plano
-    asyncio.create_task(precache_historical_data())
+    now = datetime.now()
+    
+    # Si es fin de semana y los datos están al día con el cierre del viernes, evitamos consultar al arrancar
+    if now.weekday() in (5, 6) and is_data_up_to_date_with_friday_close():
+        print(f"[{now.strftime('%H:%M:%S')}] Fin de semana: Los datos ya están actualizados con el cierre del viernes. Omitiendo consulta inicial.")
+    else:
+        print(f"[{now.strftime('%H:%M:%S')}] Iniciando consulta de datos en el arranque del servidor...")
+        await asyncio.gather(
+            fetch_and_save_market_data(),
+            fetch_and_save_merval_ccl()
+        )
+        # Lanzar la precarga en segundo plano
+        asyncio.create_task(precache_historical_data())
+        
     while True:
         await asyncio.sleep(UPDATE_INTERVAL_SECONDS)
+        
+        current_time = datetime.now()
+        # Si es fin de semana (sábado=5 o domingo=6), omitimos la consulta periódica
+        if current_time.weekday() in (5, 6):
+            continue
+            
         try:
             await asyncio.gather(
                 fetch_and_save_market_data(),

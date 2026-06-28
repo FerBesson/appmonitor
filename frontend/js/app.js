@@ -39,7 +39,8 @@ const state = {
     sortBy: 'ticker',
     sortDirection: 'asc',
     moversTab: 'gainers', // 'gainers' | 'losers'
-    moversCurrency: 'ARS' // 'ARS' | 'USD' | 'USDC'
+    moversCurrency: 'ARS', // 'ARS' | 'USD' | 'USDC'
+    oldPrices: {} // Track prices for data-flash animations on update
 };
 
 // Formateador de moneda argentina
@@ -363,6 +364,22 @@ function startCountdown() {
 }
 
 async function refreshAllData() {
+    // Save old prices for data flash animations
+    state.oldPrices = {};
+    if (state.stocks) {
+        state.stocks.forEach(s => { state.oldPrices[s.ticker] = s.price; });
+    }
+    if (state.cedears) {
+        state.cedears.forEach(s => { state.oldPrices[s.ticker] = s.price; });
+    }
+    const mervalPriceEl = document.getElementById('merval-ccl-price');
+    if (mervalPriceEl && mervalPriceEl.textContent) {
+        const val = parseFloat(mervalPriceEl.textContent.replace(/[^\d,.-]/g, '').replace(',', '.'));
+        if (!isNaN(val)) state.oldPrices['MERVAL_CCL'] = val;
+    }
+
+
+
     try {
         const fetchPromises = [
             fetch('/api/panel/stocks'),
@@ -550,10 +567,17 @@ function renderTable() {
         const sign = asset.change_pct > 0 ? '+' : '';
         const formatter = asset.currency === 'USDC' ? formatUSDC : (asset.currency === 'USD' ? formatUSD : formatARS);
 
+        // Check if price changed to trigger flash animation
+        const oldPrice = state.oldPrices[asset.ticker];
+        let flashClass = '';
+        if (oldPrice !== undefined && oldPrice !== null && oldPrice !== asset.price) {
+            flashClass = asset.price > oldPrice ? 'flash-up' : 'flash-down';
+        }
+
         return `
             <tr class="${isSelected}" data-ticker="${asset.ticker}">
                 <td class="col-ticker">${asset.ticker}</td>
-                <td class="col-price">${formatter.format(asset.price)}</td>
+                <td class="col-price ${flashClass}">${formatter.format(asset.price)}</td>
                 <td class="col-change"><span class="change-pill ${pillClass}">${sign}${asset.change_pct.toFixed(2)}%</span></td>
             </tr>
         `;
@@ -1062,6 +1086,7 @@ function renderChart(historyPoints, currency) {
     }
 
     priceTimeScale.fitContent();
+    updateHeaderFlag(); // Apply active theme colors to newly created charts
 }
 
 function updateChartWithTimeframe() {
@@ -1148,6 +1173,15 @@ function updateMervalWidget(data) {
     const mervalCcl = data && data.merval_ccl !== undefined ? data.merval_ccl : 0;
     const changePct = data && data.change_pct !== undefined ? data.change_pct : 0;
     
+    // Check if price changed to trigger flash animation
+    const oldPrice = state.oldPrices['MERVAL_CCL'];
+    if (oldPrice !== undefined && oldPrice !== null && oldPrice !== mervalCcl) {
+        const flashClass = mervalCcl > oldPrice ? 'flash-up-text' : 'flash-down-text';
+        priceEl.classList.remove('flash-up-text', 'flash-down-text');
+        void priceEl.offsetWidth; // Trigger reflow
+        priceEl.classList.add(flashClass);
+    }
+    
     // Formato de miles y decimales estándar
     const formattedPrice = new Intl.NumberFormat('es-AR', {
         minimumFractionDigits: 2,
@@ -1176,6 +1210,15 @@ function updateDolarWidget(prefix, asset) {
     
     const price = asset.price || 0;
     const changePct = asset.change_pct || 0;
+    
+    // Check if price changed to trigger flash animation
+    const oldPrice = state.oldPrices[asset.ticker];
+    if (oldPrice !== undefined && oldPrice !== null && oldPrice !== price) {
+        const flashClass = price > oldPrice ? 'flash-up-text' : 'flash-down-text';
+        priceEl.classList.remove('flash-up-text', 'flash-down-text');
+        void priceEl.offsetWidth; // Trigger reflow
+        priceEl.classList.add(flashClass);
+    }
     
     const formattedPrice = new Intl.NumberFormat('es-AR', {
         minimumFractionDigits: 2,
@@ -1353,17 +1396,40 @@ function updateHeaderFlag() {
   </g>
 </svg>`;
 
+    let accentColor, gridColor;
+
     if (state.assetType === 'cedears') {
         document.body.classList.remove('theme-acciones');
         document.body.classList.add('theme-cedears');
         flagContainer.innerHTML = usFlag;
         flagContainer.title = "Viendo CEDEARs (Estados Unidos)";
+        accentColor = 'rgba(226, 44, 60, 0.15)';
+        gridColor = 'rgba(226, 44, 60, 0.04)';
     } else {
         document.body.classList.remove('theme-cedears');
         document.body.classList.add('theme-acciones');
         flagContainer.innerHTML = arFlag;
         flagContainer.title = "Viendo Acciones (Argentina)";
+        accentColor = 'rgba(117, 170, 219, 0.15)';
+        gridColor = 'rgba(117, 170, 219, 0.04)';
     }
+
+    // Dynamic Chart Theme Updates
+    const updateChartColors = (chart) => {
+        if (chart) {
+            chart.applyOptions({
+                grid: {
+                    vertLines: { color: gridColor },
+                    horzLines: { color: gridColor }
+                },
+                timeScale: { borderColor: accentColor },
+                rightPriceScale: { borderColor: accentColor }
+            });
+        }
+    };
+    updateChartColors(state.chartInstance);
+    updateChartColors(state.rsiChartInstance);
+    updateChartColors(state.macdChartInstance);
 }
 
 function resizeAllCharts() {

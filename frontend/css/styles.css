@@ -1,9 +1,45 @@
+@property --bg-gradient-top {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(255, 140, 0, 0.06);
+}
+@property --bg-gradient-bottom {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(255, 140, 0, 0.03);
+}
+@property --accent-primary {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #ff8c00;
+}
+@property --accent-primary-light {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #ffad42;
+}
+@property --accent-primary-dim {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(255, 140, 0, 0.15);
+}
+@property --border-color {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(255, 140, 0, 0.1);
+}
+@property --border-highlight {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(255, 140, 0, 0.5);
+}
+
 :root {
     --bg-main: #050505;
     --bg-card: rgba(14, 14, 14, 0.85);
     --bg-card-hover: rgba(30, 22, 12, 0.9);
-    --border-color: rgba(var(--accent-rgb), 0.1);
-    --border-highlight: rgba(var(--accent-rgb), 0.5);
+    --border-color: rgba(255, 140, 0, 0.1);
+    --border-highlight: rgba(255, 140, 0, 0.5);
 
     --text-primary: #f5f0eb;
     --text-secondary: #8a8078;
@@ -12,20 +48,20 @@
     --accent-rgb: 255, 140, 0; /* default orange fallback */
     --accent-primary: #ff8c00;
     --accent-primary-light: #ffad42;
-    --accent-primary-dim: rgba(var(--accent-rgb), 0.15);
+    --accent-primary-dim: rgba(255, 140, 0, 0.15);
     --accent-green: #22c55e;
     --accent-red: #ef4444;
     --accent-yellow: #fbbf24;
     --accent-blue: #60a5fa;
 
-    --glow-accent: 0 0 20px rgba(var(--accent-rgb), 0.15);
-    --glow-accent-strong: 0 0 30px rgba(var(--accent-rgb), 0.25);
+    --glow-accent: 0 0 20px rgba(255, 140, 0, 0.15);
+    --glow-accent-strong: 0 0 30px rgba(255, 140, 0, 0.25);
 
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --bg-gradient-top: rgba(var(--accent-rgb), 0.06);
-    --bg-gradient-bottom: rgba(var(--accent-rgb), 0.03);
+    --bg-gradient-top: rgba(255, 140, 0, 0.06);
+    --bg-gradient-bottom: rgba(255, 140, 0, 0.03);
 }
 
 /* Dynamic Themes */
@@ -33,28 +69,28 @@ body.theme-acciones {
     --accent-rgb: 117, 170, 219; /* Argentine Celeste */
     --accent-primary: #75AADB;
     --accent-primary-light: #a8cbf3;
-    --accent-primary-dim: rgba(var(--accent-rgb), 0.15);
-    --border-color: rgba(var(--accent-rgb), 0.15);
-    --border-highlight: rgba(var(--accent-rgb), 0.5);
-    --glow-accent: 0 0 20px rgba(var(--accent-rgb), 0.15);
-    --glow-accent-strong: 0 0 30px rgba(var(--accent-rgb), 0.25);
+    --accent-primary-dim: rgba(117, 170, 219, 0.15);
+    --border-color: rgba(117, 170, 219, 0.15);
+    --border-highlight: rgba(117, 170, 219, 0.5);
+    --glow-accent: 0 0 20px rgba(117, 170, 219, 0.15);
+    --glow-accent-strong: 0 0 30px rgba(117, 170, 219, 0.25);
     --bg-card-hover: rgba(12, 22, 30, 0.85);
-    --bg-gradient-top: rgba(var(--accent-rgb), 0.06);
-    --bg-gradient-bottom: rgba(var(--accent-rgb), 0.03);
+    --bg-gradient-top: rgba(117, 170, 219, 0.06);
+    --bg-gradient-bottom: rgba(117, 170, 219, 0.03);
 }
 
 body.theme-cedears {
     --accent-rgb: 226, 44, 60; /* US Red */
     --accent-primary: #e22c3c;
     --accent-primary-light: #ff5a6a;
-    --accent-primary-dim: rgba(var(--accent-rgb), 0.15);
-    --border-color: rgba(var(--accent-rgb), 0.15);
+    --accent-primary-dim: rgba(226, 44, 60, 0.15);
+    --border-color: rgba(226, 44, 60, 0.15);
     --border-highlight: rgba(60, 59, 110, 0.6);
     --glow-accent: 0 0 20px rgba(60, 59, 110, 0.15);
-    --glow-accent-strong: 0 0 30px rgba(var(--accent-rgb), 0.25);
+    --glow-accent-strong: 0 0 30px rgba(226, 44, 60, 0.25);
     --bg-card-hover: rgba(30, 12, 14, 0.85);
     --bg-gradient-top: rgba(60, 59, 110, 0.08);
-    --bg-gradient-bottom: rgba(var(--accent-rgb), 0.04);
+    --bg-gradient-bottom: rgba(226, 44, 60, 0.04);
 }
 
 
@@ -1453,4 +1489,91 @@ body {
         align-items: stretch;
         gap: 6px;
     }
+}
+
+/* ==========================================================================
+   PREMIUM DESIGN UPGRADES: TRANSITIONS, NEON GLOWS, AND FLASHES
+   ========================================================================== */
+
+/* 1. Global smooth theme transitions */
+body, 
+.navbar, 
+.panel-section, 
+.chart-section, 
+.movers-section, 
+.navbar-merval, 
+.icon-btn, 
+.timeframe-card, 
+.movers-tab, 
+.panel-tab, 
+.currency-tab, 
+.search-box input, 
+.sector-filter-btn {
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+/* 3. Neon Variation Glows */
+.change-pill.up {
+    background: rgba(34, 197, 94, 0.15) !important;
+    color: var(--accent-green) !important;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.change-pill.down {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: var(--accent-red) !important;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.change-pill.neutral {
+    background: rgba(138, 128, 120, 0.12) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: none;
+    border: 1px solid rgba(138, 128, 120, 0.15);
+}
+
+/* 4. Real-time update flash animation for prices */
+@keyframes flash-green {
+    0% { background-color: rgba(34, 197, 94, 0.35); color: #ffffff; }
+    100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+    0% { background-color: rgba(239, 68, 68, 0.35); color: #ffffff; }
+    100% { background-color: transparent; }
+}
+
+.col-price.flash-up {
+    animation: flash-green 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.col-price.flash-down {
+    animation: flash-red 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Text-only flashes for header widgets */
+@keyframes flash-text-green {
+    0% { color: #22c55e; text-shadow: 0 0 12px rgba(34, 197, 94, 0.8); font-weight: 800; }
+    100% { color: var(--text-primary); text-shadow: none; }
+}
+
+@keyframes flash-text-red {
+    0% { color: #ef4444; text-shadow: 0 0 12px rgba(239, 68, 68, 0.8); font-weight: 800; }
+    100% { color: var(--text-primary); text-shadow: none; }
+}
+
+.flash-up-text {
+    animation: flash-text-green 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.flash-down-text {
+    animation: flash-text-red 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }

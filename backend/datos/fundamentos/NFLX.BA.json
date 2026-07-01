@@ -2,12 +2,12 @@
   "ticker": "NFLX",
   "sector": "Communication Services",
   "industry": "Entertainment",
-  "market_cap": "450.74T",
-  "pe_ratio": "0.52",
+  "market_cap": "462.96T",
+  "pe_ratio": "0.53",
   "dividend_yield": "",
-  "eps": "4,582.12",
+  "eps": "4,582.04",
   "beta": "1.49",
-  "price_to_book": "216.23",
+  "price_to_book": "221.77",
   "profit_margin": "28.52%",
   "description": "Netflix, Inc. provides entertainment services worldwide. The company offers television (TV) series, documentaries, feature films, games, and live programming across various genres and languages. It also provides members the ability to receive streaming content through a host of internet-connected devices, including TVs, digital video players, TV set-top boxes, and mobile devices. Netflix, Inc. was incorporated in 1997 and is headquartered in Los Gatos, California."
 }

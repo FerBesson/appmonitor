@@ -429,7 +429,7 @@ async function refreshAllData() {
                     const historyData = await chartRes.json();
                     state.historyCache[state.selectedTicker] = historyData;
                     state.historyPoints = historyData;
-                    updateChartWithTimeframe();
+                    updateChartWithTimeframe(true);
                 }
             } catch (e) {
                 console.error('Error actualizando gráfico en segundo plano:', e);
@@ -645,7 +645,7 @@ async function selectAsset(ticker) {
     if (state.historyCache[ticker]) {
         state.historyPoints = state.historyCache[ticker];
         state.selectedCurrency = asset.currency;
-        updateChartWithTimeframe();
+        updateChartWithTimeframe(true);
     } else {
         try {
             const res = await fetch(`/api/history/${ticker}`);
@@ -654,7 +654,7 @@ async function selectAsset(ticker) {
                 state.historyCache[ticker] = historyData; // Guardar en caché
                 state.historyPoints = historyData;
                 state.selectedCurrency = asset.currency;
-                updateChartWithTimeframe();
+                updateChartWithTimeframe(true);
             } else {
                 console.warn('Histórico no disponible para este ticker');
             }
@@ -1085,11 +1085,61 @@ function renderChart(historyPoints, currency) {
         document.getElementById('metric-rsi').textContent = last.rsi ? `${last.rsi} pts` : 'N/A';
     }
 
-    priceTimeScale.fitContent();
+    if (state.currentTimeframe === 'all') {
+        priceTimeScale.fitContent();
+    } else {
+        const lastPoint = historyPoints[historyPoints.length - 1];
+        const cutoffStr = getCutoffDateStr(historyPoints, state.currentTimeframe);
+        if (cutoffStr) {
+            priceTimeScale.setVisibleRange({
+                from: cutoffStr,
+                to: lastPoint.date
+            });
+        } else {
+            priceTimeScale.fitContent();
+        }
+    }
     updateHeaderFlag(); // Apply active theme colors to newly created charts
 }
 
-function updateChartWithTimeframe() {
+function getCutoffDateStr(points, timeframe) {
+    if (!points || points.length === 0) return null;
+    if (timeframe === 'all' || !timeframe) return null;
+
+    const lastPoint = points[points.length - 1];
+    const refDate = new Date(lastPoint.date + 'T00:00:00');
+    let cutoffDate = new Date(refDate);
+
+    switch (timeframe) {
+        case '7d':
+            cutoffDate.setDate(refDate.getDate() - 7);
+            break;
+        case '1m':
+            cutoffDate.setMonth(refDate.getMonth() - 1);
+            break;
+        case '3m':
+            cutoffDate.setMonth(refDate.getMonth() - 3);
+            break;
+        case '6m':
+            cutoffDate.setMonth(refDate.getMonth() - 6);
+            break;
+        case 'YTD':
+            cutoffDate = new Date(refDate.getFullYear(), 0, 1);
+            break;
+        case '1a':
+            cutoffDate.setFullYear(refDate.getFullYear() - 1);
+            break;
+        default:
+            return null;
+    }
+
+    const year = cutoffDate.getFullYear();
+    const month = String(cutoffDate.getMonth() + 1).padStart(2, '0');
+    const day = String(cutoffDate.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function updateChartWithTimeframe(forceRebuild = false) {
     if (!state.historyPoints || state.historyPoints.length === 0) return;
 
     // Sincronizar UI de botones de plazo
@@ -1104,8 +1154,25 @@ function updateChartWithTimeframe() {
         });
     }
 
-    const filteredPoints = filterPointsByTimeframe(state.historyPoints, state.currentTimeframe);
-    renderChart(filteredPoints, state.selectedCurrency);
+    if (forceRebuild || !state.chartInstance) {
+        renderChart(state.historyPoints, state.selectedCurrency);
+    } else {
+        const priceTimeScale = state.chartInstance.timeScale();
+        if (state.currentTimeframe === 'all') {
+            priceTimeScale.fitContent();
+        } else {
+            const lastPoint = state.historyPoints[state.historyPoints.length - 1];
+            const cutoffStr = getCutoffDateStr(state.historyPoints, state.currentTimeframe);
+            if (cutoffStr) {
+                priceTimeScale.setVisibleRange({
+                    from: cutoffStr,
+                    to: lastPoint.date
+                });
+            } else {
+                priceTimeScale.fitContent();
+            }
+        }
+    }
 }
 
 function filterPointsByTimeframe(points, timeframe) {

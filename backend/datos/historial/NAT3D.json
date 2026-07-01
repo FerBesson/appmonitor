@@ -1,0 +1,19 @@
+[
+  {
+    "date": "2026-06-18",
+    "open": 0.0,
+    "high": 1.5199999809265137,
+    "low": 1.5199999809265137,
+    "close": 1.5199999809265137,
+    "volume": 0.0,
+    "sma20": null,
+    "sma50": null,
+    "rsi": null,
+    "bb_upper": null,
+    "bb_lower": null,
+    "bb_middle": null,
+    "macd": null,
+    "macd_signal": null,
+    "macd_hist": null
+  }
+]

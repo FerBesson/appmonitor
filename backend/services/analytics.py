@@ -442,6 +442,56 @@ async def get_historical_ccl_rates() -> Dict[str, float]:
         print(f"Error obteniendo historial CCL desde ArgentinaDatos: {e}")
     return _ccl_history_cache or {}
 
+async def fetch_history_from_yahoo(ticker: str) -> List[Dict[str, Any]]:
+    from backend.services.yahoo_finance import yahoo_finance_service
+    from backend.services.merval_service import fetch_yahoo_history
+    
+    # Normalizar ticker para Yahoo Finance (por ejemplo, NU.BA para NU, AAPL.BA para AAPL)
+    normalized_ticker = yahoo_finance_service._normalize_ticker(ticker)
+    
+    client = yahoo_finance_service.get_client()
+    try:
+        # Asegurar crumb antes de consultar
+        await yahoo_finance_service._get_crumb()
+        
+        result = await fetch_yahoo_history(client, normalized_ticker)
+        timestamps = result.get("timestamp", [])
+        quotes = result.get("indicators", {}).get("quote", [{}])[0]
+        
+        opens = quotes.get("open", [])
+        highs = quotes.get("high", [])
+        lows = quotes.get("low", [])
+        closes = quotes.get("close", [])
+        volumes = quotes.get("volume", [])
+        
+        parsed_points = []
+        for i in range(len(timestamps)):
+            ts = timestamps[i]
+            if ts is None:
+                continue
+            dt_str = datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
+            c = closes[i]
+            if c is None or c <= 0:
+                continue
+                
+            o = opens[i] if (i < len(opens) and opens[i] is not None) else c
+            h = highs[i] if (i < len(highs) and highs[i] is not None) else max(o, c)
+            l = lows[i] if (i < len(lows) and lows[i] is not None) else min(o, c)
+            v = volumes[i] if (i < len(volumes) and volumes[i] is not None) else 0.0
+            
+            parsed_points.append({
+                "date": dt_str,
+                "o": float(o),
+                "h": float(h),
+                "l": float(l),
+                "c": float(c),
+                "v": float(v)
+            })
+        return parsed_points
+    except Exception as e:
+        print(f"Error obteniendo historial de Yahoo Finance para {ticker} ({normalized_ticker}): {e}")
+        return []
+
 async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
     ticker = ticker.upper()
     filepath = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
@@ -524,7 +574,9 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
         # Detectar si es CEDEAR o acción
         stored_cedears = await get_stored_cedears()
         cedear_tickers = {c.ticker.upper() for c in stored_cedears}
-        is_ced = ticker in cedear_tickers
+        
+        base_ticker = get_cedear_base_ticker(ticker, cedear_tickers)
+        is_ced = (ticker in cedear_tickers) or (base_ticker in cedear_tickers)
         
         if is_ced:
             is_usd = ticker.endswith("D") and (ticker[:-1] in cedear_tickers)
@@ -533,6 +585,8 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
             if is_usd or is_usdc:
                 base_ticker = get_cedear_base_ticker(ticker, cedear_tickers)
                 raw_hist = await data912_client.get_cedear_history(base_ticker)
+                if not raw_hist:
+                    raw_hist = await fetch_history_from_yahoo(base_ticker)
                 if is_usd:
                     rates = await get_historical_mep_rates()
                 else: # is_usdc
@@ -540,6 +594,8 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
                 sorted_dates = sorted(rates.keys())
             else:
                 raw_hist = await data912_client.get_cedear_history(ticker)
+                if not raw_hist:
+                    raw_hist = await fetch_history_from_yahoo(ticker)
                 rates = {}
                 sorted_dates = []
         else:
@@ -550,10 +606,14 @@ async def get_stock_history_processed(ticker: str) -> List[StockHistoryPoint]:
                 from backend.services.updater import get_base_ticker
                 base_ticker = get_base_ticker(ticker)
                 raw_hist = await data912_client.get_stock_history(base_ticker)
+                if not raw_hist:
+                    raw_hist = await fetch_history_from_yahoo(base_ticker)
                 rates = await get_historical_mep_rates()
                 sorted_dates = sorted(rates.keys())
             else:
                 raw_hist = await data912_client.get_stock_history(ticker)
+                if not raw_hist:
+                    raw_hist = await fetch_history_from_yahoo(ticker)
                 rates = {}
                 sorted_dates = []
 

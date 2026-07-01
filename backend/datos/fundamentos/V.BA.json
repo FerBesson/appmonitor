@@ -2,12 +2,12 @@
   "ticker": "V",
   "sector": "Financial Services",
   "industry": "Credit Services",
-  "market_cap": "56.33T",
-  "pe_ratio": "1.75",
+  "market_cap": "57.97T",
+  "pe_ratio": "1.80",
   "dividend_yield": "0.69%",
-  "eps": "16,953.34",
+  "eps": "16,953.75",
   "beta": "0.76",
-  "price_to_book": "21.48",
+  "price_to_book": "22.11",
   "profit_margin": "51.68%",
   "description": "Visa Inc. operates as a payment technology company in the United States and internationally. The company operates VisaNet, a transaction processing network that enables authorization, clearing, and settlement of payment transactions. It also offers credit, debit, and prepaid card products; tap to pay, tokenization, and click to pay services; Visa Direct, a platform which facilitates money movement, enabling clients to collect, hold, convert, and send funds across its network; and issuing solutions, such as airport lounge access, dining reservations, shopping experiences, event tickets, and seller offers. In addition, the company provides acceptance solutions, an omnichannel payment integration with e-commerce platforms; risk detection and prevention solutions; and advisory and other services comprising consulting practice, proprietary analytics models, data scientists and economists, marketing services, and managed services. It provides its services under the Visa, Visa Electron, V PAY, Interlink, and PLUS brands. The company serves consumers, sellers, financial institutions, and government entities. Visa Inc. was founded in 1958 and is headquartered in San Francisco, California."
 }

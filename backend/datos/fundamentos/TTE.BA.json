@@ -2,12 +2,12 @@
   "ticker": "TTE",
   "sector": "Energy",
   "industry": "Oil & Gas Integrated",
-  "market_cap": "29.8T",
-  "pe_ratio": "1.35",
-  "dividend_yield": "4.18%",
-  "eps": "29,887.76",
+  "market_cap": "29.2T",
+  "pe_ratio": "1.32",
+  "dividend_yield": "4.16%",
+  "eps": "29,887.55",
   "beta": "0.05",
-  "price_to_book": "0.47",
+  "price_to_book": "0.46",
   "profit_margin": "8.20%",
   "description": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Brazil, India, and internationally. The company was formerly known as TOTAL SE and changed its name to TotalEnergies SE in June 2021. TotalEnergies SE was incorporated in 1924 and is headquartered in Courbevoie, France."
 }

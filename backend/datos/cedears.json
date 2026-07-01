@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T17:09:08.798417",
+  "updated_at": "2026-07-01T17:31:12.303795",
   "cedears": [
     {
       "ticker": "AAL",
@@ -1043,9 +1043,9 @@
     },
     {
       "ticker": "AVGO",
-      "price": 14860.0,
-      "change_pct": -2.1,
-      "volume": 67085.0,
+      "price": 14910.0,
+      "change_pct": -1.77,
+      "volume": 67100.0,
       "high": null,
       "low": null,
       "open": null,
@@ -2304,9 +2304,9 @@
     },
     {
       "ticker": "COIN",
-      "price": 9280.0,
-      "change_pct": 9.69,
-      "volume": 110523.0,
+      "price": 9300.0,
+      "change_pct": 9.92,
+      "volume": 110531.0,
       "high": null,
       "low": null,
       "open": null,
@@ -6555,9 +6555,9 @@
     },
     {
       "ticker": "MSFT",
-      "price": 20090.0,
-      "change_pct": 3.39,
-      "volume": 684058.0,
+      "price": 20140.0,
+      "change_pct": 3.65,
+      "volume": 684061.0,
       "high": null,
       "low": null,
       "open": null,
@@ -7166,9 +7166,9 @@
     },
     {
       "ticker": "NVDA",
-      "price": 12940.0,
-      "change_pct": -0.38,
-      "volume": 851167.0,
+      "price": 12950.0,
+      "change_pct": -0.3,
+      "volume": 851207.0,
       "high": null,
       "low": null,
       "open": null,

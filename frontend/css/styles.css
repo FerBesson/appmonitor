@@ -1786,39 +1786,4 @@ body,
     text-align: right;
 }
 
-/* RRG Zoom Controls */
-.rrg-zoom-controls {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 3px;
-    border-radius: 6px;
-    gap: 8px;
-}
-.rrg-zoom-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    color: var(--text-primary);
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: bold;
-    transition: all 0.2s ease;
-}
-.rrg-zoom-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-}
-#rrg-zoom-label {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--text-secondary);
-    min-width: 32px;
-    text-align: center;
-    user-select: none;
-}
+

@@ -1699,7 +1699,6 @@ function initRRG() {
     state.rrgData = null;
     state.rrgPlayInterval = null;
     state.rrgCurrentIndex = 0;
-    state.rrgZoom = 1.0;
 
     const tabTecnico = document.getElementById('tab-btn-tecnico');
     const tabRotacion = document.getElementById('tab-btn-rotacion');
@@ -1720,25 +1719,6 @@ function initRRG() {
     if (slider) {
         slider.addEventListener('input', (e) => {
             state.rrgCurrentIndex = parseInt(e.target.value);
-            renderRRGFrame();
-        });
-    }
-
-    const zoomInBtn = document.getElementById('rrg-zoom-in-btn');
-    const zoomOutBtn = document.getElementById('rrg-zoom-out-btn');
-    const zoomLabel = document.getElementById('rrg-zoom-label');
-    
-    if (zoomInBtn) {
-        zoomInBtn.addEventListener('click', () => {
-            state.rrgZoom = Math.min(5.0, state.rrgZoom * 1.25);
-            if (zoomLabel) zoomLabel.textContent = `${state.rrgZoom.toFixed(1)}x`;
-            renderRRGFrame();
-        });
-    }
-    if (zoomOutBtn) {
-        zoomOutBtn.addEventListener('click', () => {
-            state.rrgZoom = Math.max(1.0, state.rrgZoom / 1.25);
-            if (zoomLabel) zoomLabel.textContent = `${state.rrgZoom.toFixed(1)}x`;
             renderRRGFrame();
         });
     }
@@ -1982,16 +1962,10 @@ function renderRRGFrame() {
     const padX = rangeX * 0.08;
     const padY = rangeY * 0.08;
     
-    const centerValX = (minX + maxX) / 2;
-    const centerValY = (minY + maxY) / 2;
-    
-    const halfWidthX = (rangeX / 2 + padX) / (state.rrgZoom || 1.0);
-    const halfHeightY = (rangeY / 2 + padY) / (state.rrgZoom || 1.0);
-    
-    const minValX = centerValX - halfWidthX;
-    const maxValX = centerValX + halfWidthX;
-    const minValY = centerValY - halfHeightY;
-    const maxValY = centerValY + halfHeightY;
+    const minValX = minX - padX;
+    const maxValX = maxX + padX;
+    const minValY = minY - padY;
+    const maxValY = maxY + padY;
     
     const ctx = document.getElementById('rrgCanvas').getContext('2d');
     state.rrgChartInstance = new Chart(ctx, {

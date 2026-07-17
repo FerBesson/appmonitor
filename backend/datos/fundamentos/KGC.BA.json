@@ -2,12 +2,12 @@
   "ticker": "KGC",
   "sector": "Basic Materials",
   "industry": "Gold",
-  "market_cap": "45.93T",
-  "pe_ratio": "11.07",
-  "dividend_yield": "0.53%",
-  "eps": "3,472.94",
+  "market_cap": "42.75T",
+  "pe_ratio": "10.31",
+  "dividend_yield": "0.57%",
+  "eps": "3,472.03",
   "beta": "1.41",
-  "price_to_book": "3.40",
+  "price_to_book": "3.06",
   "profit_margin": "35.99%",
   "description": "Kinross Gold Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of gold properties principally in the United States, Brazil, Chile, Canada, and Mauritania. It is also involved in the extraction and processing of gold-containing ores; reclamation of gold mining properties; and production and sale of silver. The company was founded in 1993 and is headquartered in Toronto, Canada."
 }

@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeaderFlag();
     refreshAllData();
     startCountdown();
+    initRRG();
 });
 
 function initEventListeners() {
@@ -597,6 +598,9 @@ function renderTable() {
 // ASSET SELECTION & CHART
 // ═══════════════════════════════════════
 async function selectAsset(ticker) {
+    if (state.rrgTab === 'rotacion') {
+        switchTab('tecnico');
+    }
     state.selectedTicker = ticker;
     renderTable();
 
@@ -1511,4 +1515,508 @@ function resizeAllCharts() {
     resizeChart(state.chartInstance, 'tv-chart-container');
     resizeChart(state.rsiChartInstance, 'tv-rsi-container');
     resizeChart(state.macdChartInstance, 'tv-macd-container');
+}
+
+// ========= RRG (Relative Rotation Graph) LÓGICA Y CONTROLES =========
+
+const TICKER_SECTORS_MAP = {
+    // CEDEARs / US Sector ETFs
+    "XLK": "Tecnología",
+    "SMH": "Semiconductores",
+    "XLF": "Financiero",
+    "XLE": "Energía",
+    "XLY": "Consumo Discrecional",
+    "XLP": "Consumo Básico",
+    "XLV": "Salud",
+    "XLI": "Industrial",
+    "XLB": "Materiales",
+    "XLRE": "Real Estate",
+    "XLU": "Servicios Públicos",
+    "XLC": "Comunicaciones",
+    
+    // Acciones Locales (Short Names / Sectores)
+    "ALUAD": "Aluar (Aluminio)",
+    "BBARD": "Banco Francés",
+    "BMA.D": "Banco Macro",
+    "BYMAD": "BYMA (Mercado)",
+    "CEPUD": "Central Puerto (Energía)",
+    "COMED": "Soc. Comercial del Plata",
+    "CRESD": "Cresud (Agro/Bienes Raíces)",
+    "ECOGD": "Dist. de Gas Cuyana",
+    "EDND": "Edenor (Energía)",
+    "GGALD": "Grupo Fin. Galicia",
+    "LOMAD": "Loma Negra (Cemento)",
+    "METRD": "Metrogas",
+    "PAMPD": "Pampa Energía",
+    "SUPVD": "Banco Supervielle",
+    "TGN4D": "Transp. Gas del Norte",
+    "TGSUD": "Transp. Gas del Sur",
+    "TRAND": "Transener (Energía)",
+    "TXARD": "Ternium Argentina (Acero)",
+    "VALOD": "Grupo Fin. Valores",
+    "YPFDD": "YPF (Petróleo/Gas)"
+};
+
+const rrgBackgroundPlugin = {
+    id: 'rrgBackground',
+    beforeDraw: (chart) => {
+        const { ctx, chartArea: { left, top, right, bottom }, scales: { x, y } } = chart;
+        const centerX = x.getPixelForValue(100);
+        const centerY = y.getPixelForValue(100);
+        
+        // Dibujar Cuadrantes coloreados de fondo (muy translúcidos para el dark mode)
+        // Top-Right: Liderando (Verde)
+        ctx.fillStyle = 'rgba(34, 197, 94, 0.04)';
+        ctx.fillRect(centerX, top, right - centerX, centerY - top);
+        
+        // Top-Left: Mejorando (Azul)
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.04)';
+        ctx.fillRect(left, top, centerX - left, centerY - top);
+        
+        // Bottom-Left: Rezagados (Rojo)
+        ctx.fillStyle = 'rgba(239, 68, 68, 0.04)';
+        ctx.fillRect(left, centerY, centerX - left, bottom - centerY);
+        
+        // Bottom-Right: Debilitándose (Amarillo)
+        ctx.fillStyle = 'rgba(234, 179, 8, 0.04)';
+        ctx.fillRect(centerX, centerY, right - centerX, bottom - centerY);
+        
+        // Dibujar líneas de cruce en (100, 100)
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 4]); // Línea punteada
+        
+        // Eje Horizontal (100)
+        ctx.beginPath();
+        ctx.moveTo(left, centerY);
+        ctx.lineTo(right, centerY);
+        ctx.stroke();
+        
+        // Eje Vertical (100)
+        ctx.beginPath();
+        ctx.moveTo(centerX, top);
+        ctx.lineTo(centerX, bottom);
+        ctx.stroke();
+        
+        ctx.setLineDash([]); // Resetear
+        
+        // Dibujar etiquetas de texto en las esquinas
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.font = 'bold 12px Inter, Outfit, sans-serif';
+        
+        ctx.fillText('LÍDERES', right - 80, top + 22);
+        ctx.fillText('MEJORANDO', left + 15, top + 22);
+        ctx.fillText('REZAGADOS', left + 15, bottom - 15);
+        ctx.fillText('DEBILITÁNDOSE', right - 115, bottom - 15);
+    }
+};
+
+const rrgLabelsPlugin = {
+    id: 'rrgLabels',
+    afterDatasetsDraw: (chart) => {
+        const { ctx } = chart;
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+            const meta = chart.getDatasetMeta(datasetIndex);
+            if (meta.hidden) return;
+            
+            const points = meta.data;
+            if (points.length === 0) return;
+            
+            const lastPoint = points[points.length - 1];
+            if (!lastPoint || lastPoint.skip) return;
+            
+            const { x: px, y: py } = lastPoint;
+            
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+            ctx.font = 'bold 9px Inter, Outfit, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            
+            ctx.fillText(dataset.label, px + 12, py);
+        });
+    }
+};
+
+function initRRG() {
+    state.rrgTab = 'tecnico';
+    state.rrgChartInstance = null;
+    state.rrgData = null;
+    state.rrgPlayInterval = null;
+    state.rrgCurrentIndex = 0;
+    state.rrgZoom = 1.0;
+
+    const tabTecnico = document.getElementById('tab-btn-tecnico');
+    const tabRotacion = document.getElementById('tab-btn-rotacion');
+    
+    if (tabTecnico) {
+        tabTecnico.addEventListener('click', () => switchTab('tecnico'));
+    }
+    if (tabRotacion) {
+        tabRotacion.addEventListener('click', () => switchTab('rotacion'));
+    }
+    
+    const playBtn = document.getElementById('rrg-play-btn');
+    const slider = document.getElementById('rrg-time-slider');
+    
+    if (playBtn) {
+        playBtn.addEventListener('click', toggleRRGPlay);
+    }
+    if (slider) {
+        slider.addEventListener('input', (e) => {
+            state.rrgCurrentIndex = parseInt(e.target.value);
+            renderRRGFrame();
+        });
+    }
+
+    const zoomInBtn = document.getElementById('rrg-zoom-in-btn');
+    const zoomOutBtn = document.getElementById('rrg-zoom-out-btn');
+    const zoomLabel = document.getElementById('rrg-zoom-label');
+    
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => {
+            state.rrgZoom = Math.min(5.0, state.rrgZoom * 1.25);
+            if (zoomLabel) zoomLabel.textContent = `${state.rrgZoom.toFixed(1)}x`;
+            renderRRGFrame();
+        });
+    }
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => {
+            state.rrgZoom = Math.max(1.0, state.rrgZoom / 1.25);
+            if (zoomLabel) zoomLabel.textContent = `${state.rrgZoom.toFixed(1)}x`;
+            renderRRGFrame();
+        });
+    }
+    
+    // Al cambiar de tipo de activo, si RRG está activo, recargar los cuadrantes
+    const assetTabs = document.querySelectorAll('.asset-type-tab');
+    assetTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            setTimeout(() => {
+                if (state.rrgTab === 'rotacion') {
+                    loadRotationGraph();
+                }
+            }, 50);
+        });
+    });
+}
+
+function switchTab(tabId) {
+    state.rrgTab = tabId;
+    const btnTecnico = document.getElementById('tab-btn-tecnico');
+    const btnRotacion = document.getElementById('tab-btn-rotacion');
+    const workspaceTecnico = document.getElementById('chart-workspace');
+    const workspaceEmpty = document.getElementById('chart-empty-state');
+    const workspaceRotation = document.getElementById('chart-rotation-workspace');
+    const controlsRow = document.querySelector('.controls-row');
+    const metricsRow = document.querySelector('.asset-metrics');
+    const fundamentalsBox = document.getElementById('fundamentals-section');
+    const tecnicoHeader = document.getElementById('tecnico-header');
+    
+    if (tabId === 'tecnico') {
+        if (btnTecnico) btnTecnico.classList.add('active');
+        if (btnRotacion) btnRotacion.classList.remove('active');
+        if (workspaceRotation) workspaceRotation.style.display = 'none';
+        
+        // Mostrar header de técnico
+        if (tecnicoHeader) tecnicoHeader.style.display = 'flex';
+        
+        // Restaurar controles del gráfico de TV
+        if (controlsRow) controlsRow.style.display = 'flex';
+        if (metricsRow) metricsRow.style.display = 'flex';
+        
+        if (state.selectedTicker) {
+            if (workspaceTecnico) workspaceTecnico.style.display = 'flex';
+            if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+            if (fundamentalsBox && !['USD_MAYORISTA', 'USD_MEP', 'USD_CCL', 'MERVAL_CCL'].includes(state.selectedTicker)) {
+                fundamentalsBox.style.display = 'block';
+            }
+        } else {
+            if (workspaceTecnico) workspaceTecnico.style.display = 'none';
+            if (workspaceEmpty) workspaceEmpty.style.display = 'flex';
+        }
+        
+        setTimeout(resizeAllCharts, 50);
+    } else {
+        if (btnTecnico) btnTecnico.classList.remove('active');
+        if (btnRotacion) btnRotacion.classList.add('active');
+        if (workspaceTecnico) workspaceTecnico.style.display = 'none';
+        if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+        if (fundamentalsBox) fundamentalsBox.style.display = 'none';
+        if (controlsRow) controlsRow.style.display = 'none';
+        if (metricsRow) metricsRow.style.display = 'none';
+        
+        // Ocultar header de técnico
+        if (tecnicoHeader) tecnicoHeader.style.display = 'none';
+        
+        if (workspaceRotation) workspaceRotation.style.display = 'flex';
+        
+        loadRotationGraph();
+    }
+}
+
+async function loadRotationGraph() {
+    const rrgBenchmarkName = document.getElementById('rrg-benchmark-name');
+    if (rrgBenchmarkName) {
+        rrgBenchmarkName.textContent = state.assetType === 'acciones' ? 'S&P MERVAL (MEP)' : 'S&P 500 (SPY)';
+    }
+    
+    stopRRGPlay();
+    
+    try {
+        const res = await fetch(`/api/rotation?panel=${state.assetType}`);
+        if (!res.ok) {
+            console.error('Error cargando rotación');
+            return;
+        }
+        const data = await res.json();
+        if (data.error) {
+            console.error(data.error);
+            return;
+        }
+        
+        state.rrgData = data;
+        
+        const slider = document.getElementById('rrg-time-slider');
+        if (slider) {
+            slider.min = 0;
+            slider.max = data.dates.length - 1;
+            slider.value = data.dates.length - 1;
+            state.rrgCurrentIndex = data.dates.length - 1;
+        }
+        
+        renderRRGFrame();
+    } catch (e) {
+        console.error('Error en loadRotationGraph:', e);
+    }
+}
+
+function toggleRRGPlay() {
+    const playBtn = document.getElementById('rrg-play-btn');
+    if (state.rrgPlayInterval) {
+        stopRRGPlay();
+    } else {
+        if (playBtn) playBtn.textContent = '⏸ Pause';
+        
+        const slider = document.getElementById('rrg-time-slider');
+        if (slider && state.rrgCurrentIndex >= state.rrgData.dates.length - 1) {
+            state.rrgCurrentIndex = 0;
+            slider.value = 0;
+            renderRRGFrame();
+        }
+        
+        state.rrgPlayInterval = setInterval(() => {
+            state.rrgCurrentIndex++;
+            if (slider) slider.value = state.rrgCurrentIndex;
+            
+            if (state.rrgCurrentIndex >= state.rrgData.dates.length - 1) {
+                stopRRGPlay();
+            }
+            renderRRGFrame();
+        }, 150);
+    }
+}
+
+function stopRRGPlay() {
+    if (state.rrgPlayInterval) {
+        clearInterval(state.rrgPlayInterval);
+        state.rrgPlayInterval = null;
+    }
+    const playBtn = document.getElementById('rrg-play-btn');
+    if (playBtn) playBtn.textContent = '▶ Play';
+}
+
+function renderRRGFrame() {
+    if (!state.rrgData || state.rrgData.dates.length === 0) return;
+    
+    const currentDate = state.rrgData.dates[state.rrgCurrentIndex];
+    const dateLabel = document.getElementById('rrg-current-date');
+    if (dateLabel) {
+        try {
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            const [y, m, d] = currentDate.split('-');
+            dateLabel.textContent = `Fecha: ${d} ${months[parseInt(m)-1]} ${y}`;
+        } catch(e) {
+            dateLabel.textContent = `Fecha: ${currentDate}`;
+        }
+    }
+    
+    const datasets = [];
+    const tickers = Object.keys(state.rrgData.assets);
+    
+    const getColorForPoint = (x, y) => {
+        if (x >= 100 && y >= 100) return { opaque: '#22c55e', trans: 'rgba(34, 197, 94, 0.45)' };
+        if (x < 100 && y >= 100) return { opaque: '#3b82f6', trans: 'rgba(59, 130, 246, 0.45)' };
+        if (x < 100 && y < 100) return { opaque: '#ef4444', trans: 'rgba(239, 68, 68, 0.45)' };
+        return { opaque: '#eab308', trans: 'rgba(234, 179, 8, 0.45)' };
+    };
+    
+    tickers.forEach(ticker => {
+        const points = state.rrgData.assets[ticker];
+        const dateIdx = points.findIndex(p => p.date === currentDate);
+        
+        if (dateIdx === -1) return;
+        
+        const startIdx = Math.max(0, dateIdx - 5);
+        const tailPoints = points.slice(startIdx, dateIdx + 1);
+        
+        if (tailPoints.length === 0) return;
+        
+        const currentPt = tailPoints[tailPoints.length - 1];
+        const colors = getColorForPoint(currentPt.x, currentPt.y);
+        
+        const pointRadii = tailPoints.map((p, idx) => idx === tailPoints.length - 1 ? 8 : 2.5);
+        const bgColors = tailPoints.map((p, idx) => idx === tailPoints.length - 1 ? colors.opaque : colors.trans);
+        const borderColors = tailPoints.map((p, idx) => idx === tailPoints.length - 1 ? '#ffffff' : colors.trans);
+        const borderWidths = tailPoints.map((p, idx) => idx === tailPoints.length - 1 ? 2 : 0.8);
+        
+        datasets.push({
+            label: ticker,
+            data: tailPoints.map(p => ({ x: p.x, y: p.y })),
+            showLine: true,
+            borderColor: colors.trans,
+            borderWidth: 1.5,
+            fill: false,
+            pointRadius: pointRadii,
+            pointBackgroundColor: bgColors,
+            pointBorderColor: borderColors,
+            pointBorderWidth: borderWidths,
+            pointHoverRadius: tailPoints.map((p, idx) => idx === tailPoints.length - 1 ? 11 : 4),
+            tension: 0.15
+        });
+    });
+    
+    if (state.rrgChartInstance) {
+        state.rrgChartInstance.destroy();
+    }
+    
+    let minX = Infinity, maxX = -Infinity;
+    let minY = Infinity, maxY = -Infinity;
+    
+    datasets.forEach(ds => {
+        ds.data.forEach(pt => {
+            if (pt.x < minX) minX = pt.x;
+            if (pt.x > maxX) maxX = pt.x;
+            if (pt.y < minY) minY = pt.y;
+            if (pt.y > maxY) maxY = pt.y;
+        });
+    });
+    
+    // Fallbacks si no hay datos
+    if (minX === Infinity || maxX === -Infinity) { minX = 95; maxX = 105; }
+    if (minY === Infinity || maxY === -Infinity) { minY = 95; maxY = 105; }
+    
+    let rangeX = maxX - minX;
+    let rangeY = maxY - minY;
+    
+    // Forzar rangos mínimos para evitar escalas microscópicas
+    if (rangeX < 1.0) {
+        const midX = (minX + maxX) / 2;
+        minX = midX - 0.5;
+        maxX = midX + 0.5;
+        rangeX = 1.0;
+    }
+    if (rangeY < 1.0) {
+        const midY = (minY + maxY) / 2;
+        minY = midY - 0.5;
+        maxY = midY + 0.5;
+        rangeY = 1.0;
+    }
+    
+    // Agregar un 8% de padding dinámico
+    const padX = rangeX * 0.08;
+    const padY = rangeY * 0.08;
+    
+    const centerValX = (minX + maxX) / 2;
+    const centerValY = (minY + maxY) / 2;
+    
+    const halfWidthX = (rangeX / 2 + padX) / (state.rrgZoom || 1.0);
+    const halfHeightY = (rangeY / 2 + padY) / (state.rrgZoom || 1.0);
+    
+    const minValX = centerValX - halfWidthX;
+    const maxValX = centerValX + halfWidthX;
+    const minValY = centerValY - halfHeightY;
+    const maxValY = centerValY + halfHeightY;
+    
+    const ctx = document.getElementById('rrgCanvas').getContext('2d');
+    state.rrgChartInstance = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 0
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const ticker = context.dataset.label;
+                            const desc = TICKER_SECTORS_MAP[ticker] || '';
+                            const labelText = desc ? `${ticker} (${desc})` : ticker;
+                            const x = context.raw.x;
+                            const y = context.raw.y;
+                            return `${labelText} — Fuerza: ${x.toFixed(2)}, Momentum: ${y.toFixed(2)}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    min: minValX,
+                    max: maxValX,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.4)',
+                        font: {
+                            family: 'Inter, Outfit, sans-serif',
+                            size: 11
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'FUERZA RELATIVA (RS-RATIO)',
+                        color: 'rgba(255, 255, 255, 0.3)',
+                        font: {
+                            family: 'Outfit, sans-serif',
+                            size: 11,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                y: {
+                    min: minValY,
+                    max: maxValY,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.4)',
+                        font: {
+                            family: 'Inter, Outfit, sans-serif',
+                            size: 11
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'MOMENTUM RELATIVO (RS-MOMENTUM)',
+                        color: 'rgba(255, 255, 255, 0.3)',
+                        font: {
+                            family: 'Outfit, sans-serif',
+                            size: 11,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        },
+        plugins: [rrgBackgroundPlugin, rrgLabelsPlugin]
+    });
 }

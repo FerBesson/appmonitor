@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lightweight Charts CDN -->
     <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
-    <link rel="stylesheet" href="css/styles.css?v=1.5.0">
+    <!-- Chart.js CDN (for RRG) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/styles.css?v=1.6.0">
 </head>
 <body>
     <div class="app-container">
@@ -136,7 +138,25 @@
 
             <!-- CENTER: Chart -->
             <div class="chart-section">
-                <div class="chart-section-header">
+                <!-- Selector de Vista (Gráfico vs RRG) -->
+                <div class="chart-view-selector-bar">
+                    <button class="view-selector-tab active" id="tab-btn-tecnico" data-tab="tecnico">
+                        <span class="tab-icon">📊</span>
+                        <div class="tab-text-group">
+                            <span class="tab-title">Gráfico Técnico</span>
+                            <span class="tab-desc">Velas e indicadores</span>
+                        </div>
+                    </button>
+                    <button class="view-selector-tab" id="tab-btn-rotacion" data-tab="rotacion">
+                        <span class="tab-icon">🔄</span>
+                        <div class="tab-text-group">
+                            <span class="tab-title">Rotación de Sectores (RRG)</span>
+                            <span class="tab-desc">Flujo de capitales</span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="chart-section-header" id="tecnico-header">
                     <div class="chart-ticker-info">
                         <h2 id="drawer-ticker">Seleccioná un activo</h2>
                         <span id="drawer-name" class="chart-subtitle">Tocá cualquier fila de la tabla</span>
@@ -145,6 +165,39 @@
                 </div>
 
                 <div class="chart-section-body">
+                    <!-- RRG (Rotación) Workspace -->
+                    <div id="chart-rotation-workspace" style="display: none;">
+                        <div class="rrg-header-row">
+                            <div class="rrg-info">
+                                <span class="rrg-benchmark-label">Benchmark: <strong id="rrg-benchmark-name">S&P MERVAL (USD)</strong></span>
+                            </div>
+                            <div class="rrg-quadrant-legend">
+                                <span class="legend-dot leading"></span> Liderando
+                                <span class="legend-dot improving"></span> Mejorando
+                                <span class="legend-dot weakening"></span> Debilitándose
+                                <span class="legend-dot lagging"></span> Rezagado
+                            </div>
+                        </div>
+                        
+                        <div class="rrg-chart-box">
+                            <canvas id="rrgCanvas"></canvas>
+                        </div>
+                        
+                        <!-- RRG Animation Controls -->
+                        <div class="rrg-controls-row">
+                            <button id="rrg-play-btn" class="rrg-play-btn">▶ Play</button>
+                            <div class="rrg-zoom-controls">
+                                <button id="rrg-zoom-out-btn" class="rrg-zoom-btn" title="Zoom Out">🔍-</button>
+                                <span id="rrg-zoom-label">1.0x</span>
+                                <button id="rrg-zoom-in-btn" class="rrg-zoom-btn" title="Zoom In">🔍+</button>
+                            </div>
+                            <div class="rrg-slider-container">
+                                <input type="range" id="rrg-time-slider" min="0" max="0" value="0">
+                                <span id="rrg-current-date">Fecha: -----</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="empty-state" id="chart-empty-state">
                         <div class="empty-icon">📊</div>
                         <p>Seleccioná una acción del panel izquierdo para ver el gráfico histórico.</p>
@@ -300,6 +353,6 @@
         </main>
     </div>
 
-    <script src="js/app.js?v=1.5.1"></script>
+    <script src="js/app.js?v=1.6.6"></script>
 </body>
 </html>

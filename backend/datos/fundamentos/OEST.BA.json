@@ -2,12 +2,12 @@
   "ticker": "OEST",
   "sector": "Industrials",
   "industry": "Infrastructure Operations",
-  "market_cap": "113.76B",
-  "pe_ratio": "7.11",
+  "market_cap": "120B",
+  "pe_ratio": "7.50",
   "dividend_yield": "",
-  "eps": "100.00",
+  "eps": "100.04",
   "beta": "-0.33",
-  "price_to_book": "0.67",
+  "price_to_book": "0.70",
   "profit_margin": "18.00%",
   "description": "Grupo Concesionario del Oeste S.A. is involved in the construction, improvement, repair, conservation, expansion, remodeling, maintenance, administration, and operation of the Western highway in Argentina. The company was incorporated in 1993 and is headquartered in Buenos Aires, Argentina."
 }

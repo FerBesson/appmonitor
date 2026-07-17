@@ -326,16 +326,38 @@ async def fetch_and_save_merval_ccl_history() -> List[StockHistoryPoint]:
                 os.makedirs(os.path.dirname(filepath), exist_ok=True)
                 serializable_result = [p.model_dump() for p in result]
                 
+                # Preparar también ^MERV (en pesos)
+                merv_list = []
+                for d in sorted(merv_map.keys()):
+                    m_data = merv_map[d]
+                    if m_data["open"] is not None and m_data["close"] is not None:
+                        merv_list.append({
+                            "date": d,
+                            "open": round(m_data["open"], 2) if m_data["open"] else 0.0,
+                            "high": round(m_data["high"], 2) if m_data["high"] else 0.0,
+                            "low": round(m_data["low"], 2) if m_data["low"] else 0.0,
+                            "close": round(m_data["close"], 2) if m_data["close"] else 0.0,
+                            "volume": m_data["volume"] or 0.0
+                        })
+                
                 def save_cache():
+                    # Guardar MERVAL_CCL
                     temp_filepath = filepath + ".tmp"
                     with open(temp_filepath, "w", encoding="utf-8") as f:
                         json.dump(serializable_result, f, ensure_ascii=False, indent=2)
                     os.replace(temp_filepath, filepath)
                     
+                    # Guardar ^MERV
+                    merv_filepath = os.path.join(os.path.dirname(filepath), "^MERV.json")
+                    temp_merv_filepath = merv_filepath + ".tmp"
+                    with open(temp_merv_filepath, "w", encoding="utf-8") as f:
+                        json.dump(merv_list, f, ensure_ascii=False, indent=2)
+                    os.replace(temp_merv_filepath, merv_filepath)
+                    
                 await asyncio.to_thread(save_cache)
-                print(f"Historial de MERVAL_CCL guardado exitosamente en caché: {filepath}")
+                print(f"Historial de MERVAL_CCL y ^MERV guardado exitosamente en caché.")
             except Exception as e:
-                print(f"Error guardando caché de historial MERVAL_CCL: {e}")
+                print(f"Error guardando caché de historial MERVAL_CCL / ^MERV: {e}")
                 
             return result
         except Exception as e:

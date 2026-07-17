@@ -127,6 +127,19 @@ async def api_history(ticker: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo histórico: {str(e)}")
 
+@app.get("/api/rotation")
+async def api_rotation(panel: str = "acciones"):
+    if panel not in ["acciones", "cedears"]:
+        raise HTTPException(status_code=400, detail="Panel inválido. Debe ser 'acciones' o 'cedears'")
+    try:
+        from backend.services.rotation import calculate_rotation_coordinates
+        res = await calculate_rotation_coordinates(panel)
+        if "error" in res:
+            raise HTTPException(status_code=500, detail=res["error"])
+        return res
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo rotación: {str(e)}")
+
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")
 if os.path.exists(frontend_dir):
     app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")

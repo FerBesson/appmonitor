@@ -755,7 +755,11 @@ function renderChart(historyPoints, currency) {
             borderColor: 'rgba(255, 140, 0, 0.12)'
         },
         rightPriceScale: {
-            borderColor: 'rgba(255, 140, 0, 0.12)'
+            borderColor: 'rgba(255, 140, 0, 0.12)',
+            minimumWidth: 80
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
         }
     });
 
@@ -847,7 +851,11 @@ function renderChart(historyPoints, currency) {
                 borderColor: 'rgba(255, 140, 0, 0.12)'
             },
             rightPriceScale: {
-                borderColor: 'rgba(255, 140, 0, 0.12)'
+                borderColor: 'rgba(255, 140, 0, 0.12)',
+                minimumWidth: 80
+            },
+            crosshair: {
+                mode: LightweightCharts.CrosshairMode.Normal,
             }
         });
 
@@ -922,7 +930,11 @@ function renderChart(historyPoints, currency) {
                 timeVisible: true
             },
             rightPriceScale: {
-                borderColor: 'rgba(255, 140, 0, 0.12)'
+                borderColor: 'rgba(255, 140, 0, 0.12)',
+                minimumWidth: 80
+            },
+            crosshair: {
+                mode: LightweightCharts.CrosshairMode.Normal,
             }
         });
 
@@ -1071,6 +1083,50 @@ function renderChart(historyPoints, currency) {
         syncTimeScale(priceTimeScale, [rsiTimeScale, macdTimeScale]);
         syncTimeScale(rsiTimeScale, [priceTimeScale, macdTimeScale]);
         syncTimeScale(macdTimeScale, [priceTimeScale, rsiTimeScale]);
+    }
+
+    // Sync Crosshairs (Free Moving synchronized crosshairs)
+    const handleCrosshairMove = (chartType, param) => {
+        // Prevent recursive updates from programmatic setCrosshairPosition calls
+        if (!param || !param.sourceEvent) return;
+
+        const time = param.time;
+        const point = time ? historyPoints.find(p => p.date === time) : null;
+
+        // 1. PRICE CHART
+        if (state.chartInstance && chartType !== 'price') {
+            if (time && point) {
+                state.chartInstance.setCrosshairPosition(point.close, time, state.candleSeries);
+            } else {
+                state.chartInstance.clearCrosshairPosition();
+            }
+        }
+
+        // 2. RSI CHART
+        if (state.rsiChartInstance && chartType !== 'rsi') {
+            if (time && point && point.rsi !== null && point.rsi !== undefined) {
+                state.rsiChartInstance.setCrosshairPosition(point.rsi, time, state.rsiSeries);
+            } else {
+                state.rsiChartInstance.clearCrosshairPosition();
+            }
+        }
+
+        // 3. MACD CHART
+        if (state.macdChartInstance && chartType !== 'macd') {
+            if (time && point && point.macd !== null && point.macd !== undefined) {
+                state.macdChartInstance.setCrosshairPosition(point.macd, time, state.macdLineSeries);
+            } else {
+                state.macdChartInstance.clearCrosshairPosition();
+            }
+        }
+    };
+
+    state.chartInstance.subscribeCrosshairMove(param => handleCrosshairMove('price', param));
+    if (state.rsiChartInstance) {
+        state.rsiChartInstance.subscribeCrosshairMove(param => handleCrosshairMove('rsi', param));
+    }
+    if (state.macdChartInstance) {
+        state.macdChartInstance.subscribeCrosshairMove(param => handleCrosshairMove('macd', param));
     }
 
     if (historyPoints.length > 0) {

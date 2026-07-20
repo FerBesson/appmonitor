@@ -716,18 +716,18 @@
   {
     "date": "2026-07-17",
     "open": 8820.0,
-    "high": 9035.0,
+    "high": 9295.0,
     "low": 8500.0,
-    "close": 8990.0,
-    "volume": 2446.0,
-    "sma20": 9102.75,
+    "close": 9140.0,
+    "volume": 11701.0,
+    "sma20": 9110.25,
     "sma50": null,
-    "rsi": 51.42,
-    "bb_upper": 9991.89,
-    "bb_lower": 8213.61,
-    "bb_middle": 9102.75,
-    "macd": 289.4628,
-    "macd_signal": 344.5548,
-    "macd_hist": -55.092
+    "rsi": 53.26,
+    "bb_upper": 9997.99,
+    "bb_lower": 8222.51,
+    "bb_middle": 9110.25,
+    "macd": 301.4287,
+    "macd_signal": 346.948,
+    "macd_hist": -45.5193
   }
 ]

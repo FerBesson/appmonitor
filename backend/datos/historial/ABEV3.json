@@ -5886,16 +5886,16 @@
     "open": 4650.0,
     "high": 4927.5,
     "low": 4650.0,
-    "close": 4862.5,
-    "volume": 157.0,
-    "sma20": 4872.38,
-    "sma50": 4850.3,
-    "rsi": 50.96,
-    "bb_upper": 5069.75,
-    "bb_lower": 4675.0,
-    "bb_middle": 4872.38,
-    "macd": -10.4812,
-    "macd_signal": 11.6374,
-    "macd_hist": -22.1186
+    "close": 4827.5,
+    "volume": 450.0,
+    "sma20": 4870.62,
+    "sma50": 4849.6,
+    "rsi": 49.6,
+    "bb_upper": 5068.94,
+    "bb_lower": 4672.31,
+    "bb_middle": 4870.62,
+    "macd": -13.2733,
+    "macd_signal": 11.079,
+    "macd_hist": -24.3523
   }
 ]

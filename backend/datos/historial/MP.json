@@ -699,18 +699,18 @@
   {
     "date": "2026-07-17",
     "open": 7035.0,
-    "high": 7110.0,
+    "high": 7260.0,
     "low": 6870.0,
-    "close": 7110.0,
-    "volume": 652.0,
-    "sma20": 8328.75,
+    "close": 7130.0,
+    "volume": 1865.0,
+    "sma20": 8329.75,
     "sma50": null,
-    "rsi": 36.48,
-    "bb_upper": 9495.9,
-    "bb_lower": 7161.6,
-    "bb_middle": 8328.75,
-    "macd": -443.543,
-    "macd_signal": -335.2256,
-    "macd_hist": -108.3174
+    "rsi": 36.71,
+    "bb_upper": 9492.74,
+    "bb_lower": 7166.76,
+    "bb_middle": 8329.75,
+    "macd": -441.9475,
+    "macd_signal": -334.9065,
+    "macd_hist": -107.041
   }
 ]

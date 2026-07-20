@@ -8708,16 +8708,16 @@
     "open": 415.0,
     "high": 415.0,
     "low": 402.25,
-    "close": 410.0,
-    "volume": 3322.0,
-    "sma20": 399.5,
-    "sma50": 378.85,
-    "rsi": 57.09,
-    "bb_upper": 429.13,
-    "bb_lower": 369.87,
-    "bb_middle": 399.5,
-    "macd": 8.2264,
-    "macd_signal": 8.2992,
-    "macd_hist": -0.0728
+    "close": 406.25,
+    "volume": 30054.0,
+    "sma20": 399.31,
+    "sma50": 378.77,
+    "rsi": 55.28,
+    "bb_upper": 428.72,
+    "bb_lower": 369.9,
+    "bb_middle": 399.31,
+    "macd": 7.9273,
+    "macd_signal": 8.2393,
+    "macd_hist": -0.312
   }
 ]

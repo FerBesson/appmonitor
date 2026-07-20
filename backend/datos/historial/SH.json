@@ -6447,16 +6447,16 @@
     "open": 6490.0,
     "high": 6555.0,
     "low": 6480.0,
-    "close": 6500.0,
-    "volume": 4507.0,
-    "sma20": 6449.25,
-    "sma50": 6314.4,
-    "rsi": 56.09,
-    "bb_upper": 6571.94,
-    "bb_lower": 6326.56,
-    "bb_middle": 6449.25,
-    "macd": 28.7107,
-    "macd_signal": 33.326,
-    "macd_hist": -4.6153
+    "close": 6515.0,
+    "volume": 17316.0,
+    "sma20": 6450.0,
+    "sma50": 6314.7,
+    "rsi": 56.9,
+    "bb_upper": 6574.1,
+    "bb_lower": 6325.9,
+    "bb_middle": 6450.0,
+    "macd": 29.9073,
+    "macd_signal": 33.5653,
+    "macd_hist": -3.658
   }
 ]

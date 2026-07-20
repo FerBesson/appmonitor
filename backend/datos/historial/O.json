@@ -698,19 +698,19 @@
   },
   {
     "date": "2026-07-17",
-    "open": 7650.0,
+    "open": 8035.0,
     "high": 8105.0,
-    "low": 8000.0,
-    "close": 8020.0,
-    "volume": 2828.0,
-    "sma20": 7597.0,
+    "low": 7890.0,
+    "close": 7965.0,
+    "volume": 9341.0,
+    "sma20": 7594.25,
     "sma50": null,
-    "rsi": 67.04,
-    "bb_upper": 8037.64,
-    "bb_lower": 7156.36,
-    "bb_middle": 7597.0,
-    "macd": 182.6374,
-    "macd_signal": 164.3478,
-    "macd_hist": 18.2896
+    "rsi": 65.8,
+    "bb_upper": 8024.87,
+    "bb_lower": 7163.63,
+    "bb_middle": 7594.25,
+    "macd": 178.25,
+    "macd_signal": 163.4703,
+    "macd_hist": 14.7797
   }
 ]

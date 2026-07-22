@@ -43,6 +43,47 @@ const state = {
     oldPrices: {} // Track prices for data-flash animations on update
 };
 
+function getBaseTicker(ticker) {
+    if (!ticker) return '';
+    let t = ticker.trim().toUpperCase();
+    if (t === 'GOGLD' || t === 'GOGLC' || t === 'GOGL') return 'GOOGL';
+    if (t === 'BRKBC' || t === 'BRKBD' || t === 'BRKB') return 'BRKB';
+    if (t.length > 3 && (t.endsWith('D') || t.endsWith('C')) && !t.startsWith('USD_')) {
+        let base = t.slice(0, -1);
+        if (base.endsWith('D')) base = base.slice(0, -1);
+        return base;
+    }
+    return t;
+}
+
+function handleLogoError(img, ticker) {
+    if (!img) return;
+    const base = getBaseTicker(ticker);
+    const currentSrc = img.getAttribute('src') || '';
+
+    if (currentSrc.endsWith('.svg')) {
+        img.src = currentSrc.slice(0, -4) + '.png';
+        return;
+    }
+
+    if (!img.dataset.triedBase && base && base !== ticker) {
+        img.dataset.triedBase = '1';
+        img.src = `assets/logos/${base}.svg`;
+        return;
+    }
+
+    if (img.dataset.triedBase === '1' && !img.dataset.triedBasePng) {
+        img.dataset.triedBasePng = '1';
+        img.src = `assets/logos/${base}.png`;
+        return;
+    }
+
+    img.style.display = 'none';
+    if (img.nextElementSibling && img.nextElementSibling.classList.contains('ticker-logo-fallback')) {
+        img.nextElementSibling.style.display = 'inline-flex';
+    }
+}
+
 // Formateador de moneda argentina
 const formatARS = new Intl.NumberFormat('es-AR', {
     style: 'currency',
@@ -485,7 +526,14 @@ function renderMarketMovers() {
         return `
             <div class="mover-row" data-ticker="${asset.ticker}">
                 <div class="mover-info">
-                    <span class="mover-ticker">${asset.ticker}</span>
+                    <div class="ticker-cell">
+                        <img src="assets/logos/${asset.ticker}.svg" 
+                             class="ticker-logo" 
+                             alt="${asset.ticker}" 
+                             onerror="handleLogoError(this, '${asset.ticker}')" />
+                        <span class="ticker-logo-fallback" style="display:none;">${asset.ticker.charAt(0)}</span>
+                        <span class="mover-ticker">${asset.ticker}</span>
+                    </div>
                     <span class="mover-price">${formatter.format(asset.price)}</span>
                 </div>
                 <span class="mover-change ${changeClass}">${sign}${asset.change_pct.toFixed(2)}%</span>
@@ -577,7 +625,16 @@ function renderTable() {
 
         return `
             <tr class="${isSelected}" data-ticker="${asset.ticker}">
-                <td class="col-ticker">${asset.ticker}</td>
+                <td class="col-ticker">
+                    <div class="ticker-cell">
+                        <img src="assets/logos/${asset.ticker}.svg" 
+                             class="ticker-logo" 
+                             alt="${asset.ticker}" 
+                             onerror="handleLogoError(this, '${asset.ticker}')" />
+                        <span class="ticker-logo-fallback" style="display:none;">${asset.ticker.charAt(0)}</span>
+                        <span>${asset.ticker}</span>
+                    </div>
+                </td>
                 <td class="col-price ${flashClass}">${formatter.format(asset.price)}</td>
                 <td class="col-change"><span class="change-pill ${pillClass}">${sign}${asset.change_pct.toFixed(2)}%</span></td>
             </tr>
@@ -598,7 +655,7 @@ function renderTable() {
 // ASSET SELECTION & CHART
 // ═══════════════════════════════════════
 async function selectAsset(ticker) {
-    if (state.rrgTab === 'rotacion') {
+    if (state.rrgTab === 'rotacion' || state.rrgTab === 'ema200') {
         switchTab('tecnico');
     }
     state.selectedTicker = ticker;
@@ -635,7 +692,13 @@ async function selectAsset(ticker) {
         displayName = 'Dólar CCL';
     }
     
-    document.getElementById('drawer-ticker').textContent = displayTicker;
+    document.getElementById('drawer-ticker').innerHTML = `
+        <div class="ticker-cell">
+            <img src="assets/logos/${ticker}.svg" class="ticker-logo" alt="${ticker}" onerror="handleLogoError(this, '${ticker}')" />
+            <span class="ticker-logo-fallback" style="display:none;">${ticker.charAt(0)}</span>
+            <span>${displayTicker}</span>
+        </div>
+    `;
     document.getElementById('drawer-name').textContent = displayName;
     document.getElementById('chart-empty-state').style.display = 'none';
     document.getElementById('chart-workspace').style.display = 'flex';
@@ -1702,6 +1765,7 @@ function initRRG() {
 
     const tabTecnico = document.getElementById('tab-btn-tecnico');
     const tabRotacion = document.getElementById('tab-btn-rotacion');
+    const tabEMA200 = document.getElementById('tab-btn-ema200');
     
     if (tabTecnico) {
         tabTecnico.addEventListener('click', () => switchTab('tecnico'));
@@ -1709,6 +1773,11 @@ function initRRG() {
     if (tabRotacion) {
         tabRotacion.addEventListener('click', () => switchTab('rotacion'));
     }
+    if (tabEMA200) {
+        tabEMA200.addEventListener('click', () => switchTab('ema200'));
+    }
+
+    initEMA200Controls();
     
     const playBtn = document.getElementById('rrg-play-btn');
     const slider = document.getElementById('rrg-time-slider');
@@ -1723,13 +1792,15 @@ function initRRG() {
         });
     }
     
-    // Al cambiar de tipo de activo, si RRG está activo, recargar los cuadrantes
+    // Al cambiar de tipo de activo, actualizar si RRG o EMA200 están activos
     const assetTabs = document.querySelectorAll('.asset-type-tab');
     assetTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             setTimeout(() => {
                 if (state.rrgTab === 'rotacion') {
                     loadRotationGraph();
+                } else if (state.rrgTab === 'ema200') {
+                    loadEMA200Pullbacks(state.assetType);
                 }
             }, 50);
         });
@@ -1740,9 +1811,13 @@ function switchTab(tabId) {
     state.rrgTab = tabId;
     const btnTecnico = document.getElementById('tab-btn-tecnico');
     const btnRotacion = document.getElementById('tab-btn-rotacion');
+    const btnEMA200 = document.getElementById('tab-btn-ema200');
+    
     const workspaceTecnico = document.getElementById('chart-workspace');
     const workspaceEmpty = document.getElementById('chart-empty-state');
     const workspaceRotation = document.getElementById('chart-rotation-workspace');
+    const workspaceEMA200 = document.getElementById('chart-ema200-workspace');
+    
     const controlsRow = document.querySelector('.controls-row');
     const metricsRow = document.querySelector('.asset-metrics');
     const fundamentalsBox = document.getElementById('fundamentals-section');
@@ -1751,7 +1826,10 @@ function switchTab(tabId) {
     if (tabId === 'tecnico') {
         if (btnTecnico) btnTecnico.classList.add('active');
         if (btnRotacion) btnRotacion.classList.remove('active');
+        if (btnEMA200) btnEMA200.classList.remove('active');
+        
         if (workspaceRotation) workspaceRotation.style.display = 'none';
+        if (workspaceEMA200) workspaceEMA200.style.display = 'none';
         
         // Mostrar header de técnico
         if (tecnicoHeader) tecnicoHeader.style.display = 'flex';
@@ -1772,23 +1850,264 @@ function switchTab(tabId) {
         }
         
         setTimeout(resizeAllCharts, 50);
-    } else {
+    } else if (tabId === 'rotacion') {
         if (btnTecnico) btnTecnico.classList.remove('active');
         if (btnRotacion) btnRotacion.classList.add('active');
+        if (btnEMA200) btnEMA200.classList.remove('active');
+        
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+        if (workspaceEMA200) workspaceEMA200.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
-        
-        // Ocultar header de técnico
         if (tecnicoHeader) tecnicoHeader.style.display = 'none';
         
         if (workspaceRotation) workspaceRotation.style.display = 'flex';
         
         loadRotationGraph();
+    } else if (tabId === 'ema200') {
+        if (btnTecnico) btnTecnico.classList.remove('active');
+        if (btnRotacion) btnRotacion.classList.remove('active');
+        if (btnEMA200) btnEMA200.classList.add('active');
+        
+        if (workspaceTecnico) workspaceTecnico.style.display = 'none';
+        if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+        if (workspaceRotation) workspaceRotation.style.display = 'none';
+        if (fundamentalsBox) fundamentalsBox.style.display = 'none';
+        if (controlsRow) controlsRow.style.display = 'none';
+        if (metricsRow) metricsRow.style.display = 'none';
+        if (tecnicoHeader) tecnicoHeader.style.display = 'none';
+        
+        if (workspaceEMA200) workspaceEMA200.style.display = 'flex';
+        
+        loadEMA200Pullbacks(state.assetType);
     }
 }
+
+window.switchTab = switchTab;
+
+async function loadEMA200Pullbacks(panel) {
+    const currentPanel = panel || state.assetType || 'acciones';
+    state.ema200Panel = currentPanel;
+    
+    const tbody = document.getElementById('ema200-tbody');
+    if (!tbody) return;
+    
+    tbody.innerHTML = `
+        <tr class="loading-row">
+            <td colspan="5">Calculando activos cerca de la EMA200...</td>
+        </tr>
+    `;
+    
+    try {
+        const res = await fetch(`/api/ema200-pullbacks?panel=${state.ema200Panel}`);
+        if (!res.ok) {
+            tbody.innerHTML = `
+                <tr class="loading-row">
+                    <td colspan="5" style="color: var(--accent-red)">Error al obtener datos de la EMA200</td>
+                </tr>
+            `;
+            return;
+        }
+        
+        const data = await res.json();
+        if (!data || data.length === 0) {
+            tbody.innerHTML = `
+                <tr class="loading-row">
+                    <td colspan="5">No se encontraron activos cerca de la EMA200.</td>
+                </tr>
+            `;
+            return;
+        }
+        
+        state.ema200RawData = data;
+        renderEMA200Table();
+    } catch (e) {
+        console.error('Error cargando pullbacks EMA200:', e);
+        tbody.innerHTML = `
+            <tr class="loading-row">
+                <td colspan="5" style="color: var(--accent-red)">Error de conexión al cargar EMA200</td>
+            </tr>
+        `;
+    }
+}
+
+function parseLastVisitDays(str) {
+    if (!str) return 9999;
+    const match = str.match(/hace (\d+)/);
+    const num = match ? parseInt(match[1]) : 1;
+    if (str.includes('día')) return num;
+    if (str.includes('semana')) return num * 7;
+    if (str.includes('mes')) return num * 30.4;
+    if (str.includes('año')) return num * 365;
+    return 999;
+}
+
+function renderEMA200Table(data) {
+    if (data) {
+        state.ema200RawData = data;
+    }
+    
+    const tbody = document.getElementById('ema200-tbody');
+    if (!tbody) return;
+    
+    let list = state.ema200RawData ? [...state.ema200RawData] : [];
+    if (list.length === 0) {
+        tbody.innerHTML = `
+            <tr class="loading-row">
+                <td colspan="5">No hay datos disponibles para mostrar.</td>
+            </tr>
+        `;
+        return;
+    }
+    
+    // 1. Filtrar por Frecuencia
+    const freqFilter = state.ema200FreqFilter || 'all';
+    if (freqFilter !== 'all') {
+        list = list.filter(item => item.freq_cat === freqFilter);
+    }
+    
+    if (list.length === 0) {
+        tbody.innerHTML = `
+            <tr class="loading-row">
+                <td colspan="5">No hay activos con frecuencia "${freqFilter}".</td>
+            </tr>
+        `;
+        return;
+    }
+    
+    // 2. Ordenar por Columna activa
+    const sortBy = state.ema200SortBy || 'dist_atrs';
+    const sortDir = state.ema200SortDirection || 'asc';
+    const mult = sortDir === 'asc' ? 1 : -1;
+    
+    list.sort((a, b) => {
+        if (sortBy === 'ticker') {
+            return mult * a.ticker.localeCompare(b.ticker);
+        } else if (sortBy === 'last_visit') {
+            return mult * (parseLastVisitDays(a.last_visit) - parseLastVisitDays(b.last_visit));
+        } else if (sortBy === 'dist_atrs') {
+            return mult * (a.dist_atrs - b.dist_atrs);
+        } else if (sortBy === 'freq_cat') {
+            const freqRank = { 'rara': 1, 'ocasional': 2, 'habitual': 3 };
+            return mult * ((freqRank[a.freq_cat] || 0) - (freqRank[b.freq_cat] || 0));
+        } else if (sortBy === 'rs_now') {
+            return mult * ((a.rs_now || 0) - (b.rs_now || 0));
+        }
+        return 0;
+    });
+    
+    // 3. Actualizar Encabezados de Tabla (Iconos de Ordenamiento)
+    const headers = document.querySelectorAll('.ema200-table th[data-sort]');
+    headers.forEach(th => {
+        const key = th.getAttribute('data-sort');
+        const iconSpan = th.querySelector('.sort-icon');
+        if (key === sortBy) {
+            th.classList.add('sorted');
+            if (iconSpan) iconSpan.textContent = sortDir === 'asc' ? '▲' : '▼';
+        } else {
+            th.classList.remove('sorted');
+            if (iconSpan) iconSpan.textContent = '';
+        }
+    });
+    
+    // 4. Renderizar Filas
+    let html = '';
+    list.forEach(item => {
+        const freqClass = item.freq_cat === 'rara' ? 'freq-rara' : (item.freq_cat === 'ocasional' ? 'freq-ocasional' : 'freq-habitual');
+        
+        html += `
+            <tr class="ema200-row" data-ticker="${item.ticker}">
+                <td class="col-ticker">
+                    <div class="ticker-badge-cell">
+                        <div class="ticker-cell">
+                            <img src="assets/logos/${item.ticker}.svg" 
+                                 class="ticker-logo" 
+                                 alt="${item.ticker}" 
+                                 onerror="handleLogoError(this, '${item.ticker}')" />
+                            <span class="ticker-logo-fallback" style="display:none;">${item.ticker.charAt(0)}</span>
+                            <span class="ticker-box">${item.ticker}</span>
+                        </div>
+                        <span class="ticker-subicon">🏗️ ${item.sector || ''}</span>
+                    </div>
+                </td>
+                <td class="col-last">
+                    <div class="last-visit-cell">
+                        ${item.last_visit}
+                    </div>
+                </td>
+                <td class="col-dist">
+                    <div class="dist-cell">
+                        <span>${item.dist_str}</span>
+                    </div>
+                </td>
+                <td class="col-freq">
+                    <span class="freq-pill ${freqClass}">${item.freq_label}</span>
+                </td>
+                <td class="col-rs">
+                    <div class="rs-cell">
+                        ${item.rs_str}
+                    </div>
+                </td>
+            </tr>
+        `;
+    });
+    
+    tbody.innerHTML = html;
+    
+    // Bind click handlers a filas para abrir gráfico técnico
+    const rows = tbody.querySelectorAll('.ema200-row');
+    rows.forEach(row => {
+        row.addEventListener('click', () => {
+            const ticker = row.getAttribute('data-ticker');
+            if (ticker) {
+                let matchedAsset = state.stocks.find(s => s.ticker === ticker) || state.cedears.find(s => s.ticker === ticker);
+                if (!matchedAsset && ticker.endsWith('D')) {
+                    const baseTkr = ticker.slice(0, -1);
+                    matchedAsset = state.stocks.find(s => s.ticker === baseTkr) || state.cedears.find(s => s.ticker === baseTkr);
+                }
+                const targetTicker = matchedAsset ? matchedAsset.ticker : ticker;
+                selectAsset(targetTicker);
+            }
+        });
+    });
+}
+
+function initEMA200Controls() {
+    state.ema200FreqFilter = 'all';
+    state.ema200SortBy = 'dist_atrs';
+    state.ema200SortDirection = 'asc';
+    
+    // Listeners para filtros de frecuencia
+    const freqTabs = document.querySelectorAll('#ema200-freq-filter-tabs .ema200-freq-tab');
+    freqTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            freqTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            state.ema200FreqFilter = e.target.getAttribute('data-freq') || 'all';
+            renderEMA200Table();
+        });
+    });
+    
+    // Listeners para ordenamiento por columnas
+    const ths = document.querySelectorAll('.ema200-table th[data-sort]');
+    ths.forEach(th => {
+        th.addEventListener('click', () => {
+            const sortKey = th.getAttribute('data-sort');
+            if (state.ema200SortBy === sortKey) {
+                state.ema200SortDirection = state.ema200SortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                state.ema200SortBy = sortKey;
+                state.ema200SortDirection = (sortKey === 'rs_now' || sortKey === 'freq_cat') ? 'desc' : 'asc';
+            }
+            renderEMA200Table();
+        });
+    });
+}
+
+window.loadEMA200Pullbacks = loadEMA200Pullbacks;
+window.renderEMA200Table = renderEMA200Table;
 
 async function loadRotationGraph() {
     const rrgBenchmarkName = document.getElementById('rrg-benchmark-name');

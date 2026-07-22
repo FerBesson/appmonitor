@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
     <!-- Chart.js CDN (for RRG) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="css/styles.css?v=1.6.1">
+    <link rel="stylesheet" href="css/styles.css?v=1.7.0">
 </head>
 <body>
     <div class="app-container">
@@ -138,20 +138,27 @@
 
             <!-- CENTER: Chart -->
             <div class="chart-section">
-                <!-- Selector de Vista (Gráfico vs RRG) -->
+                <!-- Selector de Vista (Gráfico vs RRG vs EMA200) -->
                 <div class="chart-view-selector-bar">
-                    <button class="view-selector-tab active" id="tab-btn-tecnico" data-tab="tecnico">
+                    <button class="view-selector-tab active" id="tab-btn-tecnico" onclick="switchTab('tecnico')">
                         <span class="tab-icon">📊</span>
                         <div class="tab-text-group">
                             <span class="tab-title">Gráfico Técnico</span>
                             <span class="tab-desc">Velas e indicadores</span>
                         </div>
                     </button>
-                    <button class="view-selector-tab" id="tab-btn-rotacion" data-tab="rotacion">
+                    <button class="view-selector-tab" id="tab-btn-rotacion" onclick="switchTab('rotacion')">
                         <span class="tab-icon">🔄</span>
                         <div class="tab-text-group">
                             <span class="tab-title">Rotación de Sectores (RRG)</span>
                             <span class="tab-desc">Flujo de capitales</span>
+                        </div>
+                    </button>
+                    <button class="view-selector-tab" id="tab-btn-ema200" onclick="switchTab('ema200')">
+                        <span class="tab-icon">🧲</span>
+                        <div class="tab-text-group">
+                            <span class="tab-title">Regreso a EMA200</span>
+                            <span class="tab-desc">Pullbacks institucionales</span>
                         </div>
                     </button>
                 </div>
@@ -165,6 +172,47 @@
                 </div>
 
                 <div class="chart-section-body">
+                    <!-- EMA200 Pullbacks Workspace -->
+                    <div id="chart-ema200-workspace" style="display: none;" class="ema200-workspace">
+                        <div class="ema200-card">
+                            <div class="ema200-header">
+                                <div class="ema200-header-title-group">
+                                    <div class="ema200-accent-bar"></div>
+                                    <span class="ema200-header-icon">🧲</span>
+                                    <div class="ema200-title-block">
+                                        <h2>Regreso a la EMA200</h2>
+                                        <p class="ema200-subtitle">Visitas raras a la media de largo plazo — el pullback donde las instituciones defienden a sus líderes</p>
+                                    </div>
+                                </div>
+                                <div class="ema200-freq-filter-tabs" id="ema200-freq-filter-tabs">
+                                    <button class="ema200-freq-tab active" data-freq="all">Todas</button>
+                                    <button class="ema200-freq-tab" data-freq="rara">Visita Rara</button>
+                                    <button class="ema200-freq-tab" data-freq="ocasional">Ocasional</button>
+                                    <button class="ema200-freq-tab" data-freq="habitual">Habitual</button>
+                                </div>
+                            </div>
+
+                            <div class="ema200-table-container">
+                                <table class="ema200-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-ticker" data-sort="ticker">TICKER <span class="sort-icon"></span></th>
+                                            <th class="th-last" data-sort="last_visit">ÚLTIMA VEZ <span class="sort-icon"></span></th>
+                                            <th class="th-dist sorted" data-sort="dist_atrs">DIST <span class="sort-icon">▲</span></th>
+                                            <th class="th-freq" data-sort="freq_cat">FRECUENCIA <span class="sort-icon"></span></th>
+                                            <th class="th-rs" data-sort="rs_now">RS 1M → HOY <span class="sort-icon"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ema200-tbody">
+                                        <tr class="loading-row">
+                                            <td colspan="5">Calculando activos cerca de la EMA200...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- RRG (Rotación) Workspace -->
                     <div id="chart-rotation-workspace" style="display: none;">
                         <div class="rrg-header-row">
@@ -348,6 +396,6 @@
         </main>
     </div>
 
-    <script src="js/app.js?v=1.6.7"></script>
+    <script src="js/app.js?v=1.9.0"></script>
 </body>
 </html>

@@ -140,6 +140,17 @@ async def api_rotation(panel: str = "acciones"):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo rotación: {str(e)}")
 
+@app.get("/api/ema200-pullbacks")
+async def api_ema200_pullbacks(panel: str = "cedears"):
+    if panel not in ["acciones", "cedears"]:
+        raise HTTPException(status_code=400, detail="Panel inválido. Debe ser 'acciones' o 'cedears'")
+    try:
+        from backend.services.ema200_service import calculate_ema200_pullbacks
+        return await calculate_ema200_pullbacks(panel)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo pullbacks EMA200: {str(e)}")
+
+
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")
 if os.path.exists(frontend_dir):
     app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")

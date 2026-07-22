@@ -2,12 +2,12 @@
   "ticker": "COIN",
   "sector": "Financial Services",
   "industry": "Financial Data & Stock Exchanges",
-  "market_cap": "65.59T",
-  "pe_ratio": "7.76",
+  "market_cap": "71.85T",
+  "pe_ratio": "8.50",
   "dividend_yield": "",
   "eps": "1,188.87",
   "beta": "3.35",
-  "price_to_book": "0.12",
+  "price_to_book": "0.13",
   "profit_margin": "12.74%",
   "description": "Coinbase Global, Inc. operates platform for crypto assets in the United States and internationally. It provides the primary financial account in the crypto economy for consumers; a brokerage platform with a pool of liquidity across the crypto marketplace for institutions; and a suite of products granting access to build onchain for developers. The company was founded in 2012 and is based in New York, New York."
 }

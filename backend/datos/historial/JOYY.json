@@ -1,11 +1,11 @@
 [
   {
-    "date": "2026-07-17",
-    "open": 0.0,
-    "high": 0.0,
-    "low": 0.0,
-    "close": 22160.0,
-    "volume": 1.0,
+    "date": "2026-07-22",
+    "open": 22850.0,
+    "high": 22850.0,
+    "low": 22580.0,
+    "close": 22580.0,
+    "volume": 9.0,
     "sma20": null,
     "sma50": null,
     "rsi": null,

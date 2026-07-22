@@ -25,21 +25,20 @@ CEDEAR_US_MAP = {
 def _get_nasdaq_earnings_for_date(date_str: str) -> List[Dict[str, Any]]:
     """
     Obtiene los datos de earnings de Nasdaq para una fecha específica (YYYY-MM-DD).
-    Utiliza caché local en disco por 12 horas para evitar rate limiting.
+    Utiliza caché local en disco de respuesta instantánea.
     """
     cache_file = os.path.join(EARNINGS_CACHE_DIR, f"{date_str}.json")
     
-    # 1. Verificar si hay caché reciente (< 12 horas)
+    # 1. Verificar si hay caché en disco (respuesta instantánea)
     if os.path.exists(cache_file):
         try:
-            mtime = os.path.getmtime(cache_file)
-            if datetime.now().timestamp() - mtime < 43200: # 12h
+            if os.path.getsize(cache_file) > 2:
                 with open(cache_file, "r", encoding="utf-8") as f:
                     return json.load(f)
         except Exception as e:
             print(f"Error leyendo caché de earnings para {date_str}: {e}")
 
-    # 2. Consultar la API de Nasdaq
+    # 2. Consultar la API de Nasdaq si no está en disco
     url = f"https://api.nasdaq.com/api/calendar/earnings?date={date_str}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -83,10 +82,10 @@ def _get_nasdaq_earnings_for_date(date_str: str) -> List[Dict[str, Any]]:
             
     return results
 
-# Lista de tickers de acciones locales argentinas (ADRs en NY)
+# Lista de tickers de acciones locales argentinas (ADRs en NY y Merval Líder)
 LOCAL_ARG_SYMBOLS = {
     "GGAL", "YPF", "BMA", "PAM", "PAMP", "TEO", "TECO2", "BBAR", 
-    "SUPV", "CEPU", "EDN", "VIST", "LOMA", "IRS"
+    "SUPV", "CEPU", "EDN", "VIST", "LOMA", "IRS", "CRES", "TGS"
 }
 
 # Mapeo de tickers alias/clases duplicadas para unificar en un solo ticker principal
@@ -231,33 +230,50 @@ async def get_earnings_for_date_range(start_date: datetime, end_date: datetime, 
         
     return days_data
 
+COMPILED_WEEK_CACHE = {}
+COMPILED_MONTH_CACHE = {}
+
 async def get_weekly_earnings(target_date_str: str = None, panel: str = "cedears", only_relevant: bool = True) -> Dict[str, Any]:
     """
     Devuelve los earnings para la semana laborable (Lunes a Viernes) que contiene target_date.
+    Respuesta instantánea vía memoria/caché.
     """
-    if target_date_str:
-        try:
-            dt = datetime.strptime(target_date_str, "%Y-%m-%d")
-        except ValueError:
-            dt = datetime.now()
-    else:
+    if not target_date_str:
+        target_date_str = datetime.now().strftime("%Y-%m-%d")
+        
+    try:
+        dt = datetime.strptime(target_date_str, "%Y-%m-%d")
+    except ValueError:
         dt = datetime.now()
         
     monday = dt - timedelta(days=dt.weekday())
     friday = monday + timedelta(days=4)
+    mon_str = monday.strftime("%Y-%m-%d")
+    
+    cache_key = f"{mon_str}_{panel}_{only_relevant}"
+    if cache_key in COMPILED_WEEK_CACHE:
+        return COMPILED_WEEK_CACHE[cache_key]
     
     days = await get_earnings_for_date_range(monday, friday, panel=panel, only_relevant=only_relevant)
     
-    return {
-        "startDate": monday.strftime("%Y-%m-%d"),
+    result = {
+        "startDate": mon_str,
         "endDate": friday.strftime("%Y-%m-%d"),
         "days": days
     }
+    
+    COMPILED_WEEK_CACHE[cache_key] = result
+    return result
 
 async def get_monthly_earnings(year: int, month: int, panel: str = "cedears", only_relevant: bool = True) -> Dict[str, Any]:
     """
     Devuelve los earnings para todo el mes especificado.
+    Respuesta instantánea vía memoria/caché.
     """
+    cache_key = f"{year}_{month}_{panel}_{only_relevant}"
+    if cache_key in COMPILED_MONTH_CACHE:
+        return COMPILED_MONTH_CACHE[cache_key]
+        
     start_date = datetime(year, month, 1)
     if month == 12:
         end_date = datetime(year + 1, 1, 1) - timedelta(days=1)
@@ -266,12 +282,15 @@ async def get_monthly_earnings(year: int, month: int, panel: str = "cedears", on
         
     days = await get_earnings_for_date_range(start_date, end_date, panel=panel, only_relevant=only_relevant)
     
-    return {
+    result = {
         "year": year,
         "month": month,
         "startDate": start_date.strftime("%Y-%m-%d"),
         "endDate": end_date.strftime("%Y-%m-%d"),
         "days": days
     }
+    
+    COMPILED_MONTH_CACHE[cache_key] = result
+    return result
 
 

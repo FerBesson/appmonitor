@@ -45,8 +45,7 @@ const state = {
 
 function getBaseTicker(ticker) {
     if (!ticker) return '';
-    let t = ticker.trim().toUpperCase();
-    if (t === 'GOGLD' || t === 'GOGLC' || t === 'GOGL') return 'GOOGL';
+    const t = ticker.toUpperCase();
     if (t === 'BRKBC' || t === 'BRKBD' || t === 'BRKB') return 'BRKB';
     if (t.length > 3 && (t.endsWith('D') || t.endsWith('C')) && !t.startsWith('USD_')) {
         let base = t.slice(0, -1);
@@ -56,33 +55,46 @@ function getBaseTicker(ticker) {
     return t;
 }
 
+function getCompanyLogoSrc(ticker) {
+    if (!ticker) return '';
+    const cleanSym = ticker.toUpperCase().replace('.BA', '').trim();
+    const base = getBaseTicker(cleanSym);
+    return `https://assets.parqet.com/logos/symbol/${base}`;
+}
+window.getCompanyLogoSrc = getCompanyLogoSrc;
+
 function handleLogoError(img, ticker) {
     if (!img) return;
-    const base = getBaseTicker(ticker);
-    const currentSrc = img.getAttribute('src') || '';
+    const cleanSym = (ticker || '').toUpperCase().replace('.BA', '').trim();
+    const base = getBaseTicker(cleanSym);
+    
+    const fmpLogo = `https://financialmodelingprep.com/image-stock/${base}.png`;
+    const localSvg = `assets/logos/${base}.svg`;
+    const localPng = `assets/logos/${base}.png`;
 
-    if (currentSrc.endsWith('.svg')) {
-        img.src = currentSrc.slice(0, -4) + '.png';
+    if (!img.dataset.triedFmp) {
+        img.dataset.triedFmp = '1';
+        img.src = fmpLogo;
         return;
     }
-
-    if (!img.dataset.triedBase && base && base !== ticker) {
-        img.dataset.triedBase = '1';
-        img.src = `assets/logos/${base}.svg`;
+    if (!img.dataset.triedLocalSvg) {
+        img.dataset.triedLocalSvg = '1';
+        img.src = localSvg;
         return;
     }
-
-    if (img.dataset.triedBase === '1' && !img.dataset.triedBasePng) {
-        img.dataset.triedBasePng = '1';
-        img.src = `assets/logos/${base}.png`;
+    if (!img.dataset.triedLocalPng) {
+        img.dataset.triedLocalPng = '1';
+        img.src = localPng;
         return;
     }
 
     img.style.display = 'none';
-    if (img.nextElementSibling && img.nextElementSibling.classList.contains('ticker-logo-fallback')) {
-        img.nextElementSibling.style.display = 'inline-flex';
+    const fallback = img.nextElementSibling;
+    if (fallback && (fallback.classList.contains('ticker-logo-fallback') || fallback.classList.contains('company-tile-fallback') || fallback.classList.contains('monthly-mini-fallback'))) {
+        fallback.style.display = 'inline-flex';
     }
 }
+window.handleLogoError = handleLogoError;
 
 // Formateador de moneda argentina
 const formatARS = new Intl.NumberFormat('es-AR', {
@@ -205,6 +217,7 @@ function initEventListeners() {
 
             renderTable();
             renderMarketMovers();
+            loadSidebarEarnings();
         });
     });
 
@@ -482,6 +495,8 @@ async function refreshAllData() {
             const mervalData = await mervalRes.json();
             updateMervalWidget(mervalData);
         }
+        
+        loadSidebarEarnings();
     } catch (err) {
         console.error('Error conectando al backend:', err);
         document.getElementById('status-text').textContent = 'DESCONECTADO';
@@ -527,7 +542,7 @@ function renderMarketMovers() {
             <div class="mover-row" data-ticker="${asset.ticker}">
                 <div class="mover-info">
                     <div class="ticker-cell">
-                        <img src="assets/logos/${asset.ticker}.svg" 
+                        <img src="${getCompanyLogoSrc(asset.ticker)}" 
                              class="ticker-logo" 
                              alt="${asset.ticker}" 
                              onerror="handleLogoError(this, '${asset.ticker}')" />
@@ -627,7 +642,7 @@ function renderTable() {
             <tr class="${isSelected}" data-ticker="${asset.ticker}">
                 <td class="col-ticker">
                     <div class="ticker-cell">
-                        <img src="assets/logos/${asset.ticker}.svg" 
+                        <img src="${getCompanyLogoSrc(asset.ticker)}" 
                              class="ticker-logo" 
                              alt="${asset.ticker}" 
                              onerror="handleLogoError(this, '${asset.ticker}')" />
@@ -694,7 +709,7 @@ async function selectAsset(ticker) {
     
     document.getElementById('drawer-ticker').innerHTML = `
         <div class="ticker-cell">
-            <img src="assets/logos/${ticker}.svg" class="ticker-logo" alt="${ticker}" onerror="handleLogoError(this, '${ticker}')" />
+            <img src="${getCompanyLogoSrc(ticker)}" class="ticker-logo" alt="${ticker}" onerror="handleLogoError(this, '${ticker}')" />
             <span class="ticker-logo-fallback" style="display:none;">${ticker.charAt(0)}</span>
             <span>${displayTicker}</span>
         </div>
@@ -2054,7 +2069,7 @@ function renderEMA200Table(data) {
                 <td class="col-ticker">
                     <div class="ticker-badge-cell">
                         <div class="ticker-cell">
-                            <img src="assets/logos/${item.ticker}.svg" 
+                            <img src="${getCompanyLogoSrc(item.ticker)}" 
                                  class="ticker-logo" 
                                  alt="${item.ticker}" 
                                  onerror="handleLogoError(this, '${item.ticker}')" />
@@ -3068,15 +3083,16 @@ function showCompanyEarningsCard(comp) {
     const isPastOrToday = comp.date ? (comp.date <= todayStr) : true;
     
     if (badgeEl) {
-        if (comp.timing === 'time-pre-market') {
-            badgeEl.className = 'timing-badge before-open';
-            badgeEl.innerText = '☀️ Before Open (Pre-Mercado)';
-        } else if (comp.timing === 'time-after-hours') {
+        const tStr = (comp.timing || comp.time || '').toLowerCase();
+        if (tStr.includes('after') || tStr.includes('post') || tStr === 'after-close') {
             badgeEl.className = 'timing-badge after-close';
             badgeEl.innerText = '🌙 After Close (Post-Mercado)';
+        } else if (tStr.includes('pre') || tStr.includes('before') || tStr === 'before-open') {
+            badgeEl.className = 'timing-badge before-open';
+            badgeEl.innerText = '☀️ Before Open (Pre-Mercado)';
         } else {
             badgeEl.className = 'timing-badge';
-            badgeEl.innerText = isPastOrToday ? '🕒 Horario Confirmado / Reportado' : '🕒 Horario por Confirmar';
+            badgeEl.innerText = isPastOrToday ? '📋 Horario Confirmado / Reportado' : '🕒 Horario por Confirmar';
         }
     }
     
@@ -3171,3 +3187,152 @@ function closeCompanyEarningsModal() {
     if (modal) modal.style.display = 'none';
 }
 window.closeCompanyEarningsModal = closeCompanyEarningsModal;
+
+/* Sidebar Featured Earnings Widget (Right Column) */
+let stateSidebarEarningsTab = 'today';
+let sidebarEarningsData = { today: [], tomorrow: [] };
+
+async function loadSidebarEarnings() {
+    const listEl = document.getElementById('sidebar-earnings-list');
+    if (!listEl) return;
+    
+    try {
+        const now = new Date();
+        const formatYMD = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        
+        const todayStr = formatYMD(now);
+        
+        let nextDay = new Date(now);
+        nextDay.setDate(nextDay.getDate() + 1);
+        
+        const currentPanel = state.assetType || 'cedears';
+        
+        const res = await fetch(`/api/earnings/week?date=${todayStr}&panel=${currentPanel}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        const daysList = data.days || [];
+        let todayObj = daysList.find(d => d.date === todayStr);
+        let tomorrowObj = daysList.find(d => d.date === formatYMD(nextDay));
+        
+        // Si mañana no tiene balances o cae en fin de semana, tomar el siguiente día con balances en la semana
+        if (!tomorrowObj || ((tomorrowObj.before_open.length + tomorrowObj.after_close.length + tomorrowObj.other.length) === 0)) {
+            tomorrowObj = daysList.find(d => d.date > todayStr && (d.before_open.length + d.after_close.length + d.other.length) > 0);
+        }
+        
+        const processDayComps = (dayObj) => {
+            if (!dayObj) return [];
+            const comps = [...(dayObj.before_open || []), ...(dayObj.after_close || []), ...(dayObj.other || [])];
+            comps.sort((a, b) => parseMarketCapNum(b.marketCap) - parseMarketCapNum(a.marketCap));
+            return comps;
+        };
+        
+        sidebarEarningsData.today = processDayComps(todayObj);
+        sidebarEarningsData.tomorrow = processDayComps(tomorrowObj);
+        
+        renderSidebarEarnings();
+    } catch (e) {
+        console.error("Error cargando balances destacados lateral:", e);
+    }
+}
+window.loadSidebarEarnings = loadSidebarEarnings;
+
+function switchSidebarEarningsTab(tab) {
+    stateSidebarEarningsTab = tab;
+    const btnToday = document.getElementById('sb-tab-today');
+    const btnTomorrow = document.getElementById('sb-tab-tomorrow');
+    if (btnToday) btnToday.classList.toggle('active', tab === 'today');
+    if (btnTomorrow) btnTomorrow.classList.toggle('active', tab === 'tomorrow');
+    renderSidebarEarnings();
+}
+window.switchSidebarEarningsTab = switchSidebarEarningsTab;
+
+function selectSidebarEarningsItem(idx) {
+    const comps = sidebarEarningsData[stateSidebarEarningsTab] || [];
+    const comp = comps[idx];
+    if (!comp) return;
+    showCompanyEarningsCard(comp);
+}
+window.selectSidebarEarningsItem = selectSidebarEarningsItem;
+
+function renderSidebarEarnings() {
+    const listEl = document.getElementById('sidebar-earnings-list');
+    if (!listEl) return;
+    
+    const comps = sidebarEarningsData[stateSidebarEarningsTab] || [];
+    if (comps.length === 0) {
+        listEl.innerHTML = `<div style="text-align:center; padding:18px 10px; font-size:12px; color:var(--text-secondary);">Sin balances destacados para ${stateSidebarEarningsTab === 'today' ? 'hoy' : 'próxima fecha'}</div>`;
+        return;
+    }
+    
+    const maxItems = 6;
+    const topComps = comps.slice(0, maxItems);
+    
+    const now = new Date();
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    
+    listEl.innerHTML = topComps.map((comp, idx) => {
+        const sym = comp.symbol;
+        const logo = getCompanyLogoSrc(sym);
+        const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
+        
+        const isPastOrToday = (comp.date || todayStr) <= todayStr;
+        const hasReported = isPastOrToday && comp.eps && comp.eps.trim() !== '' && comp.eps.trim() !== 'N/A';
+        
+        let valText = '';
+        let valClass = '';
+        let badgeHtml = '';
+        
+        if (hasReported) {
+            valText = `$${comp.eps}`;
+            const actualNum = parseFloat(comp.eps.replace('$', ''));
+            const estNum = parseFloat((comp.epsForecast || '').replace('$', ''));
+            if (!isNaN(actualNum) && !isNaN(estNum)) {
+                if (actualNum > estNum) {
+                    valClass = '';
+                    badgeHtml = `<span class="sidebar-earnings-badge beat">Beat</span>`;
+                } else if (actualNum < estNum) {
+                    valClass = 'miss';
+                    badgeHtml = `<span class="sidebar-earnings-badge miss">Miss</span>`;
+                } else {
+                    valClass = 'forecast';
+                    badgeHtml = `<span class="sidebar-earnings-badge pending">Inline</span>`;
+                }
+            } else {
+                badgeHtml = `<span class="sidebar-earnings-badge beat">Real</span>`;
+            }
+        } else {
+            valText = comp.epsForecast ? `Est: $${comp.epsForecast}` : 'Pend';
+            valClass = 'forecast';
+            badgeHtml = `<span class="sidebar-earnings-badge pending">Est</span>`;
+        }
+        
+        let timeLabel = '☀️ Pre';
+        const tStr = (comp.timing || comp.time || '').toLowerCase();
+        if (tStr.includes('after') || tStr.includes('post') || tStr === 'after-close') {
+            timeLabel = '🌙 Post';
+        } else if (tStr.includes('pre') || tStr.includes('before') || tStr === 'before-open') {
+            timeLabel = '☀️ Pre';
+        } else {
+            timeLabel = isPastOrToday ? '📋 Rep' : '🕒 Pend';
+        }
+        
+        return `
+            <div class="sidebar-earnings-row" onclick="selectSidebarEarningsItem(${idx})">
+                <div class="sidebar-earnings-left">
+                    <img src="${logo}" class="sidebar-earnings-logo" onerror="if(this.src !== '${fallbackLogo}'){this.src='${fallbackLogo}';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" alt="${sym}">
+                    <div class="monthly-mini-fallback" style="display:none; width:22px; height:22px; font-size:8px;">${sym.slice(0, 2)}</div>
+                    <div class="sidebar-earnings-info">
+                        <span class="sidebar-earnings-sym">${sym}</span>
+                        <span class="sidebar-earnings-timing">${timeLabel}</span>
+                    </div>
+                </div>
+                <div class="sidebar-earnings-right">
+                    <span class="sidebar-earnings-val ${valClass}">${valText}</span>
+                    ${badgeHtml}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+window.renderSidebarEarnings = renderSidebarEarnings;

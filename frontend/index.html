@@ -439,22 +439,40 @@
                 </div>
             </div>
 
-            <!-- RIGHT: Market Movers -->
-            <div class="movers-section">
-                <div class="movers-header">
-                    <h3 class="movers-title">MARKET MOVERS</h3>
-                    <div class="movers-currency-tabs" id="movers-currency-filter-container">
-                        <button class="movers-currency-tab active" data-currency="ARS">ARS</button>
-                        <button class="movers-currency-tab" data-currency="USD">USD</button>
-                        <button class="movers-currency-tab" data-currency="USDC" id="movers-currency-usdc-tab" style="display: none;">USDC</button>
+            <!-- RIGHT SIDEBAR: Market Movers + Featured Earnings -->
+            <div class="right-sidebar-column">
+                <div class="movers-section">
+                    <div class="movers-header">
+                        <h3 class="movers-title">MARKET MOVERS</h3>
+                        <div class="movers-currency-tabs" id="movers-currency-filter-container">
+                            <button class="movers-currency-tab active" data-currency="ARS">ARS</button>
+                            <button class="movers-currency-tab" data-currency="USD">USD</button>
+                            <button class="movers-currency-tab" data-currency="USDC" id="movers-currency-usdc-tab" style="display: none;">USDC</button>
+                        </div>
+                    </div>
+                    <div class="movers-tabs">
+                        <button class="movers-tab active" data-movers="gainers">Ganadores</button>
+                        <button class="movers-tab" data-movers="losers">Perdedores</button>
+                    </div>
+                    <div class="movers-list" id="movers-list">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
-                <div class="movers-tabs">
-                    <button class="movers-tab active" data-movers="gainers">Ganadores</button>
-                    <button class="movers-tab" data-movers="losers">Perdedores</button>
-                </div>
-                <div class="movers-list" id="movers-list">
-                    <!-- Populated by JS -->
+
+                <div class="sidebar-earnings-section">
+                    <div class="sidebar-earnings-header">
+                        <div class="sidebar-earnings-title-group">
+                            <span class="sidebar-earnings-icon">📅</span>
+                            <h3 class="sidebar-earnings-title">BALANCES DESTACADOS</h3>
+                        </div>
+                        <div class="sidebar-earnings-tabs">
+                            <button class="sidebar-earnings-tab active" id="sb-tab-today" onclick="switchSidebarEarningsTab('today')">Hoy</button>
+                            <button class="sidebar-earnings-tab" id="sb-tab-tomorrow" onclick="switchSidebarEarningsTab('tomorrow')">Mañana</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-earnings-list" id="sidebar-earnings-list">
+                        <!-- Populated by JS -->
+                    </div>
                 </div>
             </div>
 
@@ -551,6 +569,6 @@
         </div>
     </div>
 
-    <script src="js/app.js?v=2.0.0"></script>
+    <script src="js/app.js?v=2.1.2"></script>
 </body>
 </html>

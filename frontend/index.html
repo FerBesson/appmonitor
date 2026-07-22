@@ -477,18 +477,19 @@
 
             <div class="company-card-body">
                 <div class="company-card-metric-highlight">
-                    <span class="card-metric-label">Expectativa EPS de Mercado (Consenso)</span>
-                    <span id="cec-eps-forecast" class="card-metric-val">---</span>
+                    <span class="card-metric-label" id="cec-metric-label">Expectativa EPS de Mercado (Consenso)</span>
+                    <span id="cec-eps-primary" class="card-metric-val">---</span>
+                    <span id="cec-status-badge" class="cec-status-badge" style="display:none;">---</span>
                 </div>
 
                 <div class="company-card-metrics-grid">
                     <div class="card-mini-metric">
-                        <span class="mini-label">EPS Año Anterior</span>
-                        <span id="cec-eps-last" class="mini-val">---</span>
+                        <span class="mini-label" id="cec-mini1-label">EPS Año Anterior</span>
+                        <span id="cec-mini1-val" class="mini-val">---</span>
                     </div>
                     <div class="card-mini-metric">
-                        <span class="mini-label">Var. Estimada (YoY)</span>
-                        <span id="cec-eps-growth" class="mini-val">---</span>
+                        <span class="mini-label" id="cec-mini2-label">Var. Estimada (YoY)</span>
+                        <span id="cec-mini2-val" class="mini-val">---</span>
                     </div>
                     <div class="card-mini-metric">
                         <span class="mini-label">Cap. de Mercado</span>
@@ -509,6 +510,6 @@
         </div>
     </div>
 
-    <script src="js/app.js?v=1.9.2"></script>
+    <script src="js/app.js?v=1.9.6"></script>
 </body>
 </html>

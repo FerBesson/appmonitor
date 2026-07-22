@@ -3,7 +3,9 @@
     "symbol": "NVS",
     "name": "Novartis AG",
     "marketCap": "$293,607,298,848",
+    "eps": "$2.41",
     "epsForecast": "$2.20",
+    "surprise": "9.55",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -12,7 +14,9 @@
     "symbol": "SCHW",
     "name": "The Charles Schwab Corporation",
     "marketCap": "$173,843,985,280",
+    "eps": "$1.62",
     "epsForecast": "$1.53",
+    "surprise": "5.88",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -21,7 +25,9 @@
     "symbol": "IBKR",
     "name": "Interactive Brokers Group, Inc.",
     "marketCap": "$160,169,720,320",
+    "eps": "$0.69",
     "epsForecast": "$0.64",
+    "surprise": "7.81",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -30,7 +36,9 @@
     "symbol": "SCCO",
     "name": "Southern Copper Corporation",
     "marketCap": "$156,862,102,413",
+    "eps": "$2.01",
     "epsForecast": "$1.97",
+    "surprise": "2.03",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -39,7 +47,9 @@
     "symbol": "CB",
     "name": "Chubb Limited",
     "marketCap": "$137,612,765,609",
+    "eps": "$7.26",
     "epsForecast": "$6.63",
+    "surprise": "9.5",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -48,7 +58,9 @@
     "symbol": "COF",
     "name": "Capital One Financial Corporation",
     "marketCap": "$127,035,537,372",
+    "eps": "$5.81",
     "epsForecast": "$4.85",
+    "surprise": "19.79",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -57,7 +69,9 @@
     "symbol": "DHR",
     "name": "Danaher Corporation",
     "marketCap": "$126,698,019,939",
+    "eps": "$1.94",
     "epsForecast": "$1.84",
+    "surprise": "5.43",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -66,7 +80,9 @@
     "symbol": "MMM",
     "name": "3M Company",
     "marketCap": "$89,062,825,488",
+    "eps": "$2.40",
     "epsForecast": "$2.27",
+    "surprise": "5.73",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -75,7 +91,9 @@
     "symbol": "MRSH",
     "name": "Marsh",
     "marketCap": "$87,489,063,437",
+    "eps": "$2.96",
     "epsForecast": "$2.88",
+    "surprise": "2.78",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -84,7 +102,9 @@
     "symbol": "AMX",
     "name": "America Movil, S.A.B. de C.V.",
     "marketCap": "$78,524,377,500",
+    "eps": "$0.47",
     "epsForecast": "$0.52",
+    "surprise": "-9.62",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -93,7 +113,9 @@
     "symbol": "NOC",
     "name": "Northrop Grumman Corporation",
     "marketCap": "$72,762,329,420",
+    "eps": "$7.68",
     "epsForecast": "$6.84",
+    "surprise": "12.28",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -102,7 +124,9 @@
     "symbol": "GM",
     "name": "General Motors Company",
     "marketCap": "$71,700,416,306",
+    "eps": "$3.57",
     "epsForecast": "$3.13",
+    "surprise": "14.06",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -111,7 +135,9 @@
     "symbol": "MSCI",
     "name": "MSCI Inc.",
     "marketCap": "$40,894,672,000",
+    "eps": "$4.94",
     "epsForecast": "$4.90",
+    "surprise": "0.82",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -120,7 +146,9 @@
     "symbol": "DHI",
     "name": "D.R. Horton, Inc.",
     "marketCap": "$40,699,346,058",
+    "eps": "$3.20",
     "epsForecast": "$2.99",
+    "surprise": "7.02",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -129,7 +157,9 @@
     "symbol": "EQT",
     "name": "EQT Corporation",
     "marketCap": "$31,148,804,400",
+    "eps": "$0.39",
     "epsForecast": "$0.41",
+    "surprise": "-4.88",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -138,7 +168,9 @@
     "symbol": "HAL",
     "name": "Halliburton Company",
     "marketCap": "$27,726,850,825",
+    "eps": "$0.55",
     "epsForecast": "$0.54",
+    "surprise": "1.85",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -147,7 +179,9 @@
     "symbol": "KEY",
     "name": "KeyCorp",
     "marketCap": "$24,882,979,540",
+    "eps": "$0.44",
     "epsForecast": "$0.42",
+    "surprise": "4.76",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -156,7 +190,9 @@
     "symbol": "SYF",
     "name": "Synchrony Financial",
     "marketCap": "$24,289,295,175",
+    "eps": "$2.59",
     "epsForecast": "$2.08",
+    "surprise": "24.52",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -165,7 +201,9 @@
     "symbol": "EFX",
     "name": "Equifax, Inc.",
     "marketCap": "$20,599,526,757",
+    "eps": "$2.25",
     "epsForecast": "$2.21",
+    "surprise": "1.81",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -174,7 +212,9 @@
     "symbol": "EWBC",
     "name": "East West Bancorp, Inc.",
     "marketCap": "$18,275,301,351",
+    "eps": "$2.63",
     "epsForecast": "$2.61",
+    "surprise": "0.77",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -183,7 +223,9 @@
     "symbol": "NLY",
     "name": "Annaly Capital Management Inc.",
     "marketCap": "$16,590,687,991",
+    "eps": "$0.79",
     "epsForecast": "$0.75",
+    "surprise": "5.33",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -192,7 +234,9 @@
     "symbol": "GPC",
     "name": "Genuine Parts Company",
     "marketCap": "$16,393,835,800",
+    "eps": "$2.15",
     "epsForecast": "$2.10",
+    "surprise": "2.38",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -201,7 +245,9 @@
     "symbol": "MLI",
     "name": "Mueller Industries, Inc.",
     "marketCap": "$13,777,098,380",
+    "eps": "$1.13",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -210,7 +256,9 @@
     "symbol": "ALLY",
     "name": "Ally Financial Inc.",
     "marketCap": "$13,618,819,645",
+    "eps": "$1.21",
     "epsForecast": "$1.25",
+    "surprise": "-3.2",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -219,7 +267,9 @@
     "symbol": "HAS",
     "name": "Hasbro, Inc.",
     "marketCap": "$12,561,543,636",
+    "eps": "$1.28",
     "epsForecast": "$1.17",
+    "surprise": "9.4",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -228,7 +278,9 @@
     "symbol": "WBS",
     "name": "Webster Financial Corporation",
     "marketCap": "$12,325,355,703",
+    "eps": "$1.60",
     "epsForecast": "$1.61",
+    "surprise": "-0.62",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -237,7 +289,9 @@
     "symbol": "VMI",
     "name": "Valmont Industries, Inc.",
     "marketCap": "$9,810,688,533",
+    "eps": "$6.14",
     "epsForecast": "$5.76",
+    "surprise": "6.6",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -246,7 +300,9 @@
     "symbol": "VICR",
     "name": "Vicor Corporation",
     "marketCap": "$9,786,328,083",
+    "eps": "$1.04",
     "epsForecast": "$0.62",
+    "surprise": "67.74",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -255,7 +311,9 @@
     "symbol": "RRC",
     "name": "Range Resources Corporation",
     "marketCap": "$8,894,739,938",
+    "eps": "$0.74",
     "epsForecast": "$0.52",
+    "surprise": "42.31",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -264,7 +322,9 @@
     "symbol": "WAL",
     "name": "Western Alliance Bancorporation",
     "marketCap": "$8,789,421,480",
+    "eps": "$2.22",
     "epsForecast": "$2.33",
+    "surprise": "-4.72",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -273,7 +333,9 @@
     "symbol": "HWC",
     "name": "Hancock Whitney Corporation",
     "marketCap": "$6,219,946,668",
+    "eps": "$1.55",
     "epsForecast": "$1.55",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -282,7 +344,9 @@
     "symbol": "AUB",
     "name": "Atlantic Union Bankshares Corporation",
     "marketCap": "$6,126,781,918",
+    "eps": "$0.94",
     "epsForecast": "$0.92",
+    "surprise": "2.17",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -291,7 +355,9 @@
     "symbol": "WFRD",
     "name": "Weatherford International plc",
     "marketCap": "$5,992,818,662",
+    "eps": "$0.55",
     "epsForecast": "$0.92",
+    "surprise": "-40.22",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -300,7 +366,9 @@
     "symbol": "OZK",
     "name": "Bank OZK",
     "marketCap": "$5,745,052,783",
+    "eps": "$1.49",
     "epsForecast": "$1.46",
+    "surprise": "2.05",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -309,7 +377,9 @@
     "symbol": "AIR",
     "name": "AAR Corp.",
     "marketCap": "$5,622,667,495",
+    "eps": "$1.53",
     "epsForecast": "$1.41",
+    "surprise": "8.51",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -318,7 +388,9 @@
     "symbol": "PEGA",
     "name": "Pegasystems Inc.",
     "marketCap": "$5,170,570,618",
+    "eps": "$0.18",
     "epsForecast": "$0.23",
+    "surprise": "-21.74",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -327,7 +399,9 @@
     "symbol": "ALK",
     "name": "Alaska Air Group, Inc.",
     "marketCap": "$5,065,561,340",
+    "eps": "($0.92)",
     "epsForecast": "($0.97)",
+    "surprise": "5.15",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -336,7 +410,9 @@
     "symbol": "UCB",
     "name": "United Community Banks, Inc.",
     "marketCap": "$4,230,922,830",
+    "eps": "$0.71",
     "epsForecast": "$0.80",
+    "surprise": "-11.25",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -345,7 +421,9 @@
     "symbol": "NP",
     "name": "Neptune Insurance Holdings Inc.",
     "marketCap": "$4,196,122,911",
+    "eps": "$0.10",
     "epsForecast": "$0.11",
+    "surprise": "-9.09",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -354,7 +432,9 @@
     "symbol": "WSBC",
     "name": "WesBanco, Inc.",
     "marketCap": "$3,883,771,013",
+    "eps": "$0.92",
     "epsForecast": "$0.86",
+    "surprise": "6.98",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -363,7 +443,9 @@
     "symbol": "FFBC",
     "name": "First Financial Bancorp.",
     "marketCap": "$3,742,830,771",
+    "eps": "$0.80",
     "epsForecast": "$0.81",
+    "surprise": "-1.23",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -372,7 +454,9 @@
     "symbol": "NIC",
     "name": "Nicolet Bankshares Inc.",
     "marketCap": "$3,568,407,369",
+    "eps": "$2.99",
     "epsForecast": "$2.96",
+    "surprise": "1.01",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -381,7 +465,9 @@
     "symbol": "OFG",
     "name": "OFG Bancorp",
     "marketCap": "$2,235,468,884",
+    "eps": "$1.39",
     "epsForecast": "$1.18",
+    "surprise": "17.8",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -390,7 +476,9 @@
     "symbol": "NBHC",
     "name": "National Bank Holdings Corporation",
     "marketCap": "$2,082,510,166",
+    "eps": "$0.78",
     "epsForecast": "$0.83",
+    "surprise": "-6.02",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -399,7 +487,9 @@
     "symbol": "TFIN",
     "name": "Triumph Financial, Inc.",
     "marketCap": "$1,885,217,175",
+    "eps": "$0.44",
     "epsForecast": "$0.44",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -408,7 +498,9 @@
     "symbol": "BFC",
     "name": "Bank First Corporation",
     "marketCap": "$1,613,429,126",
+    "eps": "$2.45",
     "epsForecast": "$2.28",
+    "surprise": "7.46",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -417,7 +509,9 @@
     "symbol": "PEBO",
     "name": "Peoples Bancorp Inc.",
     "marketCap": "$1,419,187,363",
+    "eps": "$0.96",
     "epsForecast": "$0.84",
+    "surprise": "14.29",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -426,7 +520,9 @@
     "symbol": "FOR",
     "name": "Forestar Group Inc",
     "marketCap": "$1,378,255,966",
+    "eps": "$0.70",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -435,7 +531,9 @@
     "symbol": "MCB",
     "name": "Metropolitan Bank Holding Corp.",
     "marketCap": "$1,227,952,539",
+    "eps": "$1.54",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -444,7 +542,9 @@
     "symbol": "MBWM",
     "name": "Mercantile Bank Corporation",
     "marketCap": "$1,030,934,700",
+    "eps": "$1.53",
     "epsForecast": "$1.34",
+    "surprise": "14.18",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -453,7 +553,9 @@
     "symbol": "TRST",
     "name": "TrustCo Bank Corp NY",
     "marketCap": "$973,346,973",
+    "eps": "$0.98",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -462,7 +564,9 @@
     "symbol": "HAFC",
     "name": "Hanmi Financial Corporation",
     "marketCap": "$966,516,144",
+    "eps": "$0.79",
     "epsForecast": "$0.77",
+    "surprise": "2.6",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -471,7 +575,9 @@
     "symbol": "VLRS",
     "name": "Controladora Vuela Compania de Aviacion, S.A.B. de C.V.",
     "marketCap": "$927,243,450",
+    "eps": "($1.11)",
     "epsForecast": "($1.08)",
+    "surprise": "-2.78",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -480,7 +586,9 @@
     "symbol": "CCBG",
     "name": "Capital City Bank Group",
     "marketCap": "$886,366,028",
+    "eps": "$0.95",
     "epsForecast": "$0.91",
+    "surprise": "4.4",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -489,7 +597,9 @@
     "symbol": "FCBC",
     "name": "First Community Bankshares, Inc.",
     "marketCap": "$842,022,115",
+    "eps": "$0.76",
     "epsForecast": "$0.71",
+    "surprise": "7.04",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -498,7 +608,9 @@
     "symbol": "ORRF",
     "name": "Orrstown Financial Services, Inc.",
     "marketCap": "$810,668,723",
+    "eps": "$1.09",
     "epsForecast": "$1.03",
+    "surprise": "5.83",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -507,7 +619,9 @@
     "symbol": "NPB",
     "name": "Northpointe Bancshares, Inc.",
     "marketCap": "$647,026,264",
+    "eps": "$0.60",
     "epsForecast": "$0.68",
+    "surprise": "-11.76",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -516,7 +630,9 @@
     "symbol": "BHB",
     "name": "Bar Harbor Bankshares, Inc.",
     "marketCap": "$636,702,215",
+    "eps": "$0.92",
     "epsForecast": "$0.92",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -525,7 +641,9 @@
     "symbol": "AMSF",
     "name": "AMERISAFE, Inc.",
     "marketCap": "$635,554,139",
+    "eps": "$0.44",
     "epsForecast": "$0.53",
+    "surprise": "-16.98",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -534,7 +652,9 @@
     "symbol": "BWB",
     "name": "Bridgewater Bancshares, Inc.",
     "marketCap": "$610,366,904",
+    "eps": "$0.45",
     "epsForecast": "$0.46",
+    "surprise": "-2.17",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -543,7 +663,9 @@
     "symbol": "SFST",
     "name": "Southern First Bancshares, Inc.",
     "marketCap": "$583,572,784",
+    "eps": "$1.20",
     "epsForecast": "$1.19",
+    "surprise": "0.84",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -552,7 +674,9 @@
     "symbol": "KREF",
     "name": "KKR Real Estate Finance Trust Inc.",
     "marketCap": "$488,040,165",
+    "eps": "($0.60)",
     "epsForecast": "($0.60)",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -561,7 +685,9 @@
     "symbol": "FSBW",
     "name": "FS Bancorp, Inc.",
     "marketCap": "$326,942,919",
+    "eps": "$1.08",
     "epsForecast": "$1.13",
+    "surprise": "-4.42",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -570,7 +696,9 @@
     "symbol": "FVCB",
     "name": "FVCBankcorp, Inc.",
     "marketCap": "$320,342,898",
+    "eps": "$0.42",
     "epsForecast": "$0.36",
+    "surprise": "16.67",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -579,7 +707,9 @@
     "symbol": "CMTV",
     "name": "Community Bancorp. ",
     "marketCap": "$222,475,957",
+    "eps": "$0.84",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -588,7 +718,9 @@
     "symbol": "ASRV",
     "name": "AmeriServ Financial Inc.",
     "marketCap": "$66,669,569",
+    "eps": "$0.16",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"

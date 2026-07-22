@@ -3,7 +3,9 @@
     "symbol": "DAL",
     "name": "Delta Air Lines, Inc.",
     "marketCap": "$55,654,637,029",
+    "eps": "$1.56",
     "epsForecast": "$1.51",
+    "surprise": "3.31",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"

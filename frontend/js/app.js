@@ -2501,6 +2501,10 @@ function renderWeeklyEarnings(data) {
         const dayCard = document.createElement('div');
         dayCard.className = 'earnings-day-card';
         
+        const todayStr = new Date().toISOString().split('T')[0];
+        const isPastOrToday = day.date <= todayStr;
+        const otherTitle = isPastOrToday ? '📋 Balances Publicados' : '🕒 Horario por Confirmar';
+        
         const totalCount = day.total_count || 0;
         
         const boList = day.before_open || [];
@@ -2513,7 +2517,7 @@ function renderWeeklyEarnings(data) {
                 <div class="earnings-timing-section">
                     <div class="timing-section-title before-open">☀️ Before Open</div>
                     <div class="company-tiles-grid">
-                        ${topBo.map(comp => renderCompanyTile(comp)).join('')}
+                        ${topBo.map(comp => renderCompanyTile(comp, isPastOrToday)).join('')}
                     </div>
                     ${remainingBo > 0 ? `<button class="see-more-btn" onclick="event.stopPropagation(); openEarningsModalForDay('${day.date}')">+ ${remainingBo} más (Ver todas)</button>` : ''}
                 </div>
@@ -2530,20 +2534,34 @@ function renderWeeklyEarnings(data) {
                 <div class="earnings-timing-section">
                     <div class="timing-section-title after-close">🌙 After Close</div>
                     <div class="company-tiles-grid">
-                        ${topAc.map(comp => renderCompanyTile(comp)).join('')}
+                        ${topAc.map(comp => renderCompanyTile(comp, isPastOrToday)).join('')}
                     </div>
                     ${remainingAc > 0 ? `<button class="see-more-btn" onclick="event.stopPropagation(); openEarningsModalForDay('${day.date}')">+ ${remainingAc} más (Ver todas)</button>` : ''}
                 </div>
             `;
         }
         
+        const otList = day.other || [];
+        const topOt = otList.slice(0, 6);
+        const remainingOt = otList.length - 6;
+        
+        let otherHtml = '';
+        if (otList.length > 0) {
+            otherHtml = `
+                <div class="earnings-timing-section">
+                    <div class="timing-section-title" style="color: #60a5fa;">${otherTitle}</div>
+                    <div class="company-tiles-grid">
+                        ${topOt.map(comp => renderCompanyTile(comp, isPastOrToday)).join('')}
+                    </div>
+                    ${remainingOt > 0 ? `<button class="see-more-btn" onclick="event.stopPropagation(); openEarningsModalForDay('${day.date}')">+ ${remainingOt} más (Ver todas)</button>` : ''}
+                </div>
+            `;
+        }
+        
         let contentHtml = '';
-        if (beforeOpenHtml && afterCloseHtml) {
-            contentHtml = beforeOpenHtml + `<div class="timing-divider"></div>` + afterCloseHtml;
-        } else if (beforeOpenHtml) {
-            contentHtml = beforeOpenHtml;
-        } else if (afterCloseHtml) {
-            contentHtml = afterCloseHtml;
+        const sections = [beforeOpenHtml, afterCloseHtml, otherHtml].filter(Boolean);
+        if (sections.length > 0) {
+            contentHtml = sections.join('<div class="timing-divider"></div>');
         } else {
             contentHtml = `<div style="text-align:center; padding:30px 10px; color:var(--text-muted); font-size:12px;">Sin presentaciones reportadas</div>`;
         }
@@ -2566,9 +2584,10 @@ function getCompanyLogoSrc(sym) {
     return `https://assets.parqet.com/logos/symbol/${sym.toUpperCase().trim()}`;
 }
 
-function renderCompanyTile(comp) {
+function renderCompanyTile(comp, isPastOrToday = false) {
     const sym = comp.symbol;
-    const eps = comp.epsForecast ? `EPS: ${comp.epsForecast}` : '';
+    const hasReported = isPastOrToday && comp.eps && comp.eps.trim() !== '' && comp.eps.trim() !== 'N/A';
+    const epsDisplay = hasReported ? `Real: ${comp.eps}` : (comp.epsForecast ? `Est: ${comp.epsForecast}` : '');
     const primaryLogo = getCompanyLogoSrc(sym);
     const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
     
@@ -2577,7 +2596,7 @@ function renderCompanyTile(comp) {
             <img src="${primaryLogo}" class="company-tile-logo" onerror="if(this.src !== '${fallbackLogo}'){this.src='${fallbackLogo}';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" alt="${sym}">
             <div class="company-tile-fallback" style="display:none;">${sym.slice(0, 3)}</div>
             <span class="company-tile-symbol">${sym}</span>
-            ${eps ? `<span class="company-tile-eps">${eps}</span>` : ''}
+            ${epsDisplay ? `<span class="company-tile-eps" style="${hasReported ? 'color: #38bdf8;' : ''}">${epsDisplay}</span>` : ''}
         </div>
     `;
 }
@@ -2655,6 +2674,7 @@ function renderMonthlyEarnings(data) {
     }
     
     const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
     const isCurrentMonth = today.getFullYear() === year && (today.getMonth() + 1) === month;
     
     for (let dayNum = 1; dayNum <= daysInMonth; dayNum++) {
@@ -2664,9 +2684,13 @@ function renderMonthlyEarnings(data) {
             cell.classList.add('today');
         }
         
-        const dayData = dayMap[dayNum] || { before_open: [], after_close: [] };
+        const dayStr = `${year}-${String(month).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+        const isPastOrToday = dayStr <= todayStr;
+        
+        const dayData = dayMap[dayNum] || { before_open: [], after_close: [], other: [] };
         const bCount = (dayData.before_open || []).length;
         const aCount = (dayData.after_close || []).length;
+        const oCount = (dayData.other || []).length;
         
         let badgesHtml = '';
         if (bCount > 0) {
@@ -2674,6 +2698,10 @@ function renderMonthlyEarnings(data) {
         }
         if (aCount > 0) {
             badgesHtml += `<div class="monthly-badge after-close"><span>🌙 Post</span><span>${aCount}</span></div>`;
+        }
+        if (oCount > 0 && bCount === 0 && aCount === 0) {
+            const badgeLabel = isPastOrToday ? '📋 Rep' : '🕒 Pend';
+            badgesHtml += `<div class="monthly-badge" style="background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa;"><span>${badgeLabel}</span><span>${oCount}</span></div>`;
         }
         
         cell.innerHTML = `
@@ -2711,12 +2739,16 @@ function openEarningsModalForDay(dateStr) {
     if (titleEl) titleEl.innerText = `Earnings del ${dayNames[d.getDay()]} ${d.getDate()} de ${monthNames[d.getMonth()]}`;
     if (subEl) subEl.innerText = `${dayObj.total_count || 0} presentaciones de reportes trimestrales`;
     
+    const todayStr = new Date().toISOString().split('T')[0];
+    const isPastOrToday = dayObj.date <= todayStr;
+    const otherTitle = isPastOrToday ? '📋 Balances Publicados' : '🕒 Horario por Confirmar';
+    
     let html = '';
     
     if (dayObj.before_open && dayObj.before_open.length > 0) {
         html += `
             <div class="timing-section-title before-open" style="font-size:14px; margin-top:4px;">☀️ Before Open (${dayObj.before_open.length})</div>
-            ${dayObj.before_open.map(comp => renderModalRow(comp)).join('')}
+            ${dayObj.before_open.map(comp => renderModalRow(comp, isPastOrToday)).join('')}
         `;
     }
     
@@ -2724,7 +2756,15 @@ function openEarningsModalForDay(dateStr) {
         if (html) html += `<div class="timing-divider" style="margin: 12px 0;"></div>`;
         html += `
             <div class="timing-section-title after-close" style="font-size:14px;">🌙 After Close (${dayObj.after_close.length})</div>
-            ${dayObj.after_close.map(comp => renderModalRow(comp)).join('')}
+            ${dayObj.after_close.map(comp => renderModalRow(comp, isPastOrToday)).join('')}
+        `;
+    }
+
+    if (dayObj.other && dayObj.other.length > 0) {
+        if (html) html += `<div class="timing-divider" style="margin: 12px 0;"></div>`;
+        html += `
+            <div class="timing-section-title" style="font-size:14px; color: #60a5fa;">${otherTitle} (${dayObj.other.length})</div>
+            ${dayObj.other.map(comp => renderModalRow(comp, isPastOrToday)).join('')}
         `;
     }
     
@@ -2737,10 +2777,11 @@ function openEarningsModalForDay(dateStr) {
 }
 window.openEarningsModalForDay = openEarningsModalForDay;
 
-function renderModalRow(comp) {
+function renderModalRow(comp, isPastOrToday = false) {
     const sym = comp.symbol;
     const name = comp.name || sym;
-    const eps = comp.epsForecast ? `Est. EPS: ${comp.epsForecast}` : '';
+    const hasReported = isPastOrToday && comp.eps && comp.eps.trim() !== '' && comp.eps.trim() !== 'N/A';
+    const epsDisplay = hasReported ? `Real: ${comp.eps}` : (comp.epsForecast ? `Est. EPS: ${comp.epsForecast}` : '');
     const cap = comp.marketCap ? `Cap: ${comp.marketCap}` : '';
     const primaryLogo = getCompanyLogoSrc(sym);
     const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
@@ -2757,7 +2798,7 @@ function renderModalRow(comp) {
             </div>
             <div class="modal-company-right">
                 ${cap ? `<span class="modal-company-eps">${cap}</span>` : ''}
-                ${eps ? `<span class="modal-company-eps">${eps}</span>` : ''}
+                ${epsDisplay ? `<span class="modal-company-eps" style="${hasReported ? 'color: #38bdf8;' : ''}">${epsDisplay}</span>` : ''}
             </div>
         </div>
     `;
@@ -2776,7 +2817,7 @@ function openCompanyEarningsCardBySymbol(symbol) {
             const allComps = [...(day.before_open || []), ...(day.after_close || []), ...(day.other || [])];
             const found = allComps.find(c => c.symbol.toUpperCase() === symbol.toUpperCase());
             if (found) {
-                targetComp = found;
+                targetComp = { ...found, date: day.date };
                 break;
             }
         }
@@ -2802,9 +2843,15 @@ function showCompanyEarningsCard(comp) {
     const nameEl = document.getElementById('cec-name');
     const badgeEl = document.getElementById('cec-timing-badge');
     
-    const epsForecastEl = document.getElementById('cec-eps-forecast');
-    const epsLastEl = document.getElementById('cec-eps-last');
-    const epsGrowthEl = document.getElementById('cec-eps-growth');
+    const metricLabelEl = document.getElementById('cec-metric-label');
+    const metricPrimaryEl = document.getElementById('cec-eps-primary');
+    const statusBadgeEl = document.getElementById('cec-status-badge');
+    
+    const mini1LabelEl = document.getElementById('cec-mini1-label');
+    const mini1ValEl = document.getElementById('cec-mini1-val');
+    const mini2LabelEl = document.getElementById('cec-mini2-label');
+    const mini2ValEl = document.getElementById('cec-mini2-val');
+    
     const marketCapEl = document.getElementById('cec-market-cap');
     const quarterEl = document.getElementById('cec-quarter');
     const chartBtn = document.getElementById('cec-btn-chart');
@@ -2832,6 +2879,9 @@ function showCompanyEarningsCard(comp) {
     if (symbolEl) symbolEl.innerText = sym;
     if (nameEl) nameEl.innerText = name;
     
+    const todayStr = new Date().toISOString().split('T')[0];
+    const isPastOrToday = comp.date ? (comp.date <= todayStr) : true;
+    
     if (badgeEl) {
         if (comp.timing === 'time-pre-market') {
             badgeEl.className = 'timing-badge before-open';
@@ -2841,32 +2891,86 @@ function showCompanyEarningsCard(comp) {
             badgeEl.innerText = '🌙 After Close (Post-Mercado)';
         } else {
             badgeEl.className = 'timing-badge';
-            badgeEl.innerText = '🕒 Horario a Confirmar';
+            badgeEl.innerText = isPastOrToday ? '🕒 Horario Confirmado / Reportado' : '🕒 Horario por Confirmar';
         }
     }
     
+    const hasReported = isPastOrToday && comp.eps && comp.eps.trim() !== '' && comp.eps.trim() !== 'N/A';
     const forecastVal = comp.epsForecast ? comp.epsForecast.trim() : 'N/D';
     const lastVal = comp.lastYearEPS ? comp.lastYearEPS.trim() : 'N/D';
     
-    if (epsForecastEl) epsForecastEl.innerText = forecastVal;
-    if (epsLastEl) epsLastEl.innerText = lastVal;
-    if (marketCapEl) marketCapEl.innerText = comp.marketCap ? comp.marketCap : 'N/D';
-    if (quarterEl) quarterEl.innerText = comp.fiscalQuarterEnding ? comp.fiscalQuarterEnding : 'N/D';
-    
-    if (epsGrowthEl) {
-        const numForecast = parseFloat(forecastVal.replace(/[^0-9.-]/g, ''));
-        const numLast = parseFloat(lastVal.replace(/[^0-9.-]/g, ''));
+    if (hasReported) {
+        // MODO POST-PUBLICACIÓN (RESULTADO REAL)
+        if (metricLabelEl) metricLabelEl.innerText = '📊 Resultado Real Publicado (EPS)';
+        if (metricPrimaryEl) {
+            metricPrimaryEl.innerText = comp.eps.trim();
+            metricPrimaryEl.style.color = '#38bdf8';
+        }
         
-        if (!isNaN(numForecast) && !isNaN(numLast) && numLast !== 0) {
-            const growth = ((numForecast - numLast) / Math.abs(numLast)) * 100;
-            const sign = growth >= 0 ? '+' : '';
-            epsGrowthEl.innerText = `${sign}${growth.toFixed(1)}%`;
-            epsGrowthEl.className = `mini-val ${growth >= 0 ? 'positive' : 'negative'}`;
-        } else {
-            epsGrowthEl.innerText = '---';
-            epsGrowthEl.className = 'mini-val';
+        const surpriseVal = comp.surprise ? parseFloat(comp.surprise) : null;
+        if (statusBadgeEl) {
+            if (surpriseVal !== null && !isNaN(surpriseVal)) {
+                statusBadgeEl.style.display = 'inline-block';
+                if (surpriseVal > 0) {
+                    statusBadgeEl.innerText = `🟢 Superó Expectativas (+${surpriseVal.toFixed(2)}%)`;
+                    statusBadgeEl.className = 'cec-status-badge beat';
+                } else if (surpriseVal < 0) {
+                    statusBadgeEl.innerText = `🔴 Debajo de Expectativas (${surpriseVal.toFixed(2)}%)`;
+                    statusBadgeEl.className = 'cec-status-badge miss';
+                } else {
+                    statusBadgeEl.innerText = `⚪ En Línea con Consenso (0.00%)`;
+                    statusBadgeEl.className = 'cec-status-badge inline';
+                }
+            } else {
+                statusBadgeEl.style.display = 'none';
+            }
+        }
+        
+        if (mini1LabelEl) mini1LabelEl.innerText = 'Consenso Estimado';
+        if (mini1ValEl) mini1ValEl.innerText = forecastVal;
+        
+        if (mini2LabelEl) mini2LabelEl.innerText = 'Sorpresa %';
+        if (mini2ValEl) {
+            if (surpriseVal !== null && !isNaN(surpriseVal)) {
+                const sign = surpriseVal >= 0 ? '+' : '';
+                mini2ValEl.innerText = `${sign}${surpriseVal.toFixed(2)}%`;
+                mini2ValEl.className = `mini-val ${surpriseVal >= 0 ? 'positive' : 'negative'}`;
+            } else {
+                mini2ValEl.innerText = '---';
+                mini2ValEl.className = 'mini-val';
+            }
+        }
+    } else {
+        // MODO PRE-PUBLICACIÓN (EXPECTATIVA / ESTIMACIÓN)
+        if (metricLabelEl) metricLabelEl.innerText = 'Expectativa EPS de Mercado (Consenso)';
+        if (metricPrimaryEl) {
+            metricPrimaryEl.innerText = forecastVal;
+            metricPrimaryEl.style.color = '#fbbf24';
+        }
+        if (statusBadgeEl) statusBadgeEl.style.display = 'none';
+        
+        if (mini1LabelEl) mini1LabelEl.innerText = 'EPS Año Anterior';
+        if (mini1ValEl) mini1ValEl.innerText = lastVal;
+        
+        if (mini2LabelEl) mini2LabelEl.innerText = 'Var. Estimada (YoY)';
+        if (mini2ValEl) {
+            const numForecast = parseFloat(forecastVal.replace(/[^0-9.-]/g, ''));
+            const numLast = parseFloat(lastVal.replace(/[^0-9.-]/g, ''));
+            
+            if (!isNaN(numForecast) && !isNaN(numLast) && numLast !== 0) {
+                const growth = ((numForecast - numLast) / Math.abs(numLast)) * 100;
+                const sign = growth >= 0 ? '+' : '';
+                mini2ValEl.innerText = `${sign}${growth.toFixed(1)}%`;
+                mini2ValEl.className = `mini-val ${growth >= 0 ? 'positive' : 'negative'}`;
+            } else {
+                mini2ValEl.innerText = '---';
+                mini2ValEl.className = 'mini-val';
+            }
         }
     }
+    
+    if (marketCapEl) marketCapEl.innerText = comp.marketCap ? comp.marketCap : 'N/D';
+    if (quarterEl) quarterEl.innerText = comp.fiscalQuarterEnding ? comp.fiscalQuarterEnding : 'N/D';
     
     if (chartBtn) {
         chartBtn.onclick = function() {

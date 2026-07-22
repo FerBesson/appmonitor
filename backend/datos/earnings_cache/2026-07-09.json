@@ -3,7 +3,9 @@
     "symbol": "PEP",
     "name": "Pepsico, Inc.",
     "marketCap": "$184,260,360,330",
+    "eps": "$2.20",
     "epsForecast": "$2.19",
+    "surprise": "0.46",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Jun/2026"
@@ -12,7 +14,9 @@
     "symbol": "WDFC",
     "name": "WD-40 Company",
     "marketCap": "$3,190,462,941",
+    "eps": "$2.33",
     "epsForecast": "$1.58",
+    "surprise": "47.47",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -21,7 +25,9 @@
     "symbol": "NRIX",
     "name": "Nurix Therapeutics, Inc.",
     "marketCap": "$2,436,793,917",
+    "eps": "($0.81)",
     "epsForecast": "($0.73)",
+    "surprise": "-10.96",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -30,7 +36,9 @@
     "symbol": "SMPL",
     "name": "The Simply Good Foods Company",
     "marketCap": "$976,604,417",
+    "eps": "$0.36",
     "epsForecast": "$0.32",
+    "surprise": "12.5",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -39,7 +47,9 @@
     "symbol": "BNED",
     "name": "Barnes & Noble Education, Inc",
     "marketCap": "$427,845,644",
+    "eps": "$0.10",
     "epsForecast": "$0.07",
+    "surprise": "42.86",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Apr/2026"
@@ -48,7 +58,9 @@
     "symbol": "SLP",
     "name": "Simulations Plus, Inc.",
     "marketCap": "$368,698,797",
+    "eps": "$0.30",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -57,7 +69,9 @@
     "symbol": "BYRN",
     "name": "Byrna Technologies, Inc.",
     "marketCap": "$77,157,410",
+    "eps": "($0.44)",
     "epsForecast": "($0.10)",
+    "surprise": "-340",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -66,7 +80,9 @@
     "symbol": "NTIC",
     "name": "Northern Technologies International Corporation",
     "marketCap": "$76,066,476",
+    "eps": "($0.02)",
     "epsForecast": "$0.04",
+    "surprise": "-150",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -75,7 +91,9 @@
     "symbol": "EDUC",
     "name": "Educational Development Corporation",
     "marketCap": "$12,361,198",
+    "eps": "($0.16)",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -84,7 +102,9 @@
     "symbol": "ARTW",
     "name": "Art's-Way Manufacturing Co., Inc.",
     "marketCap": "$11,287,008",
+    "eps": "$0.03",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"

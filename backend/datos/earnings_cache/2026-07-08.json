@@ -3,7 +3,9 @@
     "symbol": "LEVI",
     "name": "Levi Strauss & Co.",
     "marketCap": "$9,451,929,803",
+    "eps": "$0.28",
     "epsForecast": "$0.24",
+    "surprise": "16.67",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -12,7 +14,9 @@
     "symbol": "PSMT",
     "name": "PriceSmart, Inc.",
     "marketCap": "$5,755,179,121",
+    "eps": "$1.28",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -21,7 +25,9 @@
     "symbol": "AZZ",
     "name": "AZZ Inc.",
     "marketCap": "$4,520,346,780",
+    "eps": "$1.85",
     "epsForecast": "$1.63",
+    "surprise": "13.5",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -30,7 +36,9 @@
     "symbol": "HELE",
     "name": "Helen of Troy Limited",
     "marketCap": "$635,407,424",
+    "eps": "($0.08)",
     "epsForecast": "($0.13)",
+    "surprise": "38.46",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -39,7 +47,9 @@
     "symbol": "TMQ",
     "name": "Trilogy Metals Inc.",
     "marketCap": "$551,058,588",
+    "eps": "($0.03)",
     "epsForecast": "($0.01)",
+    "surprise": "-200",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -48,7 +58,9 @@
     "symbol": "PCYO",
     "name": "Pure Cycle Corporation",
     "marketCap": "$255,914,069",
+    "eps": "$0.12",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -57,7 +69,9 @@
     "symbol": "SOTK",
     "name": "Sono-Tek Corporation",
     "marketCap": "$83,298,632",
+    "eps": "$0.05",
     "epsForecast": "$0.05",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "May/2026"
@@ -66,7 +80,9 @@
     "symbol": "GP",
     "name": "GreenPower Motor Company Inc.",
     "marketCap": "$11,260,419",
+    "eps": "($0.11)",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Mar/2026"
@@ -75,7 +91,9 @@
     "symbol": "GLMD",
     "name": "Galmed Pharmaceuticals Ltd.",
     "marketCap": "$3,988,034",
+    "eps": "($0.29)",
     "epsForecast": "",
+    "surprise": "N/A",
     "time": "time-not-supplied",
     "lastYearEPS": "",
     "fiscalQuarterEnding": "Mar/2026"

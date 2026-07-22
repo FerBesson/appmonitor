@@ -1,0 +1,245 @@
+[
+  {
+    "symbol": "BMO",
+    "name": "Bank Of Montreal",
+    "marketCap": "$126,323,316,382",
+    "epsForecast": "$3.02",
+    "time": "time-pre-market",
+    "lastYearEPS": "$2.33",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BNS",
+    "name": "Bank of Nova Scotia (The)",
+    "marketCap": "$107,563,364,931",
+    "epsForecast": "$1.53",
+    "time": "time-pre-market",
+    "lastYearEPS": "$1.37",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "MDB",
+    "name": "MongoDB, Inc.",
+    "marketCap": "$24,744,882,342",
+    "epsForecast": "$0.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.38)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "OKTA",
+    "name": "Okta, Inc.",
+    "marketCap": "$24,630,241,694",
+    "epsForecast": "$0.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.43",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BEKE",
+    "name": "KE Holdings Inc",
+    "marketCap": "$18,721,447,375",
+    "epsForecast": "$0.25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.16",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GGAL",
+    "name": "Grupo Financiero Galicia S.A.",
+    "marketCap": "$8,182,256,501",
+    "epsForecast": "$0.84",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.94",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ATAT",
+    "name": "Atour Lifestyle Holdings Limited",
+    "marketCap": "$4,245,908,147",
+    "epsForecast": "$0.55",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.42",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BOX",
+    "name": "Box, Inc.",
+    "marketCap": "$4,145,187,761",
+    "epsForecast": "$0.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.05",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "JOYY",
+    "name": "JOYY Inc.",
+    "marketCap": "$3,718,811,225",
+    "epsForecast": "$0.83",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.36",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PVH",
+    "name": "PVH Corp.",
+    "marketCap": "$3,626,401,436",
+    "epsForecast": "$3.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.52",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "KLRA",
+    "name": "Kailera Therapeutics, Inc.",
+    "marketCap": "$2,385,302,843",
+    "epsForecast": "($0.74)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CDLR",
+    "name": "Cadeler A/S",
+    "marketCap": "$2,019,760,896",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.12",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NCNO",
+    "name": "nCino, Inc.",
+    "marketCap": "$1,893,074,976",
+    "epsForecast": "$0.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.07",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "PSEC",
+    "name": "Prospect Capital Corporation",
+    "marketCap": "$1,077,166,454",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.17",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "TUYA",
+    "name": "Tuya Inc.",
+    "marketCap": "$1,067,117,821",
+    "epsForecast": "$0.02",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.02",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "HDL",
+    "name": "SUPER HI INTERNATIONAL HOLDING LTD.",
+    "marketCap": "$860,345,577",
+    "epsForecast": "$0.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.30",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "DQ",
+    "name": "DAQO New Energy Corp.",
+    "marketCap": "$802,520,385",
+    "epsForecast": "($0.28)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($1.14)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "OOMA",
+    "name": "Ooma, Inc.",
+    "marketCap": "$575,025,000",
+    "epsForecast": "$0.20",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.10",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CTRN",
+    "name": "Citi Trends, Inc.",
+    "marketCap": "$556,683,742",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.82)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "GOTU",
+    "name": "Gaotu Techedu Inc.",
+    "marketCap": "$400,582,295",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.12)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ECX",
+    "name": "ECARX Holdings Inc.",
+    "marketCap": "$396,302,383",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.13)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "EH",
+    "name": "EHang Holdings Limited",
+    "marketCap": "$382,959,445",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.13)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ELMD",
+    "name": "Electromed, Inc.",
+    "marketCap": "$335,508,193",
+    "epsForecast": "$0.32",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.25",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "SHMD",
+    "name": "SCHMID Group N.V.",
+    "marketCap": "$290,943,466",
+    "epsForecast": "",
+    "time": "time-pre-market",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ALPS",
+    "name": "ALPS Group Inc",
+    "marketCap": "$79,539,356",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.35",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "THCH",
+    "name": "TH International Limited",
+    "marketCap": "$58,508,704",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.17)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PDCC",
+    "name": "Pearl Diver Credit Company Inc.",
+    "marketCap": "",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.46",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

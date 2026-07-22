@@ -1,0 +1,110 @@
+[
+  {
+    "symbol": "MDT",
+    "name": "Medtronic plc",
+    "marketCap": "$105,411,721,397",
+    "epsForecast": "$1.38",
+    "time": "time-pre-market",
+    "lastYearEPS": "$1.26",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ZS",
+    "name": "Zscaler, Inc.",
+    "marketCap": "$24,049,440,558",
+    "epsForecast": "$0.06",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.04)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "NIO",
+    "name": "NIO Inc.",
+    "marketCap": "$12,002,145,035",
+    "epsForecast": "($0.07)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.32)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "HQY",
+    "name": "HealthEquity, Inc.",
+    "marketCap": "$8,173,782,890",
+    "epsForecast": "$0.99",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.92",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "MMED",
+    "name": "MiniMed Group, Inc.",
+    "marketCap": "$4,690,075,512",
+    "epsForecast": "$0.09",
+    "time": "time-pre-market",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "SIG",
+    "name": "Signet Jewelers Limited",
+    "marketCap": "$3,550,299,511",
+    "epsForecast": "$1.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.61",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ASO",
+    "name": "Academy Sports and Outdoors, Inc.",
+    "marketCap": "$2,992,386,401",
+    "epsForecast": "$2.07",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.82",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "PICS",
+    "name": "PicS N.V.",
+    "marketCap": "$1,604,293,782",
+    "epsForecast": "$2.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "IRS",
+    "name": "IRSA Inversiones Y Representaciones S.A.",
+    "marketCap": "$1,246,195,173",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.74",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GDEV",
+    "name": "GDEV Inc.",
+    "marketCap": "$216,745,879",
+    "epsForecast": "$1.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.90",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GEG",
+    "name": "Great Elm Group, Inc. ",
+    "marketCap": "$67,417,567",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.02",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CISS",
+    "name": "C3is Inc.",
+    "marketCap": "$876,563",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($71.43)",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

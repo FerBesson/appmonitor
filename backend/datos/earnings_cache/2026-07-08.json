@@ -1,0 +1,83 @@
+[
+  {
+    "symbol": "LEVI",
+    "name": "Levi Strauss & Co.",
+    "marketCap": "$9,451,929,803",
+    "epsForecast": "$0.24",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "PSMT",
+    "name": "PriceSmart, Inc.",
+    "marketCap": "$5,755,179,121",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "AZZ",
+    "name": "AZZ Inc.",
+    "marketCap": "$4,520,346,780",
+    "epsForecast": "$1.63",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "HELE",
+    "name": "Helen of Troy Limited",
+    "marketCap": "$635,407,424",
+    "epsForecast": "($0.13)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "TMQ",
+    "name": "Trilogy Metals Inc.",
+    "marketCap": "$551,058,588",
+    "epsForecast": "($0.01)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "PCYO",
+    "name": "Pure Cycle Corporation",
+    "marketCap": "$255,914,069",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "SOTK",
+    "name": "Sono-Tek Corporation",
+    "marketCap": "$83,298,632",
+    "epsForecast": "$0.05",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "GP",
+    "name": "GreenPower Motor Company Inc.",
+    "marketCap": "$11,260,419",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GLMD",
+    "name": "Galmed Pharmaceuticals Ltd.",
+    "marketCap": "$3,988,034",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

@@ -150,6 +150,27 @@ async def api_ema200_pullbacks(panel: str = "cedears"):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo pullbacks EMA200: {str(e)}")
 
+@app.get("/api/earnings/week")
+async def api_earnings_week(date: str = None, panel: str = "cedears"):
+    try:
+        from backend.services.earnings_service import get_weekly_earnings
+        return await get_weekly_earnings(date, panel=panel)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo earnings semanales: {str(e)}")
+
+@app.get("/api/earnings/month")
+async def api_earnings_month(year: int = None, month: int = None, panel: str = "cedears"):
+    try:
+        from backend.services.earnings_service import get_monthly_earnings
+        now = datetime.now()
+        y = year if year else now.year
+        m = month if month else now.month
+        return await get_monthly_earnings(y, m, panel=panel)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo earnings mensuales: {str(e)}")
+
+
+
 
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")
 if os.path.exists(frontend_dir):

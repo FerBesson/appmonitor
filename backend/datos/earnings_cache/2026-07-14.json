@@ -1,0 +1,218 @@
+[
+  {
+    "symbol": "JPM",
+    "name": "J P Morgan Chase & Co",
+    "marketCap": "$925,047,726,836",
+    "epsForecast": "$5.59",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BAC",
+    "name": "Bank of America Corporation",
+    "marketCap": "$434,453,279,654",
+    "epsForecast": "$1.13",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GS",
+    "name": "Goldman Sachs Group, Inc. (The)",
+    "marketCap": "$320,248,255,941",
+    "epsForecast": "$14.47",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "WFC",
+    "name": "Wells Fargo & Company",
+    "marketCap": "$268,501,026,204",
+    "epsForecast": "$1.73",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "C",
+    "name": "Citigroup Inc.",
+    "marketCap": "$226,568,842,702",
+    "epsForecast": "$2.72",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FAST",
+    "name": "Fastenal Company",
+    "marketCap": "$51,648,865,761",
+    "epsForecast": "$0.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ERIC",
+    "name": "Ericsson",
+    "marketCap": "$32,331,263,139",
+    "epsForecast": "$0.13",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PAC",
+    "name": "Grupo Aeroportuario Del Pacifico, S.A. de C.V.",
+    "marketCap": "$12,952,356,178",
+    "epsForecast": "$3.17",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BMNR",
+    "name": "BitMine Immersion Technologies, Inc.",
+    "marketCap": "$10,393,590,769",
+    "epsForecast": "$0.07",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "AEHR",
+    "name": "Aehr Test Systems",
+    "marketCap": "$3,175,412,377",
+    "epsForecast": "($0.06)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "KMTS",
+    "name": "Kestra Medical Technologies, Ltd.",
+    "marketCap": "$1,303,319,533",
+    "epsForecast": "($0.59)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "PXED",
+    "name": "Phoenix Education Partners, Inc.",
+    "marketCap": "$1,084,305,070",
+    "epsForecast": "$1.28",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "EQBK",
+    "name": "Equity Bancshares, Inc.",
+    "marketCap": "$1,040,914,435",
+    "epsForecast": "$1.24",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ANGO",
+    "name": "AngioDynamics, Inc.",
+    "marketCap": "$587,746,572",
+    "epsForecast": "($0.11)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "UNTY",
+    "name": "Unity Bancorp, Inc.",
+    "marketCap": "$574,741,230",
+    "epsForecast": "$1.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GLDG",
+    "name": "GoldMining Inc.",
+    "marketCap": "$184,104,724",
+    "epsForecast": "($0.02)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "ETS",
+    "name": "Elite Express Holding Inc.",
+    "marketCap": "$43,596,550",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "LOOP",
+    "name": "Loop Industries, Inc.",
+    "marketCap": "$36,285,278",
+    "epsForecast": "($0.05)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "CRMT",
+    "name": "America's Car-Mart, Inc.",
+    "marketCap": "$32,476,583",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "LEDS",
+    "name": "SemiLEDS Corporation",
+    "marketCap": "$20,766,242",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "JCTC",
+    "name": "Jewett-Cameron Trading Company",
+    "marketCap": "$9,187,495",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "RMCF",
+    "name": "Rocky Mountain Chocolate Factory, Inc.",
+    "marketCap": "$8,873,212",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "HIHO",
+    "name": "Highway Holdings Limited",
+    "marketCap": "$4,950,543",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VIVS",
+    "name": "VivoSim Labs, Inc.",
+    "marketCap": "$1,572,332",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

@@ -1,0 +1,389 @@
+[
+  {
+    "symbol": "AVGO",
+    "name": "Broadcom Inc.",
+    "marketCap": "$1,838,804,746,527",
+    "epsForecast": "$2.83",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.26",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CIEN",
+    "name": "Ciena Corporation",
+    "marketCap": "$57,856,925,809",
+    "epsForecast": "$1.45",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.41",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CPRT",
+    "name": "Copart, Inc.",
+    "marketCap": "$25,154,297,966",
+    "epsForecast": "$0.39",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.41",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "IOT",
+    "name": "Samsara Inc.",
+    "marketCap": "$21,018,352,658",
+    "epsForecast": "$0.02",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.03)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "LULU",
+    "name": "lululemon athletica inc.",
+    "marketCap": "$12,647,118,925",
+    "epsForecast": "$1.79",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$3.10",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "GWRE",
+    "name": "Guidewire Software, Inc.",
+    "marketCap": "$11,866,529,561",
+    "epsForecast": "$0.49",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.62",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "DOCU",
+    "name": "DocuSign, Inc.",
+    "marketCap": "$9,688,529,410",
+    "epsForecast": "$0.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.32",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "TTC",
+    "name": "Toro Company (The)",
+    "marketCap": "$8,879,201,750",
+    "epsForecast": "$1.30",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.24",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "AGX",
+    "name": "Argan, Inc.",
+    "marketCap": "$8,488,934,443",
+    "epsForecast": "$2.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.50",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "SGHC",
+    "name": "Super Group (SGHC) Limited",
+    "marketCap": "$7,920,917,125",
+    "epsForecast": "$0.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.11",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "VFS",
+    "name": "VinFast Auto Ltd.",
+    "marketCap": "$7,463,119,872",
+    "epsForecast": "($0.26)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.35)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "TTAN",
+    "name": "ServiceTitan, Inc.",
+    "marketCap": "$6,960,207,364",
+    "epsForecast": "($0.09)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.22)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "PATH",
+    "name": "UiPath, Inc.",
+    "marketCap": "$6,238,168,003",
+    "epsForecast": "$0.04",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.01",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "SAIC",
+    "name": "Science Applications International Corporation",
+    "marketCap": "$4,727,393,901",
+    "epsForecast": "$2.25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$3.63",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BRC",
+    "name": "Brady Corporation",
+    "marketCap": "$4,420,121,958",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.26",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BRZE",
+    "name": "Braze, Inc.",
+    "marketCap": "$2,976,237,520",
+    "epsForecast": "($0.21)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.22)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "WLY",
+    "name": "John Wiley & Sons, Inc.",
+    "marketCap": "$2,576,595,620",
+    "epsForecast": "$0.40",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.49",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "WLYB",
+    "name": "John Wiley & Sons, Inc.",
+    "marketCap": "$2,576,595,620",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.49",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "AMBQ",
+    "name": "Ambiq Micro, Inc.",
+    "marketCap": "$1,670,301,418",
+    "epsForecast": "($0.41)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.43)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GIII",
+    "name": "G-III Apparel Group, LTD.",
+    "marketCap": "$1,508,734,890",
+    "epsForecast": "$0.25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.25",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "NX",
+    "name": "Quanex Building Products Corporation",
+    "marketCap": "$834,051,844",
+    "epsForecast": "$0.68",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.69",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CRESY",
+    "name": "Cresud S.A.C.I.F. y A.",
+    "marketCap": "$795,780,699",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "SWBI",
+    "name": "Smith & Wesson Brands, Inc.",
+    "marketCap": "$679,404,163",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.08)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "VBNK",
+    "name": "VersaBank",
+    "marketCap": "$667,168,714",
+    "epsForecast": "$0.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.22",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "PHR",
+    "name": "Phreesia, Inc.",
+    "marketCap": "$655,206,023",
+    "epsForecast": "$0.10",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.01",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BBCP",
+    "name": "Concrete Pumping Holdings, Inc. ",
+    "marketCap": "$527,115,173",
+    "epsForecast": "$0.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.07",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "WDH",
+    "name": "Waterdrop Inc.",
+    "marketCap": "$427,569,324",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.05",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "MOBI",
+    "name": "Mobia Medical, Inc.",
+    "marketCap": "$398,655,582",
+    "epsForecast": "($0.82)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CAL",
+    "name": "Caleres, Inc.",
+    "marketCap": "$396,358,979",
+    "epsForecast": "$0.38",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.35",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "SHOE",
+    "name": "Shoe Station Group, Inc.",
+    "marketCap": "$396,137,584",
+    "epsForecast": "$0.32",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.70",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ZUMZ",
+    "name": "Zumiez Inc.",
+    "marketCap": "$317,703,808",
+    "epsForecast": "($0.11)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.06)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "FLWS",
+    "name": "1-800-FLOWERS.COM, Inc.",
+    "marketCap": "$269,213,629",
+    "epsForecast": "($0.72)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.69)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "REA",
+    "name": "Rare Earths Americas, Inc.",
+    "marketCap": "$237,493,874",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CURV",
+    "name": "Torrid Holdings Inc.",
+    "marketCap": "$230,887,284",
+    "epsForecast": "($0.03)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.02",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "EGAN",
+    "name": "eGain Corporation",
+    "marketCap": "$178,974,528",
+    "epsForecast": "$0",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.07",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PDEX",
+    "name": "Pro-Dex, Inc.",
+    "marketCap": "$178,826,432",
+    "epsForecast": "$0.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.36",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AOUT",
+    "name": "American Outdoor Brands, Inc.",
+    "marketCap": "$172,723,327",
+    "epsForecast": "($0.22)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.31)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "DLTH",
+    "name": "Duluth Holdings Inc.",
+    "marketCap": "$168,349,175",
+    "epsForecast": "($0.05)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.03",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "DAVA",
+    "name": "Endava plc",
+    "marketCap": "$148,314,356",
+    "epsForecast": "$0.05",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.22",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "LFVN",
+    "name": "Lifevantage Corporation",
+    "marketCap": "$80,741,261",
+    "epsForecast": "$0.15",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.17",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CANG",
+    "name": "Cango Inc.",
+    "marketCap": "$72,198,662",
+    "epsForecast": "($0.90)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.10)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "SPWH",
+    "name": "Sportsman's Warehouse Holdings, Inc.",
+    "marketCap": "$45,653,160",
+    "epsForecast": "($0.12)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.12)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CRMT",
+    "name": "America's Car-Mart, Inc.",
+    "marketCap": "$32,476,583",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.69)",
+    "fiscalQuarterEnding": "Jul/2026"
+  }
+]

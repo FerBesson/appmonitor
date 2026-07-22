@@ -1,0 +1,164 @@
+[
+  {
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "marketCap": "$90,296,100,000",
+    "epsForecast": "$4.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$4.29",
+    "fiscalQuarterEnding": "Aug/2026"
+  },
+  {
+    "symbol": "KR",
+    "name": "Kroger Company (The)",
+    "marketCap": "$35,398,759,954",
+    "epsForecast": "$1.05",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.04",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "RH",
+    "name": "RH",
+    "marketCap": "$3,411,813,914",
+    "epsForecast": "$0.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.93",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "FIZZ",
+    "name": "National Beverage Corp.",
+    "marketCap": "$2,881,380,500",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.60",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "KMTS",
+    "name": "Kestra Medical Technologies, Ltd.",
+    "marketCap": "$1,303,319,533",
+    "epsForecast": "($0.63)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.46)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "FEIM",
+    "name": "Frequency Electronics, Inc.",
+    "marketCap": "$788,076,298",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.07",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "IBEX",
+    "name": "IBEX Limited",
+    "marketCap": "$467,815,713",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.76",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "LOVE",
+    "name": "The Lovesac Company",
+    "marketCap": "$257,489,773",
+    "epsForecast": "($0.39)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.45)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "EVI",
+    "name": "EVI Industries, Inc.",
+    "marketCap": "$193,036,695",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.14",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "HOFT",
+    "name": "Hooker Furnishings Corporation",
+    "marketCap": "$153,283,346",
+    "epsForecast": "($0.02)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.31)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "OCC",
+    "name": "Optical Cable Corporation",
+    "marketCap": "$151,384,628",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.04",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "RFIL",
+    "name": "RF Industries, Ltd.",
+    "marketCap": "$148,879,356",
+    "epsForecast": "$0.18",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.09",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ENGN",
+    "name": "enGene Therapeutics Inc.",
+    "marketCap": "$129,289,669",
+    "epsForecast": "($0.47)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.57)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "VRA",
+    "name": "Vera Bradley, Inc.",
+    "marketCap": "$108,349,740",
+    "epsForecast": "($0.08)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.02)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "RENT",
+    "name": "Rent the Runway, Inc.",
+    "marketCap": "$104,117,930",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($6.55)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "CMCM",
+    "name": "Cheetah Mobile Inc.",
+    "marketCap": "$94,151,031",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.08)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PMI",
+    "name": "Picard Medical, Inc.",
+    "marketCap": "$12,374,860",
+    "epsForecast": "($0.03)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.85)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CMND",
+    "name": "Clearmind Medicine Inc.",
+    "marketCap": "$1,671,214",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($99.99)",
+    "fiscalQuarterEnding": "Jul/2026"
+  }
+]

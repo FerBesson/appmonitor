@@ -1,0 +1,101 @@
+[
+  {
+    "symbol": "AVAV",
+    "name": "AeroVironment, Inc.",
+    "marketCap": "$7,532,499,185",
+    "epsForecast": "$1.53",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CNXC",
+    "name": "Concentrix Corporation",
+    "marketCap": "$1,451,626,547",
+    "epsForecast": "$2.31",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "REPL",
+    "name": "Replimune Group, Inc.",
+    "marketCap": "$923,606,409",
+    "epsForecast": "($0.73)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CNCK",
+    "name": "Coincheck Group N.V.",
+    "marketCap": "$550,460,183",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "RDZN",
+    "name": "Roadzen, Inc.",
+    "marketCap": "$97,246,993",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AIRT",
+    "name": "Air T, Inc.",
+    "marketCap": "$72,050,720",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "IH",
+    "name": "iHuman Inc.",
+    "marketCap": "$70,024,621",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BENF",
+    "name": "Beneficient",
+    "marketCap": "$49,653,161",
+    "epsForecast": "($0.97)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "FMST",
+    "name": "Foremost Clean Energy Ltd.",
+    "marketCap": "$32,692,230",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MXC",
+    "name": "Mexco Energy Corporation",
+    "marketCap": "$18,884,375",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AMSS",
+    "name": "AMASS Brands Inc.",
+    "marketCap": "$13,566,245",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

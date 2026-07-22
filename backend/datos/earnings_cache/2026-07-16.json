@@ -1,0 +1,254 @@
+[
+  {
+    "symbol": "TSM",
+    "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+    "marketCap": "$2,202,241,847,287",
+    "epsForecast": "$3.87",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "UNH",
+    "name": "UnitedHealth Group Incorporated",
+    "marketCap": "$396,268,810,685",
+    "epsForecast": "$4.94",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GE",
+    "name": "GE Aerospace",
+    "marketCap": "$353,497,548,179",
+    "epsForecast": "$1.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix, Inc.",
+    "marketCap": "$285,937,737,551",
+    "epsForecast": "$0.79",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ABT",
+    "name": "Abbott Laboratories",
+    "marketCap": "$173,606,444,798",
+    "epsForecast": "$1.28",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PLD",
+    "name": "Prologis, Inc.",
+    "marketCap": "$142,739,281,440",
+    "epsForecast": "$1.53",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ISRG",
+    "name": "Intuitive Surgical, Inc.",
+    "marketCap": "$123,978,244,471",
+    "epsForecast": "$2.02",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "USB",
+    "name": "U.S. Bancorp",
+    "marketCap": "$98,822,568,306",
+    "epsForecast": "$1.28",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "STT",
+    "name": "State Street Corporation",
+    "marketCap": "$50,731,397,149",
+    "epsForecast": "$3.30",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CFG",
+    "name": "Citizens Financial Group, Inc.",
+    "marketCap": "$30,447,499,824",
+    "epsForecast": "$1.25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "WIT",
+    "name": "Wipro Limited",
+    "marketCap": "$19,088,910,674",
+    "epsForecast": "$0.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AA",
+    "name": "Alcoa Corporation",
+    "marketCap": "$11,703,515,956",
+    "epsForecast": "$2.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CBSH",
+    "name": "Commerce Bancshares, Inc.",
+    "marketCap": "$8,509,012,712",
+    "epsForecast": "$1.04",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FNB",
+    "name": "F.N.B. Corporation",
+    "marketCap": "$6,795,351,786",
+    "epsForecast": "$0.42",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "VIST",
+    "name": "Vista Energy S.A.B. de C.V.",
+    "marketCap": "$6,784,695,680",
+    "epsForecast": "$3.15",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FFIN",
+    "name": "First Financial Bankshares, Inc.",
+    "marketCap": "$4,983,345,525",
+    "epsForecast": "$0.50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CNS",
+    "name": "Cohen & Steers Inc",
+    "marketCap": "$4,152,113,908",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "INDB",
+    "name": "Independent Bank Corp.",
+    "marketCap": "$4,114,570,145",
+    "epsForecast": "$1.77",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "SFNC",
+    "name": "Simmons First National Corporation",
+    "marketCap": "$3,313,266,534",
+    "epsForecast": "$0.53",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "WAFD",
+    "name": "WaFd, Inc.",
+    "marketCap": "$2,739,784,838",
+    "epsForecast": "$0.82",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "MAN",
+    "name": "ManpowerGroup",
+    "marketCap": "$2,403,499,435",
+    "epsForecast": "$0.96",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "WABC",
+    "name": "Westamerica Bancorporation",
+    "marketCap": "$1,423,604,953",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "DBVT",
+    "name": "DBV Technologies S.A.",
+    "marketCap": "$841,998,892",
+    "epsForecast": "($0.12)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "IIIN",
+    "name": "Insteel Industries, Inc.",
+    "marketCap": "$608,429,703",
+    "epsForecast": "$0.45",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BSVN",
+    "name": "Bank7 Corp.",
+    "marketCap": "$471,397,469",
+    "epsForecast": "$1.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "LCNB",
+    "name": "LCNB Corporation",
+    "marketCap": "$275,802,696",
+    "epsForecast": "$0.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "HOVR",
+    "name": "New Horizon Aircraft Ltd.",
+    "marketCap": "$132,983,416",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "FTHM",
+    "name": "Fathom Holdings Inc.",
+    "marketCap": "$29,695,098",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

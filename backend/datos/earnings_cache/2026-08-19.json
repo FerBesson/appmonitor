@@ -1,0 +1,299 @@
+[
+  {
+    "symbol": "ADI",
+    "name": "Analog Devices, Inc.",
+    "marketCap": "$186,461,789,782",
+    "epsForecast": "$3.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.05",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "TJX",
+    "name": "TJX Companies, Inc. (The)",
+    "marketCap": "$171,284,424,352",
+    "epsForecast": "$1.17",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.10",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "LOW",
+    "name": "Lowe's Companies, Inc.",
+    "marketCap": "$114,109,489,914",
+    "epsForecast": "$4.26",
+    "time": "time-pre-market",
+    "lastYearEPS": "$4.33",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "TGT",
+    "name": "Target Corporation",
+    "marketCap": "$62,896,385,190",
+    "epsForecast": "$2.21",
+    "time": "time-pre-market",
+    "lastYearEPS": "$2.05",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "BIDU",
+    "name": "Baidu, Inc.",
+    "marketCap": "$36,822,142,757",
+    "epsForecast": "$1.19",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.49",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "EL",
+    "name": "Estee Lauder Companies, Inc. (The)",
+    "marketCap": "$29,801,047,149",
+    "epsForecast": "$0.31",
+    "time": "time-pre-market",
+    "lastYearEPS": "$0.09",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "SQM",
+    "name": "Sociedad Quimica y Minera S.A.",
+    "marketCap": "$19,663,306,703",
+    "epsForecast": "$1.89",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.31",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NDSN",
+    "name": "Nordson Corporation",
+    "marketCap": "$16,162,105,176",
+    "epsForecast": "$3.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.73",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "FUTU",
+    "name": "Futu Holdings Limited",
+    "marketCap": "$14,529,776,215",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$2.32",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "DY",
+    "name": "Dycom Industries, Inc.",
+    "marketCap": "$12,710,212,700",
+    "epsForecast": "$4.36",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$3.33",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "HTHT",
+    "name": "H World Group Limited",
+    "marketCap": "$12,300,952,760",
+    "epsForecast": "$0.64",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.52",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BZ",
+    "name": "KANZHUN LIMITED",
+    "marketCap": "$7,303,073,993",
+    "epsForecast": "$0.25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.22",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GDS",
+    "name": "GDS Holdings Limited",
+    "marketCap": "$6,568,378,154",
+    "epsForecast": "$1.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.06)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BBAR",
+    "name": "Banco BBVA Argentina S.A.",
+    "marketCap": "$4,096,988,062",
+    "epsForecast": "$0.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.24",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CAAP",
+    "name": "Corporacion America Airports SA",
+    "marketCap": "$4,090,826,055",
+    "epsForecast": "$0.51",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.30",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "KC",
+    "name": "Kingsoft Cloud Holdings Limited",
+    "marketCap": "$3,008,665,123",
+    "epsForecast": "($0.14)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.21)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ZIM",
+    "name": "ZIM Integrated Shipping Services Ltd.",
+    "marketCap": "$3,002,010,427",
+    "epsForecast": "($0.10)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.19",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NESR",
+    "name": "National Energy Services Reunited Corp",
+    "marketCap": "$2,871,121,350",
+    "epsForecast": "$0.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.21",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "COTY",
+    "name": "Coty Inc.",
+    "marketCap": "$2,421,282,705",
+    "epsForecast": "($0.01)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.05)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "DRD",
+    "name": "DRDGOLD Limited",
+    "marketCap": "$1,791,427,807",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FLNG",
+    "name": "FLEX LNG Ltd.",
+    "marketCap": "$1,693,091,369",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.46",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AVEX",
+    "name": "AEVEX Corp.",
+    "marketCap": "$1,682,115,075",
+    "epsForecast": "$0.06",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "IQ",
+    "name": "iQIYI, Inc.",
+    "marketCap": "$1,206,280,919",
+    "epsForecast": "($0.03)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.01)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FINV",
+    "name": "FinVolution Group",
+    "marketCap": "$1,130,890,270",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.41",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "JBSS",
+    "name": "John B. Sanfilippo & Son, Inc.",
+    "marketCap": "$939,374,247",
+    "epsForecast": "$1.30",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.15",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "RERE",
+    "name": "ATRenew Inc.",
+    "marketCap": "$863,904,084",
+    "epsForecast": "$0.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.05",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NBP",
+    "name": "NovaBridge Biosciences",
+    "marketCap": "$211,148,496",
+    "epsForecast": "($0.14)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.07)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FJET",
+    "name": "Starfighters Space, Inc.",
+    "marketCap": "$199,994,195",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "JFIN",
+    "name": "Jiayin Group Inc.",
+    "marketCap": "$128,730,683",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.36",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "UFI",
+    "name": "Unifi, Inc.",
+    "marketCap": "$116,356,210",
+    "epsForecast": "($0.06)",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.56)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AIDX",
+    "name": "20/20 Biolabs, Inc.",
+    "marketCap": "$6,711,206",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "NCNA",
+    "name": "NuCana plc",
+    "marketCap": "$5,368,943",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.16)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CLGN",
+    "name": "CollPlant Biotechnologies Ltd.",
+    "marketCap": "$4,621,920",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.28)",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

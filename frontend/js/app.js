@@ -655,7 +655,7 @@ function renderTable() {
 // ASSET SELECTION & CHART
 // ═══════════════════════════════════════
 async function selectAsset(ticker) {
-    if (state.rrgTab === 'rotacion' || state.rrgTab === 'ema200') {
+    if (state.rrgTab === 'rotacion' || state.rrgTab === 'ema200' || state.rrgTab === 'earnings') {
         switchTab('tecnico');
     }
     state.selectedTicker = ticker;
@@ -1766,6 +1766,7 @@ function initRRG() {
     const tabTecnico = document.getElementById('tab-btn-tecnico');
     const tabRotacion = document.getElementById('tab-btn-rotacion');
     const tabEMA200 = document.getElementById('tab-btn-ema200');
+    const tabEarnings = document.getElementById('tab-btn-earnings');
     
     if (tabTecnico) {
         tabTecnico.addEventListener('click', () => switchTab('tecnico'));
@@ -1775,6 +1776,9 @@ function initRRG() {
     }
     if (tabEMA200) {
         tabEMA200.addEventListener('click', () => switchTab('ema200'));
+    }
+    if (tabEarnings) {
+        tabEarnings.addEventListener('click', () => switchTab('earnings'));
     }
 
     initEMA200Controls();
@@ -1792,7 +1796,7 @@ function initRRG() {
         });
     }
     
-    // Al cambiar de tipo de activo, actualizar si RRG o EMA200 están activos
+    // Al cambiar de tipo de activo, actualizar si RRG, EMA200 o Earnings están activos
     const assetTabs = document.querySelectorAll('.asset-type-tab');
     assetTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -1801,6 +1805,8 @@ function initRRG() {
                     loadRotationGraph();
                 } else if (state.rrgTab === 'ema200') {
                     loadEMA200Pullbacks(state.assetType);
+                } else if (state.rrgTab === 'earnings') {
+                    loadEarningsData();
                 }
             }, 50);
         });
@@ -1812,11 +1818,13 @@ function switchTab(tabId) {
     const btnTecnico = document.getElementById('tab-btn-tecnico');
     const btnRotacion = document.getElementById('tab-btn-rotacion');
     const btnEMA200 = document.getElementById('tab-btn-ema200');
+    const btnEarnings = document.getElementById('tab-btn-earnings');
     
     const workspaceTecnico = document.getElementById('chart-workspace');
     const workspaceEmpty = document.getElementById('chart-empty-state');
     const workspaceRotation = document.getElementById('chart-rotation-workspace');
     const workspaceEMA200 = document.getElementById('chart-ema200-workspace');
+    const workspaceEarnings = document.getElementById('chart-earnings-workspace');
     
     const controlsRow = document.querySelector('.controls-row');
     const metricsRow = document.querySelector('.asset-metrics');
@@ -1827,9 +1835,11 @@ function switchTab(tabId) {
         if (btnTecnico) btnTecnico.classList.add('active');
         if (btnRotacion) btnRotacion.classList.remove('active');
         if (btnEMA200) btnEMA200.classList.remove('active');
+        if (btnEarnings) btnEarnings.classList.remove('active');
         
         if (workspaceRotation) workspaceRotation.style.display = 'none';
         if (workspaceEMA200) workspaceEMA200.style.display = 'none';
+        if (workspaceEarnings) workspaceEarnings.style.display = 'none';
         
         // Mostrar header de técnico
         if (tecnicoHeader) tecnicoHeader.style.display = 'flex';
@@ -1854,10 +1864,12 @@ function switchTab(tabId) {
         if (btnTecnico) btnTecnico.classList.remove('active');
         if (btnRotacion) btnRotacion.classList.add('active');
         if (btnEMA200) btnEMA200.classList.remove('active');
+        if (btnEarnings) btnEarnings.classList.remove('active');
         
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
         if (workspaceEMA200) workspaceEMA200.style.display = 'none';
+        if (workspaceEarnings) workspaceEarnings.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
@@ -1870,10 +1882,12 @@ function switchTab(tabId) {
         if (btnTecnico) btnTecnico.classList.remove('active');
         if (btnRotacion) btnRotacion.classList.remove('active');
         if (btnEMA200) btnEMA200.classList.add('active');
+        if (btnEarnings) btnEarnings.classList.remove('active');
         
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
         if (workspaceRotation) workspaceRotation.style.display = 'none';
+        if (workspaceEarnings) workspaceEarnings.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
@@ -1882,6 +1896,24 @@ function switchTab(tabId) {
         if (workspaceEMA200) workspaceEMA200.style.display = 'flex';
         
         loadEMA200Pullbacks(state.assetType);
+    } else if (tabId === 'earnings') {
+        if (btnTecnico) btnTecnico.classList.remove('active');
+        if (btnRotacion) btnRotacion.classList.remove('active');
+        if (btnEMA200) btnEMA200.classList.remove('active');
+        if (btnEarnings) btnEarnings.classList.add('active');
+        
+        if (workspaceTecnico) workspaceTecnico.style.display = 'none';
+        if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+        if (workspaceRotation) workspaceRotation.style.display = 'none';
+        if (workspaceEMA200) workspaceEMA200.style.display = 'none';
+        if (fundamentalsBox) fundamentalsBox.style.display = 'none';
+        if (controlsRow) controlsRow.style.display = 'none';
+        if (metricsRow) metricsRow.style.display = 'none';
+        if (tecnicoHeader) tecnicoHeader.style.display = 'none';
+        
+        if (workspaceEarnings) workspaceEarnings.style.display = 'flex';
+        
+        loadEarningsData();
     }
 }
 
@@ -2369,3 +2401,484 @@ function renderRRGFrame() {
         plugins: [rrgBackgroundPlugin, rrgLabelsPlugin]
     });
 }
+
+/* ═══════════════════════════════════════
+   EARNINGS CALENDAR LOGIC & RENDERING
+   ═══════════════════════════════════════ */
+state.earningsMode = 'week';
+state.earningsCurrentDate = new Date();
+state.lastEarningsData = null;
+
+function setEarningsMode(mode) {
+    state.earningsMode = mode;
+    const btnWeek = document.getElementById('earnings-mode-week');
+    const btnMonth = document.getElementById('earnings-mode-month');
+    const gridWeek = document.getElementById('earnings-weekly-grid');
+    const gridMonth = document.getElementById('earnings-monthly-grid');
+    
+    if (btnWeek) btnWeek.classList.toggle('active', mode === 'week');
+    if (btnMonth) btnMonth.classList.toggle('active', mode === 'month');
+    if (gridWeek) gridWeek.style.display = mode === 'week' ? 'grid' : 'none';
+    if (gridMonth) gridMonth.style.display = mode === 'month' ? 'grid' : 'none';
+    
+    loadEarningsData();
+}
+window.setEarningsMode = setEarningsMode;
+
+function navigateEarnings(direction) {
+    if (!state.earningsCurrentDate) state.earningsCurrentDate = new Date();
+    if (state.earningsMode === 'week') {
+        state.earningsCurrentDate.setDate(state.earningsCurrentDate.getDate() + (direction * 7));
+    } else {
+        state.earningsCurrentDate.setMonth(state.earningsCurrentDate.getMonth() + direction);
+    }
+    loadEarningsData();
+}
+window.navigateEarnings = navigateEarnings;
+
+function resetEarningsDate() {
+    state.earningsCurrentDate = new Date();
+    loadEarningsData();
+}
+window.resetEarningsDate = resetEarningsDate;
+
+async function loadEarningsData() {
+    const rangeText = document.getElementById('earnings-date-range-text');
+    if (!state.earningsCurrentDate) state.earningsCurrentDate = new Date();
+    const d = state.earningsCurrentDate;
+    const currentPanel = state.assetType || 'cedears';
+    
+    if (state.earningsMode === 'week') {
+        const dateStr = d.toISOString().split('T')[0];
+        if (rangeText) rangeText.innerText = "Cargando...";
+        try {
+            const res = await fetch(`/api/earnings/week?date=${dateStr}&panel=${currentPanel}`);
+            if (!res.ok) throw new Error("Error HTTP");
+            const data = await res.json();
+            state.lastEarningsData = data;
+            renderWeeklyEarnings(data);
+        } catch (e) {
+            console.error("Error cargando earnings semanales:", e);
+            if (rangeText) rangeText.innerText = "Error cargando datos";
+        }
+    } else {
+        const year = d.getFullYear();
+        const month = d.getMonth() + 1;
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        if (rangeText) rangeText.innerText = `${monthNames[d.getMonth()]} ${year}`;
+        try {
+            const res = await fetch(`/api/earnings/month?year=${year}&month=${month}&panel=${currentPanel}`);
+            if (!res.ok) throw new Error("Error HTTP");
+            const data = await res.json();
+            state.lastEarningsData = data;
+            renderMonthlyEarnings(data);
+        } catch (e) {
+            console.error("Error cargando earnings mensuales:", e);
+            if (rangeText) rangeText.innerText = "Error cargando datos";
+        }
+    }
+}
+
+function renderWeeklyEarnings(data) {
+    const rangeText = document.getElementById('earnings-date-range-text');
+    if (rangeText && data.startDate && data.endDate) {
+        const s = new Date(data.startDate + "T00:00:00");
+        const e = new Date(data.endDate + "T00:00:00");
+        const monthsStr = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+        rangeText.innerText = `${s.getDate()} ${monthsStr[s.getMonth()]} - ${e.getDate()} ${monthsStr[e.getMonth()]}`;
+    }
+    
+    const grid = document.getElementById('earnings-weekly-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    
+    const dayNames = ["LUN", "MAR", "MIÉ", "JUE", "VIE"];
+    
+    (data.days || []).forEach((day) => {
+        const dObj = new Date(day.date + "T00:00:00");
+        const dayHeaderStr = `${dayNames[dObj.getDay() - 1] || 'DÍA'} ${dObj.getDate()} ${["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"][dObj.getMonth()]}`;
+        
+        const dayCard = document.createElement('div');
+        dayCard.className = 'earnings-day-card';
+        
+        const totalCount = day.total_count || 0;
+        
+        const boList = day.before_open || [];
+        const topBo = boList.slice(0, 6);
+        const remainingBo = boList.length - 6;
+        
+        let beforeOpenHtml = '';
+        if (boList.length > 0) {
+            beforeOpenHtml = `
+                <div class="earnings-timing-section">
+                    <div class="timing-section-title before-open">☀️ Before Open</div>
+                    <div class="company-tiles-grid">
+                        ${topBo.map(comp => renderCompanyTile(comp)).join('')}
+                    </div>
+                    ${remainingBo > 0 ? `<button class="see-more-btn" onclick="event.stopPropagation(); openEarningsModalForDay('${day.date}')">+ ${remainingBo} más (Ver todas)</button>` : ''}
+                </div>
+            `;
+        }
+        
+        const acList = day.after_close || [];
+        const topAc = acList.slice(0, 6);
+        const remainingAc = acList.length - 6;
+        
+        let afterCloseHtml = '';
+        if (acList.length > 0) {
+            afterCloseHtml = `
+                <div class="earnings-timing-section">
+                    <div class="timing-section-title after-close">🌙 After Close</div>
+                    <div class="company-tiles-grid">
+                        ${topAc.map(comp => renderCompanyTile(comp)).join('')}
+                    </div>
+                    ${remainingAc > 0 ? `<button class="see-more-btn" onclick="event.stopPropagation(); openEarningsModalForDay('${day.date}')">+ ${remainingAc} más (Ver todas)</button>` : ''}
+                </div>
+            `;
+        }
+        
+        let contentHtml = '';
+        if (beforeOpenHtml && afterCloseHtml) {
+            contentHtml = beforeOpenHtml + `<div class="timing-divider"></div>` + afterCloseHtml;
+        } else if (beforeOpenHtml) {
+            contentHtml = beforeOpenHtml;
+        } else if (afterCloseHtml) {
+            contentHtml = afterCloseHtml;
+        } else {
+            contentHtml = `<div style="text-align:center; padding:30px 10px; color:var(--text-muted); font-size:12px;">Sin presentaciones reportadas</div>`;
+        }
+        
+        dayCard.innerHTML = `
+            <div class="earnings-day-header" style="cursor: pointer;" onclick="openEarningsModalForDay('${day.date}')" title="Ver todas las empresas del día">
+                <span>${dayHeaderStr}</span>
+                <span class="count-pill">${totalCount}</span>
+            </div>
+            <div class="earnings-day-content">
+                ${contentHtml}
+            </div>
+        `;
+        grid.appendChild(dayCard);
+    });
+}
+
+function getCompanyLogoSrc(sym) {
+    if (!sym) return '';
+    return `https://assets.parqet.com/logos/symbol/${sym.toUpperCase().trim()}`;
+}
+
+function renderCompanyTile(comp) {
+    const sym = comp.symbol;
+    const eps = comp.epsForecast ? `EPS: ${comp.epsForecast}` : '';
+    const primaryLogo = getCompanyLogoSrc(sym);
+    const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
+    
+    return `
+        <div class="company-tile" title="${comp.name || sym}" onclick="openCompanyEarningsCardBySymbol('${sym}')">
+            <img src="${primaryLogo}" class="company-tile-logo" onerror="if(this.src !== '${fallbackLogo}'){this.src='${fallbackLogo}';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" alt="${sym}">
+            <div class="company-tile-fallback" style="display:none;">${sym.slice(0, 3)}</div>
+            <span class="company-tile-symbol">${sym}</span>
+            ${eps ? `<span class="company-tile-eps">${eps}</span>` : ''}
+        </div>
+    `;
+}
+
+function showEarningsToast(message) {
+    let existing = document.getElementById('earnings-toast');
+    if (existing) existing.remove();
+    
+    const toast = document.createElement('div');
+    toast.id = 'earnings-toast';
+    toast.className = 'earnings-toast';
+    toast.innerHTML = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        if (toast) toast.remove();
+    }, 4000);
+}
+window.showEarningsToast = showEarningsToast;
+
+function selectAssetFromEarnings(symbol) {
+    if (!symbol) return;
+    const cleanSym = symbol.toUpperCase().trim();
+    
+    // Buscar coincidencia en CEDEARs o Acciones Locales
+    let matchedAsset = state.cedears.find(s => s.ticker === cleanSym) || state.stocks.find(s => s.ticker === cleanSym);
+    
+    if (!matchedAsset) {
+        matchedAsset = state.cedears.find(s => s.ticker.replace('.BA', '') === cleanSym) ||
+                       state.stocks.find(s => s.ticker.replace('.BA', '') === cleanSym);
+    }
+    
+    if (!matchedAsset) {
+        showEarningsToast(`⚠️ El activo <strong>${cleanSym}</strong> no cotiza actualmente como CEDEAR ni Acción Local en la plataforma.`);
+        return;
+    }
+    
+    closeEarningsModal();
+    closeCompanyEarningsModal();
+    switchTab('tecnico');
+    selectAsset(matchedAsset.ticker);
+}
+window.selectAssetFromEarnings = selectAssetFromEarnings;
+
+function renderMonthlyEarnings(data) {
+    const grid = document.getElementById('earnings-monthly-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    
+    const headers = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+    headers.forEach(h => {
+        const hCell = document.createElement('div');
+        hCell.className = 'monthly-day-header-cell';
+        hCell.innerText = h;
+        grid.appendChild(hCell);
+    });
+    
+    const year = data.year;
+    const month = data.month;
+    const firstDay = new Date(year, month - 1, 1);
+    const lastDay = new Date(year, month, 0);
+    
+    const startDayOfWeek = firstDay.getDay();
+    const daysInMonth = lastDay.getDate();
+    
+    const dayMap = {};
+    (data.days || []).forEach(d => {
+        dayMap[d.dayNum] = d;
+    });
+    
+    for (let i = 0; i < startDayOfWeek; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.className = 'monthly-day-cell other-month';
+        grid.appendChild(emptyCell);
+    }
+    
+    const today = new Date();
+    const isCurrentMonth = today.getFullYear() === year && (today.getMonth() + 1) === month;
+    
+    for (let dayNum = 1; dayNum <= daysInMonth; dayNum++) {
+        const cell = document.createElement('div');
+        cell.className = 'monthly-day-cell';
+        if (isCurrentMonth && today.getDate() === dayNum) {
+            cell.classList.add('today');
+        }
+        
+        const dayData = dayMap[dayNum] || { before_open: [], after_close: [] };
+        const bCount = (dayData.before_open || []).length;
+        const aCount = (dayData.after_close || []).length;
+        
+        let badgesHtml = '';
+        if (bCount > 0) {
+            badgesHtml += `<div class="monthly-badge before-open"><span>☀️ Pre</span><span>${bCount}</span></div>`;
+        }
+        if (aCount > 0) {
+            badgesHtml += `<div class="monthly-badge after-close"><span>🌙 Post</span><span>${aCount}</span></div>`;
+        }
+        
+        cell.innerHTML = `
+            <span class="monthly-day-number">${dayNum}</span>
+            <div class="monthly-day-badges">
+                ${badgesHtml}
+            </div>
+        `;
+        
+        cell.onclick = () => {
+            state.earningsCurrentDate = new Date(year, month - 1, dayNum);
+            setEarningsMode('week');
+        };
+        
+        grid.appendChild(cell);
+    }
+}
+
+function openEarningsModalForDay(dateStr) {
+    if (!state.lastEarningsData || !state.lastEarningsData.days) return;
+    const dayObj = state.lastEarningsData.days.find(d => d.date === dateStr);
+    if (!dayObj) return;
+    
+    const modal = document.getElementById('earnings-day-modal');
+    const titleEl = document.getElementById('earnings-modal-date-title');
+    const subEl = document.getElementById('earnings-modal-subtitle');
+    const bodyEl = document.getElementById('earnings-modal-body');
+    
+    if (!modal || !bodyEl) return;
+    
+    const d = new Date(dateStr + "T00:00:00");
+    const dayNames = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    
+    if (titleEl) titleEl.innerText = `Earnings del ${dayNames[d.getDay()]} ${d.getDate()} de ${monthNames[d.getMonth()]}`;
+    if (subEl) subEl.innerText = `${dayObj.total_count || 0} presentaciones de reportes trimestrales`;
+    
+    let html = '';
+    
+    if (dayObj.before_open && dayObj.before_open.length > 0) {
+        html += `
+            <div class="timing-section-title before-open" style="font-size:14px; margin-top:4px;">☀️ Before Open (${dayObj.before_open.length})</div>
+            ${dayObj.before_open.map(comp => renderModalRow(comp)).join('')}
+        `;
+    }
+    
+    if (dayObj.after_close && dayObj.after_close.length > 0) {
+        if (html) html += `<div class="timing-divider" style="margin: 12px 0;"></div>`;
+        html += `
+            <div class="timing-section-title after-close" style="font-size:14px;">🌙 After Close (${dayObj.after_close.length})</div>
+            ${dayObj.after_close.map(comp => renderModalRow(comp)).join('')}
+        `;
+    }
+    
+    if (!html) {
+        html = `<div style="text-align:center; padding:40px; color:var(--text-muted);">No hay empresas reportadas para esta fecha.</div>`;
+    }
+    
+    bodyEl.innerHTML = html;
+    modal.style.display = 'flex';
+}
+window.openEarningsModalForDay = openEarningsModalForDay;
+
+function renderModalRow(comp) {
+    const sym = comp.symbol;
+    const name = comp.name || sym;
+    const eps = comp.epsForecast ? `Est. EPS: ${comp.epsForecast}` : '';
+    const cap = comp.marketCap ? `Cap: ${comp.marketCap}` : '';
+    const primaryLogo = getCompanyLogoSrc(sym);
+    const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
+    
+    return `
+        <div class="modal-company-row" onclick="openCompanyEarningsCardBySymbol('${sym}')">
+            <div class="modal-company-left">
+                <img src="${primaryLogo}" class="company-tile-logo" onerror="if(this.src !== '${fallbackLogo}'){this.src='${fallbackLogo}';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" alt="${sym}">
+                <div class="company-tile-fallback" style="display:none; width:36px; height:36px;">${sym.slice(0, 3)}</div>
+                <div class="modal-company-info">
+                    <span class="modal-company-symbol">${sym}</span>
+                    <span class="modal-company-name">${name}</span>
+                </div>
+            </div>
+            <div class="modal-company-right">
+                ${cap ? `<span class="modal-company-eps">${cap}</span>` : ''}
+                ${eps ? `<span class="modal-company-eps">${eps}</span>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+function closeEarningsModal() {
+    const modal = document.getElementById('earnings-day-modal');
+    if (modal) modal.style.display = 'none';
+}
+window.closeEarningsModal = closeEarningsModal;
+
+function openCompanyEarningsCardBySymbol(symbol) {
+    let targetComp = null;
+    if (state.lastEarningsData && state.lastEarningsData.days) {
+        for (const day of state.lastEarningsData.days) {
+            const allComps = [...(day.before_open || []), ...(day.after_close || []), ...(day.other || [])];
+            const found = allComps.find(c => c.symbol.toUpperCase() === symbol.toUpperCase());
+            if (found) {
+                targetComp = found;
+                break;
+            }
+        }
+    }
+    
+    if (!targetComp) {
+        targetComp = { symbol: symbol, name: symbol };
+    }
+    
+    showCompanyEarningsCard(targetComp);
+}
+window.openCompanyEarningsCardBySymbol = openCompanyEarningsCardBySymbol;
+
+function showCompanyEarningsCard(comp) {
+    const modal = document.getElementById('company-earnings-modal');
+    if (!modal) return;
+    
+    const sym = comp.symbol || '---';
+    const name = comp.name || sym;
+    const logoImg = document.getElementById('cec-logo');
+    const fallbackDiv = document.getElementById('cec-fallback');
+    const symbolEl = document.getElementById('cec-symbol');
+    const nameEl = document.getElementById('cec-name');
+    const badgeEl = document.getElementById('cec-timing-badge');
+    
+    const epsForecastEl = document.getElementById('cec-eps-forecast');
+    const epsLastEl = document.getElementById('cec-eps-last');
+    const epsGrowthEl = document.getElementById('cec-eps-growth');
+    const marketCapEl = document.getElementById('cec-market-cap');
+    const quarterEl = document.getElementById('cec-quarter');
+    const chartBtn = document.getElementById('cec-btn-chart');
+    
+    const primaryLogo = getCompanyLogoSrc(sym);
+    const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
+    
+    if (logoImg) {
+        logoImg.style.display = 'block';
+        if (fallbackDiv) fallbackDiv.style.display = 'none';
+        logoImg.src = primaryLogo;
+        logoImg.onerror = function() {
+            if (this.src !== fallbackLogo) {
+                this.src = fallbackLogo;
+            } else {
+                this.style.display = 'none';
+                if (fallbackDiv) {
+                    fallbackDiv.innerText = sym.slice(0, 3);
+                    fallbackDiv.style.display = 'flex';
+                }
+            }
+        };
+    }
+    
+    if (symbolEl) symbolEl.innerText = sym;
+    if (nameEl) nameEl.innerText = name;
+    
+    if (badgeEl) {
+        if (comp.timing === 'time-pre-market') {
+            badgeEl.className = 'timing-badge before-open';
+            badgeEl.innerText = '☀️ Before Open (Pre-Mercado)';
+        } else if (comp.timing === 'time-after-hours') {
+            badgeEl.className = 'timing-badge after-close';
+            badgeEl.innerText = '🌙 After Close (Post-Mercado)';
+        } else {
+            badgeEl.className = 'timing-badge';
+            badgeEl.innerText = '🕒 Horario a Confirmar';
+        }
+    }
+    
+    const forecastVal = comp.epsForecast ? comp.epsForecast.trim() : 'N/D';
+    const lastVal = comp.lastYearEPS ? comp.lastYearEPS.trim() : 'N/D';
+    
+    if (epsForecastEl) epsForecastEl.innerText = forecastVal;
+    if (epsLastEl) epsLastEl.innerText = lastVal;
+    if (marketCapEl) marketCapEl.innerText = comp.marketCap ? comp.marketCap : 'N/D';
+    if (quarterEl) quarterEl.innerText = comp.fiscalQuarterEnding ? comp.fiscalQuarterEnding : 'N/D';
+    
+    if (epsGrowthEl) {
+        const numForecast = parseFloat(forecastVal.replace(/[^0-9.-]/g, ''));
+        const numLast = parseFloat(lastVal.replace(/[^0-9.-]/g, ''));
+        
+        if (!isNaN(numForecast) && !isNaN(numLast) && numLast !== 0) {
+            const growth = ((numForecast - numLast) / Math.abs(numLast)) * 100;
+            const sign = growth >= 0 ? '+' : '';
+            epsGrowthEl.innerText = `${sign}${growth.toFixed(1)}%`;
+            epsGrowthEl.className = `mini-val ${growth >= 0 ? 'positive' : 'negative'}`;
+        } else {
+            epsGrowthEl.innerText = '---';
+            epsGrowthEl.className = 'mini-val';
+        }
+    }
+    
+    if (chartBtn) {
+        chartBtn.onclick = function() {
+            selectAssetFromEarnings(sym);
+        };
+    }
+    
+    modal.style.display = 'flex';
+}
+
+function closeCompanyEarningsModal() {
+    const modal = document.getElementById('company-earnings-modal');
+    if (modal) modal.style.display = 'none';
+}
+window.closeCompanyEarningsModal = closeCompanyEarningsModal;

@@ -1,0 +1,83 @@
+[
+  {
+    "symbol": "TRV",
+    "name": "The Travelers Companies, Inc.",
+    "marketCap": "$77,095,585,382",
+    "epsForecast": "$5.31",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "TFC",
+    "name": "Truist Financial Corporation",
+    "marketCap": "$64,013,277,150",
+    "epsForecast": "$1.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FITB",
+    "name": "Fifth Third Bancorp",
+    "marketCap": "$52,257,923,858",
+    "epsForecast": "$0.98",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "RF",
+    "name": "Regions Financial Corporation",
+    "marketCap": "$26,301,157,361",
+    "epsForecast": "$0.64",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ALV",
+    "name": "Autoliv, Inc.",
+    "marketCap": "$8,606,105,370",
+    "epsForecast": "$2.34",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "VZLA",
+    "name": "Vizsla Silver Corp.",
+    "marketCap": "$1,160,714,061",
+    "epsForecast": "$0",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "SPFI",
+    "name": "South Plains Financial, Inc.",
+    "marketCap": "$840,115,686",
+    "epsForecast": "$0.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "HIFS",
+    "name": "Hingham Institution for Savings",
+    "marketCap": "$634,814,388",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CSAI",
+    "name": "Cloudastructure, Inc.",
+    "marketCap": "$6,879,417",
+    "epsForecast": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

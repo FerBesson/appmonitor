@@ -161,6 +161,13 @@
                             <span class="tab-desc">Pullbacks institucionales</span>
                         </div>
                     </button>
+                    <button class="view-selector-tab" id="tab-btn-earnings" onclick="switchTab('earnings')">
+                        <span class="tab-icon">📅</span>
+                        <div class="tab-text-group">
+                            <span class="tab-title">Calendario Earnings</span>
+                            <span class="tab-desc">Resultados trimestrales</span>
+                        </div>
+                    </button>
                 </div>
 
                 <div class="chart-section-header" id="tecnico-header">
@@ -209,6 +216,44 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings Calendar Workspace -->
+                    <div id="chart-earnings-workspace" style="display: none;" class="earnings-workspace">
+                        <div class="earnings-header-bar">
+                            <div class="earnings-title-group">
+                                <span class="earnings-header-icon">📅</span>
+                                <div class="earnings-title-block">
+                                    <h2>Calendario de Earnings</h2>
+                                    <p class="earnings-subtitle">Presentación de resultados trimestrales pre y post mercado</p>
+                                </div>
+                            </div>
+                            <div class="earnings-nav-group">
+                                <div class="earnings-mode-switch">
+                                    <button class="earnings-mode-btn active" id="earnings-mode-week" onclick="setEarningsMode('week')">Vista Semanal</button>
+                                    <button class="earnings-mode-btn" id="earnings-mode-month" onclick="setEarningsMode('month')">Vista Mensual</button>
+                                </div>
+                                <div class="earnings-date-controls">
+                                    <button class="earnings-nav-btn" id="earnings-prev-btn" onclick="navigateEarnings(-1)">‹</button>
+                                    <span class="earnings-date-label" id="earnings-date-range-text">Cargando...</span>
+                                    <button class="earnings-nav-btn" id="earnings-next-btn" onclick="navigateEarnings(1)">›</button>
+                                    <button class="earnings-today-btn" onclick="resetEarningsDate()">Hoy</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Container -->
+                        <div class="earnings-body">
+                            <!-- Weekly Grid View -->
+                            <div id="earnings-weekly-grid" class="earnings-weekly-grid">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+
+                            <!-- Monthly Matrix View -->
+                            <div id="earnings-monthly-grid" class="earnings-monthly-grid" style="display: none;">
+                                <!-- Populated dynamically by JS -->
                             </div>
                         </div>
                     </div>
@@ -396,6 +441,74 @@
         </main>
     </div>
 
-    <script src="js/app.js?v=1.9.0"></script>
+    <!-- Earnings Day Modal -->
+    <div id="earnings-day-modal" class="earnings-modal-backdrop" style="display: none;" onclick="if(event.target === this) closeEarningsModal();">
+        <div class="earnings-modal-card">
+            <div class="earnings-modal-header">
+                <div class="earnings-modal-title-group">
+                    <span class="earnings-modal-icon">📅</span>
+                    <div>
+                        <h3 id="earnings-modal-date-title">Presentaciones de Earnings</h3>
+                        <span id="earnings-modal-subtitle" class="earnings-modal-subtitle">Lista completa de empresas del día</span>
+                    </div>
+                </div>
+                <button class="earnings-modal-close" onclick="closeEarningsModal()">✕</button>
+            </div>
+            <div class="earnings-modal-body" id="earnings-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Company Earnings Expectation Card Modal -->
+    <div id="company-earnings-modal" class="earnings-modal-backdrop" style="display: none;" onclick="if(event.target === this) closeCompanyEarningsModal();">
+        <div class="company-earnings-card">
+            <button class="earnings-modal-close company-card-close" onclick="closeCompanyEarningsModal()">✕</button>
+
+            <div class="company-card-header">
+                <img id="cec-logo" class="company-card-logo" src="" alt="logo">
+                <div class="company-tile-fallback company-card-fallback" id="cec-fallback" style="display:none;">---</div>
+                <div class="company-card-title-block">
+                    <div class="company-card-symbol-row">
+                        <h2 id="cec-symbol">---</h2>
+                        <span id="cec-timing-badge" class="timing-badge before-open">☀️ Before Open</span>
+                    </div>
+                    <span id="cec-name" class="company-card-name">---</span>
+                </div>
+            </div>
+
+            <div class="company-card-body">
+                <div class="company-card-metric-highlight">
+                    <span class="card-metric-label">Expectativa EPS de Mercado (Consenso)</span>
+                    <span id="cec-eps-forecast" class="card-metric-val">---</span>
+                </div>
+
+                <div class="company-card-metrics-grid">
+                    <div class="card-mini-metric">
+                        <span class="mini-label">EPS Año Anterior</span>
+                        <span id="cec-eps-last" class="mini-val">---</span>
+                    </div>
+                    <div class="card-mini-metric">
+                        <span class="mini-label">Var. Estimada (YoY)</span>
+                        <span id="cec-eps-growth" class="mini-val">---</span>
+                    </div>
+                    <div class="card-mini-metric">
+                        <span class="mini-label">Cap. de Mercado</span>
+                        <span id="cec-market-cap" class="mini-val">---</span>
+                    </div>
+                    <div class="card-mini-metric">
+                        <span class="mini-label">Trimestre Fiscal</span>
+                        <span id="cec-quarter" class="mini-val">---</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-card-footer">
+                <button class="company-card-btn" id="cec-btn-chart">
+                    📊 Abrir Gráfico Técnico
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=1.9.2"></script>
 </body>
 </html>

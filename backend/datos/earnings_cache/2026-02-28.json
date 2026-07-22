@@ -1,0 +1,46 @@
+[
+  {
+    "symbol": "BRK.A",
+    "name": "Berkshire Hathaway Inc.",
+    "marketCap": "$1,054,901,345,224",
+    "eps": "$7,092.08",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BRK.B",
+    "name": "Berkshire Hathaway Inc.",
+    "marketCap": "$1,054,901,345,224",
+    "eps": "$4.73",
+    "epsForecast": "$5.19",
+    "surprise": "-8.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BH",
+    "name": "Biglari Holdings Inc.",
+    "marketCap": "$4,467,193,854",
+    "eps": "($2.38)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BH.A",
+    "name": "Biglari Holdings Inc.",
+    "marketCap": "$4,467,193,854",
+    "eps": "($2.38)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

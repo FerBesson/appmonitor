@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "LNN",
+    "name": "Lindsay Corporation",
+    "marketCap": "$1,139,728,631",
+    "eps": "$1.53",
+    "epsForecast": "$1.41",
+    "surprise": "8.51",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "UUU",
+    "name": "Universal Safety Products, Inc.",
+    "marketCap": "$11,871,575",
+    "eps": "($0.40)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

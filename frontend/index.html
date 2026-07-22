@@ -232,12 +232,32 @@
                             </div>
                             <div class="earnings-nav-group">
                                 <div class="earnings-mode-switch">
-                                    <button class="earnings-mode-btn active" id="earnings-mode-week" onclick="setEarningsMode('week')">Vista Semanal</button>
-                                    <button class="earnings-mode-btn" id="earnings-mode-month" onclick="setEarningsMode('month')">Vista Mensual</button>
+                                    <button class="earnings-mode-btn active" id="earnings-mode-week" onclick="setEarningsMode('week')" title="Vista Semanal">
+                                        <svg class="mode-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            <line x1="7" y1="14" x2="17" y2="14"></line>
+                                            <line x1="7" y1="18" x2="13" y2="18"></line>
+                                        </svg>
+                                        <span>Semanal</span>
+                                    </button>
+                                    <button class="earnings-mode-btn" id="earnings-mode-month" onclick="setEarningsMode('month')" title="Vista Mensual">
+                                        <svg class="mode-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            <line x1="10" y1="10" x2="10" y2="22"></line>
+                                            <line x1="15" y1="10" x2="15" y2="22"></line>
+                                        </svg>
+                                        <span>Mensual</span>
+                                    </button>
                                 </div>
                                 <div class="earnings-date-controls">
                                     <button class="earnings-nav-btn" id="earnings-prev-btn" onclick="navigateEarnings(-1)">‹</button>
-                                    <span class="earnings-date-label" id="earnings-date-range-text">Cargando...</span>
+                                    <span class="earnings-date-label clickable" id="earnings-date-range-text" onclick="openMonthPickerModal()" title="Seleccionar Mes y Año">Cargando...</span>
                                     <button class="earnings-nav-btn" id="earnings-next-btn" onclick="navigateEarnings(1)">›</button>
                                     <button class="earnings-today-btn" onclick="resetEarningsDate()">Hoy</button>
                                 </div>
@@ -510,6 +530,27 @@
         </div>
     </div>
 
-    <script src="js/app.js?v=1.9.6"></script>
+    <!-- Month & Year / Week Picker Modal -->
+    <div id="earnings-picker-modal" class="earnings-modal-backdrop" style="display: none;" onclick="if(event.target === this) closeMonthPickerModal();">
+        <div class="earnings-picker-card">
+            <div class="picker-header">
+                <h3 id="picker-title" class="picker-title">Seleccionar Fecha</h3>
+                <div class="picker-year-selector">
+                    <button class="picker-year-btn" onclick="changePickerYear(-1)">‹</button>
+                    <span id="picker-year-display" class="picker-year-text">2026</span>
+                    <button class="picker-year-btn" onclick="changePickerYear(1)">›</button>
+                </div>
+                <button class="earnings-modal-close" onclick="closeMonthPickerModal()">✕</button>
+            </div>
+            <div id="picker-month-tabs" class="picker-month-tabs" style="display: none;">
+                <!-- Mini month selector tabs for week picker mode -->
+            </div>
+            <div id="picker-content-area" class="picker-content-area">
+                <!-- Grid of months or list of weeks populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=2.0.0"></script>
 </body>
 </html>

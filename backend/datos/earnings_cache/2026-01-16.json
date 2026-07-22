@@ -1,0 +1,79 @@
+[
+  {
+    "symbol": "PNC",
+    "name": "PNC Financial Services Group, Inc. (The)",
+    "marketCap": "$100,543,752,560",
+    "eps": "$4.88",
+    "epsForecast": "$4.23",
+    "surprise": "15.37",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "STT",
+    "name": "State Street Corporation",
+    "marketCap": "$50,731,397,149",
+    "eps": "$2.97",
+    "epsForecast": "$2.82",
+    "surprise": "5.32",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "MTB",
+    "name": "M&T Bank Corporation",
+    "marketCap": "$36,415,028,620",
+    "eps": "$4.72",
+    "epsForecast": "$4.44",
+    "surprise": "6.31",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "RF",
+    "name": "Regions Financial Corporation",
+    "marketCap": "$26,301,157,361",
+    "eps": "$0.57",
+    "epsForecast": "$0.61",
+    "surprise": "-6.56",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "WIT",
+    "name": "Wipro Limited",
+    "marketCap": "$19,088,910,674",
+    "eps": "$0.03",
+    "epsForecast": "$0.04",
+    "surprise": "-25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BOKF",
+    "name": "BOK Financial Corporation",
+    "marketCap": "$8,505,333,179",
+    "eps": "$2.48",
+    "epsForecast": "$2.13",
+    "surprise": "16.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "HIFS",
+    "name": "Hingham Institution for Savings",
+    "marketCap": "$634,814,388",
+    "eps": "$4.54",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

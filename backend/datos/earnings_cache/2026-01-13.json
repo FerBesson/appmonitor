@@ -1,0 +1,156 @@
+[
+  {
+    "symbol": "JPM",
+    "name": "J P Morgan Chase & Co",
+    "marketCap": "$925,047,726,836",
+    "eps": "$5.23",
+    "epsForecast": "$4.87",
+    "surprise": "7.39",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BNY",
+    "name": "The Bank Of New York Mellon Corporation ",
+    "marketCap": "$109,058,766,460",
+    "eps": "$2.08",
+    "epsForecast": "$1.97",
+    "surprise": "5.58",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "DAL",
+    "name": "Delta Air Lines, Inc.",
+    "marketCap": "$55,654,637,029",
+    "eps": "$1.55",
+    "epsForecast": "$1.53",
+    "surprise": "1.31",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BMNR",
+    "name": "BitMine Immersion Technologies, Inc.",
+    "marketCap": "$10,393,590,769",
+    "eps": "$0.13",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "CNXC",
+    "name": "Concentrix Corporation",
+    "marketCap": "$1,451,626,547",
+    "eps": "$2.72",
+    "epsForecast": "$2.50",
+    "surprise": "8.8",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PXED",
+    "name": "Phoenix Education Partners, Inc.",
+    "marketCap": "$1,084,305,070",
+    "eps": "$1.38",
+    "epsForecast": "$1.27",
+    "surprise": "8.66",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PKE",
+    "name": "Park Aerospace Corp.",
+    "marketCap": "$762,597,458",
+    "eps": "$0.15",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "UNTY",
+    "name": "Unity Bancorp, Inc.",
+    "marketCap": "$574,741,230",
+    "eps": "$1.41",
+    "epsForecast": "$1.35",
+    "surprise": "4.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BBCP",
+    "name": "Concrete Pumping Holdings, Inc. ",
+    "marketCap": "$527,115,173",
+    "eps": "$0.09",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Oct/2025"
+  },
+  {
+    "symbol": "SOTK",
+    "name": "Sono-Tek Corporation",
+    "marketCap": "$83,298,632",
+    "eps": "$0.02",
+    "epsForecast": "$0.03",
+    "surprise": "-33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "LEXX",
+    "name": "Lexaria Bioscience Corp.",
+    "marketCap": "$13,727,288",
+    "eps": "($0.07)",
+    "epsForecast": "($0.13)",
+    "surprise": "46.15",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "EDUC",
+    "name": "Educational Development Corporation",
+    "marketCap": "$12,361,198",
+    "eps": "($0.22)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "RMCF",
+    "name": "Rocky Mountain Chocolate Factory, Inc.",
+    "marketCap": "$8,873,212",
+    "eps": "($0.02)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "VMAR",
+    "name": "Vision Marine Technologies Inc.",
+    "marketCap": "$1,888,732",
+    "eps": "($0.86)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  }
+]

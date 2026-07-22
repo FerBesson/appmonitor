@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "HPE",
+    "name": "Hewlett Packard Enterprise Company",
+    "marketCap": "$61,866,788,501",
+    "eps": "$0.67",
+    "epsForecast": "$0.44",
+    "surprise": "52.27",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CRDO",
+    "name": "Credo Technology Group Holding Ltd",
+    "marketCap": "$41,746,807,025",
+    "eps": "$0.92",
+    "epsForecast": "$0.77",
+    "surprise": "19.48",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "FRHC",
+    "name": "Freedom Holding Corp.",
+    "marketCap": "$9,809,264,663",
+    "eps": "$0.13",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SAIC",
+    "name": "Science Applications International Corporation",
+    "marketCap": "$4,727,393,901",
+    "eps": "$3.23",
+    "epsForecast": "$2.26",
+    "surprise": "42.92",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "KEN",
+    "name": "Kenon Holdings Ltd.",
+    "marketCap": "$3,622,054,675",
+    "eps": "$0.49",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GMRS",
+    "name": "GMR Solutions Inc.",
+    "marketCap": "$701,612,126",
+    "eps": "$0.28",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GLSI",
+    "name": "Greenwich LifeSciences, Inc.",
+    "marketCap": "$215,035,747",
+    "eps": "($0.58)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BRID",
+    "name": "Bridgford Foods Corporation",
+    "marketCap": "$59,770,939",
+    "eps": "($0.54)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DETX",
+    "name": "Liberty Defense Holdings, Ltd.",
+    "marketCap": "$18,897,598",
+    "eps": "($1.38)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "OPTH",
+    "name": "Optimi Health Corp.",
+    "marketCap": "$15,038,505",
+    "eps": "($0.36)",
+    "epsForecast": "($0.35)",
+    "surprise": "-2.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "RMCF",
+    "name": "Rocky Mountain Chocolate Factory, Inc.",
+    "marketCap": "$8,873,212",
+    "eps": "($0.38)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  }
+]

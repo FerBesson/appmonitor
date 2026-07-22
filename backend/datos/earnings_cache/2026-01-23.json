@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "SLB",
+    "name": "SLB Limited",
+    "marketCap": "$69,654,736,426",
+    "eps": "$0.78",
+    "epsForecast": "$0.74",
+    "surprise": "5.41",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ERIC",
+    "name": "Ericsson",
+    "marketCap": "$32,331,263,139",
+    "eps": "$0.27",
+    "epsForecast": "$0.23",
+    "surprise": "17.39",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FCNCA",
+    "name": "First Citizens BancShares, Inc.",
+    "marketCap": "$23,998,477,070",
+    "eps": "$51.27",
+    "epsForecast": "$44.21",
+    "surprise": "15.97",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "WBS",
+    "name": "Webster Financial Corporation",
+    "marketCap": "$12,325,355,703",
+    "eps": "$1.59",
+    "epsForecast": "$1.52",
+    "surprise": "4.61",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BAH",
+    "name": "Booz Allen Hamilton Holding Corporation",
+    "marketCap": "$7,645,790,401",
+    "eps": "$1.77",
+    "epsForecast": "$1.26",
+    "surprise": "40.48",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "NRIM",
+    "name": "Northrim BanCorp Inc",
+    "marketCap": "$620,628,971",
+    "eps": "$0.54",
+    "epsForecast": "$0.64",
+    "surprise": "-15.63",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "OVLY",
+    "name": "Oak Valley Bancorp (CA)",
+    "marketCap": "$280,420,555",
+    "eps": "$0.76",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ATLO",
+    "name": "Ames National Corporation",
+    "marketCap": "$262,262,284",
+    "eps": "$0.73",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FCAP",
+    "name": "First Capital, Inc.",
+    "marketCap": "$201,267,145",
+    "eps": "$1.46",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BVFL",
+    "name": "BV Financial, Inc.",
+    "marketCap": "$180,823,291",
+    "eps": "$0.65",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "AFBI",
+    "name": "Affinity Bancshares, Inc.",
+    "marketCap": "$139,146,225",
+    "eps": "$0.40",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

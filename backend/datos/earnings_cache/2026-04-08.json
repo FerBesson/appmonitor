@@ -1,0 +1,156 @@
+[
+  {
+    "symbol": "DAL",
+    "name": "Delta Air Lines, Inc.",
+    "marketCap": "$55,654,637,029",
+    "eps": "$0.64",
+    "epsForecast": "$0.61",
+    "surprise": "4.92",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "STZ",
+    "name": "Constellation Brands Inc",
+    "marketCap": "$22,313,910,186",
+    "eps": "$1.90",
+    "epsForecast": "$1.74",
+    "surprise": "9.2",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "RPM",
+    "name": "RPM International Inc.",
+    "marketCap": "$12,957,921,286",
+    "eps": "$0.57",
+    "epsForecast": "$0.37",
+    "surprise": "54.05",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "APLD",
+    "name": "Applied Digital Corporation",
+    "marketCap": "$8,587,374,647",
+    "eps": "($0.36)",
+    "epsForecast": "($0.10)",
+    "surprise": "-260",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "PSMT",
+    "name": "PriceSmart, Inc.",
+    "marketCap": "$5,755,179,121",
+    "eps": "$1.62",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "NRIX",
+    "name": "Nurix Therapeutics, Inc.",
+    "marketCap": "$2,436,793,917",
+    "eps": "($0.79)",
+    "epsForecast": "($0.76)",
+    "surprise": "-3.95",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "PCYO",
+    "name": "Pure Cycle Corporation",
+    "marketCap": "$255,914,069",
+    "eps": "$0.05",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "RELL",
+    "name": "Richardson Electronics, Ltd.",
+    "marketCap": "$250,087,920",
+    "eps": "$0.07",
+    "epsForecast": "$0.05",
+    "surprise": "40",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "RGP",
+    "name": "Resources Connection, Inc.",
+    "marketCap": "$159,974,743",
+    "eps": "($0.12)",
+    "epsForecast": "($0.09)",
+    "surprise": "-33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "VIRC",
+    "name": "Virco Manufacturing Corporation",
+    "marketCap": "$93,748,076",
+    "eps": "($0.45)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jan/2026"
+  },
+  {
+    "symbol": "LFS",
+    "name": "LEIFRAS Co., Ltd.",
+    "marketCap": "$54,152,481",
+    "eps": "$0.05",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "GAME",
+    "name": "GameSquare Holdings, Inc.",
+    "marketCap": "$39,511,908",
+    "eps": "($0.04)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BBGI",
+    "name": "Beasley Broadcast Group, Inc.",
+    "marketCap": "$38,537,366",
+    "eps": "($6.95)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "AXIL",
+    "name": "AXIL Brands, Inc.",
+    "marketCap": "$37,838,329",
+    "eps": "$0.02",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  }
+]

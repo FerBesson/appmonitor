@@ -1,0 +1,57 @@
+[
+  {
+    "symbol": "JBL",
+    "name": "Jabil Inc.",
+    "marketCap": "$33,419,746,295",
+    "eps": "$2.93",
+    "epsForecast": "$2.96",
+    "surprise": "-1.01",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "KMX",
+    "name": "CarMax Inc",
+    "marketCap": "$8,175,498,241",
+    "eps": "$1.31",
+    "epsForecast": "$0.94",
+    "surprise": "39.36",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "ODTX",
+    "name": "Odyssey Therapeutics, Inc.",
+    "marketCap": "$875,130,650",
+    "eps": "($6.77)",
+    "epsForecast": "($1.31)",
+    "surprise": "-416.79",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SB",
+    "name": "Safe Bulkers, Inc",
+    "marketCap": "$761,723,626",
+    "eps": "$0.18",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SWBI",
+    "name": "Smith & Wesson Brands, Inc.",
+    "marketCap": "$679,404,163",
+    "eps": "$0.36",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

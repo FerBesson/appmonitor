@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "HDB",
+    "name": "HDFC Bank Limited",
+    "marketCap": "$121,450,769,011",
+    "eps": "$0.40",
+    "epsForecast": "$0.38",
+    "surprise": "5.26",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "IBN",
+    "name": "ICICI Bank Limited",
+    "marketCap": "$107,580,691,364",
+    "eps": "$0.43",
+    "epsForecast": "$0.40",
+    "surprise": "7.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

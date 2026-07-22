@@ -1,0 +1,233 @@
+[
+  {
+    "symbol": "PANW",
+    "name": "Palo Alto Networks, Inc.",
+    "marketCap": "$278,852,250,000",
+    "eps": "$0.32",
+    "epsForecast": "$0.43",
+    "surprise": "-25.58",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DG",
+    "name": "Dollar General Corporation",
+    "marketCap": "$27,176,274,910",
+    "eps": "$2",
+    "epsForecast": "$1.89",
+    "surprise": "5.82",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ULTA",
+    "name": "Ulta Beauty, Inc.",
+    "marketCap": "$21,041,978,055",
+    "eps": "$7.74",
+    "epsForecast": "$6.90",
+    "surprise": "12.17",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DCI",
+    "name": "Donaldson Company, Inc.",
+    "marketCap": "$10,452,859,030",
+    "eps": "$1.06",
+    "epsForecast": "$1.05",
+    "surprise": "0.95",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GME",
+    "name": "GameStop Corporation",
+    "marketCap": "$9,776,982,490",
+    "eps": "$0.30",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GTLB",
+    "name": "GitLab Inc.",
+    "marketCap": "$5,548,365,000",
+    "eps": "($0.02)",
+    "epsForecast": "($0.06)",
+    "surprise": "66.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "SIG",
+    "name": "Signet Jewelers Limited",
+    "marketCap": "$3,550,299,511",
+    "eps": "$1.56",
+    "epsForecast": "$1.32",
+    "surprise": "18.18",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "BWLP",
+    "name": "BW LPG Limited",
+    "marketCap": "$3,422,970,180",
+    "eps": "$1.08",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "PICS",
+    "name": "PicS N.V.",
+    "marketCap": "$1,604,293,782",
+    "eps": "$0.27",
+    "epsForecast": "$1.13",
+    "surprise": "-76.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ODD",
+    "name": "ODDITY Tech Ltd.",
+    "marketCap": "$918,971,431",
+    "eps": "($0.29)",
+    "epsForecast": "($0.08)",
+    "surprise": "-262.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MOMO",
+    "name": "Hello Group Inc. ",
+    "marketCap": "$890,916,828",
+    "eps": "$0.27",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "HIVE",
+    "name": "HIVE Digital Technologies Ltd",
+    "marketCap": "$868,516,311",
+    "eps": "($0.28)",
+    "epsForecast": "($0.21)",
+    "surprise": "-33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "TIGR",
+    "name": "UP Fintech Holding Limited",
+    "marketCap": "$859,550,179",
+    "eps": "($0.15)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VLGEA",
+    "name": "Village Super Market, Inc.",
+    "marketCap": "$641,991,435",
+    "eps": "$0.61",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CTRN",
+    "name": "Citi Trends, Inc.",
+    "marketCap": "$556,683,742",
+    "eps": "$1.08",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "YEXT",
+    "name": "Yext, Inc.",
+    "marketCap": "$520,287,722",
+    "eps": "$0.08",
+    "epsForecast": "$0.07",
+    "surprise": "14.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GOTU",
+    "name": "Gaotu Techedu Inc.",
+    "marketCap": "$400,582,295",
+    "eps": "$0.02",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SPWH",
+    "name": "Sportsman's Warehouse Holdings, Inc.",
+    "marketCap": "$45,653,160",
+    "eps": "($0.39)",
+    "epsForecast": "($0.58)",
+    "surprise": "32.76",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "PETS",
+    "name": "PetMed Express, Inc.",
+    "marketCap": "$42,530,041",
+    "eps": "($0.19)",
+    "epsForecast": "($0.18)",
+    "surprise": "-5.56",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CTRM",
+    "name": "Castor Maritime Inc.",
+    "marketCap": "$19,421,332",
+    "eps": "$0.21",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BRLS",
+    "name": "Borealis Foods Inc.",
+    "marketCap": "$19,063,708",
+    "eps": "($0.30)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "symbol": "FDX",
+    "name": "FedEx Corporation",
+    "marketCap": "$74,568,024,646",
+    "eps": "$6.31",
+    "epsForecast": "$5.91",
+    "surprise": "6.77",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "CBRS",
+    "name": "Cerebras Systems Inc.",
+    "marketCap": "$46,479,942,759",
+    "eps": "($0.04)",
+    "epsForecast": "($0.14)",
+    "surprise": "71.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CCL",
+    "name": "Carnival Corporation Ltd.",
+    "marketCap": "$35,830,020,953",
+    "eps": "$0.41",
+    "epsForecast": "$0.35",
+    "surprise": "17.14",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "SUNB",
+    "name": "Sunbelt Rentals Holdings, Inc.",
+    "marketCap": "$29,523,250,077",
+    "eps": "$0.74",
+    "epsForecast": "$0.73",
+    "surprise": "1.37",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ICLR",
+    "name": "ICON plc",
+    "marketCap": "$12,757,647,692",
+    "eps": "$2.22",
+    "epsForecast": "$2.16",
+    "surprise": "2.78",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "KFY",
+    "name": "Korn Ferry ",
+    "marketCap": "$3,968,880,280",
+    "eps": "$1.40",
+    "epsForecast": "$1.37",
+    "surprise": "2.19",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "KBH",
+    "name": "KB Home",
+    "marketCap": "$3,381,844,596",
+    "eps": "$0.43",
+    "epsForecast": "$0.43",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "WOR",
+    "name": "Worthington Enterprises, Inc.",
+    "marketCap": "$2,693,153,712",
+    "eps": "$0.97",
+    "epsForecast": "$1.04",
+    "surprise": "-6.73",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "JFIN",
+    "name": "Jiayin Group Inc.",
+    "marketCap": "$128,730,683",
+    "eps": "($0.16)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "KEQU",
+    "name": "Kewaunee Scientific Corporation",
+    "marketCap": "$104,482,924",
+    "eps": "$1.14",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "marketCap": "$90,296,100,000",
+    "eps": "$4.58",
+    "epsForecast": "$4.74",
+    "surprise": "-3.38",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "LEN",
+    "name": "Lennar Corporation",
+    "marketCap": "$19,714,858,421",
+    "eps": "$1.31",
+    "epsForecast": "$1.23",
+    "surprise": "6.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "LEN.B",
+    "name": "Lennar Corporation",
+    "marketCap": "$19,714,858,421",
+    "eps": "$1.31",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "RH",
+    "name": "RH",
+    "marketCap": "$3,411,813,914",
+    "eps": "($1.97)",
+    "epsForecast": "($2.13)",
+    "surprise": "7.51",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DRVN",
+    "name": "Driven Brands Holdings Inc.",
+    "marketCap": "$2,401,758,836",
+    "eps": "$0.27",
+    "epsForecast": "$0.22",
+    "surprise": "22.73",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MH",
+    "name": "McGraw Hill, Inc.",
+    "marketCap": "$1,782,693,886",
+    "eps": "$0.31",
+    "epsForecast": "$0.15",
+    "surprise": "106.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SENEA",
+    "name": "Seneca Foods Corp.",
+    "marketCap": "$1,105,951,374",
+    "eps": "$3.67",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SENEB",
+    "name": "Seneca Foods Corp.",
+    "marketCap": "$1,105,951,374",
+    "eps": "$3.67",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "LOVE",
+    "name": "The Lovesac Company",
+    "marketCap": "$257,489,773",
+    "eps": "($0.76)",
+    "epsForecast": "($1.03)",
+    "surprise": "26.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "FRD",
+    "name": "Friedman Industries Inc.",
+    "marketCap": "$236,579,545",
+    "eps": "$1.30",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ACB",
+    "name": "Aurora Cannabis Inc.",
+    "marketCap": "$166,430,137",
+    "eps": "$0.07",
+    "epsForecast": "($0.07)",
+    "surprise": "200",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "HOFT",
+    "name": "Hooker Furnishings Corporation",
+    "marketCap": "$153,283,346",
+    "eps": "$0.10",
+    "epsForecast": "($0.07)",
+    "surprise": "242.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "RFL",
+    "name": "Rafael Holdings, Inc.",
+    "marketCap": "$120,119,991",
+    "eps": "($0.15)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "VRA",
+    "name": "Vera Bradley, Inc.",
+    "marketCap": "$108,349,740",
+    "eps": "($0.09)",
+    "epsForecast": "($0.33)",
+    "surprise": "72.73",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "MAYS",
+    "name": "J. W. Mays, Inc.",
+    "marketCap": "$77,647,846",
+    "eps": "($0.11)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "LASE",
+    "name": "Laser Photonics Corporation",
+    "marketCap": "$54,794,765",
+    "eps": "($0.16)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ZDGE",
+    "name": "Zedge, Inc.",
+    "marketCap": "$39,336,579",
+    "eps": "$0.07",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "NTRB",
+    "name": "Nutriband Inc.",
+    "marketCap": "$37,440,428",
+    "eps": "($0.10)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "TPET",
+    "name": "Trio Petroleum Corp.",
+    "marketCap": "$14,099,254",
+    "eps": "($0.05)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

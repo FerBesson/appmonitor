@@ -1,0 +1,68 @@
+[
+  {
+    "symbol": "NKE",
+    "name": "Nike, Inc.",
+    "marketCap": "$63,731,104,281",
+    "eps": "$0.20",
+    "epsForecast": "$0.11",
+    "surprise": "81.82",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "STZ",
+    "name": "Constellation Brands Inc",
+    "marketCap": "$22,313,910,186",
+    "eps": "$3.43",
+    "epsForecast": "$3.22",
+    "surprise": "6.52",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "PRGS",
+    "name": "Progress Software Corporation",
+    "marketCap": "$1,618,370,691",
+    "eps": "$1.22",
+    "epsForecast": "$1.15",
+    "surprise": "6.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "NKLR",
+    "name": "Terra Innovatum Global N.V.",
+    "marketCap": "$608,860,003",
+    "eps": "($0.03)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GHG",
+    "name": "GreenTree Hospitality Group Ltd.",
+    "marketCap": "$114,013,977",
+    "eps": "$0.02",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BRLS",
+    "name": "Borealis Foods Inc.",
+    "marketCap": "$19,063,708",
+    "eps": "($0.16)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

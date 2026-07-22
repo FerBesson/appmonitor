@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "GMRS",
+    "name": "GMR Solutions Inc.",
+    "marketCap": "$701,612,126",
+    "eps": "",
+    "epsForecast": "$0.04",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "DETX",
+    "name": "Liberty Defense Holdings, Ltd.",
+    "marketCap": "$18,897,598",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "OPTH",
+    "name": "Optimi Health Corp.",
+    "marketCap": "$15,038,505",
+    "eps": "",
+    "epsForecast": "($0.26)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

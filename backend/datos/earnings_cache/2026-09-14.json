@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "CASY",
+    "name": "Caseys General Stores, Inc.",
+    "marketCap": "$31,759,837,490",
+    "eps": "",
+    "epsForecast": "$6.58",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$5.77",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ABVX",
+    "name": "Abivax SA",
+    "marketCap": "$11,544,416,198",
+    "eps": "",
+    "epsForecast": "($1.08)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.86)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "PL",
+    "name": "Planet Labs PBC",
+    "marketCap": "$8,232,898,351",
+    "eps": "",
+    "epsForecast": "($0.18)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.07)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "VZLA",
+    "name": "Vizsla Silver Corp.",
+    "marketCap": "$1,160,714,061",
+    "eps": "",
+    "epsForecast": "$0",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.01)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "SPTX",
+    "name": "Seaport Therapeutics, Inc.",
+    "marketCap": "$1,124,141,550",
+    "eps": "",
+    "epsForecast": "($0.71)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AVO",
+    "name": "Mission Produce, Inc.",
+    "marketCap": "$1,115,479,162",
+    "eps": "",
+    "epsForecast": "$0.05",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.24",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "MAMA",
+    "name": "Mama's Creations, Inc.",
+    "marketCap": "$691,505,904",
+    "eps": "",
+    "epsForecast": "$0.05",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.03",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "YEXT",
+    "name": "Yext, Inc.",
+    "marketCap": "$520,287,722",
+    "eps": "",
+    "epsForecast": "$0.10",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.03",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "DLNG",
+    "name": "Dynagas LNG Partners LP",
+    "marketCap": "$122,971,197",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.25",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BNR",
+    "name": "Burning Rock Biotech Limited",
+    "marketCap": "$99,662,941",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.15)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "GROW",
+    "name": "U.S. Global Investors, Inc.",
+    "marketCap": "$35,972,168",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.02)",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

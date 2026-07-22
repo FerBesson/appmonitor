@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "HDB",
+    "name": "HDFC Bank Limited",
+    "marketCap": "$121,450,769,011",
+    "eps": "$0.43",
+    "epsForecast": "$0.39",
+    "surprise": "10.26",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "IBN",
+    "name": "ICICI Bank Limited",
+    "marketCap": "$107,580,691,364",
+    "eps": "$0.35",
+    "epsForecast": "$0.38",
+    "surprise": "-7.89",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "DIT",
+    "name": "AMCON Distributing Company",
+    "marketCap": "$62,573,155",
+    "eps": "$1.28",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

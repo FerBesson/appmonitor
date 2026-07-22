@@ -1,0 +1,156 @@
+[
+  {
+    "symbol": "MU",
+    "name": "Micron Technology, Inc.",
+    "marketCap": "$1,096,437,458,854",
+    "eps": "$24.89",
+    "epsForecast": "$20.98",
+    "surprise": "18.64",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "PAYX",
+    "name": "Paychex, Inc.",
+    "marketCap": "$39,822,253,006",
+    "eps": "$1.32",
+    "epsForecast": "$1.31",
+    "surprise": "0.76",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "TCOM",
+    "name": "Trip.com Group Limited",
+    "marketCap": "$27,486,632,940",
+    "eps": "$0.68",
+    "epsForecast": "$0.74",
+    "surprise": "-8.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "JEF",
+    "name": "Jefferies Financial Group Inc.",
+    "marketCap": "$10,992,960,231",
+    "eps": "$1.03",
+    "epsForecast": "$1.09",
+    "surprise": "-5.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "FUL",
+    "name": "H. B. Fuller Company",
+    "marketCap": "$3,012,095,016",
+    "eps": "$1.41",
+    "epsForecast": "$1.37",
+    "surprise": "2.92",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "NG",
+    "name": "Novagold Resources Inc.",
+    "marketCap": "$2,475,815,373",
+    "eps": "($0.06)",
+    "epsForecast": "($0.06)",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "WS",
+    "name": "Worthington Steel, Inc.",
+    "marketCap": "$1,819,374,964",
+    "eps": "$0.74",
+    "epsForecast": "$0.73",
+    "surprise": "1.37",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "MLKN",
+    "name": "MillerKnoll, Inc.",
+    "marketCap": "$1,442,850,181",
+    "eps": "$0.55",
+    "epsForecast": "$0.52",
+    "surprise": "5.77",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "DAKT",
+    "name": "Daktronics, Inc.",
+    "marketCap": "$945,417,246",
+    "eps": "$0.27",
+    "epsForecast": "$0.23",
+    "surprise": "17.39",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "MEI",
+    "name": "Methode Electronics, Inc.",
+    "marketCap": "$586,348,953",
+    "eps": "($0.30)",
+    "epsForecast": "($0.11)",
+    "surprise": "-172.73",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "PODC",
+    "name": "PodcastOne, Inc.",
+    "marketCap": "$117,255,505",
+    "eps": "($0.02)",
+    "epsForecast": "($0.03)",
+    "surprise": "33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "LVO",
+    "name": "LiveOne, Inc.",
+    "marketCap": "$74,589,735",
+    "eps": "($0.65)",
+    "epsForecast": "($0.31)",
+    "surprise": "-109.68",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MNY",
+    "name": "MoneyHero Limited",
+    "marketCap": "$43,189,088",
+    "eps": "($0.11)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CRWS",
+    "name": "Crown Crafts, Inc.",
+    "marketCap": "$32,711,272",
+    "eps": "$0.03",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "symbol": "ABM",
+    "name": "ABM Industries Incorporated",
+    "marketCap": "$2,750,374,335",
+    "eps": "$0.90",
+    "epsForecast": "$0.92",
+    "surprise": "-2.17",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GIII",
+    "name": "G-III Apparel Group, LTD.",
+    "marketCap": "$1,508,734,890",
+    "eps": "($0.21)",
+    "epsForecast": "($0.30)",
+    "surprise": "30",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GASS",
+    "name": "StealthGas, Inc.",
+    "marketCap": "$331,324,462",
+    "eps": "$0.36",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "HURC",
+    "name": "Hurco Companies, Inc.",
+    "marketCap": "$137,945,659",
+    "eps": "($0.37)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "HERE",
+    "name": "Here Group Limited",
+    "marketCap": "$101,155,384",
+    "eps": "($0.09)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "NRT",
+    "name": "North European Oil Royality Trust",
+    "marketCap": "$75,822,368",
+    "eps": "$0.22",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "TOUR",
+    "name": "Tuniu Corporation",
+    "marketCap": "$56,491,536",
+    "eps": "$0.04",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CETY",
+    "name": "Clean Energy Technologies, Inc.",
+    "marketCap": "$11,071,156",
+    "eps": "($0.23)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

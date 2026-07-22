@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AIR",
+    "name": "AAR Corp.",
+    "marketCap": "$5,622,667,495",
+    "eps": "$1.18",
+    "epsForecast": "$1.02",
+    "surprise": "15.69",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PENG",
+    "name": "Penguin Solutions, Inc.",
+    "marketCap": "$2,977,200,812",
+    "eps": "$0.36",
+    "epsForecast": "$0.25",
+    "surprise": "44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "ANGO",
+    "name": "AngioDynamics, Inc.",
+    "marketCap": "$587,746,572",
+    "eps": "$0",
+    "epsForecast": "($0.10)",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  }
+]

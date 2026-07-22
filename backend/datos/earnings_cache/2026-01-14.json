@@ -1,0 +1,211 @@
+[
+  {
+    "symbol": "BAC",
+    "name": "Bank of America Corporation",
+    "marketCap": "$434,453,279,654",
+    "eps": "$0.98",
+    "epsForecast": "$0.96",
+    "surprise": "2.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "WFC",
+    "name": "Wells Fargo & Company",
+    "marketCap": "$268,501,026,204",
+    "eps": "$1.76",
+    "epsForecast": "$1.66",
+    "surprise": "6.02",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "C",
+    "name": "Citigroup Inc.",
+    "marketCap": "$226,568,842,702",
+    "eps": "$1.81",
+    "epsForecast": "$1.65",
+    "surprise": "9.7",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "INFY",
+    "name": "Infosys Limited",
+    "marketCap": "$45,268,978,616",
+    "eps": "$0.21",
+    "epsForecast": "$0.20",
+    "surprise": "5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "HOMB",
+    "name": "Home BancShares, Inc.",
+    "marketCap": "$6,126,996,328",
+    "eps": "$0.60",
+    "epsForecast": "$0.60",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "UCB",
+    "name": "United Community Banks, Inc.",
+    "marketCap": "$4,230,922,830",
+    "eps": "$0.71",
+    "epsForecast": "$0.73",
+    "surprise": "-2.74",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FUL",
+    "name": "H. B. Fuller Company",
+    "marketCap": "$3,012,095,016",
+    "eps": "$1.28",
+    "epsForecast": "$1.24",
+    "surprise": "3.23",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "CODI",
+    "name": "Compass Diversified ",
+    "marketCap": "$769,663,932",
+    "eps": "($0.98)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Sep/2025"
+  },
+  {
+    "symbol": "RILY",
+    "name": "BRC Group Holdings, Inc.",
+    "marketCap": "$283,774,554",
+    "eps": "$2.97",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Sep/2025"
+  },
+  {
+    "symbol": "TRX",
+    "name": "TRX Gold Corporation",
+    "marketCap": "$267,623,963",
+    "eps": "$0.03",
+    "epsForecast": "$0.02",
+    "surprise": "50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PLG",
+    "name": "Platinum Group Metals Ltd.",
+    "marketCap": "$171,763,988",
+    "eps": "($0.02)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "RFIL",
+    "name": "RF Industries, Ltd.",
+    "marketCap": "$148,879,356",
+    "eps": "$0.18",
+    "epsForecast": "$0.06",
+    "surprise": "200",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Oct/2025"
+  },
+  {
+    "symbol": "HOVR",
+    "name": "New Horizon Aircraft Ltd.",
+    "marketCap": "$132,983,416",
+    "eps": "($0.15)",
+    "epsForecast": "($0.08)",
+    "surprise": "-87.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "LOOP",
+    "name": "Loop Industries, Inc.",
+    "marketCap": "$36,285,278",
+    "eps": "($0.06)",
+    "epsForecast": "($0.07)",
+    "surprise": "14.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "NTRP",
+    "name": "NextTrip, Inc.",
+    "marketCap": "$27,452,666",
+    "eps": "($0.37)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "LEDS",
+    "name": "SemiLEDS Corporation",
+    "marketCap": "$20,766,242",
+    "eps": "($0.09)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "FNGR",
+    "name": "FingerMotion, Inc.",
+    "marketCap": "$18,405,370",
+    "eps": "($0.03)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "JCTC",
+    "name": "Jewett-Cameron Trading Company",
+    "marketCap": "$9,187,495",
+    "eps": "($0.63)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "BMRA",
+    "name": "Biomerica, Inc.",
+    "marketCap": "$5,073,913",
+    "eps": "($0.45)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  }
+]

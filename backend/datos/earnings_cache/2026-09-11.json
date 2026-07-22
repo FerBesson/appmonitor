@@ -1,0 +1,57 @@
+[
+  {
+    "symbol": "PRE",
+    "name": "Prenetics Global Limited",
+    "marketCap": "$378,099,076",
+    "eps": "",
+    "epsForecast": "($0.32)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.82)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "JVA",
+    "name": "Coffee Holding Co., Inc.",
+    "marketCap": "$19,865,925",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.21)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "IHT",
+    "name": "InnSuites Hospitality Trust",
+    "marketCap": "$16,737,045",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.04)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "TPET",
+    "name": "Trio Petroleum Corp.",
+    "marketCap": "$14,099,254",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.17)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "HUIZ",
+    "name": "Huize Holding Limited",
+    "marketCap": "$12,279,893",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.15",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

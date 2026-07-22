@@ -1,0 +1,90 @@
+[
+  {
+    "symbol": "UI",
+    "name": "Ubiquiti Inc.",
+    "marketCap": "$32,436,206,235",
+    "eps": "",
+    "epsForecast": "$3.67",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$3.52",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BJ",
+    "name": "BJ's Wholesale Club Holdings, Inc.",
+    "marketCap": "$11,791,262,760",
+    "eps": "",
+    "epsForecast": "$1.15",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.14",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "RLX",
+    "name": "RLX Technology Inc.",
+    "marketCap": "$3,128,859,420",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.02",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BKE",
+    "name": "Buckle, Inc. (The)",
+    "marketCap": "$2,196,731,187",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.89",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "ZKH",
+    "name": "ZKH Group Limited",
+    "marketCap": "$468,811,985",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.05)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ZONE",
+    "name": "CleanCore Solutions Inc.",
+    "marketCap": "$143,054,442",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.46)",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "BRID",
+    "name": "Bridgford Foods Corporation",
+    "marketCap": "$59,770,939",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "($0.18)",
+    "fiscalQuarterEnding": "Jul/2026"
+  },
+  {
+    "symbol": "LABT",
+    "name": "Lakewood-Amedex Biotherapeutics Inc.",
+    "marketCap": "$3,256,468",
+    "eps": "",
+    "epsForecast": "$0.65",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

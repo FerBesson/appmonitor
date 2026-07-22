@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "ESP",
+    "name": "Espey Mfg. & Electronics Corp.",
+    "marketCap": "$175,950,499",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$1.05",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "EPM",
+    "name": "Evolution Petroleum Corporation, Inc.",
+    "marketCap": "$139,544,900",
+    "eps": "",
+    "epsForecast": "$0.02",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.03",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "FLUX",
+    "name": "Flux Power Holdings, Inc.",
+    "marketCap": "$13,671,285",
+    "eps": "",
+    "epsForecast": "($0.09)",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "N/A",
+    "fiscalQuarterEnding": "Jun/2026"
+  }
+]

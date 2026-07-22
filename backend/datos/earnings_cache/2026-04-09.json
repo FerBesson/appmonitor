@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "BB",
+    "name": "BlackBerry Limited",
+    "marketCap": "$5,280,957,815",
+    "eps": "$0.05",
+    "epsForecast": "$0.04",
+    "surprise": "25",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "WDFC",
+    "name": "WD-40 Company",
+    "marketCap": "$3,190,462,941",
+    "eps": "$1.50",
+    "epsForecast": "$1.39",
+    "surprise": "7.91",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "NEOG",
+    "name": "Neogen Corporation",
+    "marketCap": "$2,161,493,297",
+    "eps": "$0.08",
+    "epsForecast": "$0.02",
+    "surprise": "300",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "SMPL",
+    "name": "The Simply Good Foods Company",
+    "marketCap": "$976,604,417",
+    "eps": "$0.41",
+    "epsForecast": "$0.36",
+    "surprise": "13.89",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "SLP",
+    "name": "Simulations Plus, Inc.",
+    "marketCap": "$368,698,797",
+    "eps": "$0.35",
+    "epsForecast": "$0.27",
+    "surprise": "29.63",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "BYRN",
+    "name": "Byrna Technologies, Inc.",
+    "marketCap": "$77,157,410",
+    "eps": "$0.03",
+    "epsForecast": "$0.05",
+    "surprise": "-40",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "NTIC",
+    "name": "Northern Technologies International Corporation",
+    "marketCap": "$76,066,476",
+    "eps": "$0.01",
+    "epsForecast": "$0.02",
+    "surprise": "-50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "YI",
+    "name": "111, Inc.",
+    "marketCap": "$34,396,129",
+    "eps": "($0.20)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BEEM",
+    "name": "Beam Global",
+    "marketCap": "$22,827,942",
+    "eps": "($0.07)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ARTW",
+    "name": "Art's-Way Manufacturing Co., Inc.",
+    "marketCap": "$11,287,008",
+    "eps": "$0.04",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "FGI",
+    "name": "FGI Industries Ltd.",
+    "marketCap": "$8,806,596",
+    "eps": "($0.29)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

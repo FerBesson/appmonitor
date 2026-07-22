@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "AVAV",
+    "name": "AeroVironment, Inc.",
+    "marketCap": "$7,532,499,185",
+    "eps": "$1.84",
+    "epsForecast": "$1.53",
+    "surprise": "20.26",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CNXC",
+    "name": "Concentrix Corporation",
+    "marketCap": "$1,451,626,547",
+    "eps": "$2.32",
+    "epsForecast": "$2.31",
+    "surprise": "0.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "REPL",
+    "name": "Replimune Group, Inc.",
+    "marketCap": "$923,606,409",
+    "eps": "($0.76)",
+    "epsForecast": "($0.73)",
+    "surprise": "-4.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CNCK",
+    "name": "Coincheck Group N.V.",
+    "marketCap": "$550,460,183",
+    "eps": "($0.06)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "RDZN",
+    "name": "Roadzen, Inc.",
+    "marketCap": "$97,246,993",
+    "eps": "($0.09)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AIRT",
+    "name": "Air T, Inc.",
+    "marketCap": "$72,050,720",
+    "eps": "$28.75",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "IH",
+    "name": "iHuman Inc.",
+    "marketCap": "$70,024,621",
+    "eps": "$0.01",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BENF",
+    "name": "Beneficient",
+    "marketCap": "$49,653,161",
+    "eps": "($2.36)",
+    "epsForecast": "($0.97)",
+    "surprise": "-143.3",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "FMST",
+    "name": "Foremost Clean Energy Ltd.",
+    "marketCap": "$32,692,230",
+    "eps": "($0.13)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MXC",
+    "name": "Mexco Energy Corporation",
+    "marketCap": "$18,884,375",
+    "eps": "$0.33",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AMSS",
+    "name": "AMASS Brands Inc.",
+    "marketCap": "$13,566,245",
+    "eps": "($0.87)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

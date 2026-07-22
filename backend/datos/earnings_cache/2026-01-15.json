@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "TSM",
+    "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+    "marketCap": "$2,202,241,847,287",
+    "eps": "$3.14",
+    "epsForecast": "$2.82",
+    "surprise": "11.35",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "MS",
+    "name": "Morgan Stanley",
+    "marketCap": "$341,324,434,399",
+    "eps": "$2.68",
+    "epsForecast": "$2.41",
+    "surprise": "11.2",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "GS",
+    "name": "Goldman Sachs Group, Inc. (The)",
+    "marketCap": "$320,248,255,941",
+    "eps": "$14.01",
+    "epsForecast": "$11.77",
+    "surprise": "19.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "BLK",
+    "name": "BlackRock, Inc.",
+    "marketCap": "$161,170,136,739",
+    "eps": "$13.16",
+    "epsForecast": "$12.39",
+    "surprise": "6.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "JBHT",
+    "name": "J.B. Hunt Transport Services, Inc.",
+    "marketCap": "$27,654,184,272",
+    "eps": "$1.90",
+    "epsForecast": "$1.81",
+    "surprise": "4.97",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FHN",
+    "name": "First Horizon Corporation",
+    "marketCap": "$12,107,500,410",
+    "eps": "$0.52",
+    "epsForecast": "$0.46",
+    "surprise": "13.04",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "WAFD",
+    "name": "WaFd, Inc.",
+    "marketCap": "$2,739,784,838",
+    "eps": "$0.75",
+    "epsForecast": "$0.76",
+    "surprise": "-1.32",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "WABC",
+    "name": "Westamerica Bancorporation",
+    "marketCap": "$1,423,604,953",
+    "eps": "$1.12",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "IIIN",
+    "name": "Insteel Industries, Inc.",
+    "marketCap": "$608,429,703",
+    "eps": "$0.39",
+    "epsForecast": "$0.33",
+    "surprise": "18.18",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ADUR",
+    "name": "Aduro Clean Technologies Inc.",
+    "marketCap": "$506,417,744",
+    "eps": "($0.15)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "BSVN",
+    "name": "Bank7 Corp.",
+    "marketCap": "$471,397,469",
+    "eps": "$1.12",
+    "epsForecast": "$1.03",
+    "surprise": "8.74",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

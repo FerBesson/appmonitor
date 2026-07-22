@@ -1,0 +1,112 @@
+[
+  {
+    "symbol": "KEP",
+    "name": "Korea Electric Power Corporation",
+    "marketCap": "$15,060,477,246",
+    "eps": "$1.33",
+    "epsForecast": "$1.27",
+    "surprise": "4.72",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "WLY",
+    "name": "John Wiley & Sons, Inc.",
+    "marketCap": "$2,576,595,620",
+    "eps": "$1.67",
+    "epsForecast": "$1.65",
+    "surprise": "1.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "WLYB",
+    "name": "John Wiley & Sons, Inc.",
+    "marketCap": "$2,576,595,620",
+    "eps": "$1.67",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "LZB",
+    "name": "La-Z-Boy Incorporated",
+    "marketCap": "$1,569,239,539",
+    "eps": "$1.26",
+    "epsForecast": "$0.82",
+    "surprise": "53.66",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "WDH",
+    "name": "Waterdrop Inc.",
+    "marketCap": "$427,569,324",
+    "eps": "$0.04",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "UXIN",
+    "name": "Uxin Limited",
+    "marketCap": "$338,769,602",
+    "eps": "($0.05)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AFJK",
+    "name": "Aimei Health Technology Co., Ltd",
+    "marketCap": "$101,700,000",
+    "eps": "$0.01",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VNCE",
+    "name": "Vince Holding Corp.",
+    "marketCap": "$85,948,397",
+    "eps": "($0.16)",
+    "epsForecast": "($0.13)",
+    "surprise": "-23.08",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "YQ",
+    "name": "17 Education & Technology Group Inc.",
+    "marketCap": "$23,773,957",
+    "eps": "($0.23)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SNOA",
+    "name": "Sonoma Pharmaceuticals, Inc.",
+    "marketCap": "$5,719,032",
+    "eps": "($0.09)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

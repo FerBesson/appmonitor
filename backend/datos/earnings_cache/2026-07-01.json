@@ -1,0 +1,112 @@
+[
+  {
+    "symbol": "GIS",
+    "name": "General Mills, Inc.",
+    "marketCap": "$19,827,266,911",
+    "eps": "$0.95",
+    "epsForecast": "$0.82",
+    "surprise": "15.85",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "FDS",
+    "name": "FactSet Research Systems Inc.",
+    "marketCap": "$8,782,910,844",
+    "eps": "$4.53",
+    "epsForecast": "$4.44",
+    "surprise": "2.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "MSM",
+    "name": "MSC Industrial Direct Company, Inc.",
+    "marketCap": "$7,060,647,456",
+    "eps": "$1.43",
+    "epsForecast": "$1.28",
+    "surprise": "11.72",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "UNF",
+    "name": "Unifirst Corporation",
+    "marketCap": "$5,235,006,400",
+    "eps": "$2.17",
+    "epsForecast": "$1.93",
+    "surprise": "12.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "FIZZ",
+    "name": "National Beverage Corp.",
+    "marketCap": "$2,881,380,500",
+    "eps": "$0.43",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GBX",
+    "name": "Greenbrier Companies, Inc. (The)",
+    "marketCap": "$1,548,840,681",
+    "eps": "$0.60",
+    "epsForecast": "$0.57",
+    "surprise": "5.26",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "FC",
+    "name": "Franklin Covey Company",
+    "marketCap": "$231,637,335",
+    "eps": "$0.34",
+    "epsForecast": "$0.24",
+    "surprise": "41.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "BSET",
+    "name": "Bassett Furniture Industries, Incorporated",
+    "marketCap": "$180,438,326",
+    "eps": "$0.24",
+    "epsForecast": "$0.20",
+    "surprise": "20",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "MWC",
+    "name": "Micware Co., Ltd.",
+    "marketCap": "$65,955,550",
+    "eps": "N/A",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-pre-market",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "CULP",
+    "name": "Culp, Inc.",
+    "marketCap": "$46,852,301",
+    "eps": "($0.17)",
+    "epsForecast": "($0.11)",
+    "surprise": "-54.55",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

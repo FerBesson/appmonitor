@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "JOYY",
+    "name": "JOYY Inc.",
+    "marketCap": "$3,718,811,225",
+    "eps": "$0.79",
+    "epsForecast": "$0.85",
+    "surprise": "-7.06",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "FINV",
+    "name": "FinVolution Group",
+    "marketCap": "$1,130,890,270",
+    "eps": "$0.26",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "symbol": "FRVO",
+    "name": "Fervo Energy Company",
+    "marketCap": "$7,952,467,848",
+    "eps": "($3.72)",
+    "epsForecast": "($0.09)",
+    "surprise": "-4033.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "HAWK",
+    "name": "HawkEye 360, Inc.",
+    "marketCap": "$1,802,463,430",
+    "eps": "($0.45)",
+    "epsForecast": "($0.05)",
+    "surprise": "-800",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "EBF",
+    "name": "Ennis, Inc.",
+    "marketCap": "$537,588,280",
+    "eps": "$0.39",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "AIAI",
+    "name": "AIAI Holdings Corporation",
+    "marketCap": "$476,728,852",
+    "eps": "($2,717.66)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "POWW",
+    "name": "Outdoor Holding Company",
+    "marketCap": "$259,044,592",
+    "eps": "($0.03)",
+    "epsForecast": "($0.02)",
+    "surprise": "-50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CIRC",
+    "name": "Circle8 Group, Inc.",
+    "marketCap": "$64,665,529",
+    "eps": "($0.44)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "TPCS",
+    "name": "TechPrecision Corporation",
+    "marketCap": "$47,315,494",
+    "eps": "($0.04)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GITS",
+    "name": "Global Interactive Technologies, Inc. Common Stock",
+    "marketCap": "$8,303,710",
+    "eps": "($0.14)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CIIT",
+    "name": "Tianci International, Inc.",
+    "marketCap": "$3,676,086",
+    "eps": "$0.01",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "IVF",
+    "name": "INVO Fertility, Inc.",
+    "marketCap": "$1,857,476",
+    "eps": "($3.38)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

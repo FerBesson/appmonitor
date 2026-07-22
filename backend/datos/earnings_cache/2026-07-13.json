@@ -1,0 +1,46 @@
+[
+  {
+    "symbol": "FBK",
+    "name": "FB Financial Corporation",
+    "marketCap": "$3,056,371,766",
+    "eps": "$1.14",
+    "epsForecast": "$1.14",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "AERO",
+    "name": "Grupo Aeromexico, S.A.B. de C.V.",
+    "marketCap": "$2,220,649,885",
+    "eps": "($0.40)",
+    "epsForecast": "($0.37)",
+    "surprise": "-8.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "LEXX",
+    "name": "Lexaria Bioscience Corp.",
+    "marketCap": "$13,727,288",
+    "eps": "($0.08)",
+    "epsForecast": "($0.06)",
+    "surprise": "-33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "VMAR",
+    "name": "Vision Marine Technologies Inc.",
+    "marketCap": "$1,888,732",
+    "eps": "($29.10)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  }
+]

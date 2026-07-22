@@ -1,0 +1,156 @@
+[
+  {
+    "symbol": "GS",
+    "name": "Goldman Sachs Group, Inc. (The)",
+    "marketCap": "$320,248,255,941",
+    "eps": "$17.55",
+    "epsForecast": "$16.34",
+    "surprise": "7.41",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "FAST",
+    "name": "Fastenal Company",
+    "marketCap": "$51,648,865,761",
+    "eps": "$0.30",
+    "epsForecast": "$0.30",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "KT",
+    "name": "KT Corporation",
+    "marketCap": "$8,611,915,650",
+    "eps": "$0.16",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FBK",
+    "name": "FB Financial Corporation",
+    "marketCap": "$3,056,371,766",
+    "eps": "$1.12",
+    "epsForecast": "$1.13",
+    "surprise": "-0.88",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "KOPN",
+    "name": "Kopin Corporation",
+    "marketCap": "$742,656,459",
+    "eps": "$0.04",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ALOT",
+    "name": "AstroNova, Inc.",
+    "marketCap": "$223,368,267",
+    "eps": "($0.04)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jan/2026"
+  },
+  {
+    "symbol": "IMMR",
+    "name": "Immersion Corporation",
+    "marketCap": "$215,814,947",
+    "eps": "$0.36",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Oct/2025"
+  },
+  {
+    "symbol": "ETS",
+    "name": "Elite Express Holding Inc.",
+    "marketCap": "$43,596,550",
+    "eps": "($0.01)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "AZIO",
+    "name": "Azio AI Holdings, Inc.",
+    "marketCap": "$23,016,680",
+    "eps": "($2.34)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "PAPL",
+    "name": "Pineapple Financial Inc.",
+    "marketCap": "$19,211,164",
+    "eps": "($0.17)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "WETH",
+    "name": "Wetouch Technology Inc.",
+    "marketCap": "$16,226,886",
+    "eps": "($0.01)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "LEXX",
+    "name": "Lexaria Bioscience Corp.",
+    "marketCap": "$13,727,288",
+    "eps": "($0.06)",
+    "epsForecast": "($0.10)",
+    "surprise": "40",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "JCTC",
+    "name": "Jewett-Cameron Trading Company",
+    "marketCap": "$9,187,495",
+    "eps": "($0.35)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "BMRA",
+    "name": "Biomerica, Inc.",
+    "marketCap": "$5,073,913",
+    "eps": "($0.44)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "symbol": "APOG",
+    "name": "Apogee Enterprises, Inc.",
+    "marketCap": "$816,367,661",
+    "eps": "$0.57",
+    "epsForecast": "$0.43",
+    "surprise": "32.56",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "AFB",
+    "name": "Alliance National Municipal Income Fund Inc",
+    "marketCap": "$317,344,093",
+    "eps": "$0.15",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CNVS",
+    "name": "Cineverse Corp.",
+    "marketCap": "$58,776,723",
+    "eps": "($0.24)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VIDA",
+    "name": "VIDA Global Inc.",
+    "marketCap": "$36,603,159",
+    "eps": "($0.25)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MSN",
+    "name": "Emerson Radio Corporation",
+    "marketCap": "$7,579,563",
+    "eps": "($0.06)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "LCFY",
+    "name": "Locafy Limited",
+    "marketCap": "$4,785,486",
+    "eps": "($0.28)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "XAIR",
+    "name": "Beyond Air, Inc.",
+    "marketCap": "$4,251,133",
+    "eps": "($0.77)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

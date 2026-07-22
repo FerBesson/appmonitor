@@ -1,0 +1,90 @@
+[
+  {
+    "symbol": "LEVI",
+    "name": "Levi Strauss & Co.",
+    "marketCap": "$9,451,929,803",
+    "eps": "$0.42",
+    "epsForecast": "$0.37",
+    "surprise": "13.51",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "AEHR",
+    "name": "Aehr Test Systems",
+    "marketCap": "$3,175,412,377",
+    "eps": "($0.09)",
+    "epsForecast": "($0.14)",
+    "surprise": "35.71",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "GBX",
+    "name": "Greenbrier Companies, Inc. (The)",
+    "marketCap": "$1,548,840,681",
+    "eps": "$0.47",
+    "epsForecast": "$0.98",
+    "surprise": "-52.04",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "PXED",
+    "name": "Phoenix Education Partners, Inc.",
+    "marketCap": "$1,084,305,070",
+    "eps": "$0.58",
+    "epsForecast": "$0.34",
+    "surprise": "70.59",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "KRUS",
+    "name": "Kura Sushi USA, Inc.",
+    "marketCap": "$557,191,479",
+    "eps": "($0.04)",
+    "epsForecast": "($0.10)",
+    "surprise": "60",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "SKIL",
+    "name": "Skillsoft Corp.",
+    "marketCap": "$55,419,329",
+    "eps": "$1.03",
+    "epsForecast": "$0.94",
+    "surprise": "9.57",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jan/2026"
+  },
+  {
+    "symbol": "XELB",
+    "name": "Xcel Brands, Inc",
+    "marketCap": "$7,863,207",
+    "eps": "($0.55)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "SMTK",
+    "name": "SmartKem, Inc.",
+    "marketCap": "$4,124,107",
+    "eps": "($0.21)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

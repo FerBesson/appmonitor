@@ -1,0 +1,167 @@
+[
+  {
+    "symbol": "RPM",
+    "name": "RPM International Inc.",
+    "marketCap": "$13,669,397,419",
+    "eps": "$1.20",
+    "epsForecast": "$1.41",
+    "surprise": "-14.89",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "SNX",
+    "name": "TD SYNNEX Corporation",
+    "marketCap": "$12,020,227,398",
+    "eps": "$3.68",
+    "epsForecast": "$3.49",
+    "surprise": "5.44",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "AYI",
+    "name": "Acuity Inc.",
+    "marketCap": "$9,865,335,712",
+    "eps": "$4.39",
+    "epsForecast": "$4.24",
+    "surprise": "3.54",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "CMC",
+    "name": "Commercial Metals Company",
+    "marketCap": "$7,835,456,341",
+    "eps": "$1.84",
+    "epsForecast": "$1.55",
+    "surprise": "18.71",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "WDFC",
+    "name": "WD-40 Company",
+    "marketCap": "$2,752,914,423",
+    "eps": "$1.28",
+    "epsForecast": "$1.36",
+    "surprise": "-5.88",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "NEOG",
+    "name": "Neogen Corporation",
+    "marketCap": "$2,109,969,658",
+    "eps": "$0.08",
+    "epsForecast": "$0.05",
+    "surprise": "60",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "SMPL",
+    "name": "The Simply Good Foods Company",
+    "marketCap": "$2,062,064,623",
+    "eps": "$0.36",
+    "epsForecast": "$0.33",
+    "surprise": "9.09",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "GBX",
+    "name": "Greenbrier Companies, Inc. (The)",
+    "marketCap": "$1,651,488,704",
+    "eps": "$1.14",
+    "epsForecast": "$0.84",
+    "surprise": "35.71",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "LNN",
+    "name": "Lindsay Corporation",
+    "marketCap": "$1,368,246,421",
+    "eps": "$1.54",
+    "epsForecast": "$1.46",
+    "surprise": "5.48",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "TLRY",
+    "name": "Tilray Brands, Inc.",
+    "marketCap": "$1,060,198,633",
+    "eps": "($0.41)",
+    "epsForecast": "($0.14)",
+    "surprise": "-192.86",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "AEHR",
+    "name": "Aehr Test Systems",
+    "marketCap": "$681,149,593",
+    "eps": "($0.11)",
+    "epsForecast": "($0.12)",
+    "surprise": "8.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "HELE",
+    "name": "Helen of Troy Limited",
+    "marketCap": "$473,817,951",
+    "eps": "$1.52",
+    "epsForecast": "$1.49",
+    "surprise": "2.01",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "SLP",
+    "name": "Simulations Plus, Inc.",
+    "marketCap": "$363,609,380",
+    "eps": "$0.13",
+    "epsForecast": "$0.18",
+    "surprise": "-27.78",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "NTIC",
+    "name": "Northern Technologies International Corporation",
+    "marketCap": "$82,387,187",
+    "eps": "$0.04",
+    "epsForecast": "$0.05",
+    "surprise": "-20",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "AXIL",
+    "name": "AXIL Brands, Inc.",
+    "marketCap": "$48,182,522",
+    "eps": "$0.09",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  }
+]

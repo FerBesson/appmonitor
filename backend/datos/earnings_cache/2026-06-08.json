@@ -1,0 +1,189 @@
+[
+  {
+    "symbol": "VFS",
+    "name": "VinFast Auto Ltd.",
+    "marketCap": "$7,463,119,872",
+    "eps": "($0.48)",
+    "epsForecast": "($0.31)",
+    "surprise": "-54.84",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CPB",
+    "name": "The Campbell's Company",
+    "marketCap": "$6,661,927,469",
+    "eps": "$0.50",
+    "epsForecast": "$0.48",
+    "surprise": "4.17",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "MTN",
+    "name": "Vail Resorts, Inc.",
+    "marketCap": "$5,252,738,068",
+    "eps": "$8.81",
+    "epsForecast": "$8.97",
+    "surprise": "-1.78",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "FCEL",
+    "name": "FuelCell Energy, Inc.",
+    "marketCap": "$1,463,040,864",
+    "eps": "($0.58)",
+    "epsForecast": "($0.54)",
+    "surprise": "-7.41",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ODC",
+    "name": "Oil-Dri Corporation Of America",
+    "marketCap": "$1,370,741,374",
+    "eps": "$1",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GHM",
+    "name": "Graham Corporation",
+    "marketCap": "$1,269,157,517",
+    "eps": "$0.33",
+    "epsForecast": "$0.30",
+    "surprise": "10",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SPTX",
+    "name": "Seaport Therapeutics, Inc.",
+    "marketCap": "$1,124,141,550",
+    "eps": "($10.34)",
+    "epsForecast": "($10.64)",
+    "surprise": "2.82",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AVO",
+    "name": "Mission Produce, Inc.",
+    "marketCap": "$1,115,479,162",
+    "eps": "$0",
+    "epsForecast": "$0.05",
+    "surprise": "-100",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "MAMA",
+    "name": "Mama's Creations, Inc.",
+    "marketCap": "$691,505,904",
+    "eps": "$0.05",
+    "epsForecast": "$0.03",
+    "surprise": "66.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "GLOO",
+    "name": "Gloo Holdings, Inc.",
+    "marketCap": "$270,965,168",
+    "eps": "($0.22)",
+    "epsForecast": "($0.16)",
+    "surprise": "-37.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "MPAA",
+    "name": "Motorcar Parts of America, Inc.",
+    "marketCap": "$269,300,160",
+    "eps": "$0.42",
+    "epsForecast": "$0.11",
+    "surprise": "281.82",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ALOT",
+    "name": "AstroNova, Inc.",
+    "marketCap": "$223,368,267",
+    "eps": "$0.19",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DLTH",
+    "name": "Duluth Holdings Inc.",
+    "marketCap": "$168,349,175",
+    "eps": "($0.20)",
+    "epsForecast": "($0.45)",
+    "surprise": "55.56",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "OCC",
+    "name": "Optical Cable Corporation",
+    "marketCap": "$151,384,628",
+    "eps": "$0.12",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ZEPP",
+    "name": "Zepp Health Corporation",
+    "marketCap": "$79,777,497",
+    "eps": "($1.18)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GMHS",
+    "name": "Gamehaus Holdings Inc.",
+    "marketCap": "$45,630,379",
+    "eps": "$0.01",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AERT",
+    "name": "Aeries Technology, Inc.",
+    "marketCap": "$38,683,212",
+    "eps": "($0.01)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

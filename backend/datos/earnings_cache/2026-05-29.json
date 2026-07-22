@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "TLK",
+    "name": "PT Telekomunikasi Indonesia, Tbk",
+    "marketCap": "$14,809,801,382",
+    "eps": "$0.26",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BKE",
+    "name": "Buckle, Inc. (The)",
+    "marketCap": "$2,196,731,187",
+    "eps": "$0.92",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ELMT",
+    "name": "The Elmet Group Co.",
+    "marketCap": "$469,484,655",
+    "eps": "$0.23",
+    "epsForecast": "($0.18)",
+    "surprise": "227.78",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GCO",
+    "name": "Genesco Inc.",
+    "marketCap": "$402,294,562",
+    "eps": "($2.18)",
+    "epsForecast": "($2.58)",
+    "surprise": "15.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "FUFU",
+    "name": "BitFuFu Inc.",
+    "marketCap": "$251,646,933",
+    "eps": "$0.01",
+    "epsForecast": "$0.03",
+    "surprise": "-66.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "HTLM",
+    "name": "HomesToLife Ltd",
+    "marketCap": "$165,025,000",
+    "eps": "$0.04",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "DLNG",
+    "name": "Dynagas LNG Partners LP",
+    "marketCap": "$122,971,197",
+    "eps": "$0.29",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "NTRP",
+    "name": "NextTrip, Inc.",
+    "marketCap": "$27,452,666",
+    "eps": "($0.39)",
+    "epsForecast": "($0.12)",
+    "surprise": "-225",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "FNGR",
+    "name": "FingerMotion, Inc.",
+    "marketCap": "$18,405,370",
+    "eps": "($0.03)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "XCUR",
+    "name": "Exicure, Inc.",
+    "marketCap": "$12,301,698",
+    "eps": "($0.29)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CLGN",
+    "name": "CollPlant Biotechnologies Ltd.",
+    "marketCap": "$4,621,920",
+    "eps": "($0.23)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

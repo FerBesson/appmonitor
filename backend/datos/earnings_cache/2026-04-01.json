@@ -1,0 +1,222 @@
+[
+  {
+    "symbol": "CAG",
+    "name": "ConAgra Brands, Inc.",
+    "marketCap": "$7,106,699,784",
+    "eps": "$0.39",
+    "epsForecast": "$0.40",
+    "surprise": "-2.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "MSM",
+    "name": "MSC Industrial Direct Company, Inc.",
+    "marketCap": "$7,060,647,456",
+    "eps": "$0.82",
+    "epsForecast": "$0.84",
+    "surprise": "-2.38",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "LW",
+    "name": "Lamb Weston Holdings, Inc.",
+    "marketCap": "$6,525,320,670",
+    "eps": "$0.72",
+    "epsForecast": "$0.61",
+    "surprise": "18.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "UNF",
+    "name": "Unifirst Corporation",
+    "marketCap": "$5,235,006,400",
+    "eps": "$1.25",
+    "epsForecast": "$1.21",
+    "surprise": "3.31",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "CALM",
+    "name": "Cal-Maine Foods, Inc.",
+    "marketCap": "$4,133,607,303",
+    "eps": "$1.06",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "PENG",
+    "name": "Penguin Solutions, Inc.",
+    "marketCap": "$2,977,200,812",
+    "eps": "$0.42",
+    "epsForecast": "$0.28",
+    "surprise": "50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "NG",
+    "name": "Novagold Resources Inc.",
+    "marketCap": "$2,475,815,373",
+    "eps": "($0.04)",
+    "epsForecast": "($0.06)",
+    "surprise": "33.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "TLRY",
+    "name": "Tilray Brands, Inc.",
+    "marketCap": "$496,834,492",
+    "eps": "($0.24)",
+    "epsForecast": "($0.14)",
+    "surprise": "-71.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "MLP",
+    "name": "Maui Land & Pineapple Company, Inc.",
+    "marketCap": "$330,348,398",
+    "eps": "($0.06)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "CPHI",
+    "name": "China Pharma Holdings, Inc.",
+    "marketCap": "$328,228,216",
+    "eps": "($0.18)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "EU",
+    "name": "enCore Energy Corp.",
+    "marketCap": "$236,031,224",
+    "eps": "($0.09)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FC",
+    "name": "Franklin Covey Company",
+    "marketCap": "$231,637,335",
+    "eps": "($0.03)",
+    "epsForecast": "$0",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "BSET",
+    "name": "Bassett Furniture Industries, Incorporated",
+    "marketCap": "$180,438,326",
+    "eps": "$0.13",
+    "epsForecast": "$0.17",
+    "surprise": "-23.53",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "SIDU",
+    "name": "Sidus Space, Inc.",
+    "marketCap": "$165,772,951",
+    "eps": "($0.17)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "XWEL",
+    "name": "XWELL, Inc.",
+    "marketCap": "$9,035,365",
+    "eps": "($3.29)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "JUNS",
+    "name": "Jupiter Neurosciences, Inc.",
+    "marketCap": "$8,183,631",
+    "eps": "($0.07)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "MGRX",
+    "name": "Mangoceuticals, Inc.",
+    "marketCap": "$8,085,856",
+    "eps": "$0.13",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "SSM",
+    "name": "Sono Group N.V.",
+    "marketCap": "$5,350,252",
+    "eps": "($0.26)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ISPC",
+    "name": "iSpecimen Inc.",
+    "marketCap": "$3,440,531",
+    "eps": "($0.74)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "SNYR",
+    "name": "Synergy CHC Corp.",
+    "marketCap": "$2,732,639",
+    "eps": "($0.31)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

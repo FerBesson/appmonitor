@@ -1,0 +1,167 @@
+[
+  {
+    "symbol": "ORCL",
+    "name": "Oracle Corporation",
+    "marketCap": "$365,963,840,550",
+    "eps": "$1.79",
+    "epsForecast": "$1.58",
+    "surprise": "13.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "CHWY",
+    "name": "Chewy, Inc.",
+    "marketCap": "$8,806,714,693",
+    "eps": "$0.26",
+    "epsForecast": "$0.24",
+    "surprise": "8.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CNM",
+    "name": "Core & Main, Inc.",
+    "marketCap": "$8,392,963,918",
+    "eps": "$0.70",
+    "epsForecast": "$0.68",
+    "surprise": "2.94",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "NAVN",
+    "name": "Navan, Inc.",
+    "marketCap": "$6,770,298,194",
+    "eps": "($0.06)",
+    "epsForecast": "($0.12)",
+    "surprise": "50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ATEX",
+    "name": "Anterix Inc.",
+    "marketCap": "$2,063,328,413",
+    "eps": "($0.41)",
+    "epsForecast": "($0.56)",
+    "surprise": "26.79",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "YB",
+    "name": "Yuanbao Inc.",
+    "marketCap": "$645,122,814",
+    "eps": "$1.16",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "OXM",
+    "name": "Oxford Industries, Inc.",
+    "marketCap": "$607,987,551",
+    "eps": "$1.39",
+    "epsForecast": "$1.27",
+    "surprise": "9.45",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "SFIX",
+    "name": "Stitch Fix, Inc.",
+    "marketCap": "$512,355,287",
+    "eps": "($0.01)",
+    "epsForecast": "($0.06)",
+    "surprise": "83.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "PRE",
+    "name": "Prenetics Global Limited",
+    "marketCap": "$378,099,076",
+    "eps": "($0.56)",
+    "epsForecast": "($0.49)",
+    "surprise": "-14.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "JILL",
+    "name": "J. Jill, Inc.",
+    "marketCap": "$243,110,008",
+    "eps": "$0.45",
+    "epsForecast": "$0.44",
+    "surprise": "2.27",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ANIX",
+    "name": "Anixa Biosciences, Inc.",
+    "marketCap": "$121,122,104",
+    "eps": "($0.07)",
+    "epsForecast": "($0.10)",
+    "surprise": "30",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CMCM",
+    "name": "Cheetah Mobile Inc.",
+    "marketCap": "$94,151,031",
+    "eps": "($0.08)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GLBS",
+    "name": "Globus Maritime Limited",
+    "marketCap": "$66,041,841",
+    "eps": "$0.05",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "MIND",
+    "name": "MIND Technology, Inc.",
+    "marketCap": "$50,807,817",
+    "eps": "($0.05)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "SCNI",
+    "name": "Scinai Immunotherapeutics Ltd.",
+    "marketCap": "$1,231,306",
+    "eps": "$0.94",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "symbol": "STZ",
+    "name": "Constellation Brands Inc",
+    "marketCap": "$22,313,910,186",
+    "eps": "$3.06",
+    "epsForecast": "$2.65",
+    "surprise": "15.47",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "JEF",
+    "name": "Jefferies Financial Group Inc.",
+    "marketCap": "$10,992,960,231",
+    "eps": "$0.96",
+    "epsForecast": "$0.83",
+    "surprise": "15.66",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "APLD",
+    "name": "Applied Digital Corporation",
+    "marketCap": "$8,587,374,647",
+    "eps": "($0.11)",
+    "epsForecast": "($0.09)",
+    "surprise": "-22.22",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "ACI",
+    "name": "Albertsons Companies, Inc.",
+    "marketCap": "$7,279,552,874",
+    "eps": "$0.69",
+    "epsForecast": "$0.63",
+    "surprise": "9.52",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "MSM",
+    "name": "MSC Industrial Direct Company, Inc.",
+    "marketCap": "$7,060,647,456",
+    "eps": "$0.99",
+    "epsForecast": "$0.95",
+    "surprise": "4.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PSMT",
+    "name": "PriceSmart, Inc.",
+    "marketCap": "$5,755,179,121",
+    "eps": "$1.29",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "UNF",
+    "name": "Unifirst Corporation",
+    "marketCap": "$5,235,006,400",
+    "eps": "$1.98",
+    "epsForecast": "$2.05",
+    "surprise": "-3.41",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "AZZ",
+    "name": "AZZ Inc.",
+    "marketCap": "$4,520,346,780",
+    "eps": "$1.52",
+    "epsForecast": "$1.43",
+    "surprise": "6.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "CALM",
+    "name": "Cal-Maine Foods, Inc.",
+    "marketCap": "$4,133,607,303",
+    "eps": "$2.13",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "APOG",
+    "name": "Apogee Enterprises, Inc.",
+    "marketCap": "$816,367,661",
+    "eps": "$1.02",
+    "epsForecast": "$1.03",
+    "surprise": "-0.97",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "KRUS",
+    "name": "Kura Sushi USA, Inc.",
+    "marketCap": "$557,191,479",
+    "eps": "($0.23)",
+    "epsForecast": "($0.17)",
+    "surprise": "-35.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "SAR",
+    "name": "Saratoga Investment Corp",
+    "marketCap": "$318,056,720",
+    "eps": "$0.61",
+    "epsForecast": "$0.59",
+    "surprise": "3.39",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "PCYO",
+    "name": "Pure Cycle Corporation",
+    "marketCap": "$255,914,069",
+    "eps": "$0.19",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "RELL",
+    "name": "Richardson Electronics, Ltd.",
+    "marketCap": "$250,087,920",
+    "eps": "($0.01)",
+    "epsForecast": "($0.01)",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "FC",
+    "name": "Franklin Covey Company",
+    "marketCap": "$231,637,335",
+    "eps": "$0.07",
+    "epsForecast": "$0.03",
+    "surprise": "133.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  },
+  {
+    "symbol": "RGP",
+    "name": "Resources Connection, Inc.",
+    "marketCap": "$159,974,743",
+    "eps": "$0.01",
+    "epsForecast": "($0.08)",
+    "surprise": "112.5",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Nov/2025"
+  }
+]

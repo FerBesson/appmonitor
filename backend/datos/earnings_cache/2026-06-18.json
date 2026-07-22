@@ -1,0 +1,68 @@
+[
+  {
+    "symbol": "ACN",
+    "name": "Accenture plc",
+    "marketCap": "$94,025,488,181",
+    "eps": "$3.80",
+    "epsForecast": "$3.70",
+    "surprise": "2.7",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "KR",
+    "name": "Kroger Company (The)",
+    "marketCap": "$35,398,759,954",
+    "eps": "$1.58",
+    "epsForecast": "$1.59",
+    "surprise": "-0.63",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CPBI",
+    "name": "Central Plains Bancshares, Inc.",
+    "marketCap": "$84,157,473",
+    "eps": "$0.25",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "LFS",
+    "name": "LEIFRAS Co., Ltd.",
+    "marketCap": "$54,152,481",
+    "eps": "$0.03",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GRCE",
+    "name": "Grace Therapeutics, Inc.",
+    "marketCap": "$32,602,666",
+    "eps": "($0.07)",
+    "epsForecast": "($0.24)",
+    "surprise": "70.83",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "IHT",
+    "name": "InnSuites Hospitality Trust",
+    "marketCap": "$16,737,045",
+    "eps": "$0",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

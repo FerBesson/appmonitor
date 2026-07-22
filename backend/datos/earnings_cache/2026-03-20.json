@@ -1,0 +1,134 @@
+[
+  {
+    "symbol": "XPEV",
+    "name": "XPeng Inc.",
+    "marketCap": "$12,741,204,569",
+    "eps": "$0.06",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "LWLG",
+    "name": "Lightwave Logic, Inc.",
+    "marketCap": "$1,060,378,913",
+    "eps": "($0.04)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FAC",
+    "name": "Factorial Energy Inc.",
+    "marketCap": "$561,872,036",
+    "eps": "$0.06",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FUFU",
+    "name": "BitFuFu Inc.",
+    "marketCap": "$251,646,933",
+    "eps": "($0.20)",
+    "epsForecast": "($0.02)",
+    "surprise": "-900",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "MIST",
+    "name": "Milestone Pharmaceuticals Inc.",
+    "marketCap": "$153,132,515",
+    "eps": "($0.16)",
+    "epsForecast": "($0.18)",
+    "surprise": "11.11",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "USGO",
+    "name": "U.S. GoldMining Inc.",
+    "marketCap": "$107,636,625",
+    "eps": "($0.15)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "FSEA",
+    "name": "First Seacoast Bancorp, Inc.",
+    "marketCap": "$79,430,041",
+    "eps": "($0.05)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "PHUN",
+    "name": "Phunware, Inc.",
+    "marketCap": "$44,984,322",
+    "eps": "($0.11)",
+    "epsForecast": "($0.14)",
+    "surprise": "21.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ASTI",
+    "name": "Ascent Solar Technologies, Inc",
+    "marketCap": "$31,019,922",
+    "eps": "($0.40)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "ATER",
+    "name": "Aterian, Inc.",
+    "marketCap": "$11,205,792",
+    "eps": "($0.50)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "CTNT",
+    "name": "Cheetah Net Supply Chain Service Inc.",
+    "marketCap": "$4,960,244",
+    "eps": "($0.32)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "CELZ",
+    "name": "Creative Medical Technology Holdings, Inc.",
+    "marketCap": "$3,939,993",
+    "eps": "($0.80)",
+    "epsForecast": "($0.37)",
+    "surprise": "-116.22",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

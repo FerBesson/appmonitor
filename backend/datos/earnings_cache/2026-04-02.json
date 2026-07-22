@@ -1,0 +1,79 @@
+[
+  {
+    "symbol": "AYI",
+    "name": "Acuity Inc.",
+    "marketCap": "$9,761,083,810",
+    "eps": "$3.82",
+    "epsForecast": "$3.70",
+    "surprise": "3.24",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "PHVS",
+    "name": "Pharvaris N.V.",
+    "marketCap": "$2,400,009,306",
+    "eps": "($0.84)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "LNN",
+    "name": "Lindsay Corporation",
+    "marketCap": "$1,139,728,631",
+    "eps": "$1.15",
+    "epsForecast": "$1.60",
+    "surprise": "-28.13",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "ANGO",
+    "name": "AngioDynamics, Inc.",
+    "marketCap": "$587,746,572",
+    "eps": "($0.07)",
+    "epsForecast": "($0.11)",
+    "surprise": "36.36",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "TMQ",
+    "name": "Trilogy Metals Inc.",
+    "marketCap": "$551,058,588",
+    "eps": "($0.03)",
+    "epsForecast": "($0.01)",
+    "surprise": "-200",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Feb/2026"
+  },
+  {
+    "symbol": "AIRS",
+    "name": "AirSculpt Technologies, Inc.",
+    "marketCap": "$342,852,010",
+    "eps": "$0.02",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "DEFT",
+    "name": "Defi Technologies, Inc.",
+    "marketCap": "$159,879,803",
+    "eps": "$0.08",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

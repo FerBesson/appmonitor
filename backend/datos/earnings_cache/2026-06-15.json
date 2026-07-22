@@ -1,0 +1,156 @@
+[
+  {
+    "symbol": "AIOT",
+    "name": "PowerFleet, Inc.",
+    "marketCap": "$559,534,261",
+    "eps": "$0.04",
+    "epsForecast": "$0",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CGC",
+    "name": "Canopy Growth Corporation",
+    "marketCap": "$403,004,290",
+    "eps": "($0.17)",
+    "epsForecast": "($0.06)",
+    "surprise": "-183.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "PLAY",
+    "name": "Dave & Buster's Entertainment, Inc.",
+    "marketCap": "$370,847,478",
+    "eps": "$0.22",
+    "epsForecast": "$0.37",
+    "surprise": "-40.54",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CNXU",
+    "name": "Conexeu Sciences Inc.",
+    "marketCap": "$258,217,885",
+    "eps": "($0.11)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "HITI",
+    "name": "High Tide Inc.",
+    "marketCap": "$194,262,555",
+    "eps": "$0.01",
+    "epsForecast": "($0.02)",
+    "surprise": "150",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "DOMO",
+    "name": "Domo, Inc.",
+    "marketCap": "$155,317,937",
+    "eps": "($0.37)",
+    "epsForecast": "($0.41)",
+    "surprise": "9.76",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "RFIL",
+    "name": "RF Industries, Ltd.",
+    "marketCap": "$148,879,356",
+    "eps": "$0.12",
+    "epsForecast": "$0.07",
+    "surprise": "71.43",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ENGN",
+    "name": "enGene Therapeutics Inc.",
+    "marketCap": "$129,289,669",
+    "eps": "($0.43)",
+    "epsForecast": "($0.48)",
+    "surprise": "10.42",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "CODA",
+    "name": "Coda Octopus Group, Inc.",
+    "marketCap": "$114,838,076",
+    "eps": "$0.15",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "JRSH",
+    "name": "Jerash Holdings (US), Inc.",
+    "marketCap": "$57,911,726",
+    "eps": "$0.12",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CMTL",
+    "name": "Comtech Telecommunications Corp.",
+    "marketCap": "$51,833,276",
+    "eps": "($0.26)",
+    "epsForecast": "($0.30)",
+    "surprise": "13.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "AIFA",
+    "name": "All In FutureTech Alliance, Inc.",
+    "marketCap": "$13,073,918",
+    "eps": "($0.83)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VTGN",
+    "name": "VistaGen Therapeutics, Inc.",
+    "marketCap": "$9,642,626",
+    "eps": "($0.37)",
+    "epsForecast": "($0.42)",
+    "surprise": "11.9",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "CMND",
+    "name": "Clearmind Medicine Inc.",
+    "marketCap": "$1,671,214",
+    "eps": "($6.78)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  }
+]

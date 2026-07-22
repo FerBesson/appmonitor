@@ -2442,6 +2442,162 @@ function resetEarningsDate() {
 }
 window.resetEarningsDate = resetEarningsDate;
 
+let statePickerYear = new Date().getFullYear();
+let statePickerMonth = new Date().getMonth();
+
+function openMonthPickerModal() {
+    const modal = document.getElementById('earnings-picker-modal');
+    if (!modal) return;
+    
+    if (state.earningsCurrentDate) {
+        statePickerYear = state.earningsCurrentDate.getFullYear();
+        statePickerMonth = state.earningsCurrentDate.getMonth();
+    } else {
+        const now = new Date();
+        statePickerYear = now.getFullYear();
+        statePickerMonth = now.getMonth();
+    }
+    
+    renderPickerContent();
+    modal.style.display = 'flex';
+}
+window.openMonthPickerModal = openMonthPickerModal;
+
+function closeMonthPickerModal() {
+    const modal = document.getElementById('earnings-picker-modal');
+    if (modal) modal.style.display = 'none';
+}
+window.closeMonthPickerModal = closeMonthPickerModal;
+
+function changePickerYear(delta) {
+    statePickerYear += delta;
+    renderPickerContent();
+}
+window.changePickerYear = changePickerYear;
+
+function renderPickerContent() {
+    const titleEl = document.getElementById('picker-title');
+    const yearDisplay = document.getElementById('picker-year-display');
+    const monthTabsEl = document.getElementById('picker-month-tabs');
+    const contentArea = document.getElementById('picker-content-area');
+    
+    if (yearDisplay) yearDisplay.innerText = statePickerYear;
+    if (!contentArea) return;
+    
+    if (state.earningsMode === 'month') {
+        // MODO MENSUAL: Seleccionar Mes
+        if (titleEl) titleEl.innerText = "Seleccionar Mes";
+        if (monthTabsEl) monthTabsEl.style.display = "none";
+        
+        contentArea.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = 'picker-months-grid';
+        
+        const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+        const selectedMonth = state.earningsCurrentDate ? state.earningsCurrentDate.getMonth() : new Date().getMonth();
+        const selectedYear = state.earningsCurrentDate ? state.earningsCurrentDate.getFullYear() : new Date().getFullYear();
+        
+        months.forEach((mName, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `picker-month-btn ${idx === selectedMonth && statePickerYear === selectedYear ? 'selected' : ''}`;
+            btn.innerText = mName;
+            btn.onclick = () => selectPickerMonth(idx);
+            grid.appendChild(btn);
+        });
+        
+        contentArea.appendChild(grid);
+    } else {
+        // MODO SEMANAL: Seleccionar Semana por Mes
+        if (titleEl) titleEl.innerText = "Seleccionar Semana";
+        if (monthTabsEl) {
+            monthTabsEl.style.display = "grid";
+            monthTabsEl.innerHTML = '';
+            const shortMonths = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+            shortMonths.forEach((mName, idx) => {
+                const tab = document.createElement('button');
+                tab.className = `picker-month-tab ${idx === statePickerMonth ? 'active' : ''}`;
+                tab.innerText = mName;
+                tab.onclick = () => {
+                    statePickerMonth = idx;
+                    renderPickerContent();
+                };
+                monthTabsEl.appendChild(tab);
+            });
+        }
+        
+        contentArea.innerHTML = '';
+        const weeksList = document.createElement('div');
+        weeksList.className = 'picker-weeks-list';
+        
+        const monthsStr = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+        const weeks = getWeeksForMonth(statePickerYear, statePickerMonth);
+        
+        const curDate = state.earningsCurrentDate || new Date();
+        const curDateStr = curDate.toISOString().split('T')[0];
+        
+        weeks.forEach((w, idx) => {
+            const card = document.createElement('div');
+            const monStr = w.monday.toISOString().split('T')[0];
+            const friStr = w.friday.toISOString().split('T')[0];
+            
+            const isSel = curDateStr >= monStr && curDateStr <= friStr;
+            card.className = `picker-week-card ${isSel ? 'selected' : ''}`;
+            
+            card.innerHTML = `
+                <div class="picker-week-info">
+                    <span class="picker-week-num">Semana ${idx + 1} de ${monthsStr[statePickerMonth]}</span>
+                    <span class="picker-week-dates">${w.monday.getDate()} ${monthsStr[w.monday.getMonth()]} - ${w.friday.getDate()} ${monthsStr[w.friday.getMonth()]} ${w.friday.getFullYear()}</span>
+                </div>
+                <span style="font-size:16px; color:#eab308;">›</span>
+            `;
+            
+            card.onclick = () => selectPickerWeek(w.monday);
+            weeksList.appendChild(card);
+        });
+        
+        contentArea.appendChild(weeksList);
+    }
+}
+
+function getWeeksForMonth(year, monthIndex) {
+    const weeks = [];
+    const firstDay = new Date(year, monthIndex, 1);
+    const lastDay = new Date(year, monthIndex + 1, 0);
+    
+    let currentMonday = new Date(firstDay);
+    const dayOfWeek = currentMonday.getDay();
+    const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+    currentMonday.setDate(currentMonday.getDate() + diffToMonday);
+    
+    while (currentMonday <= lastDay) {
+        const friday = new Date(currentMonday);
+        friday.setDate(friday.getDate() + 4);
+        
+        weeks.push({
+            monday: new Date(currentMonday),
+            friday: friday
+        });
+        
+        currentMonday.setDate(currentMonday.getDate() + 7);
+    }
+    
+    return weeks;
+}
+
+function selectPickerMonth(monthIndex) {
+    state.earningsCurrentDate = new Date(statePickerYear, monthIndex, 1);
+    closeMonthPickerModal();
+    loadEarningsData();
+}
+window.selectPickerMonth = selectPickerMonth;
+
+function selectPickerWeek(mondayDate) {
+    state.earningsCurrentDate = new Date(mondayDate);
+    closeMonthPickerModal();
+    loadEarningsData();
+}
+window.selectPickerWeek = selectPickerWeek;
+
 async function loadEarningsData() {
     const rangeText = document.getElementById('earnings-date-range-text');
     if (!state.earningsCurrentDate) state.earningsCurrentDate = new Date();
@@ -2465,7 +2621,7 @@ async function loadEarningsData() {
         const year = d.getFullYear();
         const month = d.getMonth() + 1;
         const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-        if (rangeText) rangeText.innerText = `${monthNames[d.getMonth()]} ${year}`;
+        if (rangeText) rangeText.innerHTML = `${monthNames[d.getMonth()]} ${year} <span style="font-size:10px; opacity:0.8; margin-left:4px;">▾</span>`;
         try {
             const res = await fetch(`/api/earnings/month?year=${year}&month=${month}&panel=${currentPanel}`);
             if (!res.ok) throw new Error("Error HTTP");
@@ -2485,7 +2641,7 @@ function renderWeeklyEarnings(data) {
         const s = new Date(data.startDate + "T00:00:00");
         const e = new Date(data.endDate + "T00:00:00");
         const monthsStr = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-        rangeText.innerText = `${s.getDate()} ${monthsStr[s.getMonth()]} - ${e.getDate()} ${monthsStr[e.getMonth()]}`;
+        rangeText.innerHTML = `${s.getDate()} ${monthsStr[s.getMonth()]} - ${e.getDate()} ${monthsStr[e.getMonth()]} <span style="font-size:10px; opacity:0.8; margin-left:4px;">▾</span>`;
     }
     
     const grid = document.getElementById('earnings-weekly-grid');
@@ -2641,6 +2797,32 @@ function selectAssetFromEarnings(symbol) {
 }
 window.selectAssetFromEarnings = selectAssetFromEarnings;
 
+function renderMonthlyMiniLogo(comp) {
+    const sym = comp.symbol;
+    const primaryLogo = getCompanyLogoSrc(sym);
+    const fallbackLogo = `https://financialmodelingprep.com/image-stock/${sym}.png`;
+    return `
+        <div class="monthly-mini-tile" title="${comp.name || sym} (${sym})">
+            <img src="${primaryLogo}" class="monthly-mini-logo" onerror="if(this.src !== '${fallbackLogo}'){this.src='${fallbackLogo}';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" alt="${sym}">
+            <div class="monthly-mini-fallback" style="display:none;">${sym.slice(0, 2)}</div>
+        </div>
+    `;
+}
+
+function parseMarketCapNum(mcStr) {
+    if (!mcStr || typeof mcStr !== 'string') return 0;
+    const s = mcStr.toUpperCase().replace(/\$/g, '').replace(/,/g, '').trim();
+    try {
+        if (s.endsWith('T')) return parseFloat(s.slice(0, -1)) * 1_000_000_000_000;
+        if (s.endsWith('B')) return parseFloat(s.slice(0, -1)) * 1_000_000_000;
+        if (s.endsWith('M')) return parseFloat(s.slice(0, -1)) * 1_000_000;
+        if (s.endsWith('K')) return parseFloat(s.slice(0, -1)) * 1_000;
+        return parseFloat(s) || 0;
+    } catch (e) {
+        return 0;
+    }
+}
+
 function renderMonthlyEarnings(data) {
     const grid = document.getElementById('earnings-monthly-grid');
     if (!grid) return;
@@ -2674,7 +2856,6 @@ function renderMonthlyEarnings(data) {
     }
     
     const today = new Date();
-    const todayStr = today.toISOString().split('T')[0];
     const isCurrentMonth = today.getFullYear() === year && (today.getMonth() + 1) === month;
     
     for (let dayNum = 1; dayNum <= daysInMonth; dayNum++) {
@@ -2684,36 +2865,40 @@ function renderMonthlyEarnings(data) {
             cell.classList.add('today');
         }
         
-        const dayStr = `${year}-${String(month).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
-        const isPastOrToday = dayStr <= todayStr;
-        
         const dayData = dayMap[dayNum] || { before_open: [], after_close: [], other: [] };
-        const bCount = (dayData.before_open || []).length;
-        const aCount = (dayData.after_close || []).length;
-        const oCount = (dayData.other || []).length;
+        const allComps = [...(dayData.before_open || []), ...(dayData.after_close || []), ...(dayData.other || [])];
+        allComps.sort((a, b) => parseMarketCapNum(b.marketCap) - parseMarketCapNum(a.marketCap));
         
-        let badgesHtml = '';
-        if (bCount > 0) {
-            badgesHtml += `<div class="monthly-badge before-open"><span>☀️ Pre</span><span>${bCount}</span></div>`;
-        }
-        if (aCount > 0) {
-            badgesHtml += `<div class="monthly-badge after-close"><span>🌙 Post</span><span>${aCount}</span></div>`;
-        }
-        if (oCount > 0 && bCount === 0 && aCount === 0) {
-            const badgeLabel = isPastOrToday ? '📋 Rep' : '🕒 Pend';
-            badgesHtml += `<div class="monthly-badge" style="background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa;"><span>${badgeLabel}</span><span>${oCount}</span></div>`;
+        const maxLogos = 5;
+        const topComps = allComps.slice(0, maxLogos);
+        const remainingCount = allComps.length - maxLogos;
+        
+        let logosHtml = '';
+        if (allComps.length > 0) {
+            logosHtml = `
+                <div class="monthly-logos-container">
+                    ${topComps.map(comp => renderMonthlyMiniLogo(comp)).join('')}
+                    ${remainingCount > 0 ? `<span class="monthly-more-badge">+${remainingCount}</span>` : ''}
+                </div>
+            `;
         }
         
         cell.innerHTML = `
-            <span class="monthly-day-number">${dayNum}</span>
-            <div class="monthly-day-badges">
-                ${badgesHtml}
+            <div class="monthly-day-header-row">
+                <span class="monthly-day-number">${dayNum}</span>
+                ${allComps.length > 0 ? `<span class="monthly-day-count">${allComps.length}</span>` : ''}
             </div>
+            ${logosHtml}
         `;
         
+        const dayStr = `${year}-${String(month).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
         cell.onclick = () => {
-            state.earningsCurrentDate = new Date(year, month - 1, dayNum);
-            setEarningsMode('week');
+            if (allComps.length > 0) {
+                openEarningsModalForDay(dayStr);
+            } else {
+                state.earningsCurrentDate = new Date(year, month - 1, dayNum);
+                setEarningsMode('week');
+            }
         };
         
         grid.appendChild(cell);

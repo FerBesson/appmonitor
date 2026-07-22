@@ -1,0 +1,167 @@
+[
+  {
+    "symbol": "DRI",
+    "name": "Darden Restaurants, Inc.",
+    "marketCap": "$22,149,924,230",
+    "eps": "$3.66",
+    "epsForecast": "$3.63",
+    "surprise": "0.83",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "SNX",
+    "name": "TD SYNNEX Corporation",
+    "marketCap": "$19,933,716,874",
+    "eps": "$4.70",
+    "epsForecast": "$3.92",
+    "surprise": "19.9",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "MKC",
+    "name": "McCormick & Company, Incorporated",
+    "marketCap": "$14,074,378,747",
+    "eps": "$0.80",
+    "epsForecast": "$0.69",
+    "surprise": "15.94",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "MKC.V",
+    "name": "McCormick & Company, Incorporated",
+    "marketCap": "$14,074,378,747",
+    "eps": "$0.80",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "AYI",
+    "name": "Acuity Inc.",
+    "marketCap": "$9,761,083,810",
+    "eps": "$4.97",
+    "epsForecast": "$4.84",
+    "surprise": "2.69",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "CMC",
+    "name": "Commercial Metals Company",
+    "marketCap": "$7,489,267,480",
+    "eps": "$1.73",
+    "epsForecast": "$1.60",
+    "surprise": "8.13",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "BB",
+    "name": "BlackBerry Limited",
+    "marketCap": "$5,280,957,815",
+    "eps": "$0.03",
+    "epsForecast": "$0.02",
+    "surprise": "50",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "WGO",
+    "name": "Winnebago Industries, Inc.",
+    "marketCap": "$858,808,969",
+    "eps": "$0.66",
+    "epsForecast": "$0.82",
+    "surprise": "-19.51",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "May/2026"
+  },
+  {
+    "symbol": "QMCO",
+    "name": "Quantum Corporation",
+    "marketCap": "$451,231,770",
+    "eps": "($0.23)",
+    "epsForecast": "($0.35)",
+    "surprise": "34.29",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "AOUT",
+    "name": "American Outdoor Brands, Inc.",
+    "marketCap": "$172,723,327",
+    "eps": "$0.08",
+    "epsForecast": "($0.06)",
+    "surprise": "233.33",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "YRD",
+    "name": "Yiren Digital Ltd.",
+    "marketCap": "$108,485,692",
+    "eps": "($0.82)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "VTIX",
+    "name": "Virtuix Holdings Inc.",
+    "marketCap": "$75,336,480",
+    "eps": "($0.39)",
+    "epsForecast": "($0.42)",
+    "surprise": "7.14",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "NNOX",
+    "name": "NANO-X IMAGING LTD",
+    "marketCap": "$75,157,446",
+    "eps": "($0.20)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ZTEK",
+    "name": "Zentek Ltd.",
+    "marketCap": "$63,886,541",
+    "eps": "($0.03)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "ADXN",
+    "name": "Addex Therapeutics Ltd",
+    "marketCap": "$7,462,150",
+    "eps": "($1.53)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

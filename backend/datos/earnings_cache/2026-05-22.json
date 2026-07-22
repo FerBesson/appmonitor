@@ -1,0 +1,112 @@
+[
+  {
+    "symbol": "BJ",
+    "name": "BJ's Wholesale Club Holdings, Inc.",
+    "marketCap": "$11,791,262,760",
+    "eps": "$1.10",
+    "epsForecast": "$1.04",
+    "surprise": "5.77",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Apr/2026"
+  },
+  {
+    "symbol": "ABVX",
+    "name": "Abivax SA",
+    "marketCap": "$11,544,416,198",
+    "eps": "($0.71)",
+    "epsForecast": "($1.07)",
+    "surprise": "33.64",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "FRO",
+    "name": "Frontline Plc",
+    "marketCap": "$8,559,850,082",
+    "eps": "$1.55",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "BAH",
+    "name": "Booz Allen Hamilton Holding Corporation",
+    "marketCap": "$7,645,790,401",
+    "eps": "$1.78",
+    "epsForecast": "$1.32",
+    "surprise": "34.85",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GSL",
+    "name": "Global Ship Lease, Inc.",
+    "marketCap": "$1,510,362,160",
+    "eps": "$2.56",
+    "epsForecast": "$2.40",
+    "surprise": "6.67",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "IMPP",
+    "name": "Imperial Petroleum Inc.",
+    "marketCap": "$214,538,807",
+    "eps": "$0.57",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "SY",
+    "name": "So-Young International Inc.",
+    "marketCap": "$183,552,973",
+    "eps": "($0.07)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "YTRA",
+    "name": "Yatra Online, Inc.",
+    "marketCap": "$54,609,060",
+    "eps": "($0.03)",
+    "epsForecast": "$0.01",
+    "surprise": "-400",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  },
+  {
+    "symbol": "GITS",
+    "name": "Global Interactive Technologies, Inc. Common Stock",
+    "marketCap": "$8,303,710",
+    "eps": "($0.20)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "LABT",
+    "name": "Lakewood-Amedex Biotherapeutics Inc.",
+    "marketCap": "$3,256,468",
+    "eps": "($0.20)",
+    "epsForecast": "",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Mar/2026"
+  }
+]

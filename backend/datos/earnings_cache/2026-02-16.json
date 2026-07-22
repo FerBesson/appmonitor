@@ -1,0 +1,57 @@
+[
+  {
+    "symbol": "SON",
+    "name": "Sonoco Products Company",
+    "marketCap": "$5,409,105,975",
+    "eps": "$1.05",
+    "epsForecast": "$1.01",
+    "surprise": "3.96",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "OTTR",
+    "name": "Otter Tail Corporation",
+    "marketCap": "$3,802,504,466",
+    "eps": "$1.23",
+    "epsForecast": "$1.16",
+    "surprise": "6.03",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "RNW",
+    "name": "ReNew Energy Global plc",
+    "marketCap": "$2,256,424,076",
+    "eps": "$0",
+    "epsForecast": "($0.12)",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "HIVE",
+    "name": "HIVE Digital Technologies Ltd",
+    "marketCap": "$868,516,311",
+    "eps": "($0.18)",
+    "epsForecast": "($0.07)",
+    "surprise": "-157.14",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  },
+  {
+    "symbol": "AHRT",
+    "name": "AH Realty Trust, Inc.",
+    "marketCap": "$541,561,973",
+    "eps": "$0.29",
+    "epsForecast": "$0.26",
+    "surprise": "11.54",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Dec/2025"
+  }
+]

@@ -151,6 +151,77 @@ def parse_stocks_raw(raw_list: list) -> list:
         ).model_dump())
     return quotes
 
+_CEDEAR_NAMES_CACHE = None
+
+def get_cedear_name(ticker: str) -> str:
+    global _CEDEAR_NAMES_CACHE
+    if _CEDEAR_NAMES_CACHE is None:
+        path = os.path.join(DATOS_DIR, "cedear_names.json")
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    _CEDEAR_NAMES_CACHE = json.load(f)
+            except Exception as e:
+                print(f"Error cargando cedear_names.json: {e}")
+                _CEDEAR_NAMES_CACHE = {}
+        else:
+            _CEDEAR_NAMES_CACHE = {}
+
+    t_upper = ticker.upper()
+    if t_upper in _CEDEAR_NAMES_CACHE:
+        return _CEDEAR_NAMES_CACHE[t_upper]
+
+    base = t_upper
+    if (t_upper.endswith("C") or t_upper.endswith("D")) and len(t_upper) > 1:
+        base = t_upper[:-1]
+    if t_upper.endswith("DD") or t_upper.endswith(".D"):
+        base = t_upper[:-2]
+
+    if base in _CEDEAR_NAMES_CACHE:
+        return _CEDEAR_NAMES_CACHE[base]
+
+    return f"CEDEAR {ticker}"
+
+BASE_CEDEAR_ENDINGS_IN_D_OR_C = {
+    'AMD', 'C', 'DD', 'CRWD', 'GLD', 'HD', 'HOOD', 'JD', 'KGC', 'LND', 'MCD',
+    'PDD', 'SID', 'VOD', 'WFC', 'XLC', 'LAC', 'PAC', 'ERIC', 'HSBC', 'HMC',
+    'ACC', 'BOC', 'FMC', 'KAC', 'LRCX', 'MCH', 'NOC', 'ONC', 'PNC', 'RBC', 'SNC', 'TGI', 'VFC',
+    'GILD', 'ELPC', 'INTC'
+}
+
+KNOWN_ARS_CEDEAR_OVERRIDES = {'BA.C': 'ARS', 'BBD': 'ARS', 'PDD': 'ARS'}
+KNOWN_USD_CEDEAR_VARIANTS = {'ALAD', 'AKOBD', 'GOGLD', 'PETRD', 'VAL3D', 'NAT3D', 'C.D', 'B.D', 'BB.D', 'CAR.D', 'BA.CD', 'SPCXD', 'PDDD'}
+KNOWN_USDC_CEDEAR_VARIANTS = {'GOGLC', 'PETRC', 'VAL3C', 'B.C', 'CAR.C', 'BA.CC'}
+
+def get_cedear_currency(ticker: str, all_symbols: set) -> str:
+    t = ticker.upper()
+    if t in KNOWN_ARS_CEDEAR_OVERRIDES:
+        return 'ARS'
+    if t in KNOWN_USD_CEDEAR_VARIANTS:
+        return 'USD'
+    if t in KNOWN_USDC_CEDEAR_VARIANTS:
+        return 'USDC'
+        
+    if t.endswith('.D') or t.endswith('DD'):
+        return 'USD'
+    if t.endswith('.C') or t.endswith('CC'):
+        return 'USDC'
+        
+    if t in BASE_CEDEAR_ENDINGS_IN_D_OR_C:
+        return 'ARS'
+        
+    if t.endswith('D'):
+        candidate = t[:-1]
+        if candidate in all_symbols or candidate in ['GOOGL', 'VALE', 'PBR', 'AKO.B', 'B', 'BA', 'CAR', 'BB', 'C']:
+            return 'USD'
+            
+    if t.endswith('C'):
+        candidate = t[:-1]
+        if candidate in all_symbols or candidate in ['GOOGL', 'VALE', 'PBR', 'AKO.B', 'B', 'BA', 'CAR', 'BB', 'C']:
+            return 'USDC'
+            
+    return 'ARS'
+
 def parse_cedears_raw(raw_list: list) -> list:
     quotes = []
     if not isinstance(raw_list, list):
@@ -180,18 +251,10 @@ def parse_cedears_raw(raw_list: list) -> list:
         t_upper = ticker.upper()
         
         # Clasificación de moneda inteligente
-        currency = "ARS"
-        if t_upper.endswith("C"):
-            base = t_upper[:-1]
-            if base in all_symbols:
-                currency = "USDC"
-        elif t_upper.endswith("D"):
-            base = t_upper[:-1]
-            if base in all_symbols:
-                currency = "USD"
+        currency = get_cedear_currency(ticker, all_symbols)
 
         panel = "cedear"
-        name = f"CEDEAR {ticker}"
+        name = get_cedear_name(ticker)
 
         quotes.append(AssetQuote(
             ticker=ticker,
@@ -250,6 +313,41 @@ async def fetch_and_save_market_data():
 
         cedears_raw = await data912_client.get_arg_cedears()
         cedears_dump = parse_cedears_raw(cedears_raw)
+
+        # Protección contra respuestas incompletas o vacías de la API
+        if os.path.exists(ACCIONES_JSON_PATH):
+            try:
+                with open(ACCIONES_JSON_PATH, "r", encoding="utf-8") as f:
+                    stored_acc = json.load(f).get("acciones", [])
+                    if len(stocks_dump) < len(stored_acc):
+                        new_by_ticker = {s["ticker"]: s for s in stocks_dump}
+                        merged_stocks = []
+                        for s in stored_acc:
+                            t = s["ticker"]
+                            if t in new_by_ticker:
+                                merged_stocks.append(new_by_ticker[t])
+                            else:
+                                merged_stocks.append(s)
+                        stocks_dump = merged_stocks
+            except Exception as e:
+                print(f"Error al fusionar acciones almacenadas: {e}")
+
+        if os.path.exists(CEDEARS_JSON_PATH):
+            try:
+                with open(CEDEARS_JSON_PATH, "r", encoding="utf-8") as f:
+                    stored_ced = json.load(f).get("cedears", [])
+                    if len(cedears_dump) < len(stored_ced):
+                        new_by_ticker = {c["ticker"]: c for c in cedears_dump}
+                        merged_cedears = []
+                        for c in stored_ced:
+                            t = c["ticker"]
+                            if t in new_by_ticker:
+                                merged_cedears.append(new_by_ticker[t])
+                            else:
+                                merged_cedears.append(c)
+                        cedears_dump = merged_cedears
+            except Exception as e:
+                print(f"Error al fusionar cedears almacenados: {e}")
 
         # Obtener cotizaciones de dólares
         dolar_assets = []

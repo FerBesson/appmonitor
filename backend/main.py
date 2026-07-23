@@ -1,4 +1,5 @@
 import os
+import re
 import asyncio
 from datetime import datetime
 from contextlib import asynccontextmanager
@@ -17,6 +18,22 @@ from backend.services.updater import start_background_updater
 from backend.services.data912_client import data912_client
 from backend.services.merval_service import get_merval_ccl
 from backend.config import HISTORIAL_DIR
+
+def sanitize_ticker(ticker: str) -> str:
+    """Sanitiza y valida un ticker para prevenir vulnerabilidades de Path Traversal e inyección de caracteres maliciosos."""
+    if not ticker or not isinstance(ticker, str):
+        raise HTTPException(status_code=400, detail="Ticker no proporcionado o inválido")
+    
+    ticker_str = ticker.strip()
+    if "/" in ticker_str or "\\" in ticker_str or ".." in ticker_str:
+        raise HTTPException(status_code=400, detail="Ticker contiene caracteres de ruta no permitidos")
+        
+    clean_ticker = os.path.basename(ticker_str).upper()
+    if not re.match(r"^[A-Z0-9._\-\^]+$", clean_ticker):
+        raise HTTPException(status_code=400, detail="Ticker contiene caracteres o formato no permitido")
+    
+    return clean_ticker
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -82,16 +99,19 @@ async def api_panel_cedears():
 
 @app.get("/api/fundamentals/{ticker}", response_model=AssetFundamentals)
 async def api_fundamentals(ticker: str):
+    clean_ticker = sanitize_ticker(ticker)
     try:
-        return await yahoo_finance_service.fetch_fundamentals(ticker)
+        return await yahoo_finance_service.fetch_fundamentals(clean_ticker)
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo fundamentales: {str(e)}")
 
 @app.get("/api/history/{ticker}", response_model=List[StockHistoryPoint])
 async def api_history(ticker: str):
+    clean_ticker = sanitize_ticker(ticker)
     try:
-        ticker = ticker.upper()
-        filepath = os.path.join(HISTORIAL_DIR, f"{ticker}.json")
+        filepath = os.path.join(HISTORIAL_DIR, f"{clean_ticker}.json")
         
         # 1. Si existe caché local fresco, responder en crudo (RAW)
         # Esto evita parsear JSON en Python y la lentitud de validación/serialización Pydantic
@@ -103,12 +123,12 @@ async def api_history(ticker: str):
                 raw_json = await asyncio.to_thread(read_file)
                 return Response(content=raw_json, media_type="application/json")
             except Exception as e:
-                print(f"Error leyendo caché crudo para {ticker}: {e}")
+                print(f"Error leyendo caché crudo para {clean_ticker}: {e}")
 
         # 2. Si no, procesarlo (se descarga de la API, se calcula SMA/RSI y se guarda en disco)
-        history = await get_stock_history_processed(ticker)
+        history = await get_stock_history_processed(clean_ticker)
         if not history:
-            raise HTTPException(status_code=404, detail=f"Histórico no encontrado para {ticker}")
+            raise HTTPException(status_code=404, detail=f"Histórico no encontrado para {clean_ticker}")
             
         # Intentar responder con el archivo recién guardado en crudo para evitar serialización Pydantic
         if os.path.exists(filepath) and os.path.getsize(filepath) > 10:

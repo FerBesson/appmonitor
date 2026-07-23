@@ -2,7 +2,7 @@
   {
     "symbol": "TSM",
     "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-    "marketCap": "$2,202,241,847,287",
+    "marketCap": "$2,184,607,730,614",
     "eps": "$4.31",
     "epsForecast": "$3.87",
     "surprise": "11.37",
@@ -13,7 +13,7 @@
   {
     "symbol": "UNH",
     "name": "UnitedHealth Group Incorporated",
-    "marketCap": "$396,268,810,685",
+    "marketCap": "$391,691,762,889",
     "eps": "$6.38",
     "epsForecast": "$4.94",
     "surprise": "29.15",
@@ -24,7 +24,7 @@
   {
     "symbol": "GE",
     "name": "GE Aerospace",
-    "marketCap": "$353,497,548,179",
+    "marketCap": "$354,005,953,810",
     "eps": "$2.02",
     "epsForecast": "$1.86",
     "surprise": "8.6",
@@ -35,7 +35,7 @@
   {
     "symbol": "NFLX",
     "name": "Netflix, Inc.",
-    "marketCap": "$285,937,737,551",
+    "marketCap": "$285,354,785,996",
     "eps": "$0.80",
     "epsForecast": "$0.79",
     "surprise": "1.27",
@@ -46,7 +46,7 @@
   {
     "symbol": "ABT",
     "name": "Abbott Laboratories",
-    "marketCap": "$173,606,444,798",
+    "marketCap": "$175,174,075,985",
     "eps": "$1.31",
     "epsForecast": "$1.28",
     "surprise": "2.34",
@@ -57,7 +57,7 @@
   {
     "symbol": "PLD",
     "name": "Prologis, Inc.",
-    "marketCap": "$142,739,281,440",
+    "marketCap": "$137,750,927,200",
     "eps": "$1.63",
     "epsForecast": "$1.53",
     "surprise": "-26.14",
@@ -68,7 +68,7 @@
   {
     "symbol": "ISRG",
     "name": "Intuitive Surgical, Inc.",
-    "marketCap": "$123,978,244,471",
+    "marketCap": "$120,358,294,766",
     "eps": "$2.37",
     "epsForecast": "$2.02",
     "surprise": "17.33",
@@ -79,7 +79,7 @@
   {
     "symbol": "USB",
     "name": "U.S. Bancorp",
-    "marketCap": "$98,822,568,306",
+    "marketCap": "$100,001,428,013",
     "eps": "$1.35",
     "epsForecast": "$1.28",
     "surprise": "5.47",
@@ -90,7 +90,7 @@
   {
     "symbol": "STT",
     "name": "State Street Corporation",
-    "marketCap": "$50,731,397,149",
+    "marketCap": "$51,268,325,193",
     "eps": "$3.65",
     "epsForecast": "$3.30",
     "surprise": "10.61",
@@ -101,7 +101,7 @@
   {
     "symbol": "CFG",
     "name": "Citizens Financial Group, Inc.",
-    "marketCap": "$30,447,499,824",
+    "marketCap": "$30,633,567,878",
     "eps": "$1.30",
     "epsForecast": "$1.25",
     "surprise": "4",
@@ -112,7 +112,7 @@
   {
     "symbol": "WIT",
     "name": "Wipro Limited",
-    "marketCap": "$19,088,910,674",
+    "marketCap": "$18,984,026,549",
     "eps": "$0.03",
     "epsForecast": "$0.03",
     "surprise": "N/A",
@@ -123,7 +123,7 @@
   {
     "symbol": "AA",
     "name": "Alcoa Corporation",
-    "marketCap": "$11,703,515,956",
+    "marketCap": "$12,183,795,529",
     "eps": "$2.12",
     "epsForecast": "$2.33",
     "surprise": "-9.01",
@@ -134,7 +134,7 @@
   {
     "symbol": "CBSH",
     "name": "Commerce Bancshares, Inc.",
-    "marketCap": "$8,509,012,712",
+    "marketCap": "$8,557,119,175",
     "eps": "$1.10",
     "epsForecast": "$1.04",
     "surprise": "5.77",
@@ -143,20 +143,9 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
-    "symbol": "FNB",
-    "name": "F.N.B. Corporation",
-    "marketCap": "$6,795,351,786",
-    "eps": "$0.42",
-    "epsForecast": "$0.42",
-    "surprise": "N/A",
-    "time": "time-not-supplied",
-    "lastYearEPS": "",
-    "fiscalQuarterEnding": "Jun/2026"
-  },
-  {
     "symbol": "VIST",
     "name": "Vista Energy S.A.B. de C.V.",
-    "marketCap": "$6,784,695,680",
+    "marketCap": "$6,990,166,095",
     "eps": "$2.38",
     "epsForecast": "$3.15",
     "surprise": "-24.44",
@@ -165,9 +154,20 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
+    "symbol": "FNB",
+    "name": "F.N.B. Corporation",
+    "marketCap": "$6,713,480,078",
+    "eps": "$0.42",
+    "epsForecast": "$0.42",
+    "surprise": "N/A",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
     "symbol": "FFIN",
     "name": "First Financial Bankshares, Inc.",
-    "marketCap": "$4,983,345,525",
+    "marketCap": "$4,969,017,332",
     "eps": "$0.50",
     "epsForecast": "$0.50",
     "surprise": "N/A",
@@ -178,7 +178,7 @@
   {
     "symbol": "CNS",
     "name": "Cohen & Steers Inc",
-    "marketCap": "$4,152,113,908",
+    "marketCap": "$4,133,098,162",
     "eps": "$0.85",
     "epsForecast": "",
     "surprise": "N/A",
@@ -189,7 +189,7 @@
   {
     "symbol": "INDB",
     "name": "Independent Bank Corp.",
-    "marketCap": "$4,114,570,145",
+    "marketCap": "$4,121,819,212",
     "eps": "$1.70",
     "epsForecast": "$1.77",
     "surprise": "-3.95",
@@ -200,7 +200,7 @@
   {
     "symbol": "SFNC",
     "name": "Simmons First National Corporation",
-    "marketCap": "$3,313,266,534",
+    "marketCap": "$3,352,433,870",
     "eps": "$0.50",
     "epsForecast": "$0.53",
     "surprise": "-5.66",
@@ -211,7 +211,7 @@
   {
     "symbol": "WAFD",
     "name": "WaFd, Inc.",
-    "marketCap": "$2,739,784,838",
+    "marketCap": "$2,714,662,755",
     "eps": "$0.81",
     "epsForecast": "$0.82",
     "surprise": "-1.22",
@@ -222,7 +222,7 @@
   {
     "symbol": "MAN",
     "name": "ManpowerGroup",
-    "marketCap": "$2,403,499,435",
+    "marketCap": "$2,402,569,288",
     "eps": "$0.99",
     "epsForecast": "$0.96",
     "surprise": "3.13",
@@ -233,7 +233,7 @@
   {
     "symbol": "WABC",
     "name": "Westamerica Bancorporation",
-    "marketCap": "$1,423,604,953",
+    "marketCap": "$1,413,974,891",
     "eps": "$1.17",
     "epsForecast": "",
     "surprise": "N/A",
@@ -244,7 +244,7 @@
   {
     "symbol": "DBVT",
     "name": "DBV Technologies S.A.",
-    "marketCap": "$841,998,892",
+    "marketCap": "$807,063,635",
     "eps": "($0.60)",
     "epsForecast": "($0.12)",
     "surprise": "-400",
@@ -255,7 +255,7 @@
   {
     "symbol": "IIIN",
     "name": "Insteel Industries, Inc.",
-    "marketCap": "$608,429,703",
+    "marketCap": "$613,656,430",
     "eps": "$0.46",
     "epsForecast": "$0.45",
     "surprise": "2.22",
@@ -266,7 +266,7 @@
   {
     "symbol": "BSVN",
     "name": "Bank7 Corp.",
-    "marketCap": "$471,397,469",
+    "marketCap": "$459,307,914",
     "eps": "$0.87",
     "epsForecast": "$1.03",
     "surprise": "-15.53",
@@ -277,7 +277,7 @@
   {
     "symbol": "LCNB",
     "name": "LCNB Corporation",
-    "marketCap": "$275,802,696",
+    "marketCap": "$278,794,357",
     "eps": "$0.53",
     "epsForecast": "$0.44",
     "surprise": "20.45",
@@ -288,7 +288,7 @@
   {
     "symbol": "HOVR",
     "name": "New Horizon Aircraft Ltd.",
-    "marketCap": "$132,983,416",
+    "marketCap": "$127,637,349",
     "eps": "($0.09)",
     "epsForecast": "",
     "surprise": "N/A",
@@ -299,7 +299,7 @@
   {
     "symbol": "FTHM",
     "name": "Fathom Holdings Inc.",
-    "marketCap": "$29,695,098",
+    "marketCap": "$28,839,082",
     "eps": "($0.25)",
     "epsForecast": "",
     "surprise": "N/A",

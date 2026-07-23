@@ -103630,5 +103630,22 @@
     "macd": null,
     "macd_signal": null,
     "macd_hist": null
+  },
+  {
+    "date": "2026-07-22",
+    "open": 2111.57,
+    "high": 2184.89,
+    "low": 2111.3,
+    "close": 2174.49,
+    "volume": 0.0,
+    "sma20": 2054.27,
+    "sma50": 2048.86,
+    "rsi": 60.11,
+    "bb_upper": null,
+    "bb_lower": null,
+    "bb_middle": null,
+    "macd": null,
+    "macd_signal": null,
+    "macd_hist": null
   }
 ]

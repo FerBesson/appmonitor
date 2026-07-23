@@ -2,7 +2,7 @@
   {
     "symbol": "TRV",
     "name": "The Travelers Companies, Inc.",
-    "marketCap": "$77,095,585,382",
+    "marketCap": "$77,606,594,186",
     "eps": "$10.04",
     "epsForecast": "$5.31",
     "surprise": "89.08",
@@ -13,7 +13,7 @@
   {
     "symbol": "TFC",
     "name": "Truist Financial Corporation",
-    "marketCap": "$64,013,277,150",
+    "marketCap": "$64,449,334,896",
     "eps": "$1.23",
     "epsForecast": "$1.08",
     "surprise": "13.89",
@@ -24,7 +24,7 @@
   {
     "symbol": "FITB",
     "name": "Fifth Third Bancorp",
-    "marketCap": "$52,257,923,858",
+    "marketCap": "$52,266,986,973",
     "eps": "$1.02",
     "epsForecast": "$0.98",
     "surprise": "4.08",
@@ -35,7 +35,7 @@
   {
     "symbol": "RF",
     "name": "Regions Financial Corporation",
-    "marketCap": "$26,301,157,361",
+    "marketCap": "$26,335,292,543",
     "eps": "$0.68",
     "epsForecast": "$0.64",
     "surprise": "6.25",
@@ -46,7 +46,7 @@
   {
     "symbol": "ALV",
     "name": "Autoliv, Inc.",
-    "marketCap": "$8,606,105,370",
+    "marketCap": "$8,715,961,195",
     "eps": "$2.43",
     "epsForecast": "$2.34",
     "surprise": "3.85",
@@ -57,7 +57,7 @@
   {
     "symbol": "VZLA",
     "name": "Vizsla Silver Corp.",
-    "marketCap": "$1,160,714,061",
+    "marketCap": "$1,203,008,734",
     "eps": "($0.03)",
     "epsForecast": "$0",
     "surprise": "N/A",
@@ -68,7 +68,7 @@
   {
     "symbol": "SPFI",
     "name": "South Plains Financial, Inc.",
-    "marketCap": "$840,115,686",
+    "marketCap": "$839,349,855",
     "eps": "$0.96",
     "epsForecast": "$0.86",
     "surprise": "11.63",
@@ -79,7 +79,7 @@
   {
     "symbol": "HIFS",
     "name": "Hingham Institution for Savings",
-    "marketCap": "$634,814,388",
+    "marketCap": "$618,794,784",
     "eps": "$4.82",
     "epsForecast": "",
     "surprise": "N/A",
@@ -90,7 +90,7 @@
   {
     "symbol": "CSAI",
     "name": "Cloudastructure, Inc.",
-    "marketCap": "$6,879,417",
+    "marketCap": "$6,699,432",
     "eps": "($0.14)",
     "epsForecast": "",
     "surprise": "N/A",

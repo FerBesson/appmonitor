@@ -41,7 +41,9 @@ const state = {
     sortDirection: 'asc',
     moversTab: 'gainers', // 'gainers' | 'losers'
     moversCurrency: 'ARS', // 'ARS' | 'USD' | 'USDC'
-    oldPrices: {} // Track prices for data-flash animations on update
+    oldPrices: {}, // Track prices for data-flash animations on update
+    isOnline: true,
+    consecutiveFailures: 0
 };
 
 function getBaseTicker(ticker) {
@@ -169,6 +171,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initEventListeners() {
+    window.addEventListener('online', () => {
+        console.log('Conexión a internet restablecida');
+        updateConnectionStatus(true);
+        refreshAllData();
+    });
+
+    window.addEventListener('offline', () => {
+        console.warn('Sin conexión a internet');
+        updateConnectionStatus(false, 'SIN CONEXIÓN');
+    });
+
     // Eventos de click para el selector de Acciones / CEDEARs
     const assetTypeTabs = document.querySelectorAll('.asset-type-tab');
     assetTypeTabs.forEach(tab => {
@@ -419,6 +432,37 @@ function startCountdown() {
     }, 1000);
 }
 
+function updateConnectionStatus(isOk, message = null) {
+    const statusPill = document.querySelector('.status-pill');
+    const statusText = document.getElementById('status-text');
+    if (!statusPill || !statusText) return;
+
+    if (isOk) {
+        state.isOnline = true;
+        state.consecutiveFailures = 0;
+        statusPill.classList.remove('offline', 'reconnecting');
+        statusPill.classList.add('live-pulse');
+        statusPill.style.color = '';
+        statusText.textContent = 'ACTUALIZADO';
+    } else {
+        state.consecutiveFailures++;
+        statusPill.classList.remove('live-pulse');
+        if (navigator.onLine === false || state.consecutiveFailures >= 2) {
+            state.isOnline = false;
+            statusPill.classList.remove('reconnecting');
+            statusPill.classList.add('offline');
+            statusPill.style.color = '';
+            statusText.textContent = 'SIN CONEXIÓN';
+        } else {
+            state.isOnline = false;
+            statusPill.classList.remove('offline');
+            statusPill.classList.add('reconnecting');
+            statusPill.style.color = '';
+            statusText.textContent = message || 'RECONECTANDO...';
+        }
+    }
+}
+
 async function refreshAllData() {
     // Save old prices for data flash animations
     state.oldPrices = {};
@@ -433,8 +477,6 @@ async function refreshAllData() {
         const val = parseFloat(mervalPriceEl.textContent.replace(/[^\d,.-]/g, '').replace(',', '.'));
         if (!isNaN(val)) state.oldPrices['MERVAL_CCL'] = val;
     }
-
-
 
     try {
         const fetchPromises = [
@@ -452,8 +494,11 @@ async function refreshAllData() {
         const mervalRes = responses[1];
         const cedearsRes = needCedears ? responses[2] : null;
 
+        let anySuccess = false;
+
         if (stocksRes.ok) {
             state.stocks = await stocksRes.json();
+            anySuccess = true;
             
             // Actualizar widgets de dólares en el encabezado
             const usdMay = state.stocks.find(s => s.ticker === 'USD_MAYORISTA');
@@ -467,6 +512,7 @@ async function refreshAllData() {
 
         if (cedearsRes && cedearsRes.ok) {
             state.cedears = await cedearsRes.json();
+            anySuccess = true;
         }
 
         updateSectorDropdown();
@@ -495,13 +541,19 @@ async function refreshAllData() {
         if (mervalRes.ok) {
             const mervalData = await mervalRes.json();
             updateMervalWidget(mervalData);
+            anySuccess = true;
         }
         
         loadSidebarEarnings();
+
+        if (anySuccess) {
+            updateConnectionStatus(true);
+        } else {
+            updateConnectionStatus(false, 'ERROR SERVIDOR');
+        }
     } catch (err) {
         console.error('Error conectando al backend:', err);
-        document.getElementById('status-text').textContent = 'DESCONECTADO';
-        document.querySelector('.status-pill').style.color = '#ef4444';
+        updateConnectionStatus(false);
     }
 }
 

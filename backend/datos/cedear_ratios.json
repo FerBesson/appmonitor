@@ -1,0 +1,1754 @@
+{
+  "AABA": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "AAL": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "AAP": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "AAPL": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "ABBV": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "ABEV": {
+    "ratio": 0.3333333333333333,
+    "ratio_str": "1:3"
+  },
+  "ABEV3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ABNB": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "ABT": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "ACN": {
+    "ratio": 75.0,
+    "ratio_str": "75:1"
+  },
+  "ACWI": {
+    "ratio": 26.0,
+    "ratio_str": "26:1"
+  },
+  "ADBE": {
+    "ratio": 44.0,
+    "ratio_str": "44:1"
+  },
+  "ADGO": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ADI": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "ADP": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "ADS": {
+    "ratio": 22.0,
+    "ratio_str": "22:1"
+  },
+  "AEG": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "AEM": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "AI": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "AIG": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "AKO.B": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ALAB": {
+    "ratio": 44.0,
+    "ratio_str": "44:1"
+  },
+  "AMAT": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "AMD": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "AMGN": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "AMX": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "AMZN": {
+    "ratio": 144.0,
+    "ratio_str": "144:1"
+  },
+  "ANF": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "AOCA": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ARCO": {
+    "ratio": 0.5,
+    "ratio_str": "1:2"
+  },
+  "ARKK": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "ARM": {
+    "ratio": 27.0,
+    "ratio_str": "27:1"
+  },
+  "ASML": {
+    "ratio": 146.0,
+    "ratio_str": "146:1"
+  },
+  "ASR": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "ASTS": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "ATAD": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "AUY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "AVGO": {
+    "ratio": 39.0,
+    "ratio_str": "39:1"
+  },
+  "AVY": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "AXP": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "AZN": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "B": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BA": {
+    "ratio": 24.0,
+    "ratio_str": "24:1"
+  },
+  "BA.C": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "BABA": {
+    "ratio": 9.0,
+    "ratio_str": "9:1"
+  },
+  "BAK": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BAS": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BAYN": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "BB": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "BBAS3": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BBD": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BBDC3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BBV": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BCS": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BHP": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BIDU": {
+    "ratio": 11.0,
+    "ratio_str": "11:1"
+  },
+  "BIIB": {
+    "ratio": 13.0,
+    "ratio_str": "13:1"
+  },
+  "BIOX": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BK": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "BKNG": {
+    "ratio": 700.0,
+    "ratio_str": "700:1"
+  },
+  "BKR": {
+    "ratio": 7.0,
+    "ratio_str": "7:1"
+  },
+  "BMNR": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "BMY": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "BNG": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "BP": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "BPAI": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BRFS": {
+    "ratio": 0.3333333333333333,
+    "ratio_str": "1:3"
+  },
+  "BRKB": {
+    "ratio": 22.0,
+    "ratio_str": "22:1"
+  },
+  "BSBR": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BSN": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "BX": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "C": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "CAAP": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "CAH": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "CAJ": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "CAR": {
+    "ratio": 26.0,
+    "ratio_str": "26:1"
+  },
+  "CAT": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "CBRD": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "CCL": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "CDE": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "CEG": {
+    "ratio": 45.0,
+    "ratio_str": "45:1"
+  },
+  "CIBR": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "CL": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "CLS": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "COIN": {
+    "ratio": 27.0,
+    "ratio_str": "27:1"
+  },
+  "COPX": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "COST": {
+    "ratio": 48.0,
+    "ratio_str": "48:1"
+  },
+  "CRM": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "CRWV": {
+    "ratio": 27.0,
+    "ratio_str": "27:1"
+  },
+  "CS": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "CSCO": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "CSNA3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "CVS": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "CVX": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "CX": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "DAL": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "DD": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "DE": {
+    "ratio": 40.0,
+    "ratio_str": "40:1"
+  },
+  "DECK": {
+    "ratio": 25.0,
+    "ratio_str": "25:1"
+  },
+  "DEO": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "DHR": {
+    "ratio": 54.0,
+    "ratio_str": "54:1"
+  },
+  "DIA": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "DISN": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "DOCU": {
+    "ratio": 22.0,
+    "ratio_str": "22:1"
+  },
+  "DOW": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "DTEA": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "E": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "EA": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "EBAY": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "EBR": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "ECL": {
+    "ratio": 56.0,
+    "ratio_str": "56:1"
+  },
+  "EEM": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "EFA": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "EFX": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "ELP": {
+    "ratio": 0.3333333333333333,
+    "ratio_str": "1:3"
+  },
+  "EOAN": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "EQNR": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "ERIC": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "ERJ": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ESGU": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "ETHA": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "ETSY": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "EWJ": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "EWY": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "EWZ": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "F": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "FCX": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "FDX": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "FMCC": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "FMX": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "FNMA": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "FSLR": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "FXI": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "GDX": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "GE": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "GFI": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "GGB": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "GILD": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "GLD": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "GLOB": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "GLW": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "GM": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "GOOGL": {
+    "ratio": 58.0,
+    "ratio_str": "58:1"
+  },
+  "GPRK": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "GRMN": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "GS": {
+    "ratio": 13.0,
+    "ratio_str": "13:1"
+  },
+  "GSK": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "GT": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "HAL": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "HAPV3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HD": {
+    "ratio": 32.0,
+    "ratio_str": "32:1"
+  },
+  "HDB": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "HHPD": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "HL": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HMC": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HMY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HNPIY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HOG": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "HON": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "HOOD": {
+    "ratio": 29.0,
+    "ratio_str": "29:1"
+  },
+  "HPQ": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "HSBC": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "HSY": {
+    "ratio": 21.0,
+    "ratio_str": "21:1"
+  },
+  "HUT": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "HWM": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "IBB": {
+    "ratio": 27.0,
+    "ratio_str": "27:1"
+  },
+  "IBIT": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "IBM": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "IBN": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ICLN": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "IEMG": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "IEUR": {
+    "ratio": 11.0,
+    "ratio_str": "11:1"
+  },
+  "IFF": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "IJH": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "ILF": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "INFY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ING": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "INTC": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "IP": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "IREN": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "ISRG": {
+    "ratio": 90.0,
+    "ratio_str": "90:1"
+  },
+  "ITA": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "ITUB": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ITUB3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "IVE": {
+    "ratio": 40.0,
+    "ratio_str": "40:1"
+  },
+  "IVV": {
+    "ratio": 692.0,
+    "ratio_str": "692:1"
+  },
+  "IVW": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "IWM": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "JCI": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "JD": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "JMIA": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "JNJ": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "JOYY": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "JPM": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "KB": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "KEEL": {
+    "ratio": 0.2,
+    "ratio_str": "1:5"
+  },
+  "KEP": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "KGC": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "KMB": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "KO": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "KOFM": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "LAC": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "LAR": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "LFC": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "LKOD": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "LLY": {
+    "ratio": 56.0,
+    "ratio_str": "56:1"
+  },
+  "LMT": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "LND": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "LRCX": {
+    "ratio": 56.0,
+    "ratio_str": "56:1"
+  },
+  "LREN3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "LVS": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "LYG": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "MA": {
+    "ratio": 33.0,
+    "ratio_str": "33:1"
+  },
+  "MBG": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "MBT": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "MCD": {
+    "ratio": 24.0,
+    "ratio_str": "24:1"
+  },
+  "MDLZ": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "MDT": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "MELI": {
+    "ratio": 120.0,
+    "ratio_str": "120:1"
+  },
+  "META": {
+    "ratio": 24.0,
+    "ratio_str": "24:1"
+  },
+  "MFG": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "MGLU3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "MMC": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "MMM": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "MO": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "MOS": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "MRK": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "MRNA": {
+    "ratio": 19.0,
+    "ratio_str": "19:1"
+  },
+  "MRVL": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "MSFT": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "MSI": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "MSTR": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "MU": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "MUFG": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "MUX": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "NATU3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "NECI": {
+    "ratio": 0.3333333333333333,
+    "ratio_str": "1:3"
+  },
+  "NEM": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "NFLX": {
+    "ratio": 48.0,
+    "ratio_str": "48:1"
+  },
+  "NG": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "NGG": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "NIO": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "NKE": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "NLM": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "NMR": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "NOKA": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "NOW": {
+    "ratio": 172.0,
+    "ratio_str": "172:1"
+  },
+  "NSAN": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "NTES": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "NUE": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "NVDA": {
+    "ratio": 24.0,
+    "ratio_str": "24:1"
+  },
+  "NVS": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "NXE": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "OGZD": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "OKLO": {
+    "ratio": 28.0,
+    "ratio_str": "28:1"
+  },
+  "ORAN": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "ORCL": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "ORLY": {
+    "ratio": 222.0,
+    "ratio_str": "222:1"
+  },
+  "OXY": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "PAAS": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "PAC": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "PAGS": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "PANW": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "PATH": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "PBI": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "PBR": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "PCAR": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "PCRF": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "PDD": {
+    "ratio": 25.0,
+    "ratio_str": "25:1"
+  },
+  "PEP": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "PETR3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "PFE": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "PG": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "PHG": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "PINS": {
+    "ratio": 7.0,
+    "ratio_str": "7:1"
+  },
+  "PKS": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "PLTR": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "PM": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "PRIO3": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "PSO": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "PSQ": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "PSX": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "PTR": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "PYPL": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "QCOM": {
+    "ratio": 11.0,
+    "ratio_str": "11:1"
+  },
+  "QQQ": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "RACE": {
+    "ratio": 83.0,
+    "ratio_str": "83:1"
+  },
+  "RBLX": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "RCTB4": {
+    "ratio": 0.001,
+    "ratio_str": "1:1000"
+  },
+  "RENT3": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "RGTI": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "RIO": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "RIOT": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "RKLB": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "ROKU": {
+    "ratio": 13.0,
+    "ratio_str": "13:1"
+  },
+  "ROST": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "RSP": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "RTX": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "SAN": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "SAP": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "SATL": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "SBS": {
+    "ratio": 0.5,
+    "ratio_str": "1:2"
+  },
+  "SBSP3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "SBUX": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "SCCO": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "SCHW": {
+    "ratio": 13.0,
+    "ratio_str": "13:1"
+  },
+  "SDA": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "SE": {
+    "ratio": 32.0,
+    "ratio_str": "32:1"
+  },
+  "SH": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "SHEL": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "SHOP": {
+    "ratio": 107.0,
+    "ratio_str": "107:1"
+  },
+  "SHPW": {
+    "ratio": 0.5,
+    "ratio_str": "1:2"
+  },
+  "SI": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "SID": {
+    "ratio": 0.125,
+    "ratio_str": "1:8"
+  },
+  "SIEGY": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "SLB": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "SLV": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "SMH": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "SMSN": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "SNA": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "SNAP": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "SNOW": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "SNP": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "SONY": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "SPCE": {
+    "ratio": 0.5,
+    "ratio_str": "1:2"
+  },
+  "SPGI": {
+    "ratio": 45.0,
+    "ratio_str": "45:1"
+  },
+  "SPHQ": {
+    "ratio": 14.0,
+    "ratio_str": "14:1"
+  },
+  "SPOT": {
+    "ratio": 28.0,
+    "ratio_str": "28:1"
+  },
+  "SPXL": {
+    "ratio": 25.0,
+    "ratio_str": "25:1"
+  },
+  "SPY": {
+    "ratio": 60.0,
+    "ratio_str": "60:1"
+  },
+  "STLA": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "STNE": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "SUZ": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "SUZB3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "SWKS": {
+    "ratio": 21.0,
+    "ratio_str": "21:1"
+  },
+  "SYY": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "T": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "TCOM": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "TEAM": {
+    "ratio": 47.0,
+    "ratio_str": "47:1"
+  },
+  "TEFO": {
+    "ratio": 8.0,
+    "ratio_str": "8:1"
+  },
+  "TEM": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "TEN": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "TGT": {
+    "ratio": 24.0,
+    "ratio_str": "24:1"
+  },
+  "TILAY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "TIMB": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "TIMS3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "TJX": {
+    "ratio": 22.0,
+    "ratio_str": "22:1"
+  },
+  "TM": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "TMO": {
+    "ratio": 22.0,
+    "ratio_str": "22:1"
+  },
+  "TMUS": {
+    "ratio": 33.0,
+    "ratio_str": "33:1"
+  },
+  "TQQQ": {
+    "ratio": 25.0,
+    "ratio_str": "25:1"
+  },
+  "TRIP": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "TRVV": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "TSLA": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "TSM": {
+    "ratio": 9.0,
+    "ratio_str": "9:1"
+  },
+  "TTE": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "TTM": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "TV": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "TWLO": {
+    "ratio": 36.0,
+    "ratio_str": "36:1"
+  },
+  "TWTR": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "TXN": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "TXR": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "UAL": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "UBER": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "UGP": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "UL": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "NU": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "UNH": {
+    "ratio": 33.0,
+    "ratio_str": "33:1"
+  },
+  "UNP": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "UPST": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "URA": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "URBN": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "USB": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "USO": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "V": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "VALE": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "VALE3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "VEA": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "VIG": {
+    "ratio": 39.0,
+    "ratio_str": "39:1"
+  },
+  "VIST": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "VIV": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "VIVT3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "VOD": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "VRSN": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "VRTX": {
+    "ratio": 101.0,
+    "ratio_str": "101:1"
+  },
+  "VST": {
+    "ratio": 26.0,
+    "ratio_str": "26:1"
+  },
+  "VXX": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "VZ": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "WBA": {
+    "ratio": 3.0,
+    "ratio_str": "3:1"
+  },
+  "WBO": {
+    "ratio": 6.0,
+    "ratio_str": "6:1"
+  },
+  "WEGE3": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "WFC": {
+    "ratio": 5.0,
+    "ratio_str": "5:1"
+  },
+  "WMT": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "XLB": {
+    "ratio": 18.0,
+    "ratio_str": "18:1"
+  },
+  "XLC": {
+    "ratio": 19.0,
+    "ratio_str": "19:1"
+  },
+  "XLE": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "XLF": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "XLI": {
+    "ratio": 28.0,
+    "ratio_str": "28:1"
+  },
+  "XLK": {
+    "ratio": 46.0,
+    "ratio_str": "46:1"
+  },
+  "XLP": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "XLRE": {
+    "ratio": 9.0,
+    "ratio_str": "9:1"
+  },
+  "XLU": {
+    "ratio": 15.0,
+    "ratio_str": "15:1"
+  },
+  "XLV": {
+    "ratio": 29.0,
+    "ratio_str": "29:1"
+  },
+  "XLY": {
+    "ratio": 43.0,
+    "ratio_str": "43:1"
+  },
+  "XME": {
+    "ratio": 30.0,
+    "ratio_str": "30:1"
+  },
+  "XOM": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "XP": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "XPEV": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "XROX": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "XYZ": {
+    "ratio": 20.0,
+    "ratio_str": "20:1"
+  },
+  "YELP": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "YZCA": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "ZM": {
+    "ratio": 47.0,
+    "ratio_str": "47:1"
+  },
+  "CRWD": {
+    "ratio": 79.0,
+    "ratio_str": "79:1"
+  },
+  "ANET": {
+    "ratio": 29.0,
+    "ratio_str": "29:1"
+  },
+  "O": {
+    "ratio": 13.0,
+    "ratio_str": "13:1"
+  },
+  "GLNG": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "SNDK": {
+    "ratio": 170.0,
+    "ratio_str": "170:1"
+  },
+  "NBIS": {
+    "ratio": 27.0,
+    "ratio_str": "27:1"
+  },
+  "HIMS": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "ONDS": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "COP": {
+    "ratio": 25.0,
+    "ratio_str": "25:1"
+  },
+  "NEE": {
+    "ratio": 19.0,
+    "ratio_str": "19:1"
+  },
+  "MP": {
+    "ratio": 10.0,
+    "ratio_str": "10:1"
+  },
+  "CCJ": {
+    "ratio": 23.0,
+    "ratio_str": "23:1"
+  },
+  "FISV": {
+    "ratio": 11.0,
+    "ratio_str": "11:1"
+  },
+  "BNY": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  },
+  "EMBJ": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "MRSH": {
+    "ratio": 16.0,
+    "ratio_str": "16:1"
+  },
+  "NVO": {
+    "ratio": 7.0,
+    "ratio_str": "7:1"
+  },
+  "SPCX": {
+    "ratio": 50.0,
+    "ratio_str": "50:1"
+  },
+  "AXIA": {
+    "ratio": 0.25,
+    "ratio_str": "1:4"
+  },
+  "BPA11": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "BAC": {
+    "ratio": 4.0,
+    "ratio_str": "4:1"
+  },
+  "DIS": {
+    "ratio": 12.0,
+    "ratio_str": "12:1"
+  },
+  "NEC1": {
+    "ratio": 0.3333333333333333,
+    "ratio_str": "1:3"
+  },
+  "TIIAY": {
+    "ratio": 1.0,
+    "ratio_str": "1:1"
+  },
+  "UN": {
+    "ratio": 2.0,
+    "ratio_str": "2:1"
+  }
+}

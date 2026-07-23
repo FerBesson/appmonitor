@@ -169,6 +169,13 @@
                             <span class="tab-desc">Resultados trimestrales</span>
                         </div>
                     </button>
+                    <button class="view-selector-tab" id="tab-btn-arbitraje" onclick="switchTab('arbitraje')">
+                        <span class="tab-icon">⚖️</span>
+                        <div class="tab-text-group">
+                            <span class="tab-title">Arbitraje CCL Implícito</span>
+                            <span class="tab-desc">Scanner de primas y descuentos</span>
+                        </div>
+                    </button>
                 </div>
 
                 <div class="chart-section-header" id="tecnico-header">
@@ -275,6 +282,49 @@
                             <!-- Monthly Matrix View -->
                             <div id="earnings-monthly-grid" class="earnings-monthly-grid" style="display: none;">
                                 <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arbitraje & CCL Implícito Scanner Workspace -->
+                    <div id="chart-arbitraje-workspace" style="display: none;" class="arbitraje-workspace">
+                        <div class="arbitraje-card">
+                            <div class="arbitraje-header">
+                                <div class="arbitraje-header-title-group">
+                                    <div class="arbitraje-accent-bar"></div>
+                                    <span class="arbitraje-header-icon">⚖️</span>
+                                    <div class="arbitraje-title-block">
+                                        <h2>Scanner de Arbitraje & CCL Implícito de CEDEARs</h2>
+                                        <p class="arbitraje-subtitle">Detección de oportunidades con descuento y sobreprecios (primas) respecto al dólar CCL del mercado (<strong id="arb-market-ccl-val">ARS --</strong>)</p>
+                                    </div>
+                                </div>
+                                <div class="arbitraje-filter-tabs" id="arbitraje-filter-tabs">
+                                    <button class="arbitraje-tab active" data-filter="all">Todos</button>
+                                    <button class="arbitraje-tab" data-filter="discount">🟢 Con Descuento</button>
+                                    <button class="arbitraje-tab" data-filter="premium">🔴 Con Prima (Sobreprecio)</button>
+                                    <button class="arbitraje-tab" data-filter="neutral">⚪ Alineados</button>
+                                </div>
+                            </div>
+
+                            <div class="arbitraje-table-container">
+                                <table class="arbitraje-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-ticker" data-sort="ticker">CEDEAR <span class="sort-icon"></span></th>
+                                            <th class="th-ratio" data-sort="ratio">RATIO <span class="sort-icon"></span></th>
+                                            <th class="th-price-usd" data-sort="price_us">SUBYACENTE (USD) <span class="sort-icon"></span></th>
+                                            <th class="th-ccl" data-sort="implicit_ccl">CCL IMPLÍCITO <span class="sort-icon"></span></th>
+                                            <th class="th-price-ars" data-sort="price_ars">PRECIO ARS <span class="sort-icon"></span></th>
+                                            <th class="th-price-hipo" data-sort="price_hipotetico">PRECIO HIPOTÉTICO <span class="sort-icon"></span></th>
+                                            <th class="th-brecha sorted" data-sort="variacion_pct">VARIACIÓN % <span class="sort-icon">▼</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="arbitraje-tbody">
+                                        <tr class="loading-row">
+                                            <td colspan="7">Escaneando arbitrajes y precios hipotéticos...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

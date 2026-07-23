@@ -189,6 +189,40 @@ async def api_earnings_month(year: int = None, month: int = None, panel: str = "
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error obteniendo earnings mensuales: {str(e)}")
 
+@app.get("/api/cedear-ratios")
+async def api_cedear_ratios():
+    try:
+        from backend.config import CEDEAR_RATIOS_JSON_PATH
+        if os.path.exists(CEDEAR_RATIOS_JSON_PATH):
+            def read_ratios():
+                with open(CEDEAR_RATIOS_JSON_PATH, "r", encoding="utf-8") as f:
+                    return f.read()
+            raw_json = await asyncio.to_thread(read_ratios)
+            return Response(content=raw_json, media_type="application/json")
+        return {}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo ratios de CEDEARs: {str(e)}")
+
+@app.get("/api/us-quotes")
+async def api_us_quotes():
+    try:
+        import json
+        from backend.config import DATOS_DIR
+        cedears_path = os.path.join(DATOS_DIR, "cedears.json")
+        ars_tickers = []
+        if os.path.exists(cedears_path):
+            def read_tickers():
+                with open(cedears_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return [item["ticker"].upper().replace(".BA", "").strip() for item in data.get("cedears", []) if item.get("currency") == "ARS"]
+            ars_tickers = await asyncio.to_thread(read_tickers)
+        from backend.services.yahoo_finance import yahoo_finance_service
+        us_prices = await yahoo_finance_service.fetch_us_stock_prices_batch(ars_tickers)
+        return us_prices
+    except Exception as e:
+        print(f"Error en /api/us-quotes: {e}")
+        return {}
+
 
 
 

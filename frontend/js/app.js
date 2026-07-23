@@ -43,7 +43,10 @@ const state = {
     moversCurrency: 'ARS', // 'ARS' | 'USD' | 'USDC'
     oldPrices: {}, // Track prices for data-flash animations on update
     isOnline: true,
-    consecutiveFailures: 0
+    consecutiveFailures: 0,
+    cedearRatios: {},
+    usQuotes: {},
+    currentRatio: 1
 };
 
 function getBaseTicker(ticker) {
@@ -165,12 +168,39 @@ function calculateSMAOnValue(data, period) {
 document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
     updateHeaderFlag();
+    loadCedearRatios();
+    updateArbitrageTabVisibility();
     refreshAllData();
     startCountdown();
     initRRG();
     setTimeout(updateAssetTabPill, 50);
     window.addEventListener('resize', updateAssetTabPill);
 });
+
+function updateArbitrageTabVisibility() {
+    const btnArbitraje = document.getElementById('tab-btn-arbitraje');
+    if (!btnArbitraje) return;
+
+    if (state.assetType === 'cedears') {
+        btnArbitraje.style.display = 'flex';
+    } else {
+        btnArbitraje.style.display = 'none';
+        if (state.rrgTab === 'arbitraje') {
+            switchTab('tecnico');
+        }
+    }
+}
+
+async function loadCedearRatios() {
+    try {
+        const res = await fetch('/api/cedear-ratios');
+        if (res.ok) {
+            state.cedearRatios = await res.json();
+        }
+    } catch (e) {
+        console.error('Error cargando ratios de CEDEARs:', e);
+    }
+}
 
 function updateAssetTabPill() {
     const sliderPill = document.getElementById('asset-type-slider-pill');
@@ -226,6 +256,7 @@ function initEventListeners() {
             setTimeout(() => {
                 state.assetType = targetType;
                 updateHeaderFlag();
+                updateArbitrageTabVisibility();
 
                 const panelContainer = document.getElementById('panel-filter-container');
                 const usdcTab = document.getElementById('currency-usdc-tab');
@@ -871,6 +902,142 @@ async function selectAsset(ticker) {
 function updateQuickMetrics(asset) {
     const formatter = asset.currency === 'USDC' ? formatUSDC : (asset.currency === 'USD' ? formatUSD : formatARS);
     document.getElementById('metric-close').textContent = formatter.format(asset.price);
+    updateCedearCalculator(asset);
+}
+
+function updateCedearCalculator(asset) {
+    const calcSection = document.getElementById('cedear-calc-section');
+    if (!calcSection) return;
+
+    if (!asset || (asset.panel !== 'cedear' && state.assetType !== 'cedears')) {
+        calcSection.style.display = 'none';
+        return;
+    }
+
+    calcSection.style.display = 'block';
+
+    const cleanSym = (asset.ticker || '').toUpperCase().replace('.BA', '').trim();
+    const baseTicker = getBaseTicker(cleanSym);
+
+    // 1. Obtener Ratio
+    const ratio = state.cedearRatios[baseTicker] || state.cedearRatios[cleanSym] || 1;
+    state.currentRatio = ratio;
+
+    const ratioValEl = document.getElementById('calc-ratio-val');
+    const ratioDescEl = document.getElementById('calc-ratio-desc');
+    if (ratioValEl) ratioValEl.textContent = `${ratio} : 1`;
+    if (ratioDescEl) ratioDescEl.textContent = `${ratio} CEDEARs = 1 acción EE.UU. (${baseTicker})`;
+
+    // 2. Precios en ARS y USD
+    let priceARS = asset.currency === 'ARS' ? asset.price : 0;
+    let priceUSDD = asset.currency === 'USD' ? asset.price : 0;
+
+    // Buscar variante equivalente en ARS y USD (D) en state.cedears
+    const arsAsset = state.cedears.find(c => c.currency === 'ARS' && getBaseTicker(c.ticker) === baseTicker);
+    const usdAsset = state.cedears.find(c => (c.currency === 'USD' || c.ticker.endsWith('D')) && getBaseTicker(c.ticker) === baseTicker);
+
+    if (arsAsset && arsAsset.price > 0) priceARS = arsAsset.price;
+    if (usdAsset && usdAsset.price > 0) priceUSDD = usdAsset.price;
+
+    // Benchmark CCL de mercado
+    let benchmarkCCL = 0;
+    const usdCclQuote = state.stocks.find(s => s.ticker === 'USD_CCL');
+    if (usdCclQuote && usdCclQuote.price > 0) {
+        benchmarkCCL = usdCclQuote.price;
+    }
+    if (!benchmarkCCL) {
+        const mervalPriceEl = document.getElementById('merval-ccl-price');
+        if (mervalPriceEl && mervalPriceEl.textContent) {
+            const val = parseFloat(mervalPriceEl.textContent.replace(/[^\d,.-]/g, '').replace(',', '.'));
+            if (!isNaN(val)) benchmarkCCL = val;
+        }
+    }
+    if (!benchmarkCCL) benchmarkCCL = 1580;
+
+    let implicitCCL = 0;
+    let usUnderlyingPrice = 0;
+
+    if (priceARS > 0 && priceUSDD > 0) {
+        implicitCCL = priceARS / priceUSDD;
+        usUnderlyingPrice = priceUSDD * ratio;
+    } else if (priceARS > 0 && benchmarkCCL > 0) {
+        implicitCCL = benchmarkCCL;
+        usUnderlyingPrice = (priceARS * ratio) / benchmarkCCL;
+    }
+
+    const usPriceEl = document.getElementById('calc-us-price');
+    const implicitCclEl = document.getElementById('calc-implicit-ccl');
+    const cclDiffLabelEl = document.getElementById('calc-ccl-diff-label');
+    const brechaPillEl = document.getElementById('calc-brecha-pill');
+
+    if (usPriceEl) {
+        usPriceEl.textContent = usUnderlyingPrice > 0 
+            ? `USD ${usUnderlyingPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` 
+            : 'USD N/A';
+    }
+
+    if (implicitCclEl) {
+        implicitCclEl.textContent = implicitCCL > 0 
+            ? `ARS ${implicitCCL.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` 
+            : 'ARS N/A';
+    }
+
+    if (cclDiffLabelEl) {
+        cclDiffLabelEl.textContent = benchmarkCCL > 0 
+            ? `vs CCL Mercado (ARS ${benchmarkCCL.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})` 
+            : 'vs CCL Mercado';
+    }
+
+    // Brecha % vs CCL Benchmark
+    if (implicitCCL > 0 && benchmarkCCL > 0 && brechaPillEl) {
+        const brechaPct = ((implicitCCL - benchmarkCCL) / benchmarkCCL) * 100;
+        const sign = brechaPct >= 0 ? '+' : '';
+        brechaPillEl.textContent = `${sign}${brechaPct.toFixed(2)}% Brecha`;
+        
+        brechaPillEl.classList.remove('discount', 'premium', 'neutral');
+        if (brechaPct < -0.3) {
+            brechaPillEl.classList.add('discount');
+            brechaPillEl.title = 'CEDEAR con descuento (CCL Implícito menor que el mercado)';
+        } else if (brechaPct > 0.3) {
+            brechaPillEl.classList.add('premium');
+            brechaPillEl.title = 'CEDEAR con sobreprecio / prima (CCL Implícito mayor que el mercado)';
+        } else {
+            brechaPillEl.classList.add('neutral');
+            brechaPillEl.title = 'CCL Implícito alineado con el mercado';
+        }
+    }
+
+    // Configurar Simulador
+    const simUsQtyInput = document.getElementById('sim-us-qty');
+    const simCedearQtyInput = document.getElementById('sim-cedear-qty');
+    const simTotalArsEl = document.getElementById('sim-total-ars');
+
+    if (simUsQtyInput && simCedearQtyInput && simTotalArsEl) {
+        const updateSimulator = (fromField) => {
+            const currentRatio = state.currentRatio || 1;
+            const currentPriceARS = priceARS || 0;
+
+            if (fromField === 'us') {
+                const usQty = parseFloat(simUsQtyInput.value) || 0;
+                const cedearQty = Math.round(usQty * currentRatio);
+                simCedearQtyInput.value = cedearQty;
+                const totalARS = cedearQty * currentPriceARS;
+                simTotalArsEl.textContent = `ARS ${totalARS.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            } else {
+                const cedearQty = parseFloat(simCedearQtyInput.value) || 0;
+                const usQty = parseFloat((cedearQty / currentRatio).toFixed(4)) || 0;
+                simUsQtyInput.value = usQty;
+                const totalARS = cedearQty * currentPriceARS;
+                simTotalArsEl.textContent = `ARS ${totalARS.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            }
+        };
+
+        simUsQtyInput.oninput = () => updateSimulator('us');
+        simCedearQtyInput.oninput = () => updateSimulator('cedear');
+
+        simUsQtyInput.value = 1;
+        updateSimulator('us');
+    }
 }
 
 function renderChart(historyPoints, currency) {
@@ -1962,12 +2129,14 @@ function switchTab(tabId) {
     const btnRotacion = document.getElementById('tab-btn-rotacion');
     const btnEMA200 = document.getElementById('tab-btn-ema200');
     const btnEarnings = document.getElementById('tab-btn-earnings');
+    const btnArbitraje = document.getElementById('tab-btn-arbitraje');
     
     const workspaceTecnico = document.getElementById('chart-workspace');
     const workspaceEmpty = document.getElementById('chart-empty-state');
     const workspaceRotation = document.getElementById('chart-rotation-workspace');
     const workspaceEMA200 = document.getElementById('chart-ema200-workspace');
     const workspaceEarnings = document.getElementById('chart-earnings-workspace');
+    const workspaceArbitraje = document.getElementById('chart-arbitraje-workspace');
     
     const controlsRow = document.querySelector('.controls-row');
     const metricsRow = document.querySelector('.asset-metrics');
@@ -1979,10 +2148,12 @@ function switchTab(tabId) {
         if (btnRotacion) btnRotacion.classList.remove('active');
         if (btnEMA200) btnEMA200.classList.remove('active');
         if (btnEarnings) btnEarnings.classList.remove('active');
+        if (btnArbitraje) btnArbitraje.classList.remove('active');
         
         if (workspaceRotation) workspaceRotation.style.display = 'none';
         if (workspaceEMA200) workspaceEMA200.style.display = 'none';
         if (workspaceEarnings) workspaceEarnings.style.display = 'none';
+        if (workspaceArbitraje) workspaceArbitraje.style.display = 'none';
         
         // Mostrar header de técnico
         if (tecnicoHeader) tecnicoHeader.style.display = 'flex';
@@ -2008,11 +2179,13 @@ function switchTab(tabId) {
         if (btnRotacion) btnRotacion.classList.add('active');
         if (btnEMA200) btnEMA200.classList.remove('active');
         if (btnEarnings) btnEarnings.classList.remove('active');
+        if (btnArbitraje) btnArbitraje.classList.remove('active');
         
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
         if (workspaceEMA200) workspaceEMA200.style.display = 'none';
         if (workspaceEarnings) workspaceEarnings.style.display = 'none';
+        if (workspaceArbitraje) workspaceArbitraje.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
@@ -2026,11 +2199,13 @@ function switchTab(tabId) {
         if (btnRotacion) btnRotacion.classList.remove('active');
         if (btnEMA200) btnEMA200.classList.add('active');
         if (btnEarnings) btnEarnings.classList.remove('active');
+        if (btnArbitraje) btnArbitraje.classList.remove('active');
         
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
         if (workspaceRotation) workspaceRotation.style.display = 'none';
         if (workspaceEarnings) workspaceEarnings.style.display = 'none';
+        if (workspaceArbitraje) workspaceArbitraje.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
@@ -2044,11 +2219,13 @@ function switchTab(tabId) {
         if (btnRotacion) btnRotacion.classList.remove('active');
         if (btnEMA200) btnEMA200.classList.remove('active');
         if (btnEarnings) btnEarnings.classList.add('active');
+        if (btnArbitraje) btnArbitraje.classList.remove('active');
         
         if (workspaceTecnico) workspaceTecnico.style.display = 'none';
         if (workspaceEmpty) workspaceEmpty.style.display = 'none';
         if (workspaceRotation) workspaceRotation.style.display = 'none';
         if (workspaceEMA200) workspaceEMA200.style.display = 'none';
+        if (workspaceArbitraje) workspaceArbitraje.style.display = 'none';
         if (fundamentalsBox) fundamentalsBox.style.display = 'none';
         if (controlsRow) controlsRow.style.display = 'none';
         if (metricsRow) metricsRow.style.display = 'none';
@@ -2057,7 +2234,254 @@ function switchTab(tabId) {
         if (workspaceEarnings) workspaceEarnings.style.display = 'flex';
         
         loadEarningsData();
+    } else if (tabId === 'arbitraje') {
+        if (btnTecnico) btnTecnico.classList.remove('active');
+        if (btnRotacion) btnRotacion.classList.remove('active');
+        if (btnEMA200) btnEMA200.classList.remove('active');
+        if (btnEarnings) btnEarnings.classList.remove('active');
+        if (btnArbitraje) btnArbitraje.classList.add('active');
+        
+        if (workspaceTecnico) workspaceTecnico.style.display = 'none';
+        if (workspaceEmpty) workspaceEmpty.style.display = 'none';
+        if (workspaceRotation) workspaceRotation.style.display = 'none';
+        if (workspaceEMA200) workspaceEMA200.style.display = 'none';
+        if (workspaceEarnings) workspaceEarnings.style.display = 'none';
+        if (fundamentalsBox) fundamentalsBox.style.display = 'none';
+        if (controlsRow) controlsRow.style.display = 'none';
+        if (metricsRow) metricsRow.style.display = 'none';
+        if (tecnicoHeader) tecnicoHeader.style.display = 'none';
+        
+        if (workspaceArbitraje) workspaceArbitraje.style.display = 'flex';
+        
+        if (Object.keys(state.usQuotes).length === 0) {
+            loadUsQuotes().then(() => renderArbitrageScanner());
+        } else {
+            renderArbitrageScanner();
+        }
     }
+}
+
+async function loadUsQuotes() {
+    try {
+        const res = await fetch('/api/us-quotes');
+        if (res.ok) {
+            state.usQuotes = await res.json();
+        }
+    } catch (e) {
+        console.error('Error cargando cotizaciones de EE.UU. desde Yahoo Finance:', e);
+    }
+}
+
+function renderArbitrageScanner() {
+    const tbody = document.getElementById('arbitraje-tbody');
+    const marketCclValEl = document.getElementById('arb-market-ccl-val');
+    if (!tbody) return;
+
+    // 1. Obtener CCL de mercado Benchmark
+    let benchmarkCCL = 0;
+    const usdCclQuote = state.stocks.find(s => s.ticker === 'USD_CCL');
+    if (usdCclQuote && usdCclQuote.price > 0) {
+        benchmarkCCL = usdCclQuote.price;
+    }
+    if (!benchmarkCCL) {
+        const mervalPriceEl = document.getElementById('merval-ccl-price');
+        if (mervalPriceEl && mervalPriceEl.textContent) {
+            const val = parseFloat(mervalPriceEl.textContent.replace(/[^\d,.-]/g, '').replace(',', '.'));
+            if (!isNaN(val)) benchmarkCCL = val;
+        }
+    }
+    if (!benchmarkCCL) benchmarkCCL = 1580;
+
+    if (marketCclValEl) {
+        marketCclValEl.textContent = `ARS ${benchmarkCCL.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    // 2. Escanear exclusivamente los CEDEARs en ARS de la base de datos local
+    const arsCedearsList = state.cedears.filter(c => c.currency === 'ARS');
+    if (arsCedearsList.length === 0) {
+        tbody.innerHTML = `<tr class="loading-row"><td colspan="7">Cargando datos de CEDEARs en ARS...</td></tr>`;
+        return;
+    }
+
+    const processedMap = new Map();
+
+    arsCedearsList.forEach(asset => {
+        const cleanSym = (asset.ticker || '').toUpperCase().replace('.BA', '').trim();
+        const baseTicker = getBaseTicker(cleanSym);
+        
+        if (processedMap.has(baseTicker)) return;
+
+        const ratioEntry = state.cedearRatios[cleanSym] || state.cedearRatios[baseTicker];
+        let ratio = 1;
+        let ratioStr = '1:1';
+
+        if (ratioEntry) {
+            if (typeof ratioEntry === 'object') {
+                ratio = ratioEntry.ratio || 1;
+                ratioStr = ratioEntry.ratio_str || `${ratio}:1`;
+            } else if (typeof ratioEntry === 'number') {
+                ratio = ratioEntry;
+                ratioStr = `${ratio}:1`;
+            }
+        }
+        
+        let priceARS = asset.price || 0;
+        let priceUSDD = 0;
+
+        const usdAsset = state.cedears.find(c => (c.currency === 'USD' || c.ticker === cleanSym + 'D' || c.ticker === baseTicker + 'D') && getBaseTicker(c.ticker) === baseTicker && c.ticker !== cleanSym);
+        if (usdAsset && usdAsset.price > 0) priceUSDD = usdAsset.price;
+
+        if (priceARS <= 0) return;
+
+        // Obtener precio en vivo del subyacente en EE.UU. directamente de Yahoo Finance
+        let yfPrice = state.usQuotes[cleanSym] || state.usQuotes[baseTicker] || 0;
+        let priceUS = 0;
+
+        if (yfPrice > 0) {
+            priceUS = yfPrice;
+        } else if (priceUSDD > 0 && (priceARS / priceUSDD) > 300) {
+            priceUS = priceUSDD * ratio;
+        } else {
+            priceUS = (priceARS * ratio) / benchmarkCCL;
+        }
+
+        // Modelo Cuantitativo MTaurus Sheets:
+        // 1. CCL Implícito = (Price_ARS * Ratio) / Price_US
+        const implicitCCL = priceUS > 0 ? (priceARS * ratio) / priceUS : benchmarkCCL;
+
+        // 2. Precio Hipotético = (Price_US * CCL_Benchmark) / Ratio
+        const priceHipotetico = ratio > 0 ? (priceUS * benchmarkCCL) / ratio : priceARS;
+
+        // 3. Variación % (Desvío Teórico vs Precio ARS Actual) = (Price_Hipotético / Price_ARS) - 1
+        const variacionPct = priceARS > 0 ? ((priceHipotetico / priceARS) - 1) * 100 : 0;
+
+        let category = 'neutral';
+        if (variacionPct > 0.15) category = 'discount'; // Oportunidad: Precio teórico > Precio actual (CEDEAR barato)
+        else if (variacionPct < -0.15) category = 'premium'; // Sobreprecio: Precio teórico < Precio actual (CEDEAR caro)
+
+        processedMap.set(baseTicker, {
+            ticker: baseTicker,
+            name: asset.name || baseTicker,
+            ratio: ratio,
+            ratio_str: ratioStr,
+            price_ars: priceARS,
+            price_us: priceUS,
+            implicit_ccl: implicitCCL,
+            price_hipotetico: priceHipotetico,
+            variacion_pct: variacionPct,
+            category: category
+        });
+    });
+
+    let results = Array.from(processedMap.values());
+
+    // 3. Aplicar Filtro de Categoría
+    const currentFilter = state.arbitrajeFilter || 'all';
+    if (currentFilter !== 'all') {
+        results = results.filter(r => r.category === currentFilter);
+    }
+
+    // 4. Aplicar Ordenamiento
+    const sortBy = state.arbitrajeSortBy || 'variacion_pct';
+    const sortDir = state.arbitrajeSortDirection || 'desc';
+
+    results.sort((a, b) => {
+        let valA = a[sortBy];
+        let valB = b[sortBy];
+
+        if (typeof valA === 'string') {
+            return sortDir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        }
+        return sortDir === 'asc' ? (valA - valB) : (valB - valA);
+    });
+
+    // 5. Renderizar Filas
+    if (results.length === 0) {
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No se encontraron CEDEARs para el filtro seleccionado.</td></tr>`;
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    results.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = 'arbitraje-row';
+        tr.onclick = () => {
+            state.assetType = 'cedears';
+            selectAsset(item.ticker);
+            switchTab('tecnico');
+        };
+
+        const sign = item.variacion_pct >= 0 ? '+' : '';
+        const pillClass = item.category === 'discount' ? 'discount' : (item.category === 'premium' ? 'premium' : 'neutral');
+        const pillLabel = item.category === 'discount' ? '🟢 Oportunidad' : (item.category === 'premium' ? '🔴 Sobreprecio' : '⚪ Alineado');
+
+        tr.innerHTML = `
+            <td class="col-ticker">
+                <div class="ticker-cell">
+                    <img src="${getCompanyLogoSrc(item.ticker)}" class="ticker-logo" onerror="handleLogoError(this, '${item.ticker}')" alt="">
+                    <span class="ticker-logo-fallback" style="display:none;">${item.ticker.slice(0, 2)}</span>
+                    <strong class="ticker-code">${item.ticker}</strong>
+                </div>
+            </td>
+            <td><strong style="color: var(--accent-primary);">${item.ratio_str}</strong></td>
+            <td>USD ${item.price_us > 0 ? item.price_us.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : 'N/A'}</td>
+            <td><strong style="color: #ffffff;">ARS ${item.implicit_ccl.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+            <td><strong>$ ${item.price_ars.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+            <td><strong style="color: var(--accent-primary-light);">$ ${item.price_hipotetico.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+            <td>
+                <span class="brecha-pill ${pillClass}">
+                    ${sign}${item.variacion_pct.toFixed(2)}% (${pillLabel})
+                </span>
+            </td>
+        `;
+        fragment.appendChild(tr);
+    });
+
+    tbody.innerHTML = '';
+    tbody.appendChild(fragment);
+
+    initArbitrageTableEvents();
+}
+
+function initArbitrageTableEvents() {
+    const filterTabs = document.querySelectorAll('.arbitraje-tab');
+    filterTabs.forEach(tab => {
+        tab.onclick = (e) => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            state.arbitrajeFilter = e.target.dataset.filter;
+            renderArbitrageScanner();
+        };
+    });
+
+    const headers = document.querySelectorAll('.arbitraje-table th');
+    headers.forEach(th => {
+        th.onclick = () => {
+            const sortKey = th.dataset.sort;
+            if (!sortKey) return;
+
+            if (state.arbitrajeSortBy === sortKey) {
+                state.arbitrajeSortDirection = state.arbitrajeSortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                state.arbitrajeSortBy = sortKey;
+                state.arbitrajeSortDirection = 'asc';
+            }
+
+            headers.forEach(h => {
+                h.classList.remove('sorted');
+                const icon = h.querySelector('.sort-icon');
+                if (icon) icon.textContent = '';
+            });
+
+            th.classList.add('sorted');
+            const icon = th.querySelector('.sort-icon');
+            if (icon) {
+                icon.textContent = state.arbitrajeSortDirection === 'asc' ? '▲' : '▼';
+            }
+
+            renderArbitrageScanner();
+        };
+    });
 }
 
 window.switchTab = switchTab;
@@ -2876,11 +3300,6 @@ function renderWeeklyEarnings(data) {
         `;
         grid.appendChild(dayCard);
     });
-}
-
-function getCompanyLogoSrc(sym) {
-    if (!sym) return '';
-    return `https://assets.parqet.com/logos/symbol/${sym.toUpperCase().trim()}`;
 }
 
 function renderCompanyTile(comp, isPastOrToday = false) {

@@ -190,4 +190,118 @@ class YahooFinanceService:
             description="Información fundamental no disponible."
         )
 
+    async def fetch_us_stock_prices_batch(self, tickers: list) -> Dict[str, float]:
+        import asyncio
+        client = self.get_client()
+        results = {}
+        
+        if not hasattr(self, "_us_prices_cache"):
+            self._us_prices_cache = {}
+            self._us_prices_cache_time = 0
+
+        now = time.time()
+        if now - getattr(self, "_us_prices_cache_time", 0) < 300 and len(self._us_prices_cache) > 20:
+            return self._us_prices_cache
+
+        # Mapeo de tickers BYMA a símbolos Yahoo Finance
+        symbol_map = {
+            "BRKB": "BRK-B",
+            "DISN": "DIS",
+            "WBO": "WB",
+            "TEFO": "TEF",
+            "KOFM": "KOF",
+            "AKO.B": "AKO-B",
+            "BF.B": "BF-B",
+            "TEN": "TS",
+            "BA.C": "BAC",
+            "ERJ": "ERJ",
+            "EMBJ": "ERJ",
+            "ELPC": "ELP",
+            "PETR3": "PETR3.SA",
+            "VALE3": "VALE3.SA",
+            "ITUB3": "ITUB3.SA",
+            "BBDC3": "BBDC3.SA",
+            "BBAS3": "BBAS3.SA",
+            "LREN3": "LREN3.SA",
+            "MGLU3": "MGLU3.SA",
+            "RENT3": "RENT3.SA",
+            "SUZB3": "SUZB3.SA",
+            "WEGE3": "WEGE3.SA",
+            "CSNA3": "CSNA3.SA",
+            "VIVT3": "VIVT3.SA",
+            "PRIO3": "PRIO3.SA",
+            "SAN": "SAN",
+            "BSBR": "BSBR",
+            "BSN": "BN.PA"
+        }
+
+        # Tasas de cambio de respaldo
+        fx_rates = {"USD": 1.0, "BRL": 5.50, "EUR": 1.08, "GBP": 1.29}
+        try:
+            r_brl = await client.get("https://query1.finance.yahoo.com/v8/finance/chart/USDBRL=X?interval=1d&range=1d", timeout=3.0)
+            if r_brl.status_code == 200:
+                res_brl = r_brl.json().get("chart", {}).get("result")
+                if res_brl:
+                    meta_b = res_brl[0].get("meta", {})
+                    p_brl = meta_b.get("regularMarketPrice") or meta_b.get("chartPreviousClose")
+                    if p_brl and p_brl > 0: fx_rates["BRL"] = float(p_brl)
+
+            r_eur = await client.get("https://query1.finance.yahoo.com/v8/finance/chart/EURUSD=X?interval=1d&range=1d", timeout=3.0)
+            if r_eur.status_code == 200:
+                res_eur = r_eur.json().get("chart", {}).get("result")
+                if res_eur:
+                    meta_e = res_eur[0].get("meta", {})
+                    p_eur = meta_e.get("regularMarketPrice") or meta_e.get("chartPreviousClose")
+                    if p_eur and p_eur > 0: fx_rates["EUR"] = float(p_eur)
+        except Exception:
+            pass
+
+        async def fetch_one(ticker):
+            raw_sym = ticker.upper().replace(".BA", "").strip()
+            clean = symbol_map.get(raw_sym, raw_sym)
+
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{clean}?interval=1d&range=1d"
+            try:
+                resp = await client.get(url, timeout=4.0)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    res = data.get("chart", {}).get("result")
+                    if res and len(res) > 0:
+                        meta = res[0].get("meta", {})
+                        price = meta.get("regularMarketPrice") or meta.get("chartPreviousClose")
+                        curr = meta.get("currency", "USD").upper()
+                        
+                        if price and price > 0:
+                            price_usd = float(price)
+                            # Convertir divisas a USD
+                            if curr == "BRL":
+                                price_usd = price_usd / fx_rates["BRL"]
+                            elif curr == "EUR":
+                                price_usd = price_usd * fx_rates["EUR"]
+                            elif curr == "GBP":
+                                price_usd = price_usd * fx_rates["GBP"]
+                            elif curr == "GBP" or curr == "GBP":
+                                price_usd = (price_usd / 100.0) * fx_rates["GBP"]
+                                
+                            return ticker, raw_sym, price_usd
+            except Exception:
+                pass
+            return ticker, raw_sym, 0.0
+
+        tasks = [fetch_one(t) for t in tickers]
+        batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for item in batch_results:
+            if isinstance(item, tuple) and len(item) == 3:
+                orig_t, clean_t, price = item
+                if price > 0:
+                    results[orig_t] = price
+                    results[clean_t] = price
+
+        if results:
+            self._us_prices_cache.update(results)
+            self._us_prices_cache_time = now
+
+        return self._us_prices_cache
+
 yahoo_finance_service = YahooFinanceService()

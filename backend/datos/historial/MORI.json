@@ -31873,5 +31873,22 @@
     "macd": -0.5107,
     "macd_signal": -0.5011,
     "macd_hist": -0.0096
+  },
+  {
+    "date": "2026-07-22",
+    "open": 25.6,
+    "high": 26.3,
+    "low": 25.5,
+    "close": 26.0,
+    "volume": 3370678.0,
+    "sma20": 26.13,
+    "sma50": 27.32,
+    "rsi": 42.8,
+    "bb_upper": 26.86,
+    "bb_lower": 25.4,
+    "bb_middle": 26.13,
+    "macd": -0.477,
+    "macd_signal": -0.4963,
+    "macd_hist": 0.0193
   }
 ]

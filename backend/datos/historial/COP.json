@@ -746,5 +746,39 @@
     "macd": 92.6307,
     "macd_signal": -1.9153,
     "macd_hist": 94.546
+  },
+  {
+    "date": "2026-07-22",
+    "open": 7500.0,
+    "high": 7535.0,
+    "low": 7465.0,
+    "close": 7480.0,
+    "volume": 7848.0,
+    "sma20": 6828.25,
+    "sma50": null,
+    "rsi": 65.98,
+    "bb_upper": 7489.61,
+    "bb_lower": 6166.89,
+    "bb_middle": 6828.25,
+    "macd": 122.3069,
+    "macd_signal": 22.9291,
+    "macd_hist": 99.3778
+  },
+  {
+    "date": "2026-07-23",
+    "open": 7670.0,
+    "high": 7700.0,
+    "low": 7655.0,
+    "close": 7665.0,
+    "volume": 2779.0,
+    "sma20": 6880.25,
+    "sma50": null,
+    "rsi": 69.59,
+    "bb_upper": 7627.47,
+    "bb_lower": 6133.03,
+    "bb_middle": 6880.25,
+    "macd": 158.9214,
+    "macd_signal": 50.1276,
+    "macd_hist": 108.7938
   }
 ]

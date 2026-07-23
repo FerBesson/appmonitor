@@ -388,7 +388,7 @@ body {
     align-items: center;
 }
 
-.panel-select-tabs, .currency-select-tabs, .asset-type-select-tabs {
+.panel-select-tabs, .currency-select-tabs {
     display: flex;
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--border-color);
@@ -396,7 +396,58 @@ body {
     padding: 2px;
 }
 
-.panel-tab, .currency-tab, .asset-type-tab {
+.panel-select-tabs {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 200px;
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: left center;
+}
+
+.panel-select-tabs.hidden-filter {
+    opacity: 0 !important;
+    max-width: 0px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-width: 0 !important;
+    transform: scale(0.85) !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+.currency-tab#currency-usdc-tab,
+.movers-currency-tab#movers-currency-usdc-tab {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 70px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.currency-tab#currency-usdc-tab.hidden-filter,
+.movers-currency-tab#movers-currency-usdc-tab.hidden-filter {
+    opacity: 0 !important;
+    max-width: 0px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-width: 0 !important;
+    transform: scale(0.85) !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+.panel-tab, .currency-tab {
     background: transparent;
     border: none;
     color: var(--text-secondary);
@@ -408,20 +459,72 @@ body {
     transition: all 0.25s ease;
 }
 
-.panel-tab.active, .currency-tab.active, .asset-type-tab.active {
+.panel-tab.active, .currency-tab.active {
     background: rgba(var(--accent-rgb), 0.12);
     color: var(--accent-primary);
     box-shadow: inset 0 0 8px rgba(var(--accent-rgb), 0.06);
 }
 
-.panel-tab:hover:not(.active), .currency-tab:hover:not(.active), .asset-type-tab:hover:not(.active) {
+.panel-tab:hover:not(.active), .currency-tab:hover:not(.active) {
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.04);
 }
 
 .asset-type-select-tabs {
+    position: relative;
+    display: inline-flex;
     align-self: flex-start;
     margin-bottom: 4px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.asset-type-slider-pill {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: 50%;
+    background: rgba(var(--accent-rgb), 0.16);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 6px;
+    box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.25), inset 0 0 8px rgba(var(--accent-rgb), 0.1);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                left 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.asset-type-tab {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none;
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.asset-type-tab.active {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.6);
+}
+
+.asset-type-tab:hover:not(.active) {
+    color: var(--text-primary);
 }
 
 .search-box {
@@ -3441,6 +3544,82 @@ body,
     font-size: 11.5px;
     color: var(--text-secondary);
 }
+
+/* ==========================================================================
+   SMOOTH ASSET SWITCH TRANSITIONS (ACCIONES ↔ CEDEARS)
+   ========================================================================== */
+
+.asset-transition-out {
+    opacity: 0 !important;
+    transform: translateY(6px) scale(0.992) !important;
+    filter: blur(3px) !important;
+    transition: opacity 0.14s cubic-bezier(0.4, 0, 1, 1),
+                transform 0.14s cubic-bezier(0.4, 0, 1, 1),
+                filter 0.14s cubic-bezier(0.4, 0, 1, 1) !important;
+}
+
+.asset-transition-in {
+    animation: assetEntrance 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes assetEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.992);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Staggered Row Fade-in for Table & Sidebar Earnings */
+.table-container.asset-transition-in tbody tr,
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row {
+    animation: tableRowFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tableRowFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-container.asset-transition-in tbody tr:nth-child(1),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(1) { animation-delay: 0.02s; }
+.table-container.asset-transition-in tbody tr:nth-child(2),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(2) { animation-delay: 0.04s; }
+.table-container.asset-transition-in tbody tr:nth-child(3),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(3) { animation-delay: 0.06s; }
+.table-container.asset-transition-in tbody tr:nth-child(4),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(4) { animation-delay: 0.08s; }
+.table-container.asset-transition-in tbody tr:nth-child(5),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(5) { animation-delay: 0.10s; }
+.table-container.asset-transition-in tbody tr:nth-child(6),
+.sidebar-earnings-section.asset-transition-in .sidebar-earnings-row:nth-child(6) { animation-delay: 0.12s; }
+.table-container.asset-transition-in tbody tr:nth-child(7) { animation-delay: 0.14s; }
+.table-container.asset-transition-in tbody tr:nth-child(8) { animation-delay: 0.16s; }
+.table-container.asset-transition-in tbody tr:nth-child(9) { animation-delay: 0.18s; }
+.table-container.asset-transition-in tbody tr:nth-child(10) { animation-delay: 0.20s; }
+
+/* Header Flag Pop Animation */
+@keyframes flagPop {
+    0% { transform: scale(0.5) rotate(-15deg); opacity: 0.2; }
+    60% { transform: scale(1.18) rotate(4deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.brand-flag.flag-pop {
+    animation: flagPop 0.42s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 
 
 

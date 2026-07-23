@@ -82,7 +82,8 @@
             <!-- LEFT: Stocks Table -->
             <div class="panel-section">
                 <div class="section-toolbar">
-                    <div class="asset-type-select-tabs">
+                    <div class="asset-type-select-tabs" id="asset-type-select-tabs">
+                        <div class="asset-type-slider-pill" id="asset-type-slider-pill"></div>
                         <button class="asset-type-tab active" data-type="acciones">Acciones</button>
                         <button class="asset-type-tab" data-type="cedears">CEDEARs</button>
                     </div>
@@ -110,7 +111,7 @@
                         <div class="currency-select-tabs" id="currency-filter-container">
                             <button class="currency-tab active" data-currency="ARS">ARS</button>
                             <button class="currency-tab" data-currency="USD">USD</button>
-                            <button class="currency-tab" data-currency="USDC" id="currency-usdc-tab" style="display: none;">USDC</button>
+                            <button class="currency-tab hidden-filter" data-currency="USDC" id="currency-usdc-tab">USDC</button>
                         </div>
                     </div>
                 </div>
@@ -447,7 +448,7 @@
                         <div class="movers-currency-tabs" id="movers-currency-filter-container">
                             <button class="movers-currency-tab active" data-currency="ARS">ARS</button>
                             <button class="movers-currency-tab" data-currency="USD">USD</button>
-                            <button class="movers-currency-tab" data-currency="USDC" id="movers-currency-usdc-tab" style="display: none;">USDC</button>
+                            <button class="movers-currency-tab hidden-filter" data-currency="USDC" id="movers-currency-usdc-tab">USDC</button>
                         </div>
                     </div>
                     <div class="movers-tabs">

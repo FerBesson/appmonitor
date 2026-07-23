@@ -168,7 +168,25 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshAllData();
     startCountdown();
     initRRG();
+    setTimeout(updateAssetTabPill, 50);
+    window.addEventListener('resize', updateAssetTabPill);
 });
+
+function updateAssetTabPill() {
+    const sliderPill = document.getElementById('asset-type-slider-pill');
+    const activeTab = document.querySelector('.asset-type-tab.active');
+    const container = document.getElementById('asset-type-select-tabs');
+    if (!sliderPill || !activeTab || !container) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = activeTab.getBoundingClientRect();
+
+    const leftOffset = activeRect.left - containerRect.left;
+    const width = activeRect.width;
+
+    sliderPill.style.left = `${leftOffset}px`;
+    sliderPill.style.width = `${width}px`;
+}
 
 function initEventListeners() {
     window.addEventListener('online', () => {
@@ -186,52 +204,87 @@ function initEventListeners() {
     const assetTypeTabs = document.querySelectorAll('.asset-type-tab');
     assetTypeTabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
+            const targetType = e.target.dataset.type;
+            if (state.assetType === targetType) return;
+
+            // 1. Mover el pill deslizante de inmediato para respuesta táctil instantánea
             assetTypeTabs.forEach(t => t.classList.remove('active'));
             e.target.classList.add('active');
-            state.assetType = e.target.dataset.type;
-            updateHeaderFlag();
-            
-            const panelContainer = document.getElementById('panel-filter-container');
-            const usdcTab = document.getElementById('currency-usdc-tab');
-            const moversUsdcTab = document.getElementById('movers-currency-usdc-tab');
-            
-            if (state.assetType === 'cedears') {
-                if (panelContainer) panelContainer.style.display = 'none';
-                if (usdcTab) usdcTab.style.display = 'block';
-                if (moversUsdcTab) moversUsdcTab.style.display = 'block';
-                if (state.cedears.length === 0) refreshAllData();
-            } else {
-                if (panelContainer) panelContainer.style.display = 'flex';
-                if (usdcTab) usdcTab.style.display = 'none';
-                if (moversUsdcTab) moversUsdcTab.style.display = 'none';
-                
-                // Si la moneda seleccionada era USDC, resetear a ARS
-                if (state.currentCurrency === 'USDC') {
-                    state.currentCurrency = 'ARS';
-                    const currencyTabs = document.querySelectorAll('.currency-tab');
-                    currencyTabs.forEach(t => {
-                        if (t.dataset.currency === 'ARS') t.classList.add('active');
-                        else t.classList.remove('active');
-                    });
-                }
-                if (state.moversCurrency === 'USDC') {
-                    state.moversCurrency = 'ARS';
-                    const moversCurrencyTabs = document.querySelectorAll('.movers-currency-tab');
-                    moversCurrencyTabs.forEach(t => {
-                        if (t.dataset.currency === 'ARS') t.classList.add('active');
-                        else t.classList.remove('active');
-                    });
-                }
-            }
-            
-            state.currentSector = 'all';
-            const btnText = document.getElementById('sector-filter-btn-text');
-            if (btnText) btnText.textContent = 'Sector: Todos';
-            updateSectorDropdown();
+            updateAssetTabPill();
 
-            renderTable();
-            renderMarketMovers();
-            loadSidebarEarnings();
+            const tableContainer = document.querySelector('.table-container');
+            const moversSection = document.querySelector('.movers-section');
+            const sidebarEarnings = document.querySelector('.sidebar-earnings-section');
+            const animatedElements = [tableContainer, moversSection, sidebarEarnings].filter(Boolean);
+
+            // 2. Iniciar transición de salida (fade + micro blur)
+            animatedElements.forEach(el => {
+                el.classList.remove('asset-transition-in');
+                el.classList.add('asset-transition-out');
+            });
+
+            setTimeout(() => {
+                state.assetType = targetType;
+                updateHeaderFlag();
+
+                const panelContainer = document.getElementById('panel-filter-container');
+                const usdcTab = document.getElementById('currency-usdc-tab');
+                const moversUsdcTab = document.getElementById('movers-currency-usdc-tab');
+
+                if (state.assetType === 'cedears') {
+                    if (panelContainer) panelContainer.classList.add('hidden-filter');
+                    if (usdcTab) {
+                        usdcTab.style.display = '';
+                        usdcTab.classList.remove('hidden-filter');
+                    }
+                    if (moversUsdcTab) {
+                        moversUsdcTab.style.display = '';
+                        moversUsdcTab.classList.remove('hidden-filter');
+                    }
+                    if (state.cedears.length === 0) refreshAllData();
+                } else {
+                    if (panelContainer) panelContainer.classList.remove('hidden-filter');
+                    if (usdcTab) usdcTab.classList.add('hidden-filter');
+                    if (moversUsdcTab) moversUsdcTab.classList.add('hidden-filter');
+
+                    // Reset USDC a ARS si era la moneda seleccionada
+                    if (state.currentCurrency === 'USDC') {
+                        state.currentCurrency = 'ARS';
+                        const currencyTabs = document.querySelectorAll('.currency-tab');
+                        currencyTabs.forEach(t => {
+                            if (t.dataset.currency === 'ARS') t.classList.add('active');
+                            else t.classList.remove('active');
+                        });
+                    }
+                    if (state.moversCurrency === 'USDC') {
+                        state.moversCurrency = 'ARS';
+                        const moversCurrencyTabs = document.querySelectorAll('.movers-currency-tab');
+                        moversCurrencyTabs.forEach(t => {
+                            if (t.dataset.currency === 'ARS') t.classList.add('active');
+                            else t.classList.remove('active');
+                        });
+                    }
+                }
+
+                state.currentSector = 'all';
+                const btnText = document.getElementById('sector-filter-btn-text');
+                if (btnText) btnText.textContent = 'Sector: Todos';
+                updateSectorDropdown();
+
+                renderTable();
+                renderMarketMovers();
+                loadSidebarEarnings();
+
+                // 3. Iniciar transición de entrada (fade-in en cascada)
+                animatedElements.forEach(el => {
+                    el.classList.remove('asset-transition-out');
+                    el.classList.add('asset-transition-in');
+                });
+
+                setTimeout(() => {
+                    animatedElements.forEach(el => el.classList.remove('asset-transition-in'));
+                }, 350);
+            }, 140);
         });
     });
 
@@ -1689,6 +1742,10 @@ function updateHeaderFlag() {
         accentColor = 'rgba(117, 170, 219, 0.15)';
         gridColor = 'rgba(117, 170, 219, 0.04)';
     }
+
+    flagContainer.classList.remove('flag-pop');
+    void flagContainer.offsetWidth;
+    flagContainer.classList.add('flag-pop');
 
     // Dynamic Chart Theme Updates
     const updateChartColors = (chart) => {

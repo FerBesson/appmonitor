@@ -22,23 +22,47 @@ CEDEAR_US_MAP = {
     "WMT": "WMT", "JPM": "JPM", "BAC": "BAC", "V": "V", "MA": "MA"
 }
 
-def _get_nasdaq_earnings_for_date(date_str: str) -> List[Dict[str, Any]]:
+import time
+
+def _get_nasdaq_earnings_for_date(date_str: str, force_refresh: bool = False) -> List[Dict[str, Any]]:
     """
     Obtiene los datos de earnings de Nasdaq para una fecha específica (YYYY-MM-DD).
-    Utiliza caché local en disco de respuesta instantánea.
+    Utiliza caché local en disco con expiración inteligente para mantener los datos de hoy/ayer actualizados.
     """
     cache_file = os.path.join(EARNINGS_CACHE_DIR, f"{date_str}.json")
     
-    # 1. Verificar si hay caché en disco (respuesta instantánea)
-    if os.path.exists(cache_file):
+    use_cache = False
+    if os.path.exists(cache_file) and not force_refresh:
         try:
             if os.path.getsize(cache_file) > 2:
-                with open(cache_file, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                file_mtime = os.path.getmtime(cache_file)
+                file_age_hours = (time.time() - file_mtime) / 3600.0
+                
+                dt_target = datetime.strptime(date_str, "%Y-%m-%d").date()
+                today = datetime.now().date()
+                days_diff = (today - dt_target).days
+                
+                # Regla de expiración de caché:
+                # - Días recientes (entre hace 5 días y los próximos 7 días): expira cada 2 horas
+                #   para capturar reportes recién publicados (EPS real y sorpresa).
+                # - Días pasados de más de 5 días: la información ya no cambia, caché permanente.
+                # - Días futuros de más de 7 días: expira cada 24 horas.
+                if -5 <= days_diff <= 7:
+                    if file_age_hours < 2.0:
+                        use_cache = True
+                elif days_diff > 5:
+                    use_cache = True
+                else:
+                    if file_age_hours < 24.0:
+                        use_cache = True
+
+                if use_cache:
+                    with open(cache_file, "r", encoding="utf-8") as f:
+                        return json.load(f)
         except Exception as e:
             print(f"Error leyendo caché de earnings para {date_str}: {e}")
 
-    # 2. Consultar la API de Nasdaq si no está en disco
+    # 2. Consultar la API de Nasdaq si la caché no es válida o expiró
     url = f"https://api.nasdaq.com/api/calendar/earnings?date={date_str}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -230,13 +254,14 @@ async def get_earnings_for_date_range(start_date: datetime, end_date: datetime, 
         
     return days_data
 
-COMPILED_WEEK_CACHE = {}
-COMPILED_MONTH_CACHE = {}
+COMPILED_WEEK_CACHE = {}  # key: (timestamp, result)
+COMPILED_MONTH_CACHE = {} # key: (timestamp, result)
+CACHE_TTL_SECONDS = 600   # 10 minutos de vida útil en memoria
 
 async def get_weekly_earnings(target_date_str: str = None, panel: str = "cedears", only_relevant: bool = True) -> Dict[str, Any]:
     """
     Devuelve los earnings para la semana laborable (Lunes a Viernes) que contiene target_date.
-    Respuesta instantánea vía memoria/caché.
+    Respuesta instantánea vía memoria/caché con expiración de 10 min para mantener datos actualizados.
     """
     if not target_date_str:
         target_date_str = datetime.now().strftime("%Y-%m-%d")
@@ -251,8 +276,12 @@ async def get_weekly_earnings(target_date_str: str = None, panel: str = "cedears
     mon_str = monday.strftime("%Y-%m-%d")
     
     cache_key = f"{mon_str}_{panel}_{only_relevant}"
+    now_ts = time.time()
+    
     if cache_key in COMPILED_WEEK_CACHE:
-        return COMPILED_WEEK_CACHE[cache_key]
+        ts, cached_result = COMPILED_WEEK_CACHE[cache_key]
+        if now_ts - ts < CACHE_TTL_SECONDS:
+            return cached_result
     
     days = await get_earnings_for_date_range(monday, friday, panel=panel, only_relevant=only_relevant)
     
@@ -262,17 +291,21 @@ async def get_weekly_earnings(target_date_str: str = None, panel: str = "cedears
         "days": days
     }
     
-    COMPILED_WEEK_CACHE[cache_key] = result
+    COMPILED_WEEK_CACHE[cache_key] = (now_ts, result)
     return result
 
 async def get_monthly_earnings(year: int, month: int, panel: str = "cedears", only_relevant: bool = True) -> Dict[str, Any]:
     """
     Devuelve los earnings para todo el mes especificado.
-    Respuesta instantánea vía memoria/caché.
+    Respuesta instantánea vía memoria/caché con expiración de 10 min.
     """
     cache_key = f"{year}_{month}_{panel}_{only_relevant}"
+    now_ts = time.time()
+    
     if cache_key in COMPILED_MONTH_CACHE:
-        return COMPILED_MONTH_CACHE[cache_key]
+        ts, cached_result = COMPILED_MONTH_CACHE[cache_key]
+        if now_ts - ts < CACHE_TTL_SECONDS:
+            return cached_result
         
     start_date = datetime(year, month, 1)
     if month == 12:
@@ -290,7 +323,7 @@ async def get_monthly_earnings(year: int, month: int, panel: str = "cedears", on
         "days": days
     }
     
-    COMPILED_MONTH_CACHE[cache_key] = result
+    COMPILED_MONTH_CACHE[cache_key] = (now_ts, result)
     return result
 
 

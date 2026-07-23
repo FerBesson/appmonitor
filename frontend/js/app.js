@@ -27,6 +27,7 @@ const state = {
     macdLineSeries: null,
     macdSignalSeries: null,
     macdHistSeries: null,
+    macdDummySeries: null,
     showSMA: false,
     showBollinger: false,
     countdown: 30,
@@ -807,6 +808,7 @@ function renderChart(historyPoints, currency) {
     state.macdLineSeries = null;
     state.macdSignalSeries = null;
     state.macdHistSeries = null;
+    state.macdDummySeries = null;
 
     if (!historyPoints || historyPoints.length === 0) return;
 
@@ -830,7 +832,10 @@ function renderChart(historyPoints, currency) {
         grid: commonGrid,
         timeScale: {
             visible: false, // Hide time scale for price chart
-            borderColor: 'rgba(255, 140, 0, 0.12)'
+            borderColor: 'rgba(255, 140, 0, 0.12)',
+            rightOffset: 12,
+            fixLeftEdge: false,
+            fixRightEdge: false
         },
         rightPriceScale: {
             borderColor: 'rgba(255, 140, 0, 0.12)',
@@ -926,7 +931,10 @@ function renderChart(historyPoints, currency) {
             grid: commonGrid,
             timeScale: {
                 visible: false, // Hide time scale
-                borderColor: 'rgba(255, 140, 0, 0.12)'
+                borderColor: 'rgba(255, 140, 0, 0.12)',
+                rightOffset: 12,
+                fixLeftEdge: false,
+                fixRightEdge: false
             },
             rightPriceScale: {
                 borderColor: 'rgba(255, 140, 0, 0.12)',
@@ -1005,7 +1013,10 @@ function renderChart(historyPoints, currency) {
             timeScale: {
                 visible: true, // Show time scale on the bottom chart
                 borderColor: 'rgba(255, 140, 0, 0.12)',
-                timeVisible: true
+                timeVisible: true,
+                rightOffset: 12,
+                fixLeftEdge: false,
+                fixRightEdge: false
             },
             rightPriceScale: {
                 borderColor: 'rgba(255, 140, 0, 0.12)',
@@ -1030,6 +1041,13 @@ function renderChart(historyPoints, currency) {
             priceFormat: {
                 type: 'volume'
             }
+        });
+
+        state.macdDummySeries = state.macdChartInstance.addLineSeries({
+            visible: false,
+            priceLineVisible: false,
+            lastValueVisible: false,
+            crosshairMarkerVisible: false
         });
     }
 
@@ -1121,9 +1139,9 @@ function renderChart(historyPoints, currency) {
     state.bbLowerSeries.setData(bbLowerData);
     state.bbMiddleSeries.setData(bbMiddleData);
     if (state.rsiSeries) {
-        // Generar las bandas sombreadas
-        const rsiBand70Data = rsiData.map(d => ({ time: d.time, value: 70 }));
-        const rsiBand30Data = rsiData.map(d => ({ time: d.time, value: 30 }));
+        // Generar las bandas sombreadas cubriendo todo el rango histórico de velas
+        const rsiBand70Data = candles.map(c => ({ time: c.time, value: 70 }));
+        const rsiBand30Data = candles.map(c => ({ time: c.time, value: 30 }));
         if (state.rsiBand70Series) state.rsiBand70Series.setData(rsiBand70Data);
         if (state.rsiBand30Series) state.rsiBand30Series.setData(rsiBand30Data);
 
@@ -1137,6 +1155,7 @@ function renderChart(historyPoints, currency) {
         state.rsiSeries.setData(rsiData);
         if (state.rsiMaSeries) state.rsiMaSeries.setData(rsiMaData);
     }
+    if (state.macdDummySeries) state.macdDummySeries.setData(candles.map(c => ({ time: c.time, value: 0 })));
     if (state.macdLineSeries) state.macdLineSeries.setData(macdLineData);
     if (state.macdSignalSeries) state.macdSignalSeries.setData(macdSignalData);
     if (state.macdHistSeries) state.macdHistSeries.setData(macdHistData);
@@ -1146,21 +1165,21 @@ function renderChart(historyPoints, currency) {
     const rsiTimeScale = state.rsiChartInstance ? state.rsiChartInstance.timeScale() : null;
     const macdTimeScale = state.macdChartInstance ? state.macdChartInstance.timeScale() : null;
 
-    if (rsiTimeScale && macdTimeScale) {
+    const timeScales = [priceTimeScale, rsiTimeScale, macdTimeScale].filter(Boolean);
+
+    if (timeScales.length > 1) {
         let isSyncing = false;
-        const syncTimeScale = (source, targets) => {
-            source.subscribeVisibleTimeRangeChange(range => {
+        timeScales.forEach(source => {
+            const targets = timeScales.filter(t => t !== source);
+            source.subscribeVisibleLogicalRangeChange(range => {
                 if (isSyncing || !range) return;
                 isSyncing = true;
                 targets.forEach(t => {
-                    if (t) t.setVisibleRange(range);
+                    if (t) t.setVisibleLogicalRange(range);
                 });
                 isSyncing = false;
             });
-        };
-        syncTimeScale(priceTimeScale, [rsiTimeScale, macdTimeScale]);
-        syncTimeScale(rsiTimeScale, [priceTimeScale, macdTimeScale]);
-        syncTimeScale(macdTimeScale, [priceTimeScale, rsiTimeScale]);
+        });
     }
 
     // Sync Crosshairs (Free Moving synchronized crosshairs)

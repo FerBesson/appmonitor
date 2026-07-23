@@ -286,17 +286,6 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
-    "symbol": "HIT",
-    "name": "Health In Tech, Inc.",
-    "marketCap": "$74,080,634",
-    "eps": "$0.01",
-    "epsForecast": "($0.03)",
-    "surprise": "N/A",
-    "time": "time-not-supplied",
-    "lastYearEPS": "",
-    "fiscalQuarterEnding": "Jun/2026"
-  },
-  {
     "symbol": "PAPL",
     "name": "Pineapple Financial Inc.",
     "marketCap": "$19,211,164",

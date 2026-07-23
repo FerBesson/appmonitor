@@ -46,6 +46,7 @@ const state = {
     consecutiveFailures: 0,
     cedearRatios: {},
     usQuotes: {},
+    arbitrajeSearchQuery: '',
     currentRatio: 1
 };
 
@@ -2412,7 +2413,13 @@ function renderArbitrageScanner() {
         results = results.filter(r => r.liquidity_category === currentLiquidityFilter);
     }
 
-    // 5. Aplicar Ordenamiento
+    // 5. Aplicar Búsqueda por Ticker
+    const searchQuery = (state.arbitrajeSearchQuery || '').trim().toLowerCase();
+    if (searchQuery) {
+        results = results.filter(r => r.ticker.toLowerCase().includes(searchQuery) || (r.name && r.name.toLowerCase().includes(searchQuery)));
+    }
+
+    // 6. Aplicar Ordenamiento
     const sortBy = state.arbitrajeSortBy || 'variacion_pct';
     const sortDir = state.arbitrajeSortDirection || 'desc';
 
@@ -2426,7 +2433,7 @@ function renderArbitrageScanner() {
         return sortDir === 'asc' ? (valA - valB) : (valB - valA);
     });
 
-    // 6. Renderizar Filas
+    // 7. Renderizar Filas
     if (results.length === 0) {
         tbody.innerHTML = `<tr class="empty-row"><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 20px;">No se encontraron CEDEARs para los filtros seleccionados.</td></tr>`;
         return;
@@ -2480,6 +2487,14 @@ function renderArbitrageScanner() {
 }
 
 function initArbitrageTableEvents() {
+    const searchInput = document.getElementById('arbitraje-search-input');
+    if (searchInput) {
+        searchInput.oninput = (e) => {
+            state.arbitrajeSearchQuery = e.target.value;
+            renderArbitrageScanner();
+        };
+    }
+
     const filterTabs = document.querySelectorAll('.arbitraje-tab');
     filterTabs.forEach(tab => {
         tab.onclick = (e) => {

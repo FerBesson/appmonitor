@@ -298,11 +298,18 @@
                                         <p class="arbitraje-subtitle">Detección de oportunidades con descuento y sobreprecios (primas) respecto al dólar CCL del mercado (<strong id="arb-market-ccl-val">ARS --</strong>)</p>
                                     </div>
                                 </div>
-                                <div class="arbitraje-filter-tabs" id="arbitraje-filter-tabs">
-                                    <button class="arbitraje-tab active" data-filter="all">Todos</button>
-                                    <button class="arbitraje-tab" data-filter="discount">🟢 Con Descuento</button>
-                                    <button class="arbitraje-tab" data-filter="premium">🔴 Con Prima (Sobreprecio)</button>
-                                    <button class="arbitraje-tab" data-filter="neutral">⚪ Alineados</button>
+                                <div class="arbitraje-controls-group">
+                                    <div class="arbitraje-filter-tabs" id="arbitraje-filter-tabs">
+                                        <button class="arbitraje-tab active" data-filter="all">Todos</button>
+                                        <button class="arbitraje-tab" data-filter="discount">🟢 Con Descuento</button>
+                                        <button class="arbitraje-tab" data-filter="premium">🔴 Con Prima (Sobreprecio)</button>
+                                        <button class="arbitraje-tab" data-filter="neutral">⚪ Alineados</button>
+                                    </div>
+                                    <div class="arbitraje-filter-tabs liquidity-filter-tabs" id="arbitraje-liquidity-tabs">
+                                        <button class="arbitraje-tab-liq active" data-liq="all">💧 Toda Liquidez</button>
+                                        <button class="arbitraje-tab-liq" data-liq="high">💧 Alta Liquidez</button>
+                                        <button class="arbitraje-tab-liq" data-liq="med">💧 Media Liquidez</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -317,11 +324,12 @@
                                             <th class="th-price-ars" data-sort="price_ars">PRECIO ARS <span class="sort-icon"></span></th>
                                             <th class="th-price-hipo" data-sort="price_hipotetico">PRECIO HIPOTÉTICO <span class="sort-icon"></span></th>
                                             <th class="th-brecha sorted" data-sort="variacion_pct">VARIACIÓN % <span class="sort-icon">▼</span></th>
+                                            <th class="th-liquidez" data-sort="volume_ars">LIQUIDEZ <span class="sort-icon"></span></th>
                                         </tr>
                                     </thead>
                                     <tbody id="arbitraje-tbody">
                                         <tr class="loading-row">
-                                            <td colspan="7">Escaneando arbitrajes y precios hipotéticos...</td>
+                                            <td colspan="8">Escaneando arbitrajes y precios hipotéticos...</td>
                                         </tr>
                                     </tbody>
                                 </table>

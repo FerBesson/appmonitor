@@ -2359,6 +2359,28 @@ function renderArbitrageScanner() {
         if (variacionPct > 0.15) category = 'discount'; // Oportunidad: Precio teórico > Precio actual (CEDEAR barato)
         else if (variacionPct < -0.15) category = 'premium'; // Sobreprecio: Precio teórico < Precio actual (CEDEAR caro)
 
+        // 4. Indicador de Liquidez (Monto Operado en Pesos = Price_ARS * Volume_Nominales)
+        const volumeARS = priceARS * (asset.volume || 0);
+        let liquidityCategory = 'low';
+        let liquidityLabel = '⚠️ Baja';
+
+        if (volumeARS >= 50000000) {
+            liquidityCategory = 'high';
+            liquidityLabel = `💧 Alta ($${(volumeARS / 1000000).toFixed(1)}M)`;
+        } else if (volumeARS >= 10000000) {
+            liquidityCategory = 'med';
+            liquidityLabel = `💧 Media ($${(volumeARS / 1000000).toFixed(1)}M)`;
+        } else if (volumeARS >= 1000000) {
+            liquidityCategory = 'low';
+            liquidityLabel = `⚠️ Baja ($${(volumeARS / 1000000).toFixed(1)}M)`;
+        } else if (volumeARS > 0) {
+            liquidityCategory = 'low';
+            liquidityLabel = `⚠️ Baja ($${Math.round(volumeARS / 1000)}K)`;
+        } else {
+            liquidityCategory = 'low';
+            liquidityLabel = `⚠️ Sin Operar`;
+        }
+
         processedMap.set(baseTicker, {
             ticker: baseTicker,
             name: asset.name || baseTicker,
@@ -2369,19 +2391,28 @@ function renderArbitrageScanner() {
             implicit_ccl: implicitCCL,
             price_hipotetico: priceHipotetico,
             variacion_pct: variacionPct,
-            category: category
+            category: category,
+            volume_ars: volumeARS,
+            liquidity_category: liquidityCategory,
+            liquidity_label: liquidityLabel
         });
     });
 
     let results = Array.from(processedMap.values());
 
-    // 3. Aplicar Filtro de Categoría
+    // 3. Aplicar Filtro de Categoría de Brecha
     const currentFilter = state.arbitrajeFilter || 'all';
     if (currentFilter !== 'all') {
         results = results.filter(r => r.category === currentFilter);
     }
 
-    // 4. Aplicar Ordenamiento
+    // 4. Aplicar Filtro de Liquidez
+    const currentLiquidityFilter = state.arbitrajeLiquidityFilter || 'all';
+    if (currentLiquidityFilter !== 'all') {
+        results = results.filter(r => r.liquidity_category === currentLiquidityFilter);
+    }
+
+    // 5. Aplicar Ordenamiento
     const sortBy = state.arbitrajeSortBy || 'variacion_pct';
     const sortDir = state.arbitrajeSortDirection || 'desc';
 
@@ -2395,9 +2426,9 @@ function renderArbitrageScanner() {
         return sortDir === 'asc' ? (valA - valB) : (valB - valA);
     });
 
-    // 5. Renderizar Filas
+    // 6. Renderizar Filas
     if (results.length === 0) {
-        tbody.innerHTML = `<tr class="empty-row"><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No se encontraron CEDEARs para el filtro seleccionado.</td></tr>`;
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 20px;">No se encontraron CEDEARs para los filtros seleccionados.</td></tr>`;
         return;
     }
 
@@ -2433,6 +2464,11 @@ function renderArbitrageScanner() {
                     ${sign}${item.variacion_pct.toFixed(2)}% (${pillLabel})
                 </span>
             </td>
+            <td>
+                <span class="liquidity-pill ${item.liquidity_category}">
+                    ${item.liquidity_label}
+                </span>
+            </td>
         `;
         fragment.appendChild(tr);
     });
@@ -2450,6 +2486,16 @@ function initArbitrageTableEvents() {
             filterTabs.forEach(t => t.classList.remove('active'));
             e.target.classList.add('active');
             state.arbitrajeFilter = e.target.dataset.filter;
+            renderArbitrageScanner();
+        };
+    });
+
+    const liqFilterTabs = document.querySelectorAll('.arbitraje-tab-liq');
+    liqFilterTabs.forEach(tab => {
+        tab.onclick = (e) => {
+            liqFilterTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            state.arbitrajeLiquidityFilter = e.target.dataset.liq;
             renderArbitrageScanner();
         };
     });

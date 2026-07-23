@@ -2399,6 +2399,13 @@ body,
     margin-top: 2px;
 }
 
+.arbitraje-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .arbitraje-filter-tabs {
     display: flex;
     background: rgba(0, 0, 0, 0.4);
@@ -2408,7 +2415,7 @@ body,
     gap: 3px;
 }
 
-.arbitraje-tab {
+.arbitraje-tab, .arbitraje-tab-liq {
     background: transparent;
     border: none;
     color: var(--text-secondary);
@@ -2420,10 +2427,39 @@ body,
     transition: all 0.2s ease;
 }
 
-.arbitraje-tab.active {
+.arbitraje-tab.active, .arbitraje-tab-liq.active {
     background: rgba(var(--accent-rgb), 0.15);
     color: var(--accent-primary);
     box-shadow: inset 0 0 8px rgba(var(--accent-rgb), 0.1);
+}
+
+.liquidity-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.liquidity-pill.high {
+    background: rgba(0, 230, 118, 0.12);
+    color: #00e676;
+    border: 1px solid rgba(0, 230, 118, 0.25);
+}
+
+.liquidity-pill.med {
+    background: rgba(255, 179, 0, 0.12);
+    color: #ffb300;
+    border: 1px solid rgba(255, 179, 0, 0.25);
+}
+
+.liquidity-pill.low {
+    background: rgba(144, 164, 174, 0.12);
+    color: #90a4ae;
+    border: 1px solid rgba(144, 164, 174, 0.2);
 }
 
 .arbitraje-table-container {

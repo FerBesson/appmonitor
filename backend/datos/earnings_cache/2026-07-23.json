@@ -1595,6 +1595,17 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
+    "symbol": "UTMD",
+    "name": "Utah Medical Products, Inc.",
+    "marketCap": "$220,302,690",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.94",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
     "symbol": "OPBK",
     "name": "OP Bancorp",
     "marketCap": "$219,392,140",
@@ -1625,6 +1636,17 @@
     "surprise": "",
     "time": "time-pre-market",
     "lastYearEPS": "$1.16",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
+    "symbol": "ECBK",
+    "name": "ECB Bancorp, Inc.",
+    "marketCap": "$173,853,844",
+    "eps": "",
+    "epsForecast": "",
+    "surprise": "",
+    "time": "time-not-supplied",
+    "lastYearEPS": "$0.17",
     "fiscalQuarterEnding": "Jun/2026"
   },
   {

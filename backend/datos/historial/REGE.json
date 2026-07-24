@@ -1,22 +1,5 @@
 [
   {
-    "date": "2001-07-23",
-    "open": 1.25,
-    "high": 1.25,
-    "low": 1.25,
-    "close": 1.25,
-    "volume": 0.0,
-    "sma20": null,
-    "sma50": null,
-    "rsi": null,
-    "bb_upper": null,
-    "bb_lower": null,
-    "bb_middle": null,
-    "macd": null,
-    "macd_signal": null,
-    "macd_hist": null
-  },
-  {
     "date": "2001-07-24",
     "open": 1.25,
     "high": 1.25,
@@ -246,7 +229,7 @@
     "volume": 0.0,
     "sma20": null,
     "sma50": null,
-    "rsi": 100.0,
+    "rsi": null,
     "bb_upper": null,
     "bb_lower": null,
     "bb_middle": null,
@@ -329,12 +312,12 @@
     "low": 1.25,
     "close": 1.25,
     "volume": 0.0,
-    "sma20": 1.25,
+    "sma20": null,
     "sma50": null,
     "rsi": 100.0,
-    "bb_upper": 1.25,
-    "bb_lower": 1.25,
-    "bb_middle": 1.25,
+    "bb_upper": null,
+    "bb_lower": null,
+    "bb_middle": null,
     "macd": null,
     "macd_signal": null,
     "macd_hist": null
@@ -437,7 +420,7 @@
     "bb_upper": 1.25,
     "bb_lower": 1.25,
     "bb_middle": 1.25,
-    "macd": 0.0,
+    "macd": null,
     "macd_signal": null,
     "macd_hist": null
   },
@@ -574,8 +557,8 @@
     "bb_lower": 1.25,
     "bb_middle": 1.25,
     "macd": 0.0,
-    "macd_signal": 0.0,
-    "macd_hist": 0.0
+    "macd_signal": null,
+    "macd_hist": null
   },
   {
     "date": "2001-09-07",
@@ -840,7 +823,7 @@
     "close": 1.25,
     "volume": 0.0,
     "sma20": 1.25,
-    "sma50": 1.25,
+    "sma50": null,
     "rsi": 100.0,
     "bb_upper": 1.25,
     "bb_lower": 1.25,
@@ -105517,5 +105500,22 @@
     "macd": 111.6725,
     "macd_signal": 137.0254,
     "macd_hist": -25.3529
+  },
+  {
+    "date": "2026-07-23",
+    "open": 7100.0,
+    "high": 7100.0,
+    "low": 7100.0,
+    "close": 7100.0,
+    "volume": 0.0,
+    "sma20": 7075.0,
+    "sma50": 6707.0,
+    "rsi": 99.81,
+    "bb_upper": 7161.6,
+    "bb_lower": 6988.4,
+    "bb_middle": 7075.0,
+    "macd": 104.9156,
+    "macd_signal": 130.6034,
+    "macd_hist": -25.6878
   }
 ]

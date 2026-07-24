@@ -76787,5 +76787,22 @@
     "macd": 0.0,
     "macd_signal": 0.0,
     "macd_hist": -0.0
+  },
+  {
+    "date": "2026-07-23",
+    "open": 8050.0,
+    "high": 8050.0,
+    "low": 8050.0,
+    "close": 8050.0,
+    "volume": 0.0,
+    "sma20": 8050.0,
+    "sma50": 8050.0,
+    "rsi": 100.0,
+    "bb_upper": 8050.0,
+    "bb_lower": 8050.0,
+    "bb_middle": 8050.0,
+    "macd": 0.0,
+    "macd_signal": 0.0,
+    "macd_hist": -0.0
   }
 ]

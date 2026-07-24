@@ -2,12 +2,12 @@
   "ticker": "VRSN",
   "sector": "Technology",
   "industry": "Software - Infrastructure",
-  "market_cap": "6.26T",
-  "pe_ratio": "5.14",
+  "market_cap": "6.6T",
+  "pe_ratio": "5.31",
   "dividend_yield": "1.07%",
-  "eps": "13,376.74",
-  "beta": "0.71",
+  "eps": "13,654.04",
+  "beta": "",
   "price_to_book": "",
-  "profit_margin": "49.96%",
+  "profit_margin": "49.77%",
   "description": "VeriSign, Inc., together with its subsidiaries, provides internet infrastructure and domain name registry services that enables internet navigation for various recognized domain names worldwide. The company provides root zone maintainer services, operating two of thirteen internet root servers; and offering registration services and authoritative resolution for the .com and .net domains, which supports global e-commerce. It operates directory for .name and .cc; and back-end systems for .edu, domain names. The company was incorporated in 1995 and is headquartered in Reston, Virginia."
 }

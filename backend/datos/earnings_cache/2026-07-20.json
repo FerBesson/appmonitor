@@ -2,7 +2,7 @@
   {
     "symbol": "STLD",
     "name": "Steel Dynamics, Inc.",
-    "marketCap": "$34,414,938,058",
+    "marketCap": "$34,693,268,725",
     "eps": "$3.80",
     "epsForecast": "$3.67",
     "surprise": "3.54",
@@ -13,7 +13,7 @@
   {
     "symbol": "RYAAY",
     "name": "Ryanair Holdings plc",
-    "marketCap": "$30,543,300,741",
+    "marketCap": "$30,536,223,372",
     "eps": "$1.19",
     "epsForecast": "$1.25",
     "surprise": "-4.8",
@@ -24,7 +24,7 @@
   {
     "symbol": "WRB",
     "name": "W.R. Berkley Corporation",
-    "marketCap": "$26,937,944,328",
+    "marketCap": "$27,336,280,431",
     "eps": "$1.27",
     "epsForecast": "$1.09",
     "surprise": "16.51",
@@ -35,7 +35,7 @@
   {
     "symbol": "CCK",
     "name": "Crown Holdings, Inc.",
-    "marketCap": "$13,010,658,617",
+    "marketCap": "$12,793,870,180",
     "eps": "$2.49",
     "epsForecast": "$2.15",
     "surprise": "15.81",
@@ -46,7 +46,7 @@
   {
     "symbol": "AGNC",
     "name": "AGNC Investment Corp.",
-    "marketCap": "$12,305,801,796",
+    "marketCap": "$12,122,133,112",
     "eps": "$0.40",
     "epsForecast": "$0.38",
     "surprise": "5.26",
@@ -55,20 +55,9 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
-    "symbol": "WTFC",
-    "name": "Wintrust Financial Corporation",
-    "marketCap": "$10,692,492,759",
-    "eps": "$3.30",
-    "epsForecast": "$3.15",
-    "surprise": "4.76",
-    "time": "time-not-supplied",
-    "lastYearEPS": "",
-    "fiscalQuarterEnding": "Jun/2026"
-  },
-  {
     "symbol": "DPZ",
     "name": "Domino's Pizza Inc",
-    "marketCap": "$10,580,531,305",
+    "marketCap": "$10,693,670,839",
     "eps": "$4.07",
     "epsForecast": "$4.11",
     "surprise": "-0.97",
@@ -77,9 +66,20 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
+    "symbol": "WTFC",
+    "name": "Wintrust Financial Corporation",
+    "marketCap": "$10,641,232,464",
+    "eps": "$3.30",
+    "epsForecast": "$3.15",
+    "surprise": "4.76",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
     "symbol": "ZION",
     "name": "Zions Bancorporation N.A.",
-    "marketCap": "$10,306,723,617",
+    "marketCap": "$10,172,870,064",
     "eps": "$1.74",
     "epsForecast": "$1.57",
     "surprise": "10.83",
@@ -90,7 +90,7 @@
   {
     "symbol": "BOKF",
     "name": "BOK Financial Corporation",
-    "marketCap": "$8,600,728,043",
+    "marketCap": "$8,580,676,893",
     "eps": "$2.59",
     "epsForecast": "$2.56",
     "surprise": "1.17",
@@ -101,7 +101,7 @@
   {
     "symbol": "SFBS",
     "name": "ServisFirst Bancshares, Inc.",
-    "marketCap": "$4,734,347,100",
+    "marketCap": "$4,756,758,857",
     "eps": "$1.57",
     "epsForecast": "$1.57",
     "surprise": "N/A",
@@ -112,7 +112,7 @@
   {
     "symbol": "DX",
     "name": "Dynex Capital, Inc.",
-    "marketCap": "$3,074,514,654",
+    "marketCap": "$2,991,419,663",
     "eps": "$0.36",
     "epsForecast": "",
     "surprise": "N/A",
@@ -123,7 +123,7 @@
   {
     "symbol": "CALX",
     "name": "Calix, Inc",
-    "marketCap": "$2,256,629,366",
+    "marketCap": "$2,252,221,887",
     "eps": "$0.21",
     "epsForecast": "$0.16",
     "surprise": "31.25",
@@ -134,7 +134,7 @@
   {
     "symbol": "MCRI",
     "name": "Monarch Casino & Resort, Inc.",
-    "marketCap": "$2,099,235,257",
+    "marketCap": "$2,115,209,822",
     "eps": "$1.78",
     "epsForecast": "$1.75",
     "surprise": "1.71",
@@ -145,7 +145,7 @@
   {
     "symbol": "AMC",
     "name": "AMC Entertainment Holdings, Inc.",
-    "marketCap": "$2,008,360,436",
+    "marketCap": "$2,035,138,575",
     "eps": "$0.14",
     "epsForecast": "$0.01",
     "surprise": "1300",
@@ -156,7 +156,7 @@
   {
     "symbol": "CPAC",
     "name": "Cementos Pacasmayo S.A.A.",
-    "marketCap": "$1,007,111,437",
+    "marketCap": "$1,009,654,648",
     "eps": "$0.26",
     "epsForecast": "",
     "surprise": "N/A",
@@ -167,7 +167,7 @@
   {
     "symbol": "SMBK",
     "name": "SmartFinancial, Inc.",
-    "marketCap": "$829,275,941",
+    "marketCap": "$838,851,085",
     "eps": "$0.96",
     "epsForecast": "$0.90",
     "surprise": "6.67",
@@ -176,20 +176,9 @@
     "fiscalQuarterEnding": "Jun/2026"
   },
   {
-    "symbol": "WASH",
-    "name": "Washington Trust Bancorp, Inc.",
-    "marketCap": "$732,309,427",
-    "eps": "$0.83",
-    "epsForecast": "$0.76",
-    "surprise": "9.21",
-    "time": "time-not-supplied",
-    "lastYearEPS": "",
-    "fiscalQuarterEnding": "Jun/2026"
-  },
-  {
     "symbol": "PKE",
     "name": "Park Aerospace Corp.",
-    "marketCap": "$728,448,056",
+    "marketCap": "$746,066,537",
     "eps": "$0.17",
     "epsForecast": "",
     "surprise": "N/A",
@@ -198,9 +187,20 @@
     "fiscalQuarterEnding": "May/2026"
   },
   {
+    "symbol": "WASH",
+    "name": "Washington Trust Bancorp, Inc.",
+    "marketCap": "$717,247,609",
+    "eps": "$0.83",
+    "epsForecast": "$0.76",
+    "surprise": "9.21",
+    "time": "time-not-supplied",
+    "lastYearEPS": "",
+    "fiscalQuarterEnding": "Jun/2026"
+  },
+  {
     "symbol": "HBCP",
     "name": "Home Bancorp, Inc.",
-    "marketCap": "$543,337,476",
+    "marketCap": "$543,180,623",
     "eps": "$1.48",
     "epsForecast": "$1.46",
     "surprise": "1.37",
@@ -211,7 +211,7 @@
   {
     "symbol": "RBB",
     "name": "RBB Bancorp",
-    "marketCap": "$447,954,238",
+    "marketCap": "$446,430,008",
     "eps": "$0.59",
     "epsForecast": "$0.53",
     "surprise": "11.32",
@@ -222,7 +222,7 @@
   {
     "symbol": "ISTR",
     "name": "Investar Holding Corporation",
-    "marketCap": "$407,462,501",
+    "marketCap": "$404,427,912",
     "eps": "$0.75",
     "epsForecast": "$0.70",
     "surprise": "7.14",
@@ -233,7 +233,7 @@
   {
     "symbol": "COSO",
     "name": "CoastalSouth Bancshares, Inc.",
-    "marketCap": "$319,422,993",
+    "marketCap": "$320,385,835",
     "eps": "$0.59",
     "epsForecast": "$0.61",
     "surprise": "-3.28",
@@ -244,7 +244,7 @@
   {
     "symbol": "FUNC",
     "name": "First United Corporation",
-    "marketCap": "$283,526,614",
+    "marketCap": "$283,268,745",
     "eps": "$1.13",
     "epsForecast": "$1.05",
     "surprise": "7.62",
@@ -255,7 +255,7 @@
   {
     "symbol": "PEBK",
     "name": "Peoples Bancorp of North Carolina, Inc.",
-    "marketCap": "$233,861,002",
+    "marketCap": "$231,949,480",
     "eps": "$0.96",
     "epsForecast": "",
     "surprise": "N/A",
@@ -266,7 +266,7 @@
   {
     "symbol": "NUCL",
     "name": "Eagle Nuclear Energy Corp.",
-    "marketCap": "$192,564,485",
+    "marketCap": "$177,774,586",
     "eps": "($0.87)",
     "epsForecast": "",
     "surprise": "N/A",
@@ -277,7 +277,7 @@
   {
     "symbol": "MNSB",
     "name": "MainStreet Bancshares, Inc.",
-    "marketCap": "$165,836,305",
+    "marketCap": "$164,270,469",
     "eps": "$0.58",
     "epsForecast": "$0.53",
     "surprise": "9.43",
@@ -288,7 +288,7 @@
   {
     "symbol": "PAPL",
     "name": "Pineapple Financial Inc.",
-    "marketCap": "$25,271,197",
+    "marketCap": "$27,040,181",
     "eps": "$0.99",
     "epsForecast": "",
     "surprise": "N/A",
@@ -299,7 +299,7 @@
   {
     "symbol": "HIHO",
     "name": "Highway Holdings Limited",
-    "marketCap": "$5,320,677",
+    "marketCap": "$6,107,212",
     "eps": "$0.02",
     "epsForecast": "",
     "surprise": "N/A",
